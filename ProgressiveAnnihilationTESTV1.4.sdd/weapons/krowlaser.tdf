@@ -1,0 +1,43 @@
+[KROWLASER]
+{
+  name=HighEnergyLaser;
+  areaofeffect=8;
+  beamlaser=1;
+  beamtime=0.15;
+  corethickness=0.2;
+  craterboost=1;
+  cratermult=1;
+  energypershot=75;
+  explosiongenerator=custom:FLASH1green;
+  cegtag=LASERGLOWGREEN;
+  firestarter=90;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  laserflaresize=10;
+  lineofsight=1;
+  noselfdamage=1;
+  range=575;
+  reloadtime=0.65;
+  rendertype=0;
+  rgbcolor=0 1 0;
+  soundhit=lasrhit1;
+  soundstart=Lasrmas2;
+  targetmoveerror=0.3;
+  thickness=3;
+  tolerance=10000;
+  turret=1;
+  weaponvelocity=800;
+  [DAMAGE]
+  {
+    default=90;
+    bombers=15;
+    fighters=15;
+    gunships=15;
+    hgunships=15;
+    subs=5;
+    vradar=15;
+    vtol=15;
+    vtrans=15;
+  }
+}

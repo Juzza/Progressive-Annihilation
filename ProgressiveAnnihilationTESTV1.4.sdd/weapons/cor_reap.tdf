@@ -1,0 +1,40 @@
+[COR_REAP]
+{
+  name=PlasmaCannon;
+  areaofeffect=20;
+  craterboost=1;
+  cratermult=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  noselfdamage=1;
+  range=460;
+  reloadtime=4;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  rendertype=4;
+  soundhit=xplomed2;
+  soundstart=cannon3;
+  startsmoke=1;
+  cegtag=MITLERESPLASMA;
+  turret=1;
+  weaponvelocity=600;
+  [DAMAGE]
+  {
+    default=666;
+    bombers=30;
+    fighters=30;
+    gunships=30;
+    hgunships=30;
+    subs=5;
+    vradar=30;
+    vtol=30;
+    vtrans=30;
+  }
+}

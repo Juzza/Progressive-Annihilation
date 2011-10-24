@@ -1,0 +1,42 @@
+[ARMST_GAUSS]
+{
+  name=Gauss;
+  areaofeffect=8;
+  craterboost=1;
+  cratermult=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  minbarrelangle=-15;
+  noselfdamage=1;
+  range=220;
+  reloadtime=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  cegtag=MITLERESPLASMA;
+  rendertype=4;
+  soundhit=xplomed2;
+  soundstart=cannhvy1;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=450;
+  [DAMAGE]
+  {
+    default=200;
+    bombers=24;
+    fighters=24;
+    gunships=24;
+    hgunships=24;
+    subs=5;
+    vradar=24;
+    vtol=24;
+    vtrans=24;
+  }
+}

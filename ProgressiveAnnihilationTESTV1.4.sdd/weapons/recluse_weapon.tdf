@@ -1,0 +1,42 @@
+[ADV_ROCKET]
+{
+	name=HeavyRocket;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+	model=shipmissile;
+	range=550;
+	reloadtime=3;
+	weapontimer=6;
+	weaponvelocity=450;
+	startvelocity=200;
+	weaponacceleration=150;
+	areaofeffect=72;
+	burst=3;
+	burstrate=0.3;
+	soundtrigger=1;
+	soundstart=rockhvy3;
+	soundhit=xplosml1;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMITTELTRAIL;
+	firestarter=70;
+	smokedelay=0.1;
+	selfprop=1;
+	smoketrail=0;
+	startsmoke=1;
+	trajectoryheight=1.5;
+	wobble=9000;
+	turnrate=4000;
+	edgeeffectiveness=0.5;
+	impulsefactor=0.323;
+	impulseboost=0;
+	cratermult=0;
+	craterboost=0;
+	noselfdamage=1;
+	guided=1;
+	[DAMAGE]
+	{
+		default=195;
+		SUBS=5;
+	}
+}

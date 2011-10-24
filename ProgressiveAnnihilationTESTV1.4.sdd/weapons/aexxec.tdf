@@ -1,0 +1,309 @@
+[AXXEEEEXXX]
+{
+	name=AXXEEEEXXX;
+ 	size=2.45;
+	rgbcolor=1 0.40 0.0;
+	stages=6;
+	separation=0.66;
+	alphadecay=0.8;
+	sizedecay=-0.11;
+	nogap=1;
+	rendertype=0;
+	lineofsight=1;
+	turret=1;
+	range=180;
+	reloadtime=0.17;
+	weapontimer=4;
+	weaponvelocity=920;
+	areaofeffect=12;
+	soundtrigger=1;
+	energypershot=5;
+	tolerance=20000;
+	soundstart=lasfirerb;
+	soundhit=lasrhit1;
+	firestarter=10;
+	beamlaser=1;
+	thickness=2;
+	beamtime=0.15;
+	rgbcolor=1 0 0;
+	explosiongenerator=custom:FLASH1red;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=34;
+		SUBS=5;
+	}
+}
+[AXXE232EXXX]
+{
+	name=AXXEEEEXXX;
+	rendertype=0;
+	lineofsight=1;
+	turret=1;
+	range=180;
+	reloadtime=0.17;
+	weapontimer=4;
+	weaponvelocity=920;
+	areaofeffect=12;
+	soundtrigger=1;
+	energypershot=5;
+	tolerance=20000;
+	soundstart=lasfirerb;
+	soundhit=lasrhit1;
+	firestarter=10;
+	beamlaser=1;
+	thickness=2;
+	beamtime=0.15;
+	rgbcolor=0 1 0;
+	explosiongenerator=custom:FLASH1GREEN;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=34;
+		SUBS=5;
+	}
+}
+[EMG88]
+{
+	name=peewxxee;
+	rendertype=4;
+	lineofsight=1;
+	turret=1;
+	range=180;
+	reloadtime=0.31;
+	weapontimer=0.1;
+	weaponvelocity=500;
+	sprayangle=1180;
+	areaofeffect=8;
+	burst=3;
+	burstrate=0.1;
+	size=1.75;
+	rgbcolor=1 0.1 0.2;
+	intensity=0.7;
+	soundstart=flashemg;
+	tolerance=5000;
+	startsmoke=0;
+	endsmoke=0;
+	explosiongenerator=custom:FLASHPLOSION;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	stages=10;
+  separation=1.5;
+  alphadecay=0.1;
+  sizedecay=0;
+  nogap=0;
+  colorMap=0 0 0 0.01    1 1 1 1    0.7 0.7  0.7 1     0.5 0.5 0.5 0.7      0 0 0 0.01;
+	[DAMAGE]
+	{
+		default=18;
+		VTRANS=3;
+		FIGHTERS=3;
+		BOMBERS=3;
+		GUNSHIPS=3;
+		HGUNSHIPS=3;
+		VRADAR=3;
+		VTOL=3;
+		SUBS=1;
+	}
+}
+[EMG77]
+{
+	name=pexxewxxee;
+	rendertype=4;
+	lineofsight=1;
+	turret=1;
+	range=180;
+	reloadtime=0.31;
+	weapontimer=0.1;
+	weaponvelocity=500;
+	sprayangle=1180;
+	areaofeffect=8;
+	burst=3;
+	burstrate=0.1;
+	size=1.75;
+	rgbcolor=0 0.05 0.9;
+	intensity=0.7;
+	soundstart=flashemg;
+	tolerance=5000;
+	startsmoke=0;
+	endsmoke=0;
+	explosiongenerator=custom:FLASHPLOSION;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	stages=10;
+  separation=1.5;
+  alphadecay=0.1;
+  sizedecay=0;
+  nogap=0;
+  colorMap=1 1 1 0.01  1 1 1 0.01   1 1 1 0.01  1 1 1 0.01  1 1 1 0.01 0 0 0 0.01;
+	[DAMAGE]
+	{
+		default=18;
+		VTRANS=3;
+		FIGHTERS=3;
+		BOMBERS=3;
+		GUNSHIPS=3;
+		HGUNSHIPS=3;
+		VRADAR=3;
+		VTOL=3;
+		SUBS=1;
+	}
+}
+[COR_NASGUL]
+{
+	name=HeavyCannon;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	range=650;
+	reloadtime=1;
+	weaponvelocity=310;
+	areaofeffect=192;
+	soundstart=cannhvy2;
+	soundhit=xplomed4;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	explosiongenerator=custom:LLMiniPlasma;
+	[DAMAGE]
+	{
+		default=250;
+		VTRANS=55;
+		FIGHTERS=55;
+		BOMBERS=55;
+		GUNSHIPS=55;
+		HGUNSHIPS=55;
+		VRADAR=55;
+		VTOL=55;
+		SUBS=5;
+	}
+}
+[COR_HASGUL]
+{
+	name=HeavyCannon;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	range=550;
+	reloadtime=3;
+	weaponvelocity=310;
+	areaofeffect=192;
+	soundstart=cannhvy2;
+	soundhit=xplomed4;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	explosiongenerator=custom:LLMediumPlasma;
+	[DAMAGE]
+	{
+		default=350;
+		VTRANS=55;
+		FIGHTERS=55;
+		BOMBERS=55;
+		GUNSHIPS=55;
+		HGUNSHIPS=55;
+		VRADAR=55;
+		VTOL=55;
+		SUBS=5;
+	}
+}
+[ROCKETPACK111]
+{
+	name=HeavyRockets;
+	rendertype=1;
+	lineofsight=1;
+	vlaunch=1;
+	model=missilecougar;
+	range=950;
+	reloadtime=14;
+	noautorange=1;
+	weapontimer=3;
+	flighttime=600;
+	weaponvelocity=800;
+	weaponacceleration=100;
+	turnrate=28384;
+	areaofeffect=100;
+	metalpershot=0;
+	edgeeffectiveness=0.5;
+	soundstart=Rockhvy1;
+	soundhit=xplomed4;
+	firestarter=100;
+	smokedelay=0.1;
+	selfprop=1;
+	smoketrail=1;
+	twophase=1;
+	guidance=1;
+	explosiongenerator=custom:LLMediumPlasma;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=1800;
+		SUBS=5;
+	}
+}
+[ROCKETPACK222]
+{
+	name=HeavyRockets;
+	rendertype=1;
+	lineofsight=1;
+	vlaunch=1;
+	model=missilecougar;
+	range=950;
+	reloadtime=14;
+	noautorange=1;
+	weapontimer=3;
+	flighttime=600;
+	weaponvelocity=800;
+	weaponacceleration=100;
+	turnrate=28384;
+	areaofeffect=100;
+	metalpershot=0;
+	edgeeffectiveness=0.5;
+	soundstart=Rockhvy1;
+	soundhit=xplomed4;
+	firestarter=100;
+	smokedelay=0.1;
+	selfprop=1;
+	smoketrail=1;
+	twophase=1;
+	guidance=1;
+	explosiongenerator=custom:LLMiniPlasma;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=900;
+		SUBS=5;
+	}
+}

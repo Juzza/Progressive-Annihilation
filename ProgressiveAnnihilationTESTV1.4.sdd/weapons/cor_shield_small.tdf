@@ -1,0 +1,45 @@
+[COR_SHIELD_SMALL]
+{
+  name=PlasmaShield;
+  exteriorshield=1;
+  interceptedbyshieldtype=0;
+  isshield=1;
+  shieldalpha=0.5;
+  shieldbadcolor=1 1 1;
+  shieldgoodcolor=0.3 0.3 0.3;
+  shieldintercepttype=3;
+  shieldpower=1700;
+  shieldpowerregen=170;
+  shieldpowerregenenergy=500;
+  shieldradius=260;
+  shieldrepulser=0;
+  smartshield=1;
+  visibleshield=1;
+  [DAMAGE]
+  {
+    default=10;
+  }
+}
+
+[COR_SHIELD_SMALLER]
+{
+  name=PlasmaShield;
+  exteriorshield=1;
+  interceptedbyshieldtype=0;
+  isshield=1;
+  shieldalpha=0.5;
+  shieldbadcolor=0 0.0 1;
+  shieldgoodcolor=0 0.0 1;
+  shieldintercepttype=3;
+  shieldpower=20;
+  shieldpowerregen=1;
+  shieldpowerregenenergy=0;
+  shieldradius=50;
+  shieldrepulser=0;
+  smartshield=1;
+  visibleshield=1;
+  [DAMAGE]
+  {
+    default=10;
+  }
+}

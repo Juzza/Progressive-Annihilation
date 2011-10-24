@@ -1,0 +1,44 @@
+[ORBITAL_METEOR]
+	{
+WeaponType=MissileLauncher;
+name=RavenCatapultRockets;
+commandfire=1;
+stockpile=1;
+	energypershot=800000;
+        metalpershot=10000;
+rendertype=1;
+lineofsight=1;
+turret=1;
+model=GreyRock2.S3O;
+range=64000;
+reloadtime=180;
+Burst=15;
+Burstrate=0.08;
+weapontimer=6;
+weaponvelocity=1000;
+startvelocity=100;
+weaponacceleration=350;
+areaofeffect=1250;
+Trajectoryheight=1;
+Wobble=16500;
+turnrate=6000;
+edgeeffectiveness=0.5;
+soundstart=BURN1;
+soundhit=armcomhit;
+firestarter=70;
+smokedelay=.1;
+selfprop=1;
+smoketrail=0;
+explosiongenerator=custom:NAPALM_Expl;
+startsmoke=1;
+impulsefactor=0.123;
+impulseBoost=0.123;
+craterMult=0;
+craterBoost=0;
+NoSelfDamage=1;
+cegtag=Meteorrocketflame;
+[DAMAGE]
+	{
+	default=15000;
+	}
+}

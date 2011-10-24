@@ -1,0 +1,44 @@
+[HYDRAMISS]
+{
+  name=RapidSamMissile;
+  areaofeffect=64;
+  burnblow=1;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.9;
+  explosiongenerator=custom:FLASH2;
+  firestarter=70;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  minbarrelangle=-24;
+  model=missile;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+  noselfdamage=1;
+  range=950;
+  reloadtime=0.3;
+  rendertype=1;
+  selfprop=1;
+  soundhit=xplomed2;
+  soundstart=Rocklit3;
+  startsmoke=0;
+  startvelocity=650;
+  smoketrail=0;
+  toairweapon=1;
+  tolerance=8000;
+  tracks=1;
+  turnrate=72000;
+  turret=1;
+  weaponacceleration=150;
+  weapontimer=7;
+  weaponvelocity=950;
+  [DAMAGE]
+  {
+    default=125;
+    gunships=93;
+    hgunships=93;
+    subs=5;
+  }
+}

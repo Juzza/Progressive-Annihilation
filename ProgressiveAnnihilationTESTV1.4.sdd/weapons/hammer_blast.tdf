@@ -1,0 +1,22 @@
+[HAMMER_BLAST]
+{
+  name=PyroBlast;
+  areaofeffect=200;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  range=200;
+  reloadtime=3.6;
+  rendertype=4;
+  soundhit=xplolrg3;
+  soundstart=largegun;
+  turret=1;
+  weaponvelocity=250;
+  [DAMAGE]
+  {
+    default=100;
+  }
+}

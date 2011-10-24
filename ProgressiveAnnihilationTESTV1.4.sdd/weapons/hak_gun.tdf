@@ -1,0 +1,45 @@
+[HAK_GUN]
+{
+  name=RiotCannon;
+  areaofeffect=144;
+  burnblow=1;
+  cegtag=MINIPLASMA;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  explosiongenerator=custom:FLASH64;
+  impulseboost=0;
+  impulsefactor=0.75;
+  interceptedbyshieldtype=0;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  lineofsight=1;
+  noselfdamage=1;
+  range=315;
+  reloadtime=2.1;
+  rendertype=4;
+  soundhit=xplosml3;
+  soundstart=canlite3;
+  startsmoke=1;
+  targetmoveerror=0.6;
+  turret=1;
+  weaponvelocity=550;
+  [DAMAGE]
+  {
+    default=211;
+    bombers=27;
+    fighters=27;
+    gunships=27;
+    hgunships=27;
+    subs=5;
+    vradar=27;
+    vtol=27;
+    vtrans=27;
+  }
+}

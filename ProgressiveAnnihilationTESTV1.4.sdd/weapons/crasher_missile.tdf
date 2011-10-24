@@ -1,0 +1,42 @@
+[CRASHER_MISSILE]
+{
+	name=Rocket;
+	rendertype=1;
+	lineofsight=1;
+	vlaunch=1;
+	model=missile;
+	range=1715;
+	reloadtime=2;
+	noautorange=0;
+	weapontimer=3;
+	flighttime=75;
+	weaponvelocity=4850;
+	weaponacceleration=650;
+	startvelocity=650;
+	turnrate=24384;
+	areaofeffect=64;
+	edgeeffectiveness=0.5;
+	metalpershot=0;
+	soundstart=Rockhvy1;
+	soundhit=xplomed4;
+	firestarter=100;
+	smokedelay=0.1;
+  cegTag=RAKETENMITTELTRAIL;
+	selfprop=1;
+	smoketrail=0;
+	twophase=1;
+	guidance=1;
+	tolerance=300;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=1200;
+		COMMANDERS=500;
+		SUBS=5;
+	}
+}

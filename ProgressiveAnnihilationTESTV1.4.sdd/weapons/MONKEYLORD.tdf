@@ -1,0 +1,36 @@
+[Monkeylorddeathlasermaingun]
+{
+  name=EVILLASER;
+  beamweapon=1;
+  beamtime=0.1;
+  areaofeffect=385;
+  duration=0.02;
+  corethickness=0.5;
+  craterboost=1;
+  cratermult=1;
+  energypershot=5000;
+  explosiongenerator=custom:Monkeylorddeathlasermaingun2;
+  cegtag=MONKEYLORDTRAIL;
+  firestarter=90;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  laserflaresize=10;
+  lineofsight=1;
+  noselfdamage=1;
+  range=1800;
+  reloadtime=18.65;
+  rendertype=0;
+  rgbcolor=1 0 0;
+  soundhit=Karg_Rocket;
+  soundstart=XPLOMAS42;
+  targetmoveerror=0.3;
+  thickness=3;
+  tolerance=10000;
+  turret=1;
+  weaponvelocity=250;
+  [DAMAGE]
+  {
+    default=20000;
+  }
+}

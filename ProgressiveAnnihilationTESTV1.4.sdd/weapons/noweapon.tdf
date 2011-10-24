@@ -1,0 +1,10 @@
+[NOWEAPON]
+{
+  name=NoWeapon;
+  interceptedbyshieldtype=0;
+  range=16;
+  [DAMAGE]
+  {
+    default=0;
+  }
+}

@@ -1,0 +1,52 @@
+[ARMBOMB]
+{
+  name=Bombs;
+  areaofeffect=80;
+  commandfire=1;
+  craterboost=1;
+  cratermult=1;
+  dropped=1;
+  edgeeffectiveness=0.3;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  model=bomb;
+  noselfdamage=1;
+  range=1280;
+  reloadtime=0.19;
+  rendertype=6;
+  soundhit=xplomed2;
+  soundstart=bombrel;
+  [DAMAGE]
+  {
+    default=175;
+    antibomber=88;
+    bombers=5;
+    subs=5;
+  }
+}
+[ARMHEAVYBOMB]
+{
+  name=Bombs;
+  areaofeffect=160;
+  commandfire=1;
+  craterboost=1;
+  cratermult=1;
+  dropped=1;
+  edgeeffectiveness=0.3;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  model=bomb;
+  noselfdamage=1;
+  range=1280;
+  reloadtime=0.6;
+  rendertype=6;
+  soundhit=xplomed2;
+  soundstart=bombrel;
+  explosiongenerator=custom:LLHeavyPlasma;
+  [DAMAGE]
+  {
+    default=1575;
+  }
+}

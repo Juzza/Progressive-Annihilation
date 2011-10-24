@@ -1,0 +1,133 @@
+[blood_explode]
+{
+	[kaboom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=r10-5,r5-2,r10-5;
+		delay=i10;			
+		explosionGenerator=custom:BIGCHARLIZE_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=3;
+	}
+   	[splashes]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=-.1;
+			sizemod=1;
+			size=0.1;
+			pos=0, 1.0, 0;
+			emitVector=0, 1, 0;
+			gravity=0, -.1, 0;
+			Texture=blooddrop;
+			colorMap=1 1 .3 1   1 1 .3 1   0 0 0 0;
+			airdrag=.96;
+			particleLife=90;
+			particleLifeSpread=90;
+			numParticles=50;
+			particleSpeed=5;
+			particleSpeedSpread=10;
+			particleSize=80;
+			particleSizeSpread=30;
+			emitRot=0;
+			emitRotSpread=100;
+			directional=1;
+		}
+		air=1;
+		ground=1;
+	}
+
+	[pop]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=3;
+			sizemod=1;
+			size=0.2;
+			pos=0, 1.0, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			Texture=bloodblast;
+			colorMap=1 1 1 1   1 1 1 1   0 0 0 0;
+			airdrag=.9;
+			particleLife=60;
+			particleLifeSpread=0;
+			numParticles=5;
+			particleSpeed=0;
+			particleSpeedSpread=0;
+			particleSize=24;
+			particleSizeSpread=16;
+			emitRot=45;
+			emitRotSpread=30;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+	}
+}
+
+
+[blood_explode_SML]
+{
+   	[splashes]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=-.1;
+			sizemod=1;
+			size=0.1;
+			pos=0, 1.0, 0;
+			emitVector=0, 1, 0;
+			gravity=0, -.1, 0;
+			Texture=blooddropwhite;
+			colorMap=1 1 0 1   1 1 0 1   0 0 0 0;
+			airdrag=.96;
+			particleLife=20;
+			particleLifeSpread=8;
+			numParticles=5;
+			particleSpeed=3;
+			particleSpeedSpread=6;
+			particleSize=24;
+			particleSizeSpread=16;
+			emitRot=0;
+			emitRotSpread=80;
+			directional=1;
+		}
+		air=1;
+		ground=1;
+	}
+
+	[pop]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=3;
+			sizemod=1;
+			size=0.2;
+			pos=0, 1.0, 0;
+			emitVector=0, 1, 0;
+			gravity=0, -.1, 0;
+			Texture=bloodblastwhite;
+			colorMap=1 1 0 1   1 1 0 1   0 0 0 0;
+			airdrag=.9;
+			particleLife=20;
+			particleLifeSpread=0;
+			numParticles=1;
+			particleSpeed=0;
+			particleSpeedSpread=0;
+			particleSize=24;
+			particleSizeSpread=16;
+			emitRot=45;
+			emitRotSpread=30;
+			directional=0;
+		}
+		air=1;
+		ground=1;
+	}
+}
+

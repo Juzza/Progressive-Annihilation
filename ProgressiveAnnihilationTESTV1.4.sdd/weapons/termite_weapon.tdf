@@ -1,0 +1,42 @@
+[CORE_TERMITE_LASER]
+{
+	name=Laser;
+	rendertype=0;
+	lineofsight=1;
+	turret=1;
+	range=340;
+	reloadtime=1.1;
+	energypershot=35;
+	weaponvelocity=700;
+	areaofeffect=12;
+	soundstart=lasrhvy3;
+	soundhit=lasrhit1;
+	firestarter=90;
+	beamlaser=1;
+	thickness=2;
+	corethickness=0.2;
+	laserflaresize=10;
+	targetmoveerror=0.2;
+	beamtime=0.70;
+	rgbcolor=1 1 0;
+	tolerance=10000;
+	explosiongenerator=custom:FLASH1yellow;
+        cegtag=LASERGLOWGELB;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=400;
+		VTRANS=60;
+		FIGHTERS=60;
+		BOMBERS=60;
+		GUNSHIPS=60;
+		HGUNSHIPS=60;
+		VRADAR=60;
+		VTOL=60;
+		SUBS=5;
+	}
+}

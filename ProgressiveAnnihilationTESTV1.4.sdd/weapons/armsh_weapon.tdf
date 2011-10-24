@@ -1,0 +1,38 @@
+[ARMSH_WEAPON]
+{
+  name=Laser;
+  areaofeffect=8;
+  beamlaser=1;
+  beamtime=0.1;
+  burstrate=0.2;
+  color=232;
+  color2=234;
+  craterboost=1;
+  cratermult=1;
+  duration=0.02;
+  energypershot=3;
+  explosiongenerator=custom:FLASH1nd;
+  firestarter=50;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=230;
+  reloadtime=0.6;
+  rendertype=0;
+  soundhit=lashit;
+  soundstart=lasrfast;
+  soundtrigger=1;
+  targetmoveerror=0.3;
+  thickness=1.25;
+  turret=1;
+  weaponvelocity=450;
+  [DAMAGE]
+  {
+    default=48;
+    gunships=6;
+    hgunships=6;
+    subs=2;
+  }
+}

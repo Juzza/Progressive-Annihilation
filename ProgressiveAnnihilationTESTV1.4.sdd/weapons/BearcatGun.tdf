@@ -1,0 +1,92 @@
+[BearcatGun]
+	{
+	ID=165;
+	name=Bearcat Gun;
+	rendertype=0;
+	beamweapon=1;
+	duration=0.09;
+	texture1=EMG;
+	texture2=NULL;
+	texture3=NULL;
+	rgbcolor=0.9 0.9 1;
+	rgbcolor2=0 0.75 1;
+	intensity=1;
+	thickness=15;
+	sprayangle=880;
+	corethickness=1.5;
+	explosiongenerator=custom:BulletImpactBlue;
+	lineofsight=1;
+	turret=0;
+	RANGE=620;
+	RELOADTIME=0.31;
+	weapontimer=1;
+	weaponvelocity=450;
+	areaofeffect=62;
+	BURST=3;
+	burstrate=.1;
+	soundstart=lstart;
+turret=1;
+	soundhit=xplosml5;
+	turnrate=3000;
+	ENERGYPERSHOT=2.5;
+	selfprop=1;
+	tolerance=4000;
+	pitchtolerance=8000;
+	burnblow=0;
+	accuracy=550;
+	targetMoveError=0.2;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	soundstartvolume=16;
+	[DAMAGE]
+		{
+		DEFAULT=45;
+		}
+	}
+[BearcatGunRed]
+	{
+	ID=165;
+	name=Bearcat Gun;
+	rendertype=0;
+	beamweapon=1;
+	duration=0.09;
+	texture1=EMG;
+	texture2=NULL;
+	texture3=NULL;
+	rgbcolor=0.9 0.1 0.1;
+	rgbcolor2=0.6 0.1 0.1;
+	intensity=1;
+	thickness=20;
+	sprayangle=880;
+	corethickness=1.5;
+	explosiongenerator=custom:BulletImpactRed;
+	lineofsight=1;
+	turret=0;
+	RANGE=750;
+	RELOADTIME=2;
+	weapontimer=1;
+	weaponvelocity=1450;
+	areaofeffect=125;
+	BURST=5;
+	burstrate=0.1;
+	soundstart=lstart;
+turret=1;
+	soundhit=xplosml5;
+	turnrate=3000;
+	ENERGYPERSHOT=250;
+	selfprop=1;
+	tolerance=4000;
+	pitchtolerance=8000;
+	burnblow=0;
+	accuracy=550;
+	targetMoveError=0.2;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	soundstartvolume=16;
+	[DAMAGE]
+		{
+		DEFAULT=500;
+		}
+	}

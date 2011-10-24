@@ -1,0 +1,45 @@
+[CORBHMTH_WEAPON]
+{
+  name=PlasmaBattery;
+  accuracy=780;
+  areaofeffect=192;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.7;
+  energypershot=150;
+  explosiongenerator=custom:FLASHSMALLBUILDINGEX;
+  firestarter=99;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=2;
+	color=3;
+  noselfdamage=1;
+  range=1650;
+  reloadtime=0.5;
+  rendertype=4;
+  soundhit=xplolrg3;
+  soundstart=xplonuk3;
+  cegtag=MITLERESPLASMA;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=620;
+  [DAMAGE]
+  {
+    default=450;
+    bombers=110;
+    fighters=110;
+    gunships=110;
+    hgunships=110;
+    subs=5;
+    vradar=110;
+    vtol=110;
+    vtrans=110;
+  }
+}

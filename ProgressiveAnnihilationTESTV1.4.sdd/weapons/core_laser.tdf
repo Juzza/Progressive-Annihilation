@@ -1,0 +1,46 @@
+[CORE_LASER]
+{
+  name=Laser;
+  areaofeffect=8;
+  beamlaser=1;
+  beamtime=0.1;
+  burstrate=0.2;
+  corethickness=0.1;
+  craterboost=1;
+  cratermult=1;
+  duration=0.02;
+  energypershot=5;
+  cegtag=LASERGLOWGELB;
+  explosiongenerator=custom:FLASH1yellow2;
+  firestarter=50;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  laserflaresize=5;
+  lineofsight=1;
+  noselfdamage=1;
+  range=180;
+  reloadtime=1;
+  rendertype=0;
+  rgbcolor=1 1 0;
+  soundhit=lasrhit2;
+  soundstart=lasrfir1;
+  soundtrigger=1;
+  targetmoveerror=0.2;
+  thickness=1;
+  tolerance=10000;
+  turret=1;
+  weaponvelocity=800;
+  [DAMAGE]
+  {
+    default=50;
+    bombers=8;
+    fighters=8;
+    gunships=8;
+    hgunships=8;
+    subs=5;
+    vradar=8;
+    vtol=8;
+    vtrans=8;
+  }
+}

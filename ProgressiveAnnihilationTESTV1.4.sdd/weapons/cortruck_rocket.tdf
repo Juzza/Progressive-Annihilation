@@ -1,0 +1,41 @@
+[CORTRUCK_ROCKET]
+{
+  name=Rocket;
+  areaofeffect=72;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  firestarter=100;
+  flighttime=600;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=0;
+  model=corvrocket;
+  noautorange=1;
+  cegTag=RAKETENMITTELTRAIL;
+  noselfdamage=1;
+  range=1500;
+  reloadtime=10;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0.1;
+  smoketrail=0;
+  soundhit=xplomed4;
+  soundstart=Rockhvy1;
+  startsmoke=1;
+  tolerance=4000;
+  turnrate=24384;
+  twophase=1;
+  vlaunch=1;
+  weaponacceleration=30;
+  weapontimer=5;
+  weaponvelocity=415;
+  [DAMAGE]
+  {
+    default=1000;
+    subs=5;
+  }
+}

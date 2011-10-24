@@ -1,0 +1,43 @@
+[ARMPT_MISSILE]
+{
+  name=Missiles;
+  areaofeffect=48;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH2;
+  firestarter=70;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=0;
+  model=missile;
+  noselfdamage=1;
+  range=500;
+  reloadtime=2.6;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0.1;
+  smoketrail=0;
+  soundhit=xplosml2;
+  soundstart=rocklit1;
+  startsmoke=1;
+  startvelocity=400;
+  toairweapon=1;
+  tolerance=9000;
+  tracks=1;
+  trajectoryheight=1;
+  turnrate=40000;
+  turret=1;
+  weaponacceleration=250;
+  weaponvelocity=850;
+  wobble=50000;
+  [DAMAGE]
+  {
+    default=65;
+    subs=5;
+  }
+}

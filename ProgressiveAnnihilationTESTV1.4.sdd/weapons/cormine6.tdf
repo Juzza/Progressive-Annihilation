@@ -1,0 +1,25 @@
+[CORMINE6]
+{
+  name=Skuttle;
+  areaofeffect=480;
+  craterboost=4;
+  cratermult=1.25;
+  edgeeffectiveness=0.3;
+  explosiongenerator=custom:FLASHNUKE480;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  noselfdamage=1;
+  range=480;
+  reloadtime=3.6;
+  rendertype=4;
+  shakeduration=0;
+  shakemagnitude=0;
+  soundhit=xplonuk3;
+  soundstart=largegun;
+  weaponvelocity=400;
+  [DAMAGE]
+  {
+    default=7500;
+  }
+}

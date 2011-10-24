@@ -1,0 +1,44 @@
+[ADV_DECKLASER]
+{
+  name=L2DeckLaser;
+  areaofeffect=8;
+  beamlaser=1;
+  beamtime=0.1;
+  corethickness=0.175;
+  craterboost=1;
+  cratermult=1;
+  energypershot=10;
+  explosiongenerator=custom:FLASH1red;
+    cegtag=LASERGLOWROT;
+  firestarter=30;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  laserflaresize=12;
+  lineofsight=1;
+  noselfdamage=1;
+  range=450;
+  reloadtime=0.4;
+  rendertype=0;
+  rgbcolor=1 0 0;
+  soundhit=lasrhit2;
+  soundstart=lasrfir3;
+  soundtrigger=1;
+  targetmoveerror=0.1;
+  thickness=2.5;
+  tolerance=10000;
+  turret=1;
+  weaponvelocity=800;
+  [DAMAGE]
+  {
+    default=60;
+    bombers=15;
+    fighters=15;
+    gunships=15;
+    hgunships=15;
+    subs=5;
+    vradar=15;
+    vtol=15;
+    vtrans=15;
+  }
+}

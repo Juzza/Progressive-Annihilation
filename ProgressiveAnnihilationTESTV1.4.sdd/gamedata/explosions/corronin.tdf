@@ -1,0 +1,71 @@
+[CORRONINTRAIL2]
+{
+	usedefaultexplosions=0;	
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-1 r2,-1 r2,-1 r2;
+			width=2;
+			length=1; //60;
+			alpha=1;
+			alphadecay=0.35;
+			color=0.2 0.1, 1,;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=3; 
+	}
+}
+[CORRONINTRAIL]
+{
+	usedefaultexplosions=0;	
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-1 r2,-1 r2,-1 r2;
+			width=2;
+			length=1; //60;
+			alpha=1;
+			alphadecay=0.35;
+			color=1, 0.8, 0.5;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=3; 
+	}
+}
+[CORRONINTRAILEXPLO]
+{	
+	usedefaultexplosions=1;	
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 7, 0;    
+		delay=0;				  
+		explosionGenerator=custom:MINICHARLIZE_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 55;
+		flashAlpha = 1.8;
+		circleGrowth = 4;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 15;
+	}
+}

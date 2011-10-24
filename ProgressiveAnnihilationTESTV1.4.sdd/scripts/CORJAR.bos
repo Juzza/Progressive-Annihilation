@@ -1,0 +1,217 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  ground, body, head, barrel, flare1, l_leg, r_leg, flame1;
+
+static-var fired;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM				4
+#define SIG_LOCK 			8
+
+#define SMOKEPIECE1 body
+
+#include "SmokeUnit.h"
+
+LockTurret(heading)
+{
+	set-signal-mask SIG_LOCK;
+	
+	while(1)
+	{
+		turn head to y-axis (heading - get HEADING) speed (get 1030);
+		sleep 20;
+	}
+}
+
+lua_FlameShot(weapon) //Distortion and lups flame effect
+{
+  return 0;
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		move l_leg to y-axis [1.000000] speed [8.000000];
+		move l_leg to z-axis [2.000000] speed [5.5];
+		turn body to z-axis <-10.000000> speed <25.000000>;
+		sleep 420;
+		move l_leg to y-axis [0.000000] speed [10.000000];
+		turn body to z-axis <0.000000> speed <40.000000>;
+		sleep 300;
+		move l_leg to z-axis [-1.000000] speed [4.2];
+		move r_leg to y-axis [1.000000] speed [8];
+		move r_leg to z-axis [2.000000] speed [5.5];
+		turn body to z-axis <10.000000> speed <25.000000>;
+		sleep 420;
+		move r_leg to y-axis [0.000000] speed [10.000000];
+		turn body to z-axis <0.000000> speed <40.000000>;
+		sleep 300;
+		move r_leg to z-axis [-1.000000] speed [4.2];
+	}
+}
+
+PilotLight(Func_Var_1)
+{
+	while( TRUE )
+	{
+		while (fired)
+		{
+		sleep 100;
+		}
+		emit-sfx 1024 + 0 from flame1;
+		sleep 30;
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	turn body to z-axis <0.000000> speed <40>;
+	move l_leg to y-axis [0.000000] speed [10];
+	move r_leg to y-axis [0.000000] speed [10];
+	move l_leg to z-axis [0.000000] speed [5.5];
+	move r_leg to z-axis [0.000000] speed [5.5];
+}
+
+Create()
+{
+	hide flame1;
+	hide flare1;
+	fired = TRUE;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000;
+	
+	signal SIG_LOCK;
+	
+	set-signal-mask 0;
+	turn head to y-axis <0.000000> speed (get 1030);
+	turn barrel to x-axis <0.000000> speed (get 1031);
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare1;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = head;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_LOCK;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+
+	var absHeading;
+	absHeading = heading + get HEADING;
+	
+	turn head to y-axis heading speed (get 1030);
+	turn barrel to x-axis <0.000000> - pitch speed (get 1031);
+	wait-for-turn head around y-axis;
+	wait-for-turn barrel around x-axis;
+	
+	start-script LockTurret(absHeading);
+	start-script RestoreAfterDelay();
+	
+	return (1);
+}
+
+FirePrimary()
+{
+         emit-sfx 1025 from flare1;
+   sleep 1;
+         emit-sfx 1025 from flare1;
+   sleep 8;
+         emit-sfx 1025 from flare1;
+   sleep 16;
+         emit-sfx 1025 from flare1;
+   sleep 24;
+         emit-sfx 1025 from flare1;
+   sleep 32;
+         emit-sfx 1025 from flare1;
+   sleep 40;
+         emit-sfx 1025 from flare1;
+   sleep 48;
+         emit-sfx 1025 from flare1;
+   sleep 56;
+         emit-sfx 1025 from flare1;
+   sleep 64;
+         emit-sfx 1025 from flare1;
+}
+
+Shot1()
+{
+	call-script lua_FlameShot(1);
+	return (TRUE);
+}
+
+Killed(severity, corpsetype)
+{
+hide flare1;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode ground type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		explode head type BITMAPONLY | BITMAP3;
+		explode barrel type BITMAPONLY | BITMAP4;
+		explode flare1 type BITMAPONLY | BITMAP1;
+		explode l_leg type BITMAPONLY | BITMAP2;
+		explode r_leg type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode ground type BITMAPONLY | BITMAP2;
+		explode body type BITMAPONLY | BITMAP4;
+		explode head type BITMAPONLY | BITMAP2;
+		explode barrel type FALL | BITMAP2;
+		explode flare1 type FALL | EXPLODE_ON_HIT | BITMAP2;
+		explode l_leg type BITMAPONLY | BITMAP4;
+		explode r_leg type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode ground type BITMAPONLY | BITMAP1;
+		explode body type SHATTER | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode l_leg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode r_leg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode ground type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode body type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode flare1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode l_leg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r_leg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+}

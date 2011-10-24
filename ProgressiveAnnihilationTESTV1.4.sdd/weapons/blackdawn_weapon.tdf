@@ -1,0 +1,49 @@
+[VTOL_SALVO]
+{
+	name=BlackDawnRocketSalvo;
+	rendertype=1;
+	lineofsight=1;
+	turret=0;
+	model=exphvyrock;
+	range=450;
+	reloadtime=0.5;
+	weapontimer=6;
+	weaponvelocity=450;
+	startvelocity=100;
+	weaponacceleration=100;
+	areaofeffect=84;
+	metalpershot=0;
+	trajectoryheight=0;
+	wobble=12500;
+	turnrate=4000;
+	edgeeffectiveness=0.5;
+	soundstart=rapidrocket3;
+	soundhit=rockhit;
+	firestarter=70;
+	smokedelay=0.1;
+	selfprop=1;
+	smoketrail=0;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENKLEINTRAIL;
+	explosiongenerator=custom:MEDMISSILE_EXPLOSION;
+	startsmoke=1;
+	impulsefactor=0.123;
+	impulseboost=0.123;
+	cratermult=0.123;
+	craterboost=0.123;
+	noselfdamage=1;
+	collidefriendly=0;
+	[DAMAGE]
+	{
+		default=250;
+		COMMANDERS=125;
+		VTRANS=90;
+		FIGHTERS=90;
+		BOMBERS=90;
+		GUNSHIPS=90;
+		HGUNSHIPS=90;
+		VRADAR=90;
+		VTOL=90;
+		SUBS=5;
+	}
+}

@@ -1,0 +1,46 @@
+[KBOT_ROCKET]
+{
+  name=HeavyRocket;
+  cegtag=RAKETENMINITRAIL;
+  Weapontype=MissileLauncher;
+  smoketrail=0;
+  areaofeffect=48;
+  craterboost=0;
+  cratermult=1;
+  firestarter=70;
+  guidance=0;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  model=missile;
+  noselfdamage=1;
+  range=475;
+  reloadtime=3.8;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=.1;
+  soundhit=xplosml2;
+  soundhitvolume=8;
+  soundstart=rocklit1;
+  soundstartvolume=7;
+  startsmoke=1;
+  startvelocity=190;
+  tracks=0;
+  turret=1;
+  weaponacceleration=100;
+  weapontimer=3;
+  weaponvelocity=190;
+  [DAMAGE]
+  {
+    default=157;
+    bombers=15;
+    fighters=15;
+    gunships=15;
+    hgunships=15;
+    subs=5;
+    vradar=15;
+    vtol=15;
+    vtrans=15;
+  }
+}

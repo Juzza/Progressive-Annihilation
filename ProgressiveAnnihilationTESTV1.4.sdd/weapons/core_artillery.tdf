@@ -1,0 +1,122 @@
+[CORE_ARTILLERY]
+{
+  name=PlasmaCannon;
+  accuracy=1500;
+  areaofeffect=129;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  impulseboost=0;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  cegtag=MITLERESPLASMA;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  minbarrelangle=-10;
+  noselfdamage=1;
+  range=1240;
+  reloadtime=10;
+  rendertype=4;
+  soundhit=xplomed4;
+  soundstart=cannhvy2;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=500;
+  [DAMAGE]
+  {
+    default=1500;
+    bombers=17;
+    fighters=17;
+    gunships=17;
+    hgunships=17;
+    subs=5;
+    vradar=17;
+    vtol=17;
+    vtrans=17;
+  }
+}
+[CORE_ARTILLERYmk2]
+{
+  name=PlasmaCannon;
+  accuracy=1500;
+  areaofeffect=149;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  impulseboost=0;
+  cegtag=MITLERESPLASMA;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  minbarrelangle=-10;
+  noselfdamage=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  range=1240;
+  reloadtime=2;
+  rendertype=4;
+  soundhit=xplomed4;
+  soundstart=cannhvy2;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=500;
+  [DAMAGE]
+  {
+    default=1500;
+    bombers=17;
+    fighters=17;
+    gunships=17;
+    hgunships=17;
+    subs=5;
+    vradar=17;
+    vtol=17;
+    vtrans=17;
+  }
+}
+[CORE_ARTILLERYmini]
+{
+  name=PlasmaCannon;
+  accuracy=150;
+  areaofeffect=69;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  impulseboost=0;
+  cegtag=MINIPLASMA;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  minbarrelangle=-10;
+  noselfdamage=1;
+  range=710;
+HighTrajectory=2;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  reloadtime=0,6;
+  rendertype=4;
+  soundhit=xplomed4;
+  soundstart=cannhvy2;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=500;
+  [DAMAGE]
+  {
+    default=55;
+  }
+}

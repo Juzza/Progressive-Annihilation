@@ -1,0 +1,24 @@
+[MINE_LIGHT]
+{
+  name=LightMine;
+  areaofeffect=200;
+  craterboost=0.5;
+  cratermult=0.5;
+  edgeeffectiveness=0.5;
+  explosiongenerator=custom:TESS;
+  impulseboost=0.25;
+  impulsefactor=0.25;
+  interceptedbyshieldtype=1;
+  range=480;
+  reloadtime=3.6;
+  rendertype=4;
+  soundhit=xplosml1;
+  soundstart=largegun;
+  weaponvelocity=250;
+  [DAMAGE]
+  {
+    default=400;
+    minelayers=10;
+    mines=0.5;
+  }
+}

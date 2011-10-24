@@ -1,0 +1,41 @@
+[ARMAMPH_WEAPON1]
+{
+  name=Laser;
+  areaofeffect=8;
+  beamlaser=1;
+  beamtime=0.1;
+  corethickness=0.175;
+  craterboost=1;
+  cratermult=1;
+  energypershot=2;
+  explosiongenerator=custom:FLASH1red;
+  cegtag=LASERGLOWROT;
+  firestarter=20;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=275;
+  reloadtime=0.75;
+  rendertype=0;
+  rgbcolor=1 0 0;
+  soundhit=lasrhit2;
+  soundstart=lasrfir3;
+  targetmoveerror=0.3;
+  thickness=2;
+  turret=1;
+  weaponvelocity=500;
+  [DAMAGE]
+  {
+    default=80;
+    bombers=15;
+    fighters=15;
+    gunships=15;
+    hgunships=15;
+    subs=5;
+    vradar=15;
+    vtol=15;
+    vtrans=15;
+  }
+}

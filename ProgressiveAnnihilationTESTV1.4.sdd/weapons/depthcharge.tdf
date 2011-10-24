@@ -1,0 +1,37 @@
+[DEPTHCHARGE]
+{
+  name=DepthCharge;
+  areaofeffect=32;
+  avoidfriendly=0;
+  collidefriendly=0;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.99;
+  explosiongenerator=custom:FLASH4;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  model=DEPTHCHARGE;
+  noselfdamage=1;
+  propeller=1;
+  range=400;
+  reloadtime=2.5;
+  rendertype=1;
+  selfprop=1;
+  soundhit=xplodep2;
+  soundstart=torpedo1;
+  startvelocity=100;
+  tolerance=1000;
+  tracks=1;
+  turnrate=1600;
+  turret=1;
+  waterweapon=1;
+  weaponacceleration=1;
+  weaponvelocity=100;
+  [DAMAGE]
+  {
+    default=210;
+  }
+}

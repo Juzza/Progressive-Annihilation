@@ -1,0 +1,32 @@
+[BLASTWING_SELFD]
+{
+  name=Blastwing;
+  areaofeffect=180;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.7;
+  explosiongenerator=custom:FLASHBIGBUILDINGEX;
+  impulseboost=0.75;
+  impulsefactor=0.75;
+  interceptedbyshieldtype=1;
+  range=1;
+  reloadtime=3.6;
+  rendertype=4;
+  soundhit=xplonuk3;
+  soundstart=largegun;
+  turret=1;
+  weaponvelocity=250;
+  [DAMAGE]
+  {
+    default=600;
+    commanders=300;
+    bombers=25;
+    fighters=25;
+    gunships=25;
+    hgunships=25;
+    subs=3;
+    vradar=25;
+    vtol=25;
+    vtrans=25;
+  }
+}

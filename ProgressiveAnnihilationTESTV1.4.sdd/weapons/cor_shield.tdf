@@ -1,0 +1,22 @@
+[COR_SHIELD]
+{
+  name=PlasmaShield;
+  exteriorshield=1;
+  interceptedbyshieldtype=0;
+  isshield=1;
+  shieldalpha=0.5;
+  shieldbadcolor=1 1 1;
+  shieldgoodcolor=0.3 0.3 0.3;
+  shieldintercepttype=3;
+  shieldpower=2500;
+  shieldpowerregen=1200;
+  shieldpowerregenenergy=5000;
+  shieldradius=400;
+  shieldrepulser=0;
+  smartshield=1;
+  visibleshield=1;
+  [DAMAGE]
+  {
+    default=10;
+  }
+}

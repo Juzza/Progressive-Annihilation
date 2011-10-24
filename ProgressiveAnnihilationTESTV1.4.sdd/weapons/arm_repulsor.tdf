@@ -1,0 +1,24 @@
+[ARM_REPULSOR]
+{
+  name=PlasmaRepulsor;
+  interceptedbyshieldtype=0;
+  isshield=1;
+  shieldalpha=0.2;
+  shieldbadcolor=1 0.1 0.1;
+  shieldforce=4;
+  shieldgoodcolor=0.1 0.1 1;
+  shieldintercepttype=1;
+  shieldmaxspeed=400;
+  shieldpower=4000;
+  shieldpowerregen=700;
+  shieldpowerregenenergy=4000;
+  shieldradius=500;
+  shieldrepulser=1;
+  smartshield=1;
+  visibleshield=1;
+  visibleshieldrepulse=1;
+  [DAMAGE]
+  {
+    default=10;
+  }
+}

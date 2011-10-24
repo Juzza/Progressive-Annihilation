@@ -1,0 +1,38 @@
+[ARMVULC_WEAPON]
+{
+  name=RapidfireLRPC;
+  accuracy=1800;
+  areaofeffect=224;
+  color=2;
+  craterboost=0;
+  cratermult=1;
+  edgeeffectiveness=0.75;
+  energypershot=1500;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  noexplode=0;
+  noselfdamage=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=4;
+	color=3;
+  range=5750;
+  reloadtime=0.4;
+  cegtag=GROßESPLASMA;
+  rendertype=4;
+  soundhit=rflrpc3;
+  soundstart=XPLONUK4;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=1100;
+  [DAMAGE]
+  {
+    default=1500;
+    subs=50;
+  }
+}

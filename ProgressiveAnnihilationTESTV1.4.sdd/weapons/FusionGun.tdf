@@ -1,0 +1,80 @@
+[FUSIONGUN]
+	{
+	ID=218;
+	name=Command cruiser fusion gun;
+	rendertype=0;
+	beamweapon=1;
+	duration=0.05;
+	cegtag=NEUTRONPLASMA;
+	texture1=Fusion;
+	texture2=NULL;
+	texture3=NULL;
+	rgbcolor=1 1 1;
+	rgbcolor2=0.58 0.02 0.94;
+	intensity=1;
+	thickness=35;
+	explosiongenerator=custom:BeamImpact;
+	lineofsight=1;
+	turret=1;
+	RANGE=1020;
+	RELOADTIME=3.3;
+	weaponvelocity=1000;
+	areaofeffect=100;
+	burnblow=1;
+	soundstart=fusion;
+	soundhit=xplolrg4;
+	tolerance=5000;
+	ENERGYPERSHOT=216.6666667;
+	shakemagnitude=9;
+	shakeduration=.3;
+	startsmoke=1;
+	endsmoke=1;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	[DAMAGE]
+		{
+		DEFAULT=650.0;
+		}
+	}
+[FUSIONGUN2]
+	{
+	ID=218;
+	name=Command cruiser fusion gun;
+	rendertype=0;
+	beamweapon=1;
+	duration=0.05;
+	cegtag=NEUTRONPLASMAROT;
+	texture1=Fusion;
+	texture2=NULL;
+	texture3=NULL;
+	rgbcolor=1 1 1;
+	rgbcolor2=0.9 0.02 0.14;
+	intensity=1;
+	thickness=40;
+	explosiongenerator=custom:BeamImpactRed;
+	lineofsight=1;
+	turret=1;
+	RANGE=1020;
+	RELOADTIME=3.3;
+	weaponvelocity=1000;
+	areaofeffect=100;
+	burnblow=1;
+	soundstart=fusion;
+	soundhit=xplolrg4;
+	tolerance=5000;
+	ENERGYPERSHOT=416.6666667;
+	shakemagnitude=9;
+	shakeduration=.3;
+	startsmoke=1;
+	endsmoke=1;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	[DAMAGE]
+		{
+		DEFAULT=1500.0;
+		}
+	}
+
+

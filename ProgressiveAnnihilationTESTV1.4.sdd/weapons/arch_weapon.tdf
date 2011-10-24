@@ -1,0 +1,39 @@
+[ARCH_WEAPON]
+{
+  name=Energy Chaingun;
+  accuracy=512;
+  alphadecay=0.7;
+  areaofeffect=16;
+  colormap=1 1 1 1  1 0.7 0 1 1 0.7 0 1;
+  craterboost=1;
+  cratermult=1;
+  cegTag=EMGPEE;
+  endsmoke=0;
+  explosiongenerator=custom:ARCHPLOSION;
+  impulseboost=0;
+  impulsefactor=1;
+  intensity=0.8;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  pitchtolerance=12000;
+  range=1040;
+  reloadtime=0.08;
+  rendertype=4;
+  rgbcolor=1 0.95 0.5;
+  separation=1.5;
+  size=2.5;
+  soundstart=brawlemg;
+  stages=10;
+  startsmoke=0;
+  sweepfire=0;
+  toairweapon=1;
+  tolerance=6000;
+  turret=1;
+  weapontimer=1;
+  weaponvelocity=2500;
+  [DAMAGE]
+  {
+    default=25;
+  }
+}

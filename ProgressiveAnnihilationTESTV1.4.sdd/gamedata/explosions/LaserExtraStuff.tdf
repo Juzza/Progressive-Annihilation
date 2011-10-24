@@ -1,0 +1,271 @@
+[PulseTeal]
+{
+  [pikes15]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-13 r30,-13 r30,-13 r30;
+			width=6;
+			length=15;
+			alpha=0.8;
+			alphadecay=0.1;
+			color=0,1,1;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+    count=10; 
+	}
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=7;
+			alpha=0.42;
+			expansionSpeed=4 r2;
+			color=0,1,1;
+		}
+		ground=1;
+		air=1;
+		count=1;
+   		water=1;
+	}
+		[groundflash]
+	{
+		flashsize=40;
+		flashalpha=0.6;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=12;
+		color=0,0.5,0.7;
+	}
+}
+[PulseRed]
+{
+  [pikes15]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-13 r30,-13 r30,-13 r30;
+			width=6;
+			length=15;
+			alpha=0.8;
+			alphadecay=0.1;
+			color=1,0,0;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+    count=10; 
+	}
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=7;
+			alpha=0.42;
+			expansionSpeed=4 r2;
+			color=1,0,0;
+		}
+		ground=1;
+		air=1;
+		count=1;
+   		water=1;
+	}
+		[groundflash]
+	{
+		flashsize=40;
+		flashalpha=0.6;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=12;
+		color=1,0.1,0.1;
+	}
+}
+
+[Pulsewhite]
+{
+  [pikes15]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-2 r5,-2 r5,-2 r5;
+			width=2;
+			length=1;
+			alpha=0.6;
+			alphadecay=0.1;
+			color=1,1,1;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+    count=10; 
+	}
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=3;
+			alpha=0.42;
+			expansionSpeed=8 r1;
+			color=1,1,1;
+		}
+		ground=1;
+		air=1;
+		count=1;
+   		water=1;
+	}
+		[groundflash]
+	{
+		flashsize=15;
+		flashalpha=0.6;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=12;
+		color=1,1,1;
+	}
+}
+[Pulsered]
+{
+  [pikes15]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-2 r5,-2 r5,-2 r5;
+			width=2;
+			length=1;
+			alpha=0.6;
+			alphadecay=0.1;
+			color=1,0.2,0.1;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+    count=10; 
+	}
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=3;
+			alpha=0.42;
+			expansionSpeed=8 r1;
+			color=1,0.2,0.1;
+		}
+		ground=1;
+		air=1;
+		count=1;
+   		water=1;
+	}
+		[groundflash]
+	{
+		flashsize=15;
+		flashalpha=0.6;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=12;
+		color=1,0.2,0.1;
+	}
+}
+[Pulsegreen]
+{
+  [pikes15]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-2 r5,-2 r5,-2 r5;
+			width=2;
+			length=1;
+			alpha=0.6;
+			alphadecay=0.1;
+			color=0,1,0;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+    count=10; 
+	}
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=3;
+			alpha=0.42;
+			expansionSpeed=8 r1;
+			color=0,1,0;
+		}
+		ground=1;
+		air=1;
+		count=1;
+   		water=1;
+	}
+		[groundflash]
+	{
+		flashsize=15;
+		flashalpha=0.6;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=12;
+		color=0,1,0;
+	}
+}
+[Pulseblue]
+{
+  [pikes15]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-2 r5,-2 r5,-2 r5;
+			width=2;
+			length=1;
+			alpha=0.6;
+			alphadecay=0.1;
+			color=0,0,1;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+    count=10; 
+	}
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=3;
+			alpha=0.42;
+			expansionSpeed=8 r1;
+			color=0,0,1;
+		}
+		ground=1;
+		air=1;
+		count=1;
+   		water=1;
+	}
+		[groundflash]
+	{
+		flashsize=15;
+		flashalpha=0.6;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=12;
+		color=0,0,1;
+	}
+}

@@ -1,0 +1,43 @@
+[CORRONINGRENADE]
+{
+	ID=2;
+	name=CORRONINGRENADE;
+	cegTag=CORRONINTRAIL;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	color=3;
+	range=545;
+	sprayangle=680;
+	burst=3;
+	burstrate=0.1;
+	reloadtime=2.23;
+	weaponvelocity=300;
+	energypershot=12;
+	areaofeffect=12;
+	soundstart=MechPlasma;
+	soundhit=macrossmhit;
+	accuracy=1000;
+	tolerance=1000;
+	explosiongenerator=custom:CORRONINTRAILEXPLO;
+        SweepFire=1; // added by Myg in v9 for .75b2 release
+	GroundBounce=1;
+	WaterBounce=1;
+	NumBounce=3;
+	BounceSlip=0.35;
+	BounceRebound=0.5;
+	startsmoke=1;
+	soundtrigger=1;
+	weapontimer=1;
+	rgbcolor=1 0.2 0.1;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=0.8;
+	[DAMAGE]
+	{
+		default=87;
+	}
+}

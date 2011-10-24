@@ -1,0 +1,44 @@
+[ARM_CRUS]
+{
+  name=CruiserCannon;
+  areaofeffect=16;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  minbarrelangle=-15;
+  noselfdamage=1;
+  range=740;
+  reloadtime=1.2;
+  cegtag=MITLERESPLASMA;
+  rendertype=4;
+  soundhit=xplomed2;
+  soundstart=cannhvy1;
+  startsmoke=1;
+  targetmoveerror=0.1;
+  turret=1;
+  weaponvelocity=550;
+  [DAMAGE]
+  {
+    default=220;
+    bombers=40;
+    fighters=40;
+    gunships=40;
+    hgunships=40;
+    subs=5;
+    vradar=40;
+    vtol=40;
+    vtrans=40;
+  }
+}

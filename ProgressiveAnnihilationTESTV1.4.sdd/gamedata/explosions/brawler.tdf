@@ -1,0 +1,113 @@
+
+[brawlerejector]
+{
+	usedefaultexplosions=0;
+   [shells]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, -0.4, 0;
+		colorMap=1 1 1 1   1 1 1 1;
+		Texture=shell;
+		airdrag=0.97;
+		particleLife=40;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0;
+		particleSpeedSpread=0;
+		particleSize=2.5;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	
+	}
+}
+[brawlermuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 1 0 0.01	1 0.5 0 0.01	0 0 0 0.01; 
+          	size=12;
+          	length=18;
+          	sizeGrowth=1;
+          	ttl=3;
+          	frontOffset=0.1;
+          	sideTexture=plasma2;
+          	frontTexture=flowerflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+   	[GROUNDFLASH]
+	{
+		flashsize=35;
+		flashalpha=0.9;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=3;
+		color=1,0.7,0;
+	}
+}
+
+[BRAWLIMPACTS]
+{
+	usedefaultexplosions=0;
+	[GROUNDFLASH]
+	{
+		flashsize=12;
+		flashalpha=0.9;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=3;
+		color=1,0.7,0;
+	}
+   [sparks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, -0.4, 0;
+		colorMap=1 1 0 0.01   1 1 0 0.01   1 0.5 0 0.01   0 0 0 0.01;
+		Texture=plasma;
+		airdrag=0.97;
+		particleLife=14;
+		particleLifeSpread=0;
+		numParticles=4;
+		particleSpeed=5;
+		particleSpeedSpread=10;
+		particleSize=6;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=90;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	
+	}
+}	

@@ -1,0 +1,45 @@
+[ARM_CRABE_GAUSS]
+{
+	name=HeavyPlasma;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	minbarrelangle=-20;
+	range=660;
+	reloadtime=3;
+	energypershot=0;
+	weaponvelocity=290;
+	areaofeffect=200;
+	edgeeffectiveness=0.3;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=2;
+	color=3;
+	explosiongenerator=custom:LLMiniPlasma;
+	soundstart=BERTHA1;
+	soundhit=bertha6;
+	shakemagnitude=2;
+	shakeduration=1;
+	impulsefactor=0.8;
+	impulseboost=0;
+  cegtag=MITLERESPLASMA;
+	cratermult=0.25;
+	craterboost=0;
+	noselfdamage=1;
+	rgbcolor=0.95 1 0;
+	[DAMAGE]
+	{
+		default=600;
+		VTRANS=111;
+		FIGHTERS=111;
+		BOMBERS=111;
+		GUNSHIPS=111;
+		HGUNSHIPS=111;
+		VRADAR=111;
+		VTOL=111;
+		SUBS=5;
+	}
+}

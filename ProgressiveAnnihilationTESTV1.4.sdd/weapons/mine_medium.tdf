@@ -1,0 +1,24 @@
+[MINE_MEDIUM]
+{
+  name=MediumMine;
+  areaofeffect=250;
+  craterboost=0.75;
+  cratermult=0.75;
+  edgeeffectiveness=0.6;
+  explosiongenerator=custom:FLASHMEDIUMBUILDING;
+  impulseboost=0.25;
+  impulsefactor=0.25;
+  interceptedbyshieldtype=1;
+  range=480;
+  reloadtime=3.6;
+  rendertype=4;
+  soundhit=xplomed1;
+  soundstart=largegun;
+  weaponvelocity=250;
+  [DAMAGE]
+  {
+    default=1000;
+    minelayers=20;
+    mines=0.5;
+  }
+}

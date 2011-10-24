@@ -1,0 +1,64 @@
+[STORMMUZZLE]
+{
+   [fluffy]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 1  1 1 1 1 0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.9;
+		particleLife=60;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0.5 i0.36;
+		particleSpeedSpread=0.8;
+		particleSize=5 i-0.45;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=7;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=10;
+	}
+}
+[STORMBACK]
+{
+   [fluffy]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 1  1 1 1 1 0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.9;
+		particleLife=60;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=4 i-.4;
+		particleSpeedSpread=0.8;
+		particleSize=5 i-0.25;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=30;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=10;
+	}
+}

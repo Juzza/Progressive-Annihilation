@@ -1,0 +1,45 @@
+[GAUSS]
+{
+  name=GaussCannon;
+  accuracy=200;
+  areaofeffect=5;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH1nd;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  lineofsight=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  minbarrelangle=-15;
+  movingaccuracy=400;
+  noselfdamage=1;
+  range=680;
+  cegtag=MITLERESPLASMA;
+  reloadtime=1.79;
+  rendertype=4;
+  soundhit=xplomed2;
+  soundstart=cannhvy1;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=350;
+  [DAMAGE]
+  {
+    default=200;
+    bombers=35;
+    fighters=35;
+    gunships=35;
+    hgunships=35;
+    subs=5;
+    vradar=35;
+    vtol=35;
+    vtrans=35;
+  }
+}

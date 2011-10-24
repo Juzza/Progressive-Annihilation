@@ -1,0 +1,43 @@
+[GIMP_LASER]
+{
+  name=HighEnergyLaser;
+  areaofeffect=12;
+  beamlaser=1;
+  beamtime=0.30;
+  corethickness=0.2;
+  craterboost=1;
+  cratermult=1;
+  energypershot=35;
+  explosiongenerator=custom:FLASH1green;
+  firestarter=90;
+  impulseboost=0;
+  impulsefactor=1;
+  cegtag=LASERGLOWGREEN;
+  interceptedbyshieldtype=0;
+  laserflaresize=10;
+  lineofsight=1;
+  noselfdamage=1;
+  range=300;
+  reloadtime=2.3;
+  rendertype=0;
+  rgbcolor=0 1 0;
+  soundhit=lasrhit1;
+  soundstart=lasrhvy3;
+  targetmoveerror=0.25;
+  thickness=3;
+  tolerance=10000;
+  turret=1;
+  weaponvelocity=700;
+  [DAMAGE]
+  {
+    default=450;
+    bombers=38;
+    fighters=38;
+    gunships=38;
+    hgunships=38;
+    subs=5;
+    vradar=38;
+    vtol=38;
+    vtrans=38;
+  }
+}

@@ -1,0 +1,133 @@
+[ORCONE_GUN]
+{
+	name=SuperEMG;
+	 rendertype=4;
+   lineofsight=1;
+   turret=1;
+   range=600;
+   reloadtime=0.28;
+   cegtag=EMGPEEBIG;
+   burst=3;
+	 burstrate=0.09;
+   weaponvelocity=900;
+   areaofeffect=24;
+   accuracy=300;
+   sprayangle=300;
+   burnblow=1;
+   rgbcolor=1 0.95 0.4;
+   intensity=0.7;
+	 soundstart=Krogun1;
+	 soundhit=xplomed4;
+   explosiongenerator=custom:FLASH1;
+   startsmoke=1;
+   noselfdamage=1;
+   impulsefactor=1;
+   impulseboost=0;
+   cratermult=0.6;
+   craterboost=0.6;
+   noselfdamage=1;
+   stages=10;
+   separation=1.5;
+   alphadecay=0.7;
+	[DAMAGE]
+	{
+		default=400;
+		KROG=440;
+		COMMANDERS=240;
+		ANNIDDM=330;
+		VTRANS=55;
+		FIGHTERS=55;
+		BOMBERS=55;
+		GUNSHIPS=55;
+		HGUNSHIPS=55;
+		VRADAR=55;
+		VTOL=55;
+		SUBS=5;
+	}
+}
+
+[ORCONE_LASER]
+{
+	name=OrconeAALaser;
+	turret=1;
+	name=lasers;
+	rendertype=0;
+	energypershot=25;
+	lineofsight=1;
+	beamweapon=1;
+	toairweapon=1;
+	beamtime=0.1;
+	range=950;
+	reloadtime=0.1;
+	weaponvelocity=1200;
+	areaofeffect=20;
+	edgeeffectiveness=1;
+	soundstart=lasrfir3;
+	soundhit=lasrhit2;
+	soundtrigger=1;
+	tolerance=1000;
+	pitchtolerance=1000;
+	startsmoke=1;
+	TrajectoryHeight=1.4;
+	turnrate=780;      
+	firestarter=10;
+	corethickness=0.25;
+	thickness=4;
+	CollideFriendly=0;
+	explosiongenerator=custom:FLASH2;
+	rgbcolor=0.2 0.2 1;
+	duration=0.024;
+	sweepfire=0;
+	[DAMAGE]
+	{
+	  default=32;
+	}
+}
+
+[ORCONE_ROCKET]
+{
+	name=RiotRocket;
+	vlaunch=1;
+	rendertype=1;
+	lineofsight=0;
+	TwoPhase=1;
+	canAttackGround=0;
+	model=exphvyrock;
+	range=925;
+	reloadtime=1.8;
+	weapontimer=2.2;
+	flighttime=600;
+	weaponvelocity=2400;
+	startvelocity=750;
+	weaponacceleration=175;
+	turnrate=650;
+	areaofeffect=144;
+	soundstart=rapidrocket3;
+	soundhit=xplomed2;
+	firestarter=55;
+	EdgeEffectiveness=0.8;
+	smokedelay=0.1;
+  cegTag=RAKETENMITTELTRAIL;
+	guidance=1;
+	track=1;
+	selfprop=1;
+	smoketrail=0;
+	explosiongenerator=custom:FLASH96;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=220;
+		VTRANS=90;
+		FIGHTERS=90;
+		BOMBERS=90;
+		GUNSHIPS=90;
+		HGUNSHIPS=90;
+		VRADAR=90;
+		VTOL=90;
+	}
+}

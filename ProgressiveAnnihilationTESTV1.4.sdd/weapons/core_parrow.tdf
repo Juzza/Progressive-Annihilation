@@ -1,0 +1,41 @@
+[CORE_PARROW]
+{
+  name=PoisonArrowCannon;
+  areaofeffect=160;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH96;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  noselfdamage=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  cegtag=MITLERESPLASMA;
+  range=575;
+  reloadtime=1.8;
+  rendertype=4;
+  soundhit=xplomed1;
+  soundstart=largegun;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=300;
+  [DAMAGE]
+  {
+    default=360;
+    bombers=60;
+    fighters=60;
+    gunships=60;
+    hgunships=60;
+    subs=5;
+    vradar=60;
+    vtol=60;
+    vtrans=60;
+  }
+}

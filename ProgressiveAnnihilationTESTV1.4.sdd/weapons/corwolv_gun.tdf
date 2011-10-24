@@ -1,0 +1,43 @@
+[CORWOLV_GUN]
+{
+  name=LightArtillery;
+  accuracy=275;
+  areaofeffect=88;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:CHARLIZE;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  noselfdamage=1;
+  range=800;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  reloadtime=5;
+  rendertype=4;
+  cegtag=MINIPLASMA;
+  soundhit=xplomed2;
+  soundstart=cannhvy3;
+  startsmoke=1;
+  targetmoveerror=0.1;
+  turret=1;
+  weaponvelocity=330;
+  [DAMAGE]
+  {
+    default=250;
+    bombers=15;
+    fighters=15;
+    gunships=15;
+    hgunships=15;
+    subs=5;
+    vradar=15;
+    vtol=15;
+    vtrans=15;
+  }
+}

@@ -1,0 +1,42 @@
+[ARM_PINCER_GAUSS]
+{
+  name=PincerCannon;
+  areaofeffect=8;
+  cegtag=MINIPLASMA;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:LIGHTARMS;
+  impulseboost=0;
+  impulsefactor=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=305;
+  reloadtime=1.5;
+  rendertype=4;
+  soundhit=xplomed2;
+  soundstart=cannhvy1;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=450;
+  [DAMAGE]
+  {
+    default=116;
+    bombers=25;
+    fighters=25;
+    gunships=25;
+    hgunships=25;
+    subs=5;
+    vradar=25;
+    vtol=25;
+    vtrans=25;
+  }
+}

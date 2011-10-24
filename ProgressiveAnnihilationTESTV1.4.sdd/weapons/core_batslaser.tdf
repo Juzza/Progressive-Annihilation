@@ -1,0 +1,43 @@
+[CORE_BATSLASER]
+{
+  name=HighEnergyLaser;
+  areaofeffect=8;
+  beamlaser=1;
+  beamtime=0.2;
+  corethickness=0.2;
+  craterboost=1;
+  cratermult=1;
+  energypershot=125;
+  explosiongenerator=custom:FLASH1green;
+  cegtag=LASERGLOWGREEN;
+  firestarter=90;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  laserflaresize=15;
+  lineofsight=1;
+  noselfdamage=1;
+  range=875;
+  reloadtime=1.1;
+  rendertype=0;
+  rgbcolor=0 1 0;
+  soundhit=lasrhit1;
+  soundstart=Lasrmas2;
+  targetmoveerror=0.2;
+  thickness=3;
+  tolerance=10000;
+  turret=1;
+  weaponvelocity=700;
+  [DAMAGE]
+  {
+    default=270;
+    bombers=65;
+    fighters=65;
+    gunships=65;
+    hgunships=65;
+    subs=5;
+    vradar=65;
+    vtol=65;
+    vtrans=65;
+  }
+}
