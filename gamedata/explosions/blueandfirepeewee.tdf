@@ -1,0 +1,98 @@
+[blueEMGhit]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 6;
+		flashAlpha = 2.1;
+		ttl = 30;
+		color = 0.1,0.6,1;
+	}
+	[nova]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=blueexplo;
+      		heat = 24;
+      		maxheat = 24;
+      		heatFalloff = 1;
+      		size = 0.2;
+      		sizeGrowth = 1;
+      		speed = 0, 0, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=blueexplo;
+      		heat = 30;
+      		maxheat = 40;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = .5;
+      		speed = 0, 1, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+}
+[fireEMGhit]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 6;
+		flashAlpha = 2.1;
+		ttl = 30;
+		color = 0.9,0.0,0.1;
+	}
+	[nova]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=RedTELE.tga;
+      		heat = 24;
+      		maxheat = 24;
+      		heatFalloff = 1;
+      		size = 0.2;
+      		sizeGrowth = 1;
+      		speed = 0, 0, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=RedTELE.tga;
+      		heat = 30;
+      		maxheat = 40;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = .5;
+      		speed = 0, 1, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+}

@@ -1,0 +1,129 @@
+[chaos1]
+{
+  name=LightningGunxx;
+  areaofeffect=20;
+  beamweapon=1;
+  craterboost=1;
+  cratermult=1;
+  duration=10;
+  explosiongenerator=custom:Pulsered;
+  cegtag=LASERGLOWROT;
+  firestarter=50;
+  impulseboost=0;
+  impulsefactor=1;
+  intensity=12;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=1200;
+  reloadtime=9.7;
+  rendertype=7;
+  rgbcolor=1 0.05 0.01;
+  soundhit=lashit;
+  soundstart=lghthvy1;
+  soundtrigger=1;
+  startsmoke=1;
+  targetmoveerror=0.3;
+  texture1=lightning4;
+  thickness=8;
+  turret=1;
+  weaponvelocity=400;
+  [DAMAGE]
+  {
+    default=2000;
+    bombers=65;
+    fighters=65;
+    gunships=65;
+    hgunships=65;
+    subs=5;
+    vradar=65;
+    vtol=65;
+    vtrans=65;
+  }
+}
+[chaos2]
+{
+  name=LightningGunxx;
+  areaofeffect=20;
+  beamweapon=1;
+  craterboost=1;
+  cratermult=1;
+  duration=10;
+  explosiongenerator=custom:FLASH3blue;
+  cegtag=LASERGLOWblau;
+  firestarter=50;
+  impulseboost=0;
+  impulsefactor=1;
+  intensity=12;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=700;
+  reloadtime=4.7;
+  rendertype=7;
+  rgbcolor=0 0.05 1;
+  soundhit=lashit;
+  soundstart=lghthvy1;
+  soundtrigger=1;
+  startsmoke=1;
+  targetmoveerror=0.3;
+  texture1=lightning4;
+  thickness=6;
+  turret=1;
+  weaponvelocity=400;
+  [DAMAGE]
+  {
+    default=700;
+    bombers=65;
+    fighters=65;
+    gunships=65;
+    hgunships=65;
+    subs=5;
+    vradar=65;
+    vtol=65;
+    vtrans=65;
+  }
+}
+[chaos3]
+{
+  name=LightningGunxx;
+  areaofeffect=20;
+  beamweapon=1;
+  craterboost=1;
+  cratermult=1;
+  duration=10;
+  explosiongenerator=custom:FLASH1green;
+  cegtag=LASERGLOWgreen;
+  firestarter=50;
+  impulseboost=0;
+  impulsefactor=1;
+  intensity=12;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=400;
+  reloadtime=3.7;
+  rendertype=7;
+  rgbcolor=0 1 0.01;
+  soundhit=lashit;
+  soundstart=lghthvy1;
+  soundtrigger=1;
+  startsmoke=1;
+  targetmoveerror=0.3;
+  texture1=lightning4;
+  thickness=6;
+  turret=1;
+  weaponvelocity=400;
+  [DAMAGE]
+  {
+    default=350;
+    bombers=65;
+    fighters=65;
+    gunships=65;
+    hgunships=65;
+    subs=5;
+    vradar=65;
+    vtol=65;
+    vtrans=65;
+  }
+}

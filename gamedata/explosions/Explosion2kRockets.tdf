@@ -1,0 +1,589 @@
+[LLheavymissile]
+{	
+	usedefaultexplosions=0;	
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 7, 0;    
+		delay=0;				  
+		explosionGenerator=custom:LLheavymissile_EXPLOSION;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[GROUNDFLASH]
+   	{
+	      	ttl=28;
+      		flashSize=75;
+      	      	flashAlpha=0.9;
+      	      	circleGrowth=2;
+      	      	circleAlpha=0.2;
+      	      	color=1,0.7,0.4;
+	}
+	[sphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			expansionSpeed=10;
+			ttl=24;
+			alpha=0.15;
+			color=1,0.9,0.9;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		underwater=0;
+		count=3;
+	}
+	[dirt1]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=2;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+ colorMap=1.0 0.1 0.2 0.9 1.0 0.1 0.2 0.9 0.99 0.99 0.99 0.7 0.99 0.99 0.99 0.5 0.1 0.1 0.1 0.3 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.01;
+			Texture=dirtplosion2;
+			airdrag=0.8;
+			particleLife=60;
+			particleLifeSpread=16;
+			numParticles=25;
+			particleSpeed=0;
+			particleSpeedSpread=18;
+			particleSize=1.4;
+			particleSizeSpread=16;
+			emitRot=0;
+			emitRotSpread=45;
+			directional=1;
+		}
+		airLos=1;
+		air=0;
+		water=0;
+		ground=1;
+		count=1;
+	}
+	[splash_water]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.0;
+			sizeMod=1.0;
+			pos=35 r-70, 0, 35 r-70;
+			emitVector=0, 1, 0;
+			gravity=0, -0.25, 0;
+			colorMap=0.4 0.4 0.4 0.1   0 0 0 0.001;
+			Texture=randdots;
+			airdrag=0.96;
+			particleLife=30;
+			particleLifeSpread=8;
+			numParticles=1;
+			particleSpeed=4;
+			particleSpeedSpread=1;
+			particleSize=12;
+			particleSizeSpread=8;
+			emitRot=0;
+			emitRotSpread=25;
+			directional=1;
+		}
+		air=0;
+		water=1;
+		ground=0;
+		count=4;
+	}
+	[splash_water2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=2;
+			sizeMod=0.998;
+			pos=0, 2, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+ colorMap=1.0 0.1 0.2 0.9 1.0 0.1 0.2 0.9 0.99 0.99 0.99 0.7 0.99 0.99 0.99 0.5 0.1 0.1 0.1 0.3 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.01;
+			Texture=dirtplosion2;
+			airdrag=0.8;
+			particleLife=25;
+			particleLifeSpread=16;
+			numParticles=12;
+			particleSpeed=0;
+			particleSpeedSpread=16;
+			particleSize=1.9;
+			particleSizeSpread=8;
+			emitRot=0;
+			emitRotSpread=45;
+			directional=1;
+		}
+		airLos=1;
+		air=0;
+		water=1;
+		ground=0;
+		count=1;
+	}
+}
+[LLmediummissile]
+{	
+	usedefaultexplosions=0;	
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 7, 0;    
+		delay=0;				  
+		explosionGenerator=custom:LLmediummissile_EXPLOSION;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[GROUNDFLASH]
+   	{
+	      	ttl=13;
+      		flashSize=25;
+      	      	flashAlpha=0.9;
+      	      	circleGrowth=2;
+      	      	circleAlpha=0.2;
+      	      	color=1,0.7,0.4;
+	}
+	[sphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			expansionSpeed=5;
+			ttl=7;
+			alpha=0.35;
+			color=1,0.9,0.9;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		underwater=0;
+		count=3;
+	}
+	[dirt1]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=2;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			colorMap=1 0.5 0.3 0.13    0.45 0.37 0.3 0.13	0.05 0.05 0.04 0.1  0 0 0 0;
+			Texture=dirtplosion2;
+			airdrag=0.8;
+			particleLife=40;
+			particleLifeSpread=8;
+			numParticles=15;
+			particleSpeed=0;
+			particleSpeedSpread=9;
+			particleSize=0.8;
+			particleSizeSpread=3;
+			emitRot=0;
+			emitRotSpread=45;
+			directional=1;
+		}
+		airLos=1;
+		air=0;
+		water=0;
+		ground=1;
+		count=1;
+	}
+	[splash_water]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.0;
+			sizeMod=1.0;
+			pos=35 r-70, 0, 35 r-70;
+			emitVector=0, 1, 0;
+			gravity=0, -0.25, 0;
+			colorMap=0.4 0.4 0.4 0.1   0 0 0 0.001;
+			Texture=randdots;
+			airdrag=0.96;
+			particleLife=20;
+			particleLifeSpread=2;
+			numParticles=1;
+			particleSpeed=4;
+			particleSpeedSpread=1;
+			particleSize=4;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=25;
+			directional=1;
+		}
+		air=0;
+		water=1;
+		ground=0;
+		count=4;
+	}
+	[splash_water2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=2;
+			sizeMod=0.998;
+			pos=0, 2, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			colorMap=1 1 1 0.1    0.2 0.2 0.2 0.02    0 0 0 0.0000001;
+			Texture=dirtplosion2;
+			airdrag=0.8;
+			particleLife=15;
+			particleLifeSpread=10;
+			numParticles=12;
+			particleSpeed=0;
+			particleSpeedSpread=10;
+			particleSize=0.9;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=45;
+			directional=1;
+		}
+		airLos=1;
+		air=0;
+		water=1;
+		ground=0;
+		count=1;
+	}
+}
+[LLsmallmissile]
+{	
+	usedefaultexplosions=0;	
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 7, 0;    
+		delay=0;				  
+		explosionGenerator=custom:LLsmallmissile_EXPLOSION;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[GROUNDFLASH]
+   	{
+	      	ttl=10;
+      		flashSize=7;
+      	      	flashAlpha=0.9;
+      	      	circleGrowth=2;
+      	      	circleAlpha=0.2;
+      	      	color=1,0.7,0.4;
+	}
+	[sphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			expansionSpeed=3;
+			ttl=4;
+			alpha=0.35;
+			color=1,0.9,0.9;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		underwater=0;
+		count=3;
+	}
+	[dirt1]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=2;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			 colorMap=1.0 0.1 0.2 0.9 1.0 0.1 0.2 0.9 0.99 0.99 0.99 0.7 0.99 0.99 0.99 0.5 0.1 0.1 0.1 0.3 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.01;
+			Texture=dirtplosion2;
+			airdrag=0.8;
+			particleLife=40;
+			particleLifeSpread=5;
+			numParticles=15;
+			particleSpeed=0;
+			particleSpeedSpread=5;
+			particleSize=0.4;
+			particleSizeSpread=3;
+			emitRot=0;
+			emitRotSpread=45;
+			directional=1;
+		}
+		airLos=1;
+		air=0;
+		water=0;
+		ground=1;
+		count=1;
+	}
+	[splash_water]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.0;
+			sizeMod=1.0;
+			pos=35 r-70, 0, 35 r-70;
+			emitVector=0, 1, 0;
+			gravity=0, -0.25, 0;
+			colorMap=0.4 0.4 0.4 0.1   0 0 0 0.001;
+			Texture=randdots;
+			airdrag=0.96;
+			particleLife=20;
+			particleLifeSpread=2;
+			numParticles=1;
+			particleSpeed=4;
+			particleSpeedSpread=1;
+			particleSize=4;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=25;
+			directional=1;
+		}
+		air=0;
+		water=1;
+		ground=0;
+		count=4;
+	}
+	[splash_water2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=2;
+			sizeMod=0.998;
+			pos=0, 2, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+		      colorMap=1.0 0.1 0.2 0.9 1.0 0.1 0.2 0.9 0.99 0.99 0.99 0.7 0.99 0.99 0.99 0.5 0.1 0.1 0.1 0.3 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.01;
+			Texture=dirtplosion2;
+			airdrag=0.8;
+			particleLife=15;
+			particleLifeSpread=5;
+			numParticles=12;
+			particleSpeed=0;
+			particleSpeedSpread=5;
+			particleSize=0.4;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=45;
+			directional=1;
+		}
+		airLos=1;
+		air=0;
+		water=1;
+		ground=0;
+		count=1;
+	}
+}
+[LLsmallmissile_EXPLOSION]
+{
+	[pop2]
+	{
+	class=heatcloud;
+   	
+		[properties]
+      		{
+		texture=explo;
+      		heat = 10;
+      		maxheat = 15;
+      		heatFalloff = 0.5;
+
+      		size = 15 r-1.5;
+      		sizeGrowth = 0.9;
+
+         	pos = -25 r50, 5, -25 r50;
+         	speed=-1 r2, 1 0, -1 r2;
+      		}
+		air=1;
+      	water=1;
+      	ground=1;
+      	count=4;
+	} 
+
+	[pop1]
+	{
+	class=heatcloud;
+   	
+		[properties]
+      		{
+		texture=sakexplo;
+      		heat = 10;
+      		maxheat = 15;
+      		heatFalloff = 0.4;
+			airdrag=0.8;
+      		size = 20;
+      		sizeGrowth = 0.9;
+
+         	pos = -2 r4, 3, -2 r4;
+         	speed=0, 1 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=7;
+	} 
+	[groundflash]
+   	{
+      	ttl = 17;
+      	flashSize = 70;
+      	flashAlpha = 0.9;
+
+      	circleGrowth = 4;
+      	circleAlpha = 0.5;
+
+      	color = 1, 0.3, 0;
+
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+
+}
+[LLmediummissile_EXPLOSION]
+{
+	[pop2]
+	{
+	class=heatcloud;
+   	
+		[properties]
+      		{
+		texture=explo;
+      		heat = 10;
+      		maxheat = 15;
+      		heatFalloff = 0.5;
+
+      		size = 25 r-1.5;
+      		sizeGrowth = 0.9;
+
+         	pos = -25 r50, 5, -25 r50;
+         	speed=-1 r2, 1 0, -1 r2;
+      		}
+		air=1;
+      	water=1;
+      	ground=1;
+      	count=4;
+	} 
+
+	[pop1]
+	{
+	class=heatcloud;
+   	
+		[properties]
+      		{
+		texture=sakexplo;
+      		heat = 10;
+      		maxheat = 15;
+      		heatFalloff = 0.4;
+			airdrag=0.8;
+      		size = 35;
+      		sizeGrowth = 0.9;
+
+         	pos = -2 r4, 3, -2 r4;
+         	speed=0, 1 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=7;
+	} 
+	[groundflash]
+   	{
+      	ttl = 17;
+      	flashSize = 120;
+      	flashAlpha = 0.9;
+
+      	circleGrowth = 4;
+      	circleAlpha = 0.5;
+
+      	color = 1, 0.3, 0;
+
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+
+}
+[LLheavymissile_EXPLOSION]
+{
+	[pop2]
+	{
+	class=heatcloud;
+   	
+		[properties]
+      		{
+		texture=explo;
+      		heat = 10;
+      		maxheat = 15;
+      		heatFalloff = 0.5;
+
+      		size = 40 r-1.5;
+      		sizeGrowth = 0.9;
+
+         	pos = -25 r50, 5, -25 r50;
+         	speed=-1 r2, 1 0, -1 r2;
+      		}
+		air=1;
+      	water=1;
+      	ground=1;
+      	count=4;
+	} 
+
+	[pop1]
+	{
+	class=heatcloud;
+   	
+		[properties]
+      		{
+		texture=sakexplo;
+      		heat = 10;
+      		maxheat = 15;
+      		heatFalloff = 0.4;
+			airdrag=0.8;
+      		size = 45;
+      		sizeGrowth = 0.9;
+
+         	pos = -2 r4, 3, -2 r4;
+         	speed=0, 1 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=7;
+	} 
+	[groundflash]
+   	{
+      	ttl = 17;
+      	flashSize = 180;
+      	flashAlpha = 0.9;
+
+      	circleGrowth = 4;
+      	circleAlpha = 0.5;
+
+      	color = 1, 0.3, 0;
+
+	air=1;
+     	ground=1;
+      	water=1;
+	}
+
+}
+

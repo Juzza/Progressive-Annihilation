@@ -1,0 +1,95 @@
+[STORM_ROCKET]
+{
+  name=HeavyRocket;
+  areaofeffect=68;
+  craterboost=0;
+  Weapontype=MissileLauncher;
+  cegTag=KBOTMISSILETRAIL;
+  cratermult=1;
+  firestarter=70;
+  guidance=0;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  model=missile;
+  noselfdamage=1;
+  range=475;
+  reloadtime=7.5;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=.1;
+  smoketrail=0;
+  soundhit=xplosml2;
+  soundhitvolume=8;
+  soundstart=rocklit1;
+  soundstartvolume=7;
+  startsmoke=1;
+  startvelocity=100;
+  tracks=0;
+  trajectoryheight=0.4;
+  turret=1;
+  weaponacceleration=100;
+  weapontimer=3;
+  weaponvelocity=170;
+  [DAMAGE]
+  {
+    default=300;
+    bombers=30;
+    fighters=30;
+    gunships=30;
+    hgunships=30;
+    subs=5;
+    vradar=30;
+    vtol=30;
+    vtrans=30;
+  }
+}
+[STORM_ROCKETORGY]
+{
+  name=HeavyRocket;
+  areaofeffect=68;
+  craterboost=0;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+  cratermult=1;
+  firestarter=70;
+  guidance=0;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  model=missile;
+  noselfdamage=1;
+  range=875;
+  reloadtime=0.8;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=.1;
+  smoketrail=0;
+  soundhit=xplosml2;
+  soundhitvolume=8;
+  soundstart=rocklit1;
+  soundstartvolume=7;
+  startsmoke=1;
+  startvelocity=100;
+  tracks=0;
+  trajectoryheight=0.4;
+  turret=1;
+  weaponacceleration=100;
+  weapontimer=3;
+  weaponvelocity=225;
+  [DAMAGE]
+  {
+    default=150;
+    bombers=30;
+    fighters=30;
+    gunships=30;
+    hgunships=30;
+    subs=5;
+    vradar=30;
+    vtol=30;
+    vtrans=30;
+  }
+}
+

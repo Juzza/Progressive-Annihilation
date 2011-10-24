@@ -1,0 +1,84 @@
+[CORHOWIEHEAVY]
+{
+  name=RavenCatapultRockets;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMITTELTRAIL;
+  areaofeffect=96;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  explosiongenerator=custom:MEDMISSILE_EXPLOSION;
+  firestarter=70;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=0;
+  model=exphvyrock;
+  noselfdamage=1;
+  range=1450;
+  reloadtime=0.2;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0.1;
+  smoketrail=0;
+  soundhit=rockhit;
+  soundstart=rapidrocket3;
+  startsmoke=1;
+	explosiongenerator=custom:CORRONINTRAILEXPLO;
+  startvelocity=100;
+  trajectoryheight=1;
+  turnrate=4000;
+  turret=1;
+  weaponacceleration=100;
+  weapontimer=6;
+  weaponvelocity=450;
+  wobble=10000;
+  [DAMAGE]
+  {
+    default=480;
+    subs=5;
+  }
+}
+[CORHOWIElight]
+{
+  name=RavenCatapultRockets;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENKLEINTRAIL;
+  areaofeffect=25;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  explosiongenerator=custom:MEDMISSILE_EXPLOSION;
+  firestarter=70;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=0;
+  model=missile;
+  noselfdamage=1;
+  range=750;
+  reloadtime=0.2;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0.1;
+  smoketrail=0;
+  soundhit=rockhit;
+  soundstart=rapidrocket3;
+  startsmoke=1;
+  startvelocity=100;
+  trajectoryheight=1;
+  turnrate=4000;
+  turret=1;
+explosiongenerator=custom:CORRONINTRAILEXPLO;
+  weaponacceleration=100;
+  weapontimer=3;
+  weaponvelocity=450;
+  wobble=10000;
+  [DAMAGE]
+  {
+    default=150;
+    subs=5;
+  }
+}

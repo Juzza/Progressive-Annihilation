@@ -1,0 +1,23 @@
+[blood_spray]
+{
+	[flare]
+	{
+		class = CBitmapMuzzleFlame;
+
+		[properties]
+      		{
+         	colorMap=.6 1 0 1   .6 1 0 1   0 0 0 0;
+          	size=1;
+          	length=2;
+          	sizeGrowth=16;
+          	ttl=18;
+          	frontOffset=0;
+          	sideTexture=bloodblast;
+          	frontTexture=null;
+		dir=1, 0, 0;
+	      	}
+		water=1;
+		air=1;
+		ground=0;
+	}
+}

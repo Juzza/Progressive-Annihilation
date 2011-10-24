@@ -1,0 +1,42 @@
+[THUD_WEAPON]
+{
+  name=PlasmaCannon;
+  cegTag=MINIPLASMA;
+  areaofeffect=36;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:MARY_SUE;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  minbarrelangle=-35;
+  noselfdamage=1;
+  range=430;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  reloadtime=3;
+  rendertype=4;
+  soundhit=xplomed3;
+  soundstart=cannon1;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=500;
+  [DAMAGE]
+  {
+    default=220;
+    bombers=21;
+    fighters=21;
+    gunships=21;
+    hgunships=21;
+    subs=5;
+    vradar=21;
+    vtol=21;
+    vtrans=21;
+  }
+}

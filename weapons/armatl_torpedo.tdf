@@ -1,0 +1,39 @@
+[ARMATL_TORPEDO]
+{
+  name=Level2 Torpedo Launcher;
+  areaofeffect=32;
+  avoidfriendly=0;
+  burnblow=1;
+  collidefriendly=0;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH3;
+  guidance=1;
+  cegtag=TORPEDOTRIAL;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  model=Advtorpedo;
+  noselfdamage=1;
+  propeller=1;
+  range=915;
+  reloadtime=3.1;
+  rendertype=1;
+  selfprop=1;
+  soundhit=xplodep1;
+  soundstart=torpedo1;
+  startvelocity=80;
+  tolerance=1167;
+  tracks=1;
+  turnrate=99000;
+  turret=1;
+  waterweapon=1;
+  weaponacceleration=60;
+  weapontimer=10;
+  weaponvelocity=380;
+  [DAMAGE]
+  {
+    default=750;
+  }
+}

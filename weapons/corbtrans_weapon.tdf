@@ -1,0 +1,40 @@
+[CORAIRLASER]
+{
+	name=BeamLaser;
+	rendertype=0;
+	lineofsight=1;
+	turret=1;
+	range=600;
+	reloadtime=0.3;
+	energypershot=40;
+	weaponvelocity=1600;
+	areaofeffect=8;
+	soundtrigger=1;
+	soundstart=build2;
+	soundhit=burn02;
+	firestarter=30;
+	beamweapon=1;
+	thickness=5;
+	corethickness=0.35;
+	laserflaresize=10;
+	targetmoveerror=0;
+	beamtime=0.01;
+	rgbcolor=0 0.6 1;
+  cegtag=LASERGLOWBLAU;
+	Accuracy=2500;
+	tolerance=1000;
+	MoveAccuracy=2600;
+	explosiongenerator=custom:BEAMERRAY;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=0;
+	noselfdamage=1;
+	sweepfire=1;
+	lodDistance=10000;
+	[DAMAGE]
+	{
+		default=20;
+		COMMANDERS=8;
+	}
+}

@@ -1,0 +1,35 @@
+[MaulerPhotonCannon]
+	{
+	ID=251;
+	name=Mauler photon cannon;
+	rendertype=0;
+	beamweapon=1;
+	duration=0.25;
+	texture1=LongBoltNoisy;
+	texture2=NULL;
+	texture3=NULL;
+	rgbcolor=0.9 0.9 1;
+	rgbcolor2=0 0 1;
+	intensity=1;
+	thickness=30;
+	corethickness=1;
+	explosiongenerator=custom:lvl5r;
+	lineofsight=1;
+	turret=1;
+	RANGE=2000;
+	RELOADTIME=12;
+	weaponvelocity=700;
+	ENERGYPERSHOT=3333.3333333;
+	areaofeffect=200;
+	tolerance=1000;
+	soundstart=ionfire;
+	soundhit=bang2;
+	firestarter=50;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	[DAMAGE]
+		{
+		DEFAULT=50000;
+		}
+	}

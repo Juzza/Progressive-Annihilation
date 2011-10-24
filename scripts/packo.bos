@@ -1,0 +1,211 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, armor, turret, Rsleeve, Lsleeve,
+       Rbarrel1, Rflare, Lbarrel1, Lflare, ejectorr, ejectorl;
+
+static-var  activeBarrel;
+
+// Signal definitions
+#define SIG_AIM				2
+
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+	return (0);
+	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
+}
+
+Activatescr()
+{
+	set ARMORED to 0;
+	move turret to y-axis [5.000000] speed [50.000000];
+	wait-for-move turret along y-axis;
+	move Rsleeve to x-axis [2.000000] speed [18.000000];
+	move Lsleeve to x-axis [-2.000000] speed [18.000000];
+	move Lbarrel1 to z-axis [5.5.000000] speed [18.000000];
+	move Rbarrel1 to z-axis [5.5.000000] speed [18.000000];
+	wait-for-move Rsleeve along x-axis;
+	wait-for-move Lsleeve along x-axis;
+	wait-for-move Lbarrel1 along z-axis;
+	wait-for-move Rbarrel1 along z-axis;
+}
+
+Deactivatescr()
+{
+	move Lbarrel1 to z-axis [0.000000] speed [10.000000];
+	move Rbarrel1 to z-axis [0.000000] speed [10.000000];
+	wait-for-move Lbarrel1 along z-axis;
+	wait-for-move Rbarrel1 along z-axis;
+	move Rsleeve to x-axis [0.000000] speed [10.000000];
+	move Lsleeve to x-axis [0.000000] speed [10.000000];
+	wait-for-move Lsleeve along x-axis;
+	wait-for-move Rsleeve along x-axis;
+	turn Rsleeve to x-axis <0.000000> speed <10.000000>;
+	turn Lsleeve to x-axis <0.000000> speed <10.000000>;
+	wait-for-move Rsleeve along x-axis;
+	wait-for-move Lsleeve along x-axis;
+	wait-for-move Lbarrel1 along z-axis;
+	wait-for-move Rbarrel1 along z-axis;
+	move turret to y-axis [0.000000] speed [20.000000];
+	turn turret to y-axis <0.0> speed <30.0>;
+	wait-for-move turret along y-axis;
+
+	
+	set ARMORED to 1;
+}
+
+RestoreAfterDelay()
+{
+	sleep 3000; 
+	stop-spin Rbarrel1 around z-axis decelerate <25.000000>;
+	stop-spin Lbarrel1 around z-axis decelerate <25.000000>;
+	sleep 1500;
+	set-signal-mask 0;
+	start-script Deactivatescr();
+	
+}
+
+Create()
+{
+	hide lflare;
+	hide Rflare;
+	hide ejectorr;
+	hide ejectorl;
+	
+	dont-shade Lbarrel1;
+	dont-shade Rbarrel1;
+	
+	activeBarrel = 0;
+	
+	start-script SmokeUnit();
+}
+
+AimPrimary(heading, pitch)
+{
+	start-script Activatescr();
+	
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	
+	turn turret to y-axis heading speed <360.000000>;
+	turn Rsleeve to x-axis <0.000000> - pitch speed <180.000000>;
+	turn Lsleeve to x-axis <0.000000> - pitch speed <180.000000>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn Rsleeve around x-axis;
+	wait-for-turn Lsleeve around x-axis;
+	spin Rbarrel1 around z-axis speed <800.000000> accelerate <25.000000>;
+	spin Lbarrel1 around z-axis speed <800.000000> accelerate <25.000000>;
+	
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+Shot1()
+{
+    if (activeBarrel == 0)
+    {
+        emit-sfx 1025 from ejectorr;
+        emit-sfx 1024 from Rflare;
+        activeBarrel = 1;
+    }
+	else if (activeBarrel == 1)
+    {
+        emit-sfx 1025 from ejectorl;
+        emit-sfx 1024 from Lflare;
+        activeBarrel = 0;
+    }
+}
+FirePrimary()
+{
+	// Nothing
+}
+
+QueryPrimary(piecenum)
+{
+	if (activeBarrel == 0)         piecenum = Rflare;
+	else if (activeBarrel == 1)    piecenum = Lflare;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret;
+}
+
+Killed(severity, corpsetype)
+{
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP1;
+		explode armor type BITMAPONLY | BITMAP2;
+		explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP3;
+		explode Rsleeve type FALL | EXPLODE_ON_HIT | BITMAP2;
+		explode Lsleeve type BITMAPONLY | BITMAP3;
+		explode Rbarrel1 type BITMAPONLY | BITMAP4;
+		explode Lbarrel1 type FALL | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP1;
+		explode armor type BITMAPONLY | BITMAP2;
+		explode turret type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+		explode Rsleeve type FALL | EXPLODE_ON_HIT | BITMAP2;
+		explode Lsleeve type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP3;
+		explode Rbarrel1 type FALL | EXPLODE_ON_HIT | BITMAP4;
+		explode Lbarrel1 type FALL | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP1;
+		explode armor type BITMAPONLY | BITMAP2;
+		explode turret type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode Rsleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Lsleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode Rbarrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode Lbarrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP1;
+	explode armor type BITMAPONLY | BITMAP2;
+	explode turret type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode Rsleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Lsleeve type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode Rbarrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode Lbarrel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+}

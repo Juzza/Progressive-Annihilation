@@ -1,0 +1,55 @@
+[ProtonTorpedo]
+{
+	ID=17;
+	name=Proton torpedo;
+	rendertype=0;
+	beamweapon=1;
+	duration=0.025;
+	texture1=PlasmaBall;
+	texture2=NULL;
+	texture3=NULL;
+	rgbcolor=1 1 1;
+	rgbcolor2=0 1 0;
+	intensity=1;
+turret=1;
+	thickness=6;
+	corethickness=1.2;
+	explosiongenerator=custom:bluegreennovaexplo;
+	lineofsight=1;
+	RANGE=480;
+	RELOADTIME=3.2;
+	weapontimer=5;
+	weaponvelocity=300;
+	areaofeffect=50;
+	ENERGYPERSHOT=80;
+	tolerance=3000;
+	pitchtolerance=6000;
+	burnblow=1;
+	soundstart=gun110;
+	soundhit=xplomed4;
+	firestarter=80;
+	selfprop=1;
+	guidance=1;
+	tracks=1;
+	turnrate=2000;
+	startsmoke=1;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	[DAMAGE]
+	{
+		DEFAULT=280.0;
+		COMMANDERS=280.0;
+		FIGHTERS=280.0;
+		CORVETTES=280.0;
+		FRIGATES=280.0;
+		DESTROYERS=280.0;
+		CRUISERS=280.0;
+		BATTLECRUISERS=280.0;
+		SUPERCAPS=192.0;
+		ODS=280.0;
+		BUILDINGS=352.0;
+		DEFENCES=352.0;
+		BUILDERS=280.0;
+	}
+}

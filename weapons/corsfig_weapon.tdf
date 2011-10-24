@@ -1,0 +1,50 @@
+[CORSFIG_WEAPON]
+{
+  name=GuidedMissiles;
+  areaofeffect=48;
+  avoidfriendly=1;
+  collidefriendly=0;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH2;
+  firestarter=70;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=0;
+  model=missile;
+  noselfdamage=1;
+  range=520;
+  reloadtime=1.85;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0.1;
+  smoketrail=0;
+  soundhit=xplosml2;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+  soundstart=Rocklit3;
+  startsmoke=1;
+  startvelocity=320;
+  tolerance=50000;
+  tracks=1;
+  turnrate=19384;
+  weaponacceleration=146;
+  weapontimer=6;
+  weaponvelocity=522;
+  [DAMAGE]
+  {
+    default=11;
+    bombers=130;
+    commanders=11;
+    fighters=130;
+    gunships=130;
+    hgunships=130;
+    subs=3;
+    vradar=130;
+    vtol=130;
+    vtrans=130;
+  }
+}

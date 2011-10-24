@@ -1,0 +1,79 @@
+[InvincibleLaser400]
+	{
+	ID=171;
+	name=400MW laser turret;
+	rendertype=0;
+	beamlaser=1;
+	beamtime=1;
+	rgbcolor=0 0 0.5;
+	thickness=20;
+	corethickness=0.3;
+	largebeamlaser=1;
+	texture1=Type4Beam;
+	texture2=NULL;
+	texture3=NULL;
+	texture4=flare;
+	laserflaresize=8;
+	explosiongenerator=custom:LASER400DBLUE;
+	lineofsight=1;
+	RANGE=750;
+	RELOADTIME=5.8;
+	weaponvelocity=1500;
+	ENERGYPERSHOT=190;
+	areaofeffect=50;
+	soundtrigger=1;
+	soundstart=laser400;
+	soundhit=packohit;
+	targetMoveErrorr=0.4;
+	tolerance=1500;
+	firestarter=20;
+	turret=1;
+	accuracy=800;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	[DAMAGE]
+		{
+		DEFAULT=1070.0;
+		}
+	}
+[InvincibleLaser600]
+	{
+	ID=171;
+	name=400MW laser turret;
+	rendertype=0;
+	beamlaser=1;
+	beamtime=1;
+	rgbcolor=0 0 0.5;
+	thickness=20;
+	corethickness=0.3;
+	largebeamlaser=1;
+	texture1=Type4Beam;
+	texture2=NULL;
+	texture3=NULL;
+	texture4=flare;
+	laserflaresize=8;
+	explosiongenerator=custom:LASER400DBLUE;
+	lineofsight=1;
+	RANGE=750;
+	RELOADTIME=5.8;
+	weaponvelocity=1500;
+	ENERGYPERSHOT=190;
+	areaofeffect=50;
+	soundtrigger=1;
+	soundstart=laser400;
+	soundhit=packohit;
+	targetMoveErrorr=0.4;
+	tolerance=1500;
+	firestarter=20;
+	turret=1;
+	accuracy=800;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	[DAMAGE]
+		{
+		DEFAULT=6070.0;
+		}
+	}
+

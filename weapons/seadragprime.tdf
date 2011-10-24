@@ -1,0 +1,40 @@
+[SEADRAGPRIME]
+{
+  name=BattleshipCannon;
+  accuracy=350;
+  areaofeffect=64;
+  craterboost=1;
+  cegtag=MITLERESPLASMA;
+  cratermult=1;
+  explosiongenerator=custom:FLASH4;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  minbarrelangle=-25;
+  noselfdamage=1;
+  range=1450;
+  reloadtime=0.53;
+  rendertype=4;
+  soundhit=xplomed2;
+  soundstart=cannhvy1;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=400;
+  [DAMAGE]
+  {
+    default=250;
+    anniddm=140;
+    blackhydra=350;
+    bombers=65;
+    fighters=65;
+    gunships=65;
+    hgunships=65;
+    krogoth=350;
+    orcone=350;
+    seadragon=350;
+    subs=5;
+    vradar=65;
+    vtol=65;
+    vtrans=65;
+  }
+}

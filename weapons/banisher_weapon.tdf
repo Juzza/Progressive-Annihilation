@@ -1,0 +1,40 @@
+[TAWF_BANISHER]
+{
+	name=Banisher;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+	model=TAWF114a;
+	range=650;
+	reloadtime=7.5;
+	weapontimer=5;
+	weaponvelocity=400;
+	startvelocity=400;
+	weaponacceleration=70;
+	turnrate=22000;
+	areaofeffect=120;
+	edgeeffectiveness=0.4;
+	soundstart=TAWF114a;
+	soundhit=TAWF114b;
+	firestarter=20;
+	smokedelay=0.01;
+	trajectoryheight=0.45;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	smoketrail=1;
+	tolerance=9000;
+	//explosiongenerator=custom:TESS;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=3000;
+		COMMANDERS=1000;
+		SUBS=5;
+	}
+}

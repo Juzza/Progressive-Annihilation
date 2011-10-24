@@ -1,0 +1,48 @@
+[JETHRO_MISSILE]
+{
+	name=Missiles;
+	rendertype=1;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+	lineofsight=1;
+	turret=1;
+	toairweapon=0;
+	model=missile;
+	range=760;
+	reloadtime=2;
+	weapontimer=5;
+	weaponvelocity=850;
+	startvelocity=650;
+	weaponacceleration=141;
+	turnrate=63000;
+	areaofeffect=128;
+	metalpershot=0;
+	soundstart=rocklit1;
+	soundhit=xplosml2;
+	firestarter=70;
+	smokedelay=0.1;
+	guidance=1;
+	tracks=1;
+	selfprop=1;
+	smoketrail=0;
+	tolerance=9000;
+	explosiongenerator=custom:FLASH2;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	[DAMAGE]
+	{
+		default=20;
+		VTRANS=90;
+		FIGHTERS=90;
+		BOMBERS=90;
+		VRADAR=90;
+		VTOL=90;
+		GUNSHIPS=90;
+		HGUNSHIPS=90;
+		SUBS=5;
+	}
+}

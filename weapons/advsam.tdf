@@ -1,0 +1,54 @@
+[ADVSAM]
+{
+  name=ADVSAM;
+  areaofeffect=240;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.25;
+  energypershot=2000;
+  explosiongenerator=custom:FLASHSMALLBUILDINGEX;
+  firestarter=90;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=0;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=75;
+  model=ADVSAM;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMITTELTRAIL;
+ flighttime=3;
+	noselfdamage=1;
+	proximityPriority=-1.5;
+  range=2400;
+  reloadtime=20;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0;
+  smoketrail=0;
+  soundhit=impact;
+  soundstart=launch;
+  startsmoke=1;
+  startvelocity=1000;
+  stockpile=1;
+  toairweapon=1;
+  tolerance=10000;
+  tracks=1;
+  trajectoryheight=0.55;
+  turnrate=99000;
+  turret=1;
+  weaponacceleration=300;
+  weapontimer=8;
+  weaponvelocity=1800;
+  [DAMAGE]
+  {
+    default=1750;
+    bombers=1750;
+    fighters=1750;
+    gunships=1750;
+    hgunships=1750;
+    vradar=1750;
+    vtol=1750;
+    vtrans=1750;
+  }
+}

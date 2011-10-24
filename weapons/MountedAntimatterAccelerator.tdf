@@ -1,0 +1,87 @@
+[MountedAntimatterAccelerator]
+	{
+	ID=168;
+	name=Mounted antimatter accelerator;
+	rendertype=0;
+	beamlaser=1;
+	beamtime=1.5;
+	rgbcolor=1 0 0;
+	thickness=15;
+	corethickness=0.5;
+	largebeamlaser=1;
+	texture1=Type6Beam;
+	texture2=NULL;
+	texture3=NULL;
+	texture4=EMG;
+	explosiongenerator=custom:DIESMALL;
+	laserflaresize=6;
+	lineofsight=1;
+	RANGE=1500;
+	RELOADTIME=4;
+	weaponvelocity=1500;
+	ENERGYPERSHOT=666.6666667;
+	areaofeffect=100;
+	soundtrigger=1;
+	soundstart=arrfire;
+	soundhit=thunder_clap;
+	burnblow=1;
+	noexplode=0;
+	targetMoveError=0.4;
+	tolerance=100;
+	pitchtolerance=100;
+	firestarter=20;
+	turret=1;
+	startsmoke=1;
+	endsmoke=1;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	[DAMAGE]
+		{
+		DEFAULT=1800;
+		}
+	}
+[MountedAntimatterAcceleratorxXx]
+	{
+	ID=168;
+	name=Mounted antimatter accelerator;
+	rendertype=0;
+	beamlaser=1;
+	beamtime=1.5;
+	rgbcolor=1 0 0;
+	thickness=25;
+	corethickness=0.5;
+	largebeamlaser=1;
+	texture1=Type6Beam;
+	texture2=NULL;
+	texture3=NULL;
+	texture4=EMG;
+	explosiongenerator=custom:DIESMALL;
+	laserflaresize=9;
+	lineofsight=1;
+	RANGE=1800;
+	RELOADTIME=4;
+	weaponvelocity=1500;
+	ENERGYPERSHOT=666.6666667;
+	areaofeffect=100;
+	soundtrigger=1;
+	soundstart=arrfire;
+	soundhit=thunder_clap;
+	burnblow=1;
+	noexplode=0;
+	targetMoveError=0.4;
+	tolerance=100;
+	pitchtolerance=100;
+	firestarter=20;
+	turret=1;
+	startsmoke=1;
+	endsmoke=1;
+	cratermult=0;
+	craterboost=0;
+	impulseboost=0;
+	[DAMAGE]
+		{
+		DEFAULT=8800;
+		}
+	}
+

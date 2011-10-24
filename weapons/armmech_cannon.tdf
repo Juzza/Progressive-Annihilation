@@ -1,0 +1,46 @@
+[ARMMECH_CANNON]
+{
+  name=MechPlasmaCannon;
+  areaofeffect=12;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH2;
+  firestarter=5;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=350;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  reloadtime=0.8;
+  rendertype=4;
+  cegtag=MITLERESPLASMA;
+  soundhit=XploMed2;
+  soundstart=KroGun1;
+  soundwater=SplsSml;
+  startsmoke=1;
+  targetmoveerror=0.15;
+  turret=1;
+  weapontimer=2;
+  weaponvelocity=600;
+  [DAMAGE]
+  {
+    default=185;
+    bombers=60;
+    fighters=60;
+    gunships=60;
+    hgunships=60;
+    subs=5;
+    vradar=60;
+    vtol=60;
+    vtrans=60;
+  }
+}

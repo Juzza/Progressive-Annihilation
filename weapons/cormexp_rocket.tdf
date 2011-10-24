@@ -1,0 +1,43 @@
+[CORMEXP_ROCKET]
+{
+  name=RocketBattery;
+  areaofeffect=128;
+  craterboost=1;
+  cratermult=0.5;
+  explosiongenerator=custom:FLASH96;
+  firestarter=70;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  model=missile;
+  noselfdamage=1;
+  range=650;
+  reloadtime=0.3;
+  rendertype=1;
+  selfprop=1;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+  smokedelay=0.1;
+  smoketrail=0;
+  soundhit=xplosml2;
+  soundstart=rocklit1;
+  startsmoke=1;
+  startvelocity=450;
+  turret=1;
+  weaponacceleration=150;
+  weapontimer=5;
+  weaponvelocity=750;
+  [DAMAGE]
+  {
+    default=375;
+    bombers=65;
+    fighters=65;
+    gunships=65;
+    hgunships=65;
+    subs=5;
+    vradar=65;
+    vtol=65;
+    vtrans=65;
+  }
+}

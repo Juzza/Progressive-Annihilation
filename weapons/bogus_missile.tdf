@@ -1,0 +1,29 @@
+[BOGUS_MISSILE]
+{
+  name=Missiles;
+  areaofeffect=48;
+  craterboost=1;
+  cratermult=1;
+  impulseboost=0;
+  impulsefactor=0;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  metalpershot=0;
+  range=800;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+  reloadtime=0.5;
+  rendertype=1;
+  startvelocity=450;
+  tolerance=9000;
+  smoketrail=0;
+  turnrate=33000;
+  turret=1;
+  weaponacceleration=101;
+  weapontimer=0.1;
+  weaponvelocity=650;
+  [DAMAGE]
+  {
+    default=0;
+  }
+}

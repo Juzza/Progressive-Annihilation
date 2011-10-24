@@ -1,0 +1,1429 @@
+[NUKEOFGODS]//In works of experiemtsn//script released under GPL by !Noruas! & Luke Cieron Fahy -XTA mod- Edited by LL.
+{
+	usedefaultexplosions=0;
+	[SHOCKEWAVE] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=0;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_Shock_Wavex;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[DROPS1] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=0;				  
+		explosionGenerator=custom:explo_doomsday;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[DROPS2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=0;				  
+		explosionGenerator=custom:explo_fire;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[DROPS3] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=0;				  
+		explosionGenerator=custom:BLINDER;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[SHOCKEWAVES] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=5 r70;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_Shock_Wavex;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=13;
+	}
+	[Blastiated] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=0 r0;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=15;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 5, 5 r-10;  
+		delay=5;				  
+		explosionGenerator=custom:PILLILARTIMEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 41, 5 r-10;  
+		delay=15;				  
+		explosionGenerator=custom:PILLILARTIMEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated3] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=25;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR3] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 81, 5 r-10;  
+		delay=25;				  
+		explosionGenerator=custom:PILLILARTIMEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR4] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 121, 5 r-10;  
+		delay=35;				  
+		explosionGenerator=custom:PILLILARTIMEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated4] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=35;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR5] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 161, 5 r-10;  
+		delay=45;				  
+		explosionGenerator=custom:PILLILARTIMEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+
+	[PILLIAR51] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 1, 5 r-10;  
+		delay=45;				  
+		explosionGenerator=custom:PILLILARTIMEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated5] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=45;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated6] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 168, 1 r-2;  
+		delay=55;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated61] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 0, 1 r-2;  
+		delay=55;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated62] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 94, 1 r-2;  
+		delay=55;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATEx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[TOP] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 201, 5 r-10;  
+		delay=60;				  
+		explosionGenerator=custom:TOPx;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[spikesofhell]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-25 r50,-25 r50,-25 r50;
+			width=40;
+			length=1; //60;
+			alpha=1;
+			alphadecay=0.05;
+			color=1.0, 0.7, 0.2;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=30; 
+	}
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=27;
+			alpha=0.22;
+			expansionSpeed=16 r4;
+			color=1.0, 0.8, 0.1;
+		}
+		ground=1;
+		air=1;
+		count=3;
+   		water=1;
+	}
+}
+[BLINDER]
+{
+	// INITIAL SPARK EFFECT
+	[flamey]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 40;
+      		maxheat = 40;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 5;
+      		speed = 0, 0, 0;
+      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 25;
+      		maxheat = 25;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 10;
+      		speed = 0, 1, 0;
+      		pos = r-3 r3, 5, r-3 r3;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+	[groundflash]
+	{
+		flashSize = 3500;
+		flashAlpha = 3;
+		circleGrowth = 6;
+		circleAlpha = 3;
+		ttl = 270;
+		color = 1,0.8,0.7;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=150;
+			length=550;
+			alpha=0.99;
+			alphadecay=0.08;
+			color=1.0,1.0,1.0;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=29; 
+	}
+}
+[explo_doomsday]
+{
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=2;
+			sizemod=.98;
+			pos=0, 0, 0;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=clouds2;
+			colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+			airdrag=.9;
+			particleLife=64;
+			particleLifeSpread=40;
+			numParticles=40;
+			particleSpeed=0;
+			particleSpeedSpread=20;
+			particleSize=6;
+			particleSizeSpread=0;
+			emitRot=0;
+			emitRotSpread=90;
+			directional=0;
+			alwaysVisible=1;
+		}
+		air=1;
+		ground=1;
+		water=1;
+	}
+	[charge]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=16;
+			sizemod=1;
+			pos=0, 0, 0;
+			emitVector=dir;
+			gravity=0, 0, 0;
+			Texture=clouds2;
+			colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+			airdrag=.95;
+			particleLife=8;
+			particleLifeSpread=0;
+			numParticles=3;
+			particleSpeed=0.01;
+			particleSpeedSpread=0;
+			particleSize=1;
+			particleSizeSpread=10;
+			emitRot=0;
+			emitRotSpread=180;
+			directional=1;
+			alwaysVisible=1;
+		}
+		air=1;
+		ground=1;
+		water=1;
+	}
+	[spike]
+	{
+		class=explspike;
+		[properties]
+		{
+			alwaysvisible=1;
+			dir=-1 r2, 0r1, -1r2;
+			width=6;
+			length=300;
+			alpha=0.9;
+			alphadecay=0.05;
+			color=1.0, 0.8, 0.5;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=15;
+	}
+	[blastwave]
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+			delay=1 i1;
+			dir=0,1,0;
+			damage=0 i1;
+			explosionGenerator=custom:explo_doomsday_ring;
+			speed=0,0,0;
+			pos=0,0,0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=50;
+	}
+	[blastsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			alwaysVisible=1;
+			ttl=60;
+			alpha=0.8;
+			expansionSpeed=8;
+			color=1.0, 0.8, 0.5;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=1;
+	}
+[GROUNDFLASH]
+	{
+		flashsize=500;
+		flashalpha=3.5;
+		circlegrowth=0.001;
+		circlealpha=0.35;
+		ttl=220;
+		color=1,0.8,0.7;
+	}
+	[ring1]
+	{
+		class = CBitmapMuzzleFlame;
+
+		[properties]
+      	{
+         	dir = 0, 1, 0.01;
+         	colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+         	pos = 0, 20 i30, 0;
+          	size=1;
+          	length=1;
+          	sizeGrowth=450 i-60;
+          	ttl=48 i12;
+          	frontOffset=0;
+          	sideTexture=null;
+          	frontTexture=flame;
+          	alwaysVisible=1;
+      	}
+		water=1;
+		air=1;
+		ground=1;
+		count=3;
+	}
+}
+
+[explo_doomsday_ring]
+{
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=-1;
+			sizemod=1;
+			pos=d8 y0 i.1 s1 x0,0,1.5808 i.1 s1 x0;
+			emitVector=i.1 s1,.8,1.5808 i.1 s1;
+			gravity=0, 0, 0;
+			Texture=clouds2;
+			colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+			airdrag=.9;
+			particleLife=12 d-.1;
+			particleLifeSpread=6;
+			numParticles=1;
+			particleSpeed=10;
+			particleSpeedSpread=18;
+			particleSize=12;
+			particleSizeSpread=6;
+			emitRot=0;
+			emitRotSpread=10;
+			directional=0;
+			alwaysVisible=1;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=64;
+	}
+	[spikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			alwaysvisible=1;
+			dir=0,1,0;
+			pos=d8 y0 i.05 s1 x0,0,1.5808 i.05 s1 x0;
+			width=3;
+			length=240 d-2;
+			alpha=0.9;
+			alphadecay=0.3;
+			color=1.0, 0.8, 0.5;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=0;//128;
+	}
+}
+[explo_fire]
+{
+	[circle]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=1;
+			sizemod=1;
+			pos=0, 1.0, 0;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=clouds2;
+			colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+			airdrag=.9;
+			particleLife=16;
+			particleLifeSpread=10;
+			numParticles=12;
+			particleSpeed=0;
+			particleSpeedSpread=3.6;
+			particleSize=3;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=90;
+			directional=0;
+			alwaysVisible=1;
+		}
+		air=1;
+		ground=1;
+		water=1;
+	}
+	[spew]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=0, 1.0, 0;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=clouds2;
+			colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+			airdrag=1;
+			particleLife=6;
+			particleLifeSpread=2;
+			numParticles=5 r10;
+			particleSpeed=6;
+			particleSpeedSpread=4;
+			particleSize=3;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=90;
+			directional=1;
+			alwaysVisible=1;
+		}
+		air=1;
+		ground=1;
+		water=1;
+	}
+	[burn]
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+			delay=1 i5;
+			dir=0,1,0;
+			damage=0 i1;
+			explosionGenerator=custom:explo_fire_burn;
+			speed=0,0,0;
+			pos=0,0,0;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=20;
+	}
+}
+
+[explo_fire_burn]
+{
+	[circle]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=1 d-.03;
+			sizemod=1;
+			pos=-30 r60, 1.0, -30 r60;
+			emitVector=0,1,0;
+			gravity=0, .1, 0;
+			Texture=clouds2;
+			colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+			airdrag=.9;
+			particleLife=16;
+			particleLifeSpread=10;
+			numParticles=2;
+			particleSpeed=0;
+			particleSpeedSpread=.6;
+			particleSize=3 d-.1;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=10;
+			directional=0;
+			alwaysVisible=1;
+		}
+		air=1;
+		ground=1;
+		water=1;
+		count=3;
+	}
+	[spew]
+	{
+		class=CSimpleParticleSystem;
+		[properties] {
+			sizegrowth=0;
+			sizemod=1;
+			pos=-30 r60, 1.0, -30 r60;
+			emitVector=0,1,0;
+			gravity=0, 0, 0;
+			Texture=clouds2;
+			colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+			airdrag=1;
+			particleLife=6;
+			particleLifeSpread=2;
+			numParticles=1 r4;
+			particleSpeed=6;
+			particleSpeedSpread=4;
+			particleSize=3;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=30;
+			directional=1;
+			alwaysVisible=1;
+		}
+		air=1;
+		ground=1;
+		water=1;
+	}
+	[shockwave]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+      	{
+         	dir = 0,1,0.00001;
+         	pos = 0, 30, 0;
+         	colorMap=.1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+          	size=1;
+          	length=1;
+          	sizeGrowth=120 d-3;
+          	ttl=24;
+          	frontOffset=-.1;
+          	sideTexture=null;
+          	frontTexture=flame;
+			alwaysVisible=1;
+      	}
+		water=1;
+		air=1;
+		ground=1;
+	}
+}
+[SMALL_NUKE_EXPLOSION_INIATEx]
+{
+	usedefaultexplosions=1;
+	[G_blast]//base explo// 
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.14;
+		sizeMod=1.0;
+		pos=3 r-3, 1 r-2, 3 r-3;  
+		gravity=0, 0, 0;
+	
+		colorMap=1 0.25 0 0.01		0.01 0.01 0.01 0.01 	0 0 0 0.01	 0 0 0 0.01;
+
+		Texture=odd;
+		airdrag=0.87;
+		
+		particleLifeSpread=30; 
+		particleSpeedSpread=18;  
+		particleSizeSpread=10;   
+		
+		particleLife=60; //75;
+		numParticles=135; //150; 
+		particleSpeed=17; 
+		particleSize=32;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=5; 
+		directional=1; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[G_blast2]//half sphere explo// 
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.14;
+		sizeMod=1.0;
+		pos=3 r-3, 1 r-2, 3 r-3;  
+		gravity=0, 0, 0;
+	
+		colorMap=1 0.25 0 0.01 		0.01 0.01 0.01 0.01 	0 0 0 0.01 	0 0 0 0.01;
+
+		Texture=odd;
+		airdrag=0.87;
+		
+		particleLifeSpread=30; 
+		particleSpeedSpread=15;  
+		particleSizeSpread=13;   
+		
+		particleLife=60; //75;
+		numParticles=150; //200; 
+		particleSpeed=17; 
+		particleSize=32;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=0;
+		emitRotSpread=80; 
+		directional=1; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[PILLILARTIMEx]
+{
+	usedefaultexplosions=1;
+	[G_blast]//base explo// 
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.14;
+		sizeMod=1.0;
+		pos=3 r-3, 1 r-2, 3 r-3;  
+		gravity=0, 0.05, 0;
+	
+		colorMap=0.6 0.5 0.4 0.01 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.2 0 0 0 0.01;
+
+
+
+
+		Texture=groundflash43;
+		airdrag=0.5;
+		
+		particleLifeSpread=30; 
+		particleSpeedSpread=18;  
+		particleSizeSpread=10;   
+		
+		particleLife=220; //75;
+		numParticles=12; 
+		particleSpeed=17; 
+		particleSize=32;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=5; 
+		directional=1; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[G_blast2]//half sphere explo// 
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.14;
+		sizeMod=1.0;
+		pos=3 r-3, 1 r-2, 3 r-3;  
+		gravity=0, 0.05, 0;
+	
+	
+		colorMap=0.6 0.5 0.4 0.01 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.2 0 0 0 0.01;
+  
+		Texture=groundflash43;
+		airdrag=0.5;
+		
+		particleLifeSpread=30; 
+		particleSpeedSpread=15;  
+		particleSizeSpread=13;   
+		
+		particleLife=220; //75;
+		numParticles=12; 
+		particleSpeed=17; 
+		particleSize=32;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=0;
+		emitRotSpread=80; 
+		directional=1; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[TOPx]
+{
+	usedefaultexplosions=1;
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=27;
+			alpha=0.22;
+			expansionSpeed=16 r4;
+			color=1.0, 0.9, 0.8;
+		}
+		ground=1;
+		air=1;
+		count=3;
+   		water=1;
+	}
+	[G_TOP]//base explo// 
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.16; //0.14;//
+		sizeMod=1.0;
+		pos=3 r-3, 1 r-2, 3 r-3;  
+		gravity=0, 0, 0; //0, 0.05, 0;
+	
+	
+		//colorMap=0.6 0.5 0.4 0.01 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.2 0 0 0 0.01;
+		colorMap=0 0 0 0.01 0.2 0.2 0.2 0.9 0 0 0 0.01;
+
+
+
+		Texture=groundflash43;
+		airdrag=0.86; //0.7;//
+		
+		particleLifeSpread=30; 
+		particleSpeedSpread=24; //28;//  
+		particleSizeSpread=10;   
+		
+		particleLife=240; //168; //160; //75;//
+		numParticles=190; //190; //90;//
+		particleSpeed=25; //32;// 
+		particleSize=32;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=5; 
+		directional=1; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[G_RTOP2]//half sphere explo// 
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.18; //0.14;//
+		sizeMod=1.0;
+		pos=3 r-3, 1 r-2, 3 r-3;  
+		gravity=0, 0, 0; //0, 0.05, 0;
+	
+	
+		//colorMap=0.6 0.5 0.4 0.01 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.2 0 0 0 0.01;
+		colorMap=0 0 0 0.01 0.2 0.2 0.2 0.9 0 0 0 0.01;
+
+		Texture=groundflash43;
+		airdrag=0.86; //0.7;//
+		
+		particleLifeSpread=30; 
+		particleSpeedSpread=24; //28;//  
+		particleSizeSpread=10;   
+		
+		particleLife=240; //168; //160; //75;
+		numParticles=180; //90;// 
+		particleSpeed=24; //32;// 
+		particleSize=32;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=0;
+		emitRotSpread=80; 
+		directional=1; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+[SMALL_NUKE_EXPLOSION_Shock_wavex]
+{
+[G_smokewave1] ////////!!!Shockwave explosion!!!//////////////////////textures and script released under GPL by Luke Cieron Fahy XTA mod/////////////////////
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.16;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+	
+			colorMap=1 0.3 0.2 0.01 	1 0.5 0.2 0.01 	0.1 0.1 0.1 0.01 	0.1 0.1 0.1 0.01 	0 0 0 0.01;
+
+		Texture=kburst;
+		airdrag=0.95;
+		
+		particleLifeSpread=1; 
+		particleSpeedSpread=4;  
+		particleSizeSpread=1;   
+		
+		particleLife=38;
+		numParticles=32; 
+		particleSpeed=16; 
+		particleSize=16;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=5; 
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[G_smokewave2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.16; 
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+	
+			colorMap=1 0.3 0.2 0.01 	1 0.5 0.2 0.01	 0.1 0.1 0.1 0.01 	0.1 0.1 0.1 0.01 	0 0 0 0.01;
+
+		Texture=kburst;
+		airdrag=0.95;
+		
+		particleLifeSpread=1; 
+		particleSpeedSpread=4;  
+		particleSizeSpread=1;   
+		
+		particleLife=38;
+		numParticles=32; 
+		particleSpeed=16; 
+		particleSize=16;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=5; 
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[G_smokewave3]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.16;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+			colorMap=1 0.3 0.2 0.01 	1 0.5 0.2 0.01 	0.1 0.1 0.1 0.01 	0.1 0.1 0.1 0.01 	0 0 0 0.01;
+
+		Texture=kburst;
+		airdrag=0.95;
+		
+		particleLifeSpread=1; 
+		particleSpeedSpread=4;  
+		particleSizeSpread=1;   
+		
+		particleLife=38;
+		numParticles=32; 
+		particleSpeed=16; 
+		particleSize=16;
+		
+		
+		emitVector=0, 1, 0;
+		emitRot=80;
+		emitRotSpread=5; 
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+[G_smokewave4]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.16;
+		sizeMod=1.0;
+		pos=0, 1, 0; 
+		gravity=0, 0, 0;
+		
+			colorMap=1 0.3 0.2 0.01 	1 0.5 0.2 0.01	 0.1 0.1 0.1 0.01 	0.1 0.1 0.1 0.01 	0 0 0 0.01;
+
+		Texture=kburst;
+		airdrag=0.95;
+		
+		particleLifeSpread=1; 
+		particleSpeedSpread=4;  
+		particleSizeSpread=1;   
+		
+		particleLife=38;
+		numParticles=32; 
+		particleSpeed=16; 
+		particleSize=16;
+		
+		
+		emitVector=0, 1, 0; 
+		emitRot=80;
+		emitRotSpread=5; 
+		directional=0; 
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+[NUKE_EXPLOSION_FX_COMx]//In works of experiemtsn//script released under GPL by !Noruas! & Luke Cieron Fahy -XTA mod-
+{
+	usedefaultexplosions=0;
+	[SHOCKEWAVE] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=0;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_Shock_Wave;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=0 r0;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATE;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=15;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATE;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 5, 5 r-10;  
+		delay=0;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 41, 5 r-10;  
+		delay=5;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[Blastiated3] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=1 r-2, 1 r-2, 1 r-2;  
+		delay=25;				  
+		explosionGenerator=custom:SMALL_NUKE_EXPLOSION_INIATE;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR3] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 81, 5 r-10;  
+		delay=10;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR4] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 121, 5 r-10;  
+		delay=15;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR5] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 161, 5 r-10;  
+		delay=20;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+
+	[PILLIAR51] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 1, 5 r-10;  
+		delay=25;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[TOP] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 201, 5 r-10;  
+		delay=30;				  
+		explosionGenerator=custom:TOP;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[spikesofhell]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-25 r50,-25 r50,-25 r50;
+			width=40;
+			length=1; //60;
+			alpha=1;
+			alphadecay=0.05;
+			color=1.0, 0.7, 0.2;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=30; 
+	}
+	[WIndsphere]
+	{
+		class=CSpherePartSpawner;
+		[properties]
+		{
+			ttl=27;
+			alpha=0.22;
+			expansionSpeed=16 r4;
+			color=1.0, 0.8, 0.1;
+		}
+		ground=1;
+		air=1;
+		count=3;
+   		water=1;
+	}
+}
+
+[PUFFYx]//In works of experiemtsn//script released under GPL by !Noruas! & Luke Cieron Fahy -XTA mod-
+{
+	usedefaultexplosions=0;
+	[PILLIAR] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 25, 5 r-10;  
+		delay=19;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=0;
+	water=0;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, 0, 5 r-10;  
+		delay=15;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=0;
+	water=0;
+	ground=1;
+	count=1;
+	}
+	[PILLIAR3] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=5 r-10, -15 r5, 5 r-10;  
+		delay=15;				  
+		explosionGenerator=custom:PILLILARTIME;
+		}
+	air=1;
+	water=0;
+	ground=0;
+	count=1;
+	}
+	[spikesofhell]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=40;
+			length=1; //60;
+			alpha=1;
+			alphadecay=0.05;
+			color=1.0, 0.8, 0.5;
+
+		}
+		air=1;
+		water=1;
+		ground=1;
+  		count=15; 
+	}
+	[dirtsplash]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=3;
+			sizeMod=1.0;
+			pos=0, 1, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0.125, 0;
+			colorMap=0.5 0.35 0.1 0.1  0.5 0.35 0.1 .01  0.1 0.1 0.1 .01	 0 0 0 0.01;
+			Texture=odd;
+			airdrag=0.8;
+			particleLife=37.0;
+			particleLifeSpread=5;
+			numParticles=5;
+			particleSpeed=0;
+			particleSpeedSpread=19;
+			particleSize=4.0;
+			particleSizeSpread=1;
+			emitRot=0;
+			emitRotSpread=25;
+			directional=1;
+			alwaysvisible=1;
+		}
+		air=0;
+		water=0;
+		ground=1;
+		count=1;
+	}
+}
+

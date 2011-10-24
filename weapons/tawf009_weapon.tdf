@@ -1,0 +1,40 @@
+[TAWF009_WEAPON]
+{
+  name=AdvTorpedo;
+  areaofeffect=16;
+  avoidfriendly=0;
+  burnblow=1;
+  collidefriendly=0;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH3;
+  cegtag=TORPEDOTRAIL;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  model=advtorpedo;
+  noselfdamage=1;
+  propeller=1;
+  range=880;
+  reloadtime=3.5;
+  rendertype=1;
+  selfprop=1;
+  soundhit=xplodep1;
+  soundstart=torpedo1;
+  startvelocity=150;
+  tolerance=32767;
+  tracks=1;
+  turnrate=1750;
+  turret=0;
+  waterweapon=1;
+  weaponacceleration=25;
+  weapontimer=3;
+  weaponvelocity=250;
+  [DAMAGE]
+  {
+    default=1500;
+    subs=375;
+  }
+}

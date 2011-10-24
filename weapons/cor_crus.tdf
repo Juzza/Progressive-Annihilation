@@ -1,0 +1,41 @@
+[COR_CRUS]
+{
+  name=HighEnergyLaser;
+  areaofeffect=8;
+  beamlaser=1;
+  beamtime=0.15;
+  corethickness=0.2;
+  craterboost=1;
+  cratermult=1;
+  energypershot=50;
+  explosiongenerator=custom:FLASH1;
+  firestarter=90;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=785;
+  reloadtime=0.9;
+  rendertype=0;
+  rgbcolor=0 1 0;
+  cegtag=LASERGLOWGREEN;
+  soundhit=lasrhit1;
+  soundstart=Lasrmas2;
+  targetmoveerror=0.175;
+  thickness=3;
+  turret=1;
+  weaponvelocity=700;
+  [DAMAGE]
+  {
+    default=180;
+    bombers=44;
+    fighters=44;
+    gunships=44;
+    hgunships=44;
+    subs=5;
+    vradar=44;
+    vtol=44;
+    vtrans=44;
+  }
+}

@@ -1,0 +1,72 @@
+[CORFIXED_GUN_HIGH]
+{
+  name=PlasmaCannon;
+  accuracy=750;
+  areaofeffect=208;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  explosiongenerator=custom:FLASH96;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  noselfdamage=1;
+  range=1245;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  reloadtime=7;
+  rendertype=4;
+  soundhit=xplomed2;
+  soundstart=cannhvy5;  
+cegtag=MITLERESPLASMA;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=440;
+  [DAMAGE]
+  {
+    default=463;
+    subs=5;
+  }
+}
+[ARMFIXED_GUN_HIGH]
+{
+  name=PlasmaCannon;
+  accuracy=750;
+  areaofeffect=208;
+  craterboost=1;
+  cratermult=1;
+  edgeeffectiveness=0.5;
+  explosiongenerator=custom:FLASH96;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  noselfdamage=1;
+  range=1245;
+  reloadtime=7;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  rendertype=4;
+  soundhit=xplomed2;
+  soundstart=cannhvy5;  
+cegtag=MITLERESPLASMA;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=440;
+  [DAMAGE]
+  {
+    default=463;
+    subs=5;
+  }
+}

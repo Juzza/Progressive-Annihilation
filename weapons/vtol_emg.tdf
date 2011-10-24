@@ -1,0 +1,53 @@
+[VTOL_EMG]
+{
+  name=E.M.G.;
+  alphadecay=0.7;
+  areaofeffect=8;
+  beamweapon=1;
+  burst=3;
+  burstrate=0.1;
+  corethickness=0.35;
+  craterboost=1;
+  cratermult=1;
+  duration=0.025;
+  endsmoke=0;
+  explosiongenerator=custom:BRAWLIMPACTS;
+  cegtag=emgpeebig;
+  impulseboost=0;
+  impulsefactor=1;
+  intensity=0.8;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  pitchtolerance=12000;
+  range=380;
+  reloadtime=0.475;
+  rendertype=4;
+  rgbcolor=1 0.5 0;
+  separation=2;
+  size=1.5;
+  soundstart=brawlemg;
+  sprayangle=1024;
+  stages=10;
+  startsmoke=0;
+  sweepfire=0;
+  thickness=2;
+  tolerance=6000;
+  turret=0;
+  weapontimer=1;
+  weaponvelocity=450;
+  [DAMAGE]
+  {
+    default=16;
+    bombers=2;
+    fighters=2;
+    flakboats=8;
+    flaks=8;
+    gunships=2;
+    hgunships=2;
+    subs=1;
+    vradar=2;
+    vtol=2;
+    vtrans=2;
+  }
+}

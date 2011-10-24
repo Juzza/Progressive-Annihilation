@@ -1,0 +1,45 @@
+[KBOT_ROCKET]
+{
+	name=HeavyRocket;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+	model=missile;
+	range=475;
+	reloadtime=3.8;
+Weapontype=MissileLauncher;
+  cegTag=KBOTMISSILETRAIL;
+	weapontimer=3;
+	weaponvelocity=190;
+	startvelocity=190;
+	weaponacceleration=100;
+	areaofeffect=48;
+	soundstart=rocklit1;
+	soundhit=xplosml2;
+	firestarter=70;
+	smokedelay=.1;
+	guidance=0;
+	tracks=0;
+	selfprop=1;
+	smoketrail=0;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseBoost=0;
+	cratermult=1;
+	craterboost=0;
+	NoSelfDamage=1;
+	soundstartvolume=7;
+	soundhitvolume=8;
+	[DAMAGE]
+	{
+		default=157;
+		VTRANS=15;
+		FIGHTERS=15;
+		BOMBERS=15;
+		GUNSHIPS=15;
+		HGUNSHIPS=15;
+		VRADAR=15;
+		VTOL=15;
+		SUBS=5;
+	}
+}

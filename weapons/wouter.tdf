@@ -1,0 +1,43 @@
+[WOUTER_ROCKETS]
+	{
+  name=HeavyRockets;
+  areaofeffect=96;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:STARFIRE;
+  firestarter=70;
+  flighttime=600;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=0;
+  model=fmdmisl;
+  noselfdamage=1;
+  range=800;
+  reloadtime=2.75;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0.1;
+  cegTag=RAKETENMITTELTRAIL;
+  smoketrail=0;
+  soundhit=xplosml2;
+  soundstart=rocklit1;
+  startsmoke=1;
+  startvelocity=200;
+  tolerance=9000;
+  tracks=1;
+  turnrate=50000;
+  twophase=1;
+  vlaunch=1;
+  weaponacceleration=150;
+  weapontimer=2;
+  weaponvelocity=800;
+  [DAMAGE]
+  {
+    default=360;
+    subs=5;
+  }
+}
+

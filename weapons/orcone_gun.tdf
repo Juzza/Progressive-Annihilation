@@ -1,0 +1,44 @@
+[ORCONE_GUN]
+{
+  name=SuperEMG;
+  accuracy=300;
+  alphadecay=0.7;
+  areaofeffect=24;
+  burnblow=1;
+  burst=3;
+  burstrate=0.09;
+  craterboost=0.6;
+  cegtag=EMGPEEBIG;
+  cratermult=0.6;
+  explosiongenerator=custom:FLASH1;
+  impulseboost=0;
+  impulsefactor=1;
+  intensity=0.7;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  noselfdamage=1;
+  range=600;
+  reloadtime=0.28;
+  rendertype=4;
+  rgbcolor=1 0.95 0.4;
+  separation=1.5;
+  soundhit=xplomed4;
+  soundstart=Krogun1;
+  sprayangle=300;
+  stages=10;
+  startsmoke=1;
+  turret=1;
+  weaponvelocity=900;
+  [DAMAGE]
+  {
+    default=400;
+    bombers=55;
+    fighters=55;
+    gunships=55;
+    hgunships=55;
+    subs=5;
+    vradar=55;
+    vtol=55;
+    vtrans=55;
+  }
+}

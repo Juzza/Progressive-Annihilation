@@ -1,0 +1,40 @@
+[LUGER_WEAPON]
+{
+	name=PlasmaCannon;
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	minbarrelangle=-10;
+	range=1500;
+	reloadtime=20;
+	weaponvelocity=500;
+	areaofeffect=65;
+	cegtag=MITLERESPLASMA;
+	edgeeffectiveness=0.5;
+	soundstart=cannhvy2;
+	soundhit=xplomed4;
+	accuracy=900;
+	sprayangle=900;
+	startsmoke=1;
+	impulsefactor=1;
+	impulseboost=0;
+	cratermult=1;
+	craterboost=1;
+	noselfdamage=1;
+	explosiongenerator=custom:LLMiniPlasma;
+	burst=4;
+	burstrate=1.5;
+	[DAMAGE]
+	{
+		default=750;
+		COMMANDERS=500;
+		VTRANS=17;
+		FIGHTERS=17;
+		BOMBERS=17;
+		GUNSHIPS=17;
+		HGUNSHIPS=17;
+		VRADAR=17;
+		VTOL=17;
+		SUBS=5;
+	}
+}

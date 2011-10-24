@@ -1,0 +1,49 @@
+[ARMKAM_WEAPON]
+{
+  name=Beamlaser;
+  areaofeffect=8;
+  beamlaser=1;
+  beamtime=0.12;
+  corethickness=0.57;
+  craterboost=1;
+  cratermult=1;
+  endsmoke=0;
+  explosiongenerator=custom:BEAMERRAY;
+  cegtag=LASERGLOWBLAU;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  largebeamlaser=1;
+  laserflaresize=10;
+  lineofsight=1;
+  noselfdamage=1;
+  pitchtolerance=12000;
+  range=350;
+  reloadtime=0.1;
+  rendertype=0;
+  rgbcolor=0 0 1;
+  soundhit=burn02;
+  soundstart=build2;
+  startsmoke=0;
+  sweepfire=0;
+  texture1=largelaser;
+  texture2=flare;
+  texture3=flare;
+  texture4=smallflare;
+  thickness=7.5;
+  tolerance=6000;
+  turret=0;
+  [DAMAGE]
+  {
+    default=9;
+    bombers=1;
+    commanders=9;
+    fighters=1;
+    gunships=1;
+    hgunships=1;
+    subs=1;
+    vradar=1;
+    vtol=1;
+    vtrans=1;
+  }
+}

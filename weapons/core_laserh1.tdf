@@ -1,0 +1,45 @@
+[CORE_LASERH1]
+{
+  name=HighEnergyLaser;
+  areaofeffect=14;
+  beamweapon=1;
+  canattackground=0;
+  corethickness=0.4;
+  craterboost=1;
+  cratermult=1;
+  duration=0.05;
+  energypershot=100;
+  explosiongenerator=custom:COREGREEN;
+  firestarter=90;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  laserflaresize=10;
+  cegtag=LASERGLOWGREEN;
+  lineofsight=1;
+  loddistance=10000;
+  noselfdamage=1;
+  range=620;
+  reloadtime=0.4;
+  rendertype=0;
+  rgbcolor=0 1 0;
+  soundhit=lasrhit1;
+  soundstart=Lasrmas2;
+  targetmoveerror=0.2;
+  thickness=6;
+  tolerance=500;
+  turret=1;
+  weaponvelocity=2500;
+  [DAMAGE]
+  {
+    default=400;
+    bombers=4;
+    fighters=4;
+    gunships=4;
+    hgunships=4;
+    subs=2;
+    vradar=4;
+    vtol=4;
+    vtrans=4;
+  }
+}

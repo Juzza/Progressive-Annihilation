@@ -1,0 +1,75 @@
+[COAX_DEPTHCHARGE]
+{
+  name=DepthCharge;
+  avoidfriendly=0;
+  burnblow=1;
+  collidefriendly=0;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH2;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  model=depthcharge;
+  noselfdamage=1;
+  propeller=1;
+  range=580;
+  reloadtime=1.8;
+  rendertype=1;
+  selfprop=1;
+  soundhit=xplodep2;
+  soundstart=torpedo1;
+  startvelocity=250;
+  tracks=1;
+  turnrate=18000;
+  turret=1;
+  waterweapon=1;
+  weaponacceleration=25;
+  weapontimer=6;
+  weaponvelocity=350;
+  [DAMAGE]
+  {
+    default=250;
+    dl=5;
+  }
+}
+[COAX_DEPTHCHARGE666]
+{
+  name=DepthCharge;
+  avoidfriendly=0;
+  burnblow=1;
+  collidefriendly=0;
+  craterboost=1;
+  cegtag=TORPEDOTRAIL;
+  cratermult=1;
+  explosiongenerator=custom:FLASH2;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=0;
+  lineofsight=1;
+  model=torpedo;
+  noselfdamage=1;
+  propeller=1;
+  range=1250;
+  reloadtime=1.8;
+  rendertype=1;
+  selfprop=1;
+  soundhit=xplodep2;
+  soundstart=torpedo1;
+  startvelocity=250;
+  tracks=1;
+  turnrate=18000;
+  turret=1;
+  waterweapon=1;
+  weaponacceleration=25;
+  weapontimer=6;
+  weaponvelocity=350;
+  [DAMAGE]
+  {
+    default=250;
+    dl=5;
+  }
+}

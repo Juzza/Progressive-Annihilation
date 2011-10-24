@@ -1,0 +1,36 @@
+[COR_SUPERGUN]
+	{
+	ID=140;
+	name=Supergun;//more like subpar
+	rendertype=4;
+	ballistic=1;
+	turret=1;
+	Stages=0;
+
+	soundtrigger=1;
+	burst=40;
+	burstrate=0;
+	sprayangle=100;
+	range=64000;
+	weaponvelocity=2540;
+	areaofeffect=75;//190
+	reloadtime=55;
+	energypershot=10000;
+  cegtag=GROßESPLASMA;
+	soundstart=xplonuk3;
+	soundhit=AMATIR;
+
+	firestarter=75;
+	accuracy=10;
+	aimrate=2500;
+	tolerance=300;
+	holdtime=10;
+
+	startsmoke=1;
+	CollideFriendly=0;
+	AvoidFriendly=0;
+	[DAMAGE]
+		{
+		default=3500;
+		}
+	}

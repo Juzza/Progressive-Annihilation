@@ -1,0 +1,39 @@
+[MECH_RAPIDLASER]
+{
+  name=RapidFireLaserTank;
+  areaofeffect=12;
+  beamlaser=1;
+  beamtime=0.01;
+  color=126;
+  color2=128;
+  corethickness=0.35;
+  energypershot=4;
+  explosionart=explode5;
+  explosiongaf=fx;
+  firestarter=100;
+  interceptedbyshieldtype=0;
+  laserflaresize=6;
+  lineofsight=1;
+  noselfdamage=1;
+  range=390;
+  reloadtime=0.1;
+  rendertype=0;
+  soundstart=Lasrfir2;
+  targetmoveerror=0;
+  thickness=5;
+  tolerance=18000;
+  turret=1;
+  weaponvelocity=2200;
+  [DAMAGE]
+  {
+    default=100;
+    bombers=8;
+    fighters=8;
+    gunships=8;
+    hgunships=8;
+    subs=5;
+    vradar=8;
+    vtol=8;
+    vtrans=8;
+  }
+}

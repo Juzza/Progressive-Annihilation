@@ -1,0 +1,33 @@
+[COM_PARALYZER]
+{
+	name=Rockets;
+	rendertype=1;
+	lineofsight=1;
+	turret=1;
+	range=475;
+	reloadtime=3.8;
+	weapontimer=2;
+	weaponvelocity=990;
+	startvelocity=190;
+	weaponacceleration=999;
+	areaofeffect=48;
+	metalpershot=0;
+	firestarter=70;
+	smokedelay=0.1;
+	selfprop=1;
+	smoketrail=0;
+	startsmoke=0;
+	impulsefactor=0.123;
+	impulseboost=0.123;
+	cratermult=0;
+	texture1=notexture;
+	craterboost=0;
+	noselfdamage=0;
+	paralyzer=1;
+	paralyzetime=12;
+	explosiongenerator=custom:KROGCRUSHE;
+	[DAMAGE]
+	{
+		default=3157;
+	}
+}

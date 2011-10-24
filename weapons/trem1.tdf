@@ -1,0 +1,41 @@
+[TREM1]
+{
+  name=RapidArtillery;
+  accuracy=1400;
+  areaofeffect=160;
+  craterboost=1;
+  cratermult=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  minbarrelangle=-35;
+  noselfdamage=1;
+  range=1275;
+  reloadtime=0.4;
+  rendertype=4;
+  soundhit=xplomed4;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  cegtag=MITLERESPLASMA;
+  soundstart=cannhvy2;
+  turret=1;
+  weaponvelocity=395;
+  [DAMAGE]
+  {
+    default=295;
+    bombers=19;
+    fighters=19;
+    gunships=19;
+    hgunships=19;
+    subs=5;
+    vradar=19;
+    vtol=19;
+    vtrans=19;
+  }
+}

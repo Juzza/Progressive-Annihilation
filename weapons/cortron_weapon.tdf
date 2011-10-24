@@ -1,0 +1,47 @@
+[CORTRON_WEAPON]
+{
+  name=TacticalNuke;
+  areaofeffect=512;
+  commandfire=1;
+  craterboost=4;
+  cratermult=1.75;
+  edgeeffectiveness=0.4;
+  energypershot=23437;
+  explosiongenerator=custom:FLASHNUKE480;
+  firestarter=0;
+  flighttime=400;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=750;
+  model=empmisl;
+  noautorange=1;
+  noselfdamage=1;
+  propeller=1;
+  range=3000;
+  reloadtime=90;
+  rendertype=1;
+  selfprop=1;
+  shakeduration=1.5;
+  shakemagnitude=32;
+  smokedelay=0.1;
+  smoketrail=0;
+  cegTag=RAKETENGROßTRAIL;
+  soundhit=xplomed4;
+  soundstart=misicbm1;
+  startsmoke=1;
+  stockpile=1;
+  tolerance=4000;
+  turnrate=32768;
+  twophase=1;
+  vlaunch=1;
+  weaponacceleration=180;
+  weapontimer=4;
+  weaponvelocity=1200;
+  [DAMAGE]
+  {
+    default=2500;
+  }
+}

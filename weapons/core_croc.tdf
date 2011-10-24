@@ -1,0 +1,40 @@
+[CORE_CROC]
+{
+  name=PlasmaCannon;
+  areaofeffect=64;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH64;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=1;
+  cegtag=MITLERESPLASMA;
+  noselfdamage=1;
+	rgbcolor=1 0.8 0.5;
+	stages=20;
+  	separation=0.45;
+  	alphadecay=0.3;
+  	sizedecay=-0.15;
+  	nogap=1;
+	size=1;
+	color=3;
+  range=440;
+  reloadtime=0.9;
+  rendertype=4;
+  soundhit=xplomed4;
+  soundstart=cannon2;
+  turret=1;
+  weaponvelocity=260;
+  [DAMAGE]
+  {
+    default=116;
+    bombers=29;
+    fighters=29;
+    gunships=29;
+    hgunships=29;
+    subs=5;
+    vradar=29;
+    vtol=29;
+    vtrans=29;
+  }
+}

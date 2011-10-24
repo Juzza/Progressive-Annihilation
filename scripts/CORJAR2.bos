@@ -1,0 +1,159 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  ground, body, head, barrel, flare, l_leg, r_leg;
+
+static-var  restore_delay;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM				4
+
+#define SMOKEPIECE1 body
+
+#include "SmokeUnit.h"
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while( TRUE )
+	{
+		move l_leg to y-axis [1.000000] speed [8.000000];
+		move l_leg to z-axis [2.000000] speed [5.5];
+		turn body to z-axis <-10.000000> speed <25.000000>;
+		sleep 420;
+		move l_leg to y-axis [0.000000] speed [10.000000];
+		turn body to z-axis <0.000000> speed <40.000000>;
+		sleep 300;
+		move l_leg to z-axis [-1.000000] speed [4.2];
+		move r_leg to y-axis [1.000000] speed [8];
+		move r_leg to z-axis [2.000000] speed [5.5];
+		turn body to z-axis <10.000000> speed <25.000000>;
+		sleep 420;
+		move r_leg to y-axis [0.000000] speed [10.000000];
+		turn body to z-axis <0.000000> speed <40.000000>;
+		sleep 300;
+		move r_leg to z-axis [-1.000000] speed [4.2];
+	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	turn body to z-axis <0.000000> speed <40>;
+	move l_leg to y-axis [0.000000] speed [10];
+	move r_leg to y-axis [0.000000] speed [10];
+	move l_leg to z-axis [0.000000] speed [5.5];
+	move r_leg to z-axis [0.000000] speed [5.5];
+}
+
+Create()
+{
+	hide flare;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script SmokeUnit();
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = head;
+}
+
+QueryPrimary(piecenum)
+{
+	piecenum = flare;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn head to y-axis <0.000000> speed <90.000000>;
+	turn barrel to x-axis <0.000000> speed <45.000000>;
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn head to y-axis heading speed <300.000000>;
+	turn barrel to x-axis <0.000000> - pitch speed <70.000000>;
+	wait-for-turn head around y-axis;
+	wait-for-turn barrel around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FirePrimary()
+{
+	move barrel to z-axis [-1.500000] speed [50.000000];
+	show flare;
+	wait-for-move barrel along z-axis;
+	move barrel to z-axis [0.000000] speed [2.000000];
+	sleep 15;
+	hide flare;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode ground type BITMAPONLY | BITMAP1;
+		explode body type BITMAPONLY | BITMAP2;
+		explode head type BITMAPONLY | BITMAP3;
+		explode barrel type BITMAPONLY | BITMAP4;
+		explode flare type BITMAPONLY | BITMAP1;
+		explode l_leg type BITMAPONLY | BITMAP2;
+		explode r_leg type BITMAPONLY | BITMAP3;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode ground type BITMAPONLY | BITMAP2;
+		explode body type BITMAPONLY | BITMAP4;
+		explode head type BITMAPONLY | BITMAP2;
+		explode barrel type FALL | BITMAP2;
+		explode flare type FALL | EXPLODE_ON_HIT | BITMAP2;
+		explode l_leg type BITMAPONLY | BITMAP4;
+		explode r_leg type BITMAPONLY | BITMAP2;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode ground type BITMAPONLY | BITMAP1;
+		explode body type SHATTER | BITMAP2;
+		explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode l_leg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode r_leg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		return (0);
+	}
+	corpsetype = 3;
+	explode ground type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode body type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode head type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode barrel type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode flare type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode l_leg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode r_leg type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+}

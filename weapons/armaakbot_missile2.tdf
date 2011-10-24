@@ -1,0 +1,46 @@
+[ARMAAKBOT_MISSILE2]
+{
+  name=Missiles;
+  areaofeffect=24;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH2;
+  firestarter=70;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=0;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=0;
+  model=missile;
+  noselfdamage=1;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+  range=770;
+  reloadtime=1.07;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0.1;
+  smoketrail=0;
+  soundhit=xplosml2;
+  soundhitvolume=7.5;
+  soundstart=rocklit1;
+  soundstartvolume=7.5;
+  startsmoke=1;
+  startvelocity=650;
+  toairweapon=1;
+  tolerance=9000;
+  tracks=1;
+  turnrate=63000;
+  turret=1;
+  weaponacceleration=125;
+  weapontimer=5;
+  weaponvelocity=900;
+  [DAMAGE]
+  {
+    default=68;
+    gunships=51;
+    hgunships=51;
+    subs=5;
+  }
+}

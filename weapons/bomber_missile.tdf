@@ -1,0 +1,41 @@
+[BOMBER_MISSILE]
+{
+  name=Missiles;
+  areaofeffect=16;
+  craterboost=1;
+  cratermult=1;
+  explosiongenerator=custom:FLASH2;
+  firestarter=70;
+  guidance=1;
+  impulseboost=0;
+  impulsefactor=1;
+  interceptedbyshieldtype=2;
+  lineofsight=1;
+  metalpershot=0;
+  model=missile;
+  noselfdamage=1;
+  range=640;
+  reloadtime=1;
+  rendertype=1;
+  selfprop=1;
+  smokedelay=0.1;
+  smoketrail=0;
+Weapontype=MissileLauncher;
+  cegTag=RAKETENMINITRAIL;
+  soundhit=xplosml2;
+  soundstart=rocklit1;
+  startsmoke=1;
+  startvelocity=650;
+  tolerance=9000;
+  tracks=1;
+  turnrate=63000;
+  turret=1;
+  weaponacceleration=150;
+  weapontimer=5;
+  weaponvelocity=850;
+  [DAMAGE]
+  {
+    default=95;
+    subs=5;
+  }
+}
