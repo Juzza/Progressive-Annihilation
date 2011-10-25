@@ -155,11 +155,11 @@ else
     particleList[particleCnt] = {
       class        = 'SimpleParticles2',
       colormap     = { {1, 1, 1, 0.01}, {0, 0, 0, 0.01} },
-      count        = 20,
+      count        = 0,
       --delay        = 20,
-      life         = weaponRange / 20,
-      lifeSpread   = 20,
-      delaySpread  = 15,
+      life         = 0,
+      lifeSpread   = 0,
+      delaySpread  = 0,
 
       force        = {0,1,0},
       --forceExp     = 0.2,
