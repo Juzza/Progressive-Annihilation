@@ -81,7 +81,7 @@ SetMaxReloadTime(Func_Var_1)
 
 RestoreAfterDelay()
 {
-	sleep 7000;
+	sleep 8500;
 	signal SIG_LOCK;
 	turn turret to y-axis <0.000000> speed (get 1030);
 	turn launcher to x-axis <0.000000> speed (get 1031);

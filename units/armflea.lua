@@ -94,7 +94,7 @@ return {
 		},
 		weapondefs = {
 			flea_laser = {
-				areaofeffect = 90,
+				areaofeffect = 100,
 				beamtime = 0.10000000149012,
 				burstrate = 0.20000000298023,
 				corethickness = 0.10000000149012,

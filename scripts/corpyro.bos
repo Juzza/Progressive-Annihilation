@@ -565,8 +565,8 @@ AimPrimary(heading, pitch)
 		sleep 100;
 	}
 	turn torso to y-axis heading speed (get 1030);
-	turn luparm to x-axis <12.000000> - pitch speed (get 1031);
-	turn ruparm to x-axis <12.000000> - pitch speed (get 1031);
+	turn luparm to x-axis <10.000000> - pitch speed (get 1031);
+	turn ruparm to x-axis <10.000000> - pitch speed (get 1031);
 	wait-for-turn torso around y-axis;
 	wait-for-turn luparm around x-axis;
 	wait-for-turn ruparm around x-axis;
