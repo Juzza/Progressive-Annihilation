@@ -14,7 +14,7 @@ return {
 		buildtime = 52000,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 0 -2",
-		collisionvolumescales = "40 57 40",
+		collisionvolumescales = "60 57 60",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		corpse = "DEAD",

@@ -3,15 +3,19 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
+#define MAX_UNLOAD_RADIUS [300]
+#define UNLOAD_TIME 10
+
 piece  base, body_right, rdoor1, rdoor2, body_left, ldoor1, ldoor2, wakes,
        w1, w2, w3, w4, blast, load_shoulder, load_arm, unload_shoulder,
        unload_arm, goal_shoulder, goal_arm, wheels, wheel1, wheel2, wheel3, wheel4,
        wheel5, wheel6, wheel7, wheel8, bwheel1, bwheel2, bwheel3, bwheel4,
        front, rear, supportbase, supportleft1, supportleft2, supportmid1, supportmid2, supportright1,
-       supportright2, translinkleft, translinkmid, translinkright, flare1, flare2, flare3;
-
+	   supportright2, translinkleft, translinkmid, translinkright, flare1, flare2, flare3;
+       
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, Static_Var_4, Static_Var_5,
             Static_Var_6, Static_Var_7, Static_Var_8, Static_Var_9;
+
 
 
 StartMoving()
@@ -249,8 +253,19 @@ AimFromTertiary(piecenum)
 	piecenum = flare3;
 }
 
-TransportDrop(Func_Var_1)
+TransportDrop(Func_Var_1,xz,unitid)
 {
+		if(get XZ_HYPOT(get PIECE_XZ(base) - get UNIT_XZ(unitid))<=MAX_UNLOAD_RADIUS)
+		turn unload_shoulder to y-axis get XZ_ATAN(get PIECE_XZ(unload_shoulder) - xz) now;
+		move unload_arm to z-axis 0 now;
+		move unload_arm to y-axis get PIECE_Y(base) - get PIECE_Y(unload_shoulder) now;
+		
+		attach-unit unitid to unload_arm;
+		
+		//slowly move the arm, carrying the unit, to the pos where to unload
+		move unload_arm to z-axis get XZ_HYPOT(get PIECE_XZ(unload_shoulder) - xz) speed ((get XZ_HYPOT(get PIECE_XZ(unload_shoulder) - xz))/(UNLOAD_TIME))*10000;
+		move unload_arm to y-axis get GROUND_HEIGHT(xz) - get PIECE_Y(unload_shoulder) speed ((get PIECE_Y(base) - get GROUND_HEIGHT(xz))/(UNLOAD_TIME))*10000;//again, I assumed that torax was above ground, if not, speed would be negative, and things could go BAD!!
+		
 	drop-unit Func_Var_1;
 	drop-unit Func_Var_1;
 	drop-unit Func_Var_1;

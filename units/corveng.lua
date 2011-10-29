@@ -87,7 +87,7 @@ return {
 					default = 23,
 					fighters = 50,
 					subs = 5,
-					vtol = 80,
+					vtol = 125,
 				},
 			},
 		},

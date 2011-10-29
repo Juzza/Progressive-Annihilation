@@ -14,7 +14,7 @@ return {
 		buildtime = 32078,
 		category = "ALL NOTSUB NOWEAPON NOTAIR",
 		collisionvolumeoffsets = "3 -5 0",
-		collisionvolumescales = "72 43 51",
+		collisionvolumescales = "112 43 81",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		description = "Hazardous Energy Source",

@@ -23,7 +23,6 @@
 	BMcode=1;
 	Builder=0;
 	ThreeD=1;
-	ZBuffer=1;
 	NoAutoFire=0;
 	SightDistance=600;
 	SoundCategory=CORE_BIGTANK;
@@ -62,13 +61,9 @@
 	BadTargetCategory=VTOL;
 	NoChaseCategory=VTOL;
 	amphibious=1;
-	Downloadable=1;
-	ImmuneToParalyzer=1;
 	weapon1=COR_SHIELD_SMALLER;
 	weapon2=COR_SHIELD_SMALLER;
 	weapon3=COR_SHIELD_SMALLER;
-	Ovradjust=1;
 	cantbetransported=1;
-	unloadspread=4;
 	antiweapons=1;
 	}

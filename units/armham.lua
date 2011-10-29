@@ -9,7 +9,7 @@ return {
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR",
 		corpse = "DEAD",
-		collisionvolumeoffsets = "0 -1 -5",
+		collisionvolumeoffsets = "0 -1 0",
 		collisionvolumescales = "33 33 33",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",

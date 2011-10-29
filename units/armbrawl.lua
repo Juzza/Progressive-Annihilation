@@ -36,6 +36,11 @@ return {
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 550,
 		turnrate = 792,
+		sfxtypes = {
+		explosiongenerators = {
+		"custom:flashmuzzle1",
+		},
+	},
 		sounds = {
 			canceldestruct = "cancel2",
 			underattack = "warning1",

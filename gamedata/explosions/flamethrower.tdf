@@ -147,7 +147,7 @@
 
       airdrag        = 1;
 
-      particleLife      = 21;
+      particleLife      = 22;
       particleLifeSpread   = 0;
       numParticles      = 10;
       particleSpeed     = 6;
@@ -185,7 +185,7 @@
 
       airdrag        = 1;
 
-      particleLife      = 21;
+      particleLife      = 22;
       particleLifeSpread   = 5;
       numParticles      = 10;
       particleSpeed     = 6;

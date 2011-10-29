@@ -15,7 +15,7 @@ return {
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOWEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 2",
-		collisionvolumescales = "46 34 40",
+		collisionvolumescales = "70 34 70",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		corpse = "DEAD",

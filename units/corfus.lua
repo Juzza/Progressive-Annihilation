@@ -15,7 +15,7 @@ return {
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		corpse = "DEAD",
 		collisionvolumeoffsets = "0 0 -2",
-		collisionvolumescales = "40 57 40",
+		collisionvolumescales = "60 57 60",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Box",
 		description = "Produces Energy / Storage",
