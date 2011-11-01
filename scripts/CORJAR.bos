@@ -5,7 +5,7 @@
 
 piece  ground, body, head, barrel, flare1, l_leg, r_leg, flame1;
 
-static-var fired;
+static-var 	bAiming, bmoving;
 
 // Signal definitions
 #define SIG_MOVE			2
@@ -57,18 +57,26 @@ StartMoving()
 	}
 }
 
+MotionControl(moving, aiming)
+{
+		while (TRUE)
+		moving = bMoving;
+		aiming = bAiming;
+}
+
 PilotLight(Func_Var_1)
 {
 	while( TRUE )
 	{
-		while (fired)
+		while( bAiming )
 		{
-		sleep 100;
+			sleep 100;
 		}
 		emit-sfx 1024 + 0 from flame1;
 		sleep 30;
 	}
 }
+
 
 StopMoving()
 {
@@ -84,7 +92,8 @@ Create()
 {
 	hide flame1;
 	hide flare1;
-	fired = TRUE;
+	bAiming = FALSE;
+	bMoving = FALSE;
 	while( get BUILD_PERCENT_LEFT )
 	{
 		sleep 400;
@@ -101,6 +110,7 @@ RestoreAfterDelay()
 	set-signal-mask 0;
 	turn head to y-axis <0.000000> speed (get 1030);
 	turn barrel to x-axis <0.000000> speed (get 1031);
+	bAiming = FALSE;
 }
 
 SweetSpot(piecenum)
@@ -131,6 +141,7 @@ AimPrimary(heading, pitch)
 	turn barrel to x-axis <0.000000> - pitch speed (get 1031);
 	wait-for-turn head around y-axis;
 	wait-for-turn barrel around x-axis;
+	bAiming = TRUE;
 	
 	start-script LockTurret(absHeading);
 	start-script RestoreAfterDelay();

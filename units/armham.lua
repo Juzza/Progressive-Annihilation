@@ -3,7 +3,7 @@ return {
 		acceleration = 0.11999999731779,
 		brakerate = 0.22499999403954,
 		buildcostenergy = 1100,
-		buildcostmetal = 120,
+		buildcostmetal = 130,
 		buildpic = "ARMHAM.DDS",
 		buildtime = 2200,
 		canmove = true,

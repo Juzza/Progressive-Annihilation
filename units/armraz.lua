@@ -2,10 +2,10 @@ return {
 	armraz = {
 		acceleration = 0.20600000023842,
 		brakerate = 0.26199999451637,
-		buildcostenergy = 63286,
-		buildcostmetal = 3577,
+		buildcostenergy = 62000,
+		buildcostmetal = 3600,
 		buildpic = "ARMRAZ.DDS",
-		buildtime = 88566,
+		buildtime = 88000,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTAIR",
 		collisionvolumeoffsets = "0.0 -2.0 0.0",

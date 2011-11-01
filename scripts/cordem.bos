@@ -251,18 +251,15 @@ StopMoving()
 
 RestoreAfterDelay()
 {
+    sleep 500;
+	stop-spin lflamegun around z-axis decelerate <3.000000>;
+	stop-spin rflamegun around z-axis decelerate <3.000000>;
 	sleep restore_delay;
 	
 	signal SIG_LOCK;
 	set-signal-mask 0;
 	
-	turn rflamegun to z-axis <0> speed <300>;
-	turn lflamegun to z-axis <0> speed <300>;
-	stop-spin lflamegun around z-axis decelerate <30.000000>;
-	stop-spin rflamegun around z-axis decelerate <30.000000>;
-	wait-for-turn rflamegun around z-axis;
-	wait-for-turn lflamegun around z-axis;
-	turn torso to y-axis <0.000000> speed (get 1030);
+	turn torso to y-axis <0.000000> speed <80>;
 	wait-for-turn torso around y-axis;
 	baiming = 0;
 }
@@ -279,8 +276,8 @@ AimPrimary(heading, pitch)
 	baiming = 1;
 	turn torso to y-axis heading speed (get 1030);
 	wait-for-turn torso around y-axis;
-	spin lflamegun around z-axis speed <300.000000> accelerate <15.000000>;
-	spin rflamegun around z-axis speed <300.000000> accelerate <15.000000>;
+	spin lflamegun around z-axis speed <300.000000> accelerate <35.000000>;
+	spin rflamegun around z-axis speed <300.000000> accelerate <35.000000>;
 	
 	start-script LockTurret(absHeading);
 	start-script RestoreAfterDelay();

@@ -255,17 +255,6 @@ AimFromTertiary(piecenum)
 
 TransportDrop(Func_Var_1,xz,unitid)
 {
-		if(get XZ_HYPOT(get PIECE_XZ(base) - get UNIT_XZ(unitid))<=MAX_UNLOAD_RADIUS)
-		turn unload_shoulder to y-axis get XZ_ATAN(get PIECE_XZ(unload_shoulder) - xz) now;
-		move unload_arm to z-axis 0 now;
-		move unload_arm to y-axis get PIECE_Y(base) - get PIECE_Y(unload_shoulder) now;
-		
-		attach-unit unitid to unload_arm;
-		
-		//slowly move the arm, carrying the unit, to the pos where to unload
-		move unload_arm to z-axis get XZ_HYPOT(get PIECE_XZ(unload_shoulder) - xz) speed ((get XZ_HYPOT(get PIECE_XZ(unload_shoulder) - xz))/(UNLOAD_TIME))*10000;
-		move unload_arm to y-axis get GROUND_HEIGHT(xz) - get PIECE_Y(unload_shoulder) speed ((get PIECE_Y(base) - get GROUND_HEIGHT(xz))/(UNLOAD_TIME))*10000;//again, I assumed that torax was above ground, if not, speed would be negative, and things could go BAD!!
-		
 	drop-unit Func_Var_1;
 	drop-unit Func_Var_1;
 	drop-unit Func_Var_1;

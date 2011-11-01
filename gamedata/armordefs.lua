@@ -11,6 +11,7 @@ return {
 		corsktl = 99,
 	},
 	["else"] = {
+		armdreadx = 99,
 		cormak = 99,
 		corjar = 99,
 		ajuno = 99,

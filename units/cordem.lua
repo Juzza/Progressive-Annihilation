@@ -2,10 +2,10 @@ return {
 	CORDEM = {
 		acceleration = 0.07,
 		brakerate = 0.15,
-		buildcostenergy = 40000,
-		buildcostmetal = 8000,
+		buildcostenergy = 35000,
+		buildcostmetal = 6000,
 		buildpic = "SHIVA.DDS",
-		buildtime = 80000,
+		buildtime = 135000,
 		canmove = true,
 		category = "KBOT WEAPON ALL NOTSUB NOTAIR",
 		corpse = "DEAD",
@@ -19,7 +19,7 @@ return {
 		idleautoheal = 85,
 		idletime = 900,
 		mass = 200000,
-		maxdamage = 28000,
+		maxdamage = 22000,
 		maxslope = 36,
 		maxvelocity = 1.3,
 		maxwaterdepth = 32,
@@ -101,7 +101,7 @@ return {
 		},
 		weapondefs = {
 			flamer1 = {
-				accuracy = 1000,
+				accuracy = 1500,
 				burst = 2,
 				burstrate = 0.1,
 				groundbounce = true,
@@ -130,7 +130,7 @@ return {
 				turret = true,
 				weaponVelocity = 500,
 				damage = {
-					default = 10,
+					default = 14,
 				},
 			},
 		},

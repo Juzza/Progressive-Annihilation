@@ -13,7 +13,7 @@
 	collisionvolumescales=100 100 100;
 	collisionvolumetest=1;
 	collisionvolumetype=Box;
-	BuildCostEnergy=36000;
+	BuildCostEnergy=40000;
 	BuildCostMetal=6500;
 	MaxDamage=30000;
 	MaxWaterDepth=255;
@@ -27,7 +27,7 @@
 	SightDistance=600;
 	SoundCategory=CORE_BIGTANK;
 	ExplodeAs=BANTHA_DEATH;
-	SelfDestructAs=BANTHA_NUKE;
+	SelfDestructAs=BANTHA_DEATH;
 	selfdestructcountdown=10;
 	Category=CORE TANK MOBILE WEAPON NOTAIR NOTSUB CTRL_G CTRL_V CTRL_W CTRL_T NOTSHIP LEVEL3   ALL;
 	TEDClass=TANK;
