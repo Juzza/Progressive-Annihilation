@@ -12,6 +12,7 @@ return {
 		customparams = {
       turretyawrate = 180,
 	  turretpitchrate = 100,
+	  dpslimit = 100,
     },	
 		description = "Armoured Assault Kbot",
 		energymake = 0,
@@ -106,7 +107,7 @@ return {
 			flamer = {
 				accuracy = 800,
 				groundbounce = true,
-				areaOfEffect = 110,
+				areaOfEffect = 60,
 				avoidFeature = false,
 				coreThickness = 0,
 				duration = 1,
@@ -131,7 +132,7 @@ return {
 				turret = true,
 				weaponVelocity = 500,
 				damage = {
-					default = 9,
+					default = 30,
 				},
 			},
 		},

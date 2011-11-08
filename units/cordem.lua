@@ -1,5 +1,5 @@
 return {
-	CORDEM = {
+	cordem = {
 		acceleration = 0.07,
 		brakerate = 0.15,
 		buildcostenergy = 30000,
@@ -11,6 +11,7 @@ return {
 		corpse = "DEAD",
 		customparams = {
       turretyawrate = 150,
+	  dpslimit = 330,
     },	
 		description = "Experimental Flame Kbot",
 		explodeas = "MECH_BLASTSML",
@@ -21,7 +22,7 @@ return {
 		mass = 200000,
 		maxdamage = 18000,
 		maxslope = 36,
-		maxvelocity = 1.3,
+		maxvelocity = 1.15,
 		maxwaterdepth = 32,
 		movementclass = "HKBOT4",
 		name = "Archdemon",
@@ -105,7 +106,7 @@ return {
 				burst = 2,
 				burstrate = 0.1,
 				groundbounce = true,
-				areaOfEffect = 200,
+				areaOfEffect = 110,
 				avoidFeature = false,
 				coreThickness = 0,
 				duration = 1,
@@ -122,7 +123,7 @@ return {
 				name = "Flamer",
 				range = 410,
 				reloadtime = 0.1,
-				size = 5,
+				size = 2,
 				WeaponType = "LaserCannon",
 				rgbColor = "0 0 0",
 				rgbColor2 = "0 0 0",
@@ -131,7 +132,7 @@ return {
 				turret = true,
 				weaponVelocity = 500,
 				damage = {
-					default = 14,
+					default = 50,
 				},
 			},
 		},

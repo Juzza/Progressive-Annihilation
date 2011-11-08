@@ -118,7 +118,7 @@ return {
 				name = "RiotCannon",
 				noselfdamage = true,
 				range = 315,
-				reloadtime = 2,
+				reloadtime = 1.8,
 				soundhit = "xplosml3",
 				soundstart = "canlite3",
 				turret = true,

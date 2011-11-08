@@ -94,8 +94,8 @@ local unitCollisionVolume = {}
 		off={112,35,112,0,0,0,1,1,1},
 	}
 	unitCollisionVolume["corsolar"] = {
-		on={56,65,56,0,-25,0,0,1,0},
-		off={47,65,47,0,-35,0,0,1,0},
+		on={56,65,56,0,-20,0,0,1,0},
+		off={47,65,47,0,-20,0,0,1,0},
 	}
 	unitCollisionVolume["cortarg"] = {
 		on={64,20,64,0,0,0,1,1,1},

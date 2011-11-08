@@ -12,6 +12,7 @@ return {
 		customparams = {
       turretyawrate = 275,
 	  turretpitchrate = 100,
+	  dpslimit = 100,
     },	
 		description = "Fast Assault Kbot",
 		energymake = 1.1000000238419,
@@ -86,7 +87,7 @@ return {
 			flamer = {
 				accuracy = 800,
 				groundbounce = true,
-				areaOfEffect = 110,
+				areaOfEffect = 60,
 				avoidFeature = false,
 				coreThickness = 0,
 				duration = 1,
@@ -111,7 +112,7 @@ return {
 				turret = true,
 				weaponVelocity = 500,
 				damage = {
-					default = 12,
+					default = 40,
 				},
 			},
 		},

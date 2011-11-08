@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 2000,
 		buildcostmetal = 205,
 		buildpic = "CORMAK.DDS",
-		buildtime = 2400,
+		buildtime = 2800,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB ANTIEMG NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 0",

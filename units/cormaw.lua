@@ -10,6 +10,9 @@ return {
 		buildinggrounddecaltype = "cormaw_aoplane.dds",
 		buildpic = "CORMAW.DDS",
 		buildtime = 4419,
+		customparams = {
+	  dpslimit = 180,
+    },	
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -24 0",
 		collisionvolumescales = "30 60 30",
@@ -115,7 +118,7 @@ return {
 			flamer = {
 				accuracy = 800,
 				groundbounce = true,
-				areaOfEffect = 110,
+				areaOfEffect = 60,
 				avoidFeature = false,
 				coreThickness = 0,
 				duration = 1,
@@ -140,7 +143,7 @@ return {
 				turret = true,
 				weaponVelocity = 500,
 				damage = {
-					default = 16,
+					default = 55,
 				},
 			},
 		},

@@ -15,68 +15,77 @@ walk()
 {
 	if( TRUE )
 	{
-Turn LLArm to x-axis <-24.9> speed<90>;
-Turn LLArm to y-axis <3.9> speed<90>;
-Turn LLArm to z-axis <17> speed<90>;
-Turn RUArm to x-axis <4> speed<90>;
+Turn LLArm to x-axis <39.9> speed<120>;
+Turn LLArm to y-axis <35.9> speed<120>;
+Turn LLArm to z-axis <-25> speed<120>;
+Turn RUArm to x-axis <-4> speed<120>;
 //legs
-Turn LULeg to x-axis <-32> speed<90>;
-Turn LLLeg to x-axis <0.0000003> speed<90>;
-Turn LFoot to x-axis <32> speed<90>;
-Turn RULeg to x-axis <15> speed<90>;
-Turn RLLeg to x-axis <-10> speed<90>;
-Turn RFoot to x-axis <-17> speed<90>;
-Sleep 200;
+Turn LULeg to x-axis <32> speed<120>;
+Turn LLLeg to x-axis <-0.0000003> speed<120>;
+Turn LFoot to x-axis <-32> speed<120>;
+Turn RULeg to x-axis <-25> speed<120>;
+Turn RLLeg to x-axis <10> speed<120>;
+Turn RFoot to x-axis <17> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <-36.8> speed<90>;
-Turn LLArm to y-axis <44.4> speed<90>;
-Turn LLArm to z-axis <18.6> speed<90>;
-Turn RUArm to x-axis <9> speed<90>;
-Turn RLArm to x-axis <9> speed<90>;
+Turn LLArm to x-axis <67.8> speed<120>;
+Turn LLArm to y-axis <70.4> speed<120>;
+Turn LLArm to z-axis <-45.6> speed<120>;
+Turn RUArm to x-axis <-9> speed<120>;
+Turn RLArm to x-axis <-9> speed<120>;
 //legs move
 
 //Legs turn
-Turn LULeg to x-axis <-38> speed<90>;
-Turn LLLeg to x-axis <0.999> speed<90>;
-Turn LFoot to x-axis <37> speed<90>;
-Turn RULeg to x-axis <28> speed<90>;
-Turn RLLeg to x-axis <-25> speed<90>;
-Turn RFoot to x-axis <-26> speed<90>;
-Sleep 200;
+Turn LULeg to x-axis <38> speed<120>;
+Turn LLLeg to x-axis <-0.999> speed<120>;
+Turn LFoot to x-axis <-37> speed<120>;
+Turn RULeg to x-axis <-38> speed<120>;
+Turn RLLeg to x-axis <25> speed<120>;
+Turn RFoot to x-axis <26> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <-17.6> speed<90>;
-Turn LLArm to y-axis <19> speed<90>;
-Turn LLArm to z-axis <0.5> speed<90>;
-Turn RUArm to x-axis <4> speed<90>;
-Turn RLArm to x-axis <6> speed<90>;
+Turn LLArm to x-axis <17.6> speed<120>;
+Turn LLArm to y-axis <35> speed<120>;
+Turn LLArm to z-axis <-25.5> speed<120>;
+Turn RUArm to x-axis <-4> speed<120>;
+Turn RLArm to x-axis <-6> speed<120>;
 //legs move
 
 //Legs turn
-Turn LULeg to x-axis <-24> speed<90>;
-Turn LLLeg to x-axis <17> speed<90>;
-Turn LFoot to x-axis <11> speed<90>;
-Turn RULeg to x-axis <34> speed<90>;
-Turn RLLeg to x-axis <-21> speed<90>;
-Turn RFoot to x-axis <-12> speed<90>;
-Sleep 200;
+Turn LULeg to x-axis <24> speed<120>;
+Turn LLLeg to x-axis <-17> speed<120>;
+Turn LFoot to x-axis <-11> speed<120>;
+Turn RULeg to x-axis <-34> speed<120>;
+Turn RLLeg to x-axis <21> speed<120>;
+Turn RFoot to x-axis <12> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <-5.2> speed<90>;
-Turn LLArm to y-axis <0.8> speed<90>;
-Turn LLArm to z-axis <3.6> speed<90>;
-Turn RLArm to x-axis <6> speed<90>;
+Turn LLArm to x-axis <-5.2> speed<120>;
+Turn LLArm to y-axis <0.8> speed<120>;
+Turn LLArm to z-axis <-3.6> speed<120>;
+Turn RLArm to x-axis <6> speed<120>;
 //Legs turn
-Turn LULeg to x-axis <-6> speed<90>;
-Turn LLLeg to x-axis <16> speed<90>;
-Turn LFoot to x-axis <-21> speed<90>;
-Turn RULeg to x-axis <16> speed<90>;
-Turn RLLeg to x-axis <-18> speed<90>;
-Turn RFoot to x-axis <-12> speed<90>;
+Turn LULeg to x-axis <-6> speed<120>;
+Turn LLLeg to x-axis <16> speed<120>;
+Turn LFoot to x-axis <-21> speed<120>;
+Turn RULeg to x-axis <16> speed<120>;
+Turn RLLeg to x-axis <-18> speed<120>;
+Turn RFoot to x-axis <-12> speed<120>;
 wait-for-turn LULeg around x-axis;
 wait-for-turn RULeg around x-axis;
 wait-for-turn RLLeg around x-axis;
@@ -85,16 +94,16 @@ wait-for-turn LLLeg around x-axis;
 	if( TRUE )
 	{
 Turn LLArm to x-axis <-8.6> speed<120>;
-Turn LLArm to y-axis <7.2> speed<120>;
-Turn LLArm to z-axis <4.1> speed<120>;
-Turn RLArm to x-axis <-6> speed<120>;
+Turn LLArm to y-axis <-7.2> speed<120>;
+Turn LLArm to z-axis <-4.1> speed<120>;
+Turn RLArm to x-axis <6> speed<120>;
 //Legs turn
-Turn LULeg to x-axis <31> speed<120>;
-Turn LLLeg to x-axis <-1.999> speed<120>;
-Turn LFoot to x-axis <-16> speed<120>;
-Turn RULeg to x-axis <-27> speed<120>;
-Turn RLLeg to x-axis <-18> speed<120>;
-Turn RFoot to x-axis <27> speed<120>;
+Turn LULeg to x-axis <-31> speed<120>;
+Turn LLLeg to x-axis <1.999> speed<120>;
+Turn LFoot to x-axis <16> speed<120>;
+Turn RULeg to x-axis <27> speed<120>;
+Turn RLLeg to x-axis <18> speed<120>;
+Turn RFoot to x-axis <-27> speed<120>;
 wait-for-turn LULeg around x-axis;
 wait-for-turn RULeg around x-axis;
 wait-for-turn RLLeg around x-axis;
@@ -102,19 +111,19 @@ wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <19.5> speed<120>;
-Turn LLArm to y-axis <2> speed<120>;
-Turn LLArm to z-axis <-6.5> speed<120>;
-Turn RLArm to x-axis <-14> speed<120>;
+Turn LLArm to x-axis <-19.5> speed<120>;
+Turn LLArm to y-axis <-2> speed<120>;
+Turn LLArm to z-axis <6.5> speed<120>;
+Turn RLArm to x-axis <14> speed<120>;
 //legs move
 
 //Legs turn
-Turn LULeg to x-axis <45> speed<120>;
-Turn LLLeg to x-axis <-5> speed<120>;
-Turn LFoot to x-axis <-29> speed<120>;
-Turn RULeg to x-axis <-39> speed<120>;
-Turn RLLeg to x-axis <-9> speed<120>;
-Turn RFoot to x-axis <48> speed<120>;
+Turn LULeg to x-axis <-45> speed<120>;
+Turn LLLeg to x-axis <5> speed<120>;
+Turn LFoot to x-axis <29> speed<120>;
+Turn RULeg to x-axis <39> speed<120>;
+Turn RLLeg to x-axis <9> speed<120>;
+Turn RFoot to x-axis <-48> speed<120>;
 wait-for-turn LULeg around x-axis;
 wait-for-turn RULeg around x-axis;
 wait-for-turn RLLeg around x-axis;
@@ -122,18 +131,18 @@ wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <19.5> speed<120>;
-Turn LLArm to y-axis <2> speed<120>;
-Turn LLArm to z-axis <-6.5> speed<120>;
-Turn RLArm to x-axis <-4> speed<120>;
+Turn LLArm to x-axis <-19.5> speed<120>;
+Turn LLArm to y-axis <-2> speed<120>;
+Turn LLArm to z-axis <6.5> speed<120>;
+Turn RLArm to x-axis <4> speed<120>;
 //legs move
 //Legs turn
-Turn LULeg to x-axis <45> speed<120>;
-Turn LLLeg to x-axis <-16> speed<120>;
-Turn LFoot to x-axis <-30> speed<120>;
-Turn RULeg to x-axis <-39> speed<120>;
-Turn RLLeg to x-axis <9> speed<120>;
-Turn RFoot to x-axis <31> speed<120>;
+Turn LULeg to x-axis <-45> speed<120>;
+Turn LLLeg to x-axis <16> speed<120>;
+Turn LFoot to x-axis <30> speed<120>;
+Turn RULeg to x-axis <39> speed<120>;
+Turn RLLeg to x-axis <-9> speed<120>;
+Turn RFoot to x-axis <-31> speed<120>;
 wait-for-turn LULeg around x-axis;
 wait-for-turn RULeg around x-axis;
 wait-for-turn RLLeg around x-axis;
@@ -162,107 +171,115 @@ walklegs()
 {
 	if( TRUE )
 	{
-Turn LULeg to x-axis <-32> speed<50>;
-Turn LLLeg to x-axis <0.0000003> speed<50>;
-Turn LFoot to x-axis <32> speed<50>;
-Turn RULeg to x-axis <39> speed<50>;
-Turn RLLeg to x-axis <-10> speed<50>;
-Turn RFoot to x-axis <-17> speed<50>;
-Sleep 300;
+Turn LULeg to x-axis <-32> speed<120>;
+Turn LLLeg to x-axis <0.0000003> speed<120>;
+Turn LFoot to x-axis <32> speed<120>;
+Turn RULeg to x-axis <39> speed<120>;
+Turn RLLeg to x-axis <-10> speed<120>;
+Turn RFoot to x-axis <-17> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
 //Legs turn
-Turn LULeg to x-axis <-38> speed<50>;
-Turn LLLeg to x-axis <0.999> speed<50>;
-Turn LFoot to x-axis <37> speed<50>;
-Turn RULeg to x-axis <49> speed<50>;
-Turn RLLeg to x-axis <-19> speed<50>;
-Turn RFoot to x-axis <-30> speed<50>;
-Sleep 300;
+Turn LULeg to x-axis <-38> speed<120>;
+Turn LLLeg to x-axis <0.999> speed<120>;
+Turn LFoot to x-axis <37> speed<120>;
+Turn RULeg to x-axis <49> speed<120>;
+Turn RLLeg to x-axis <-19> speed<120>;
+Turn RFoot to x-axis <-30> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
 //Legs turn
-Turn LULeg to x-axis <-24> speed<50>;
-Turn LLLeg to x-axis <17> speed<50>;
-Turn LFoot to x-axis <11> speed<50>;
-Turn RULeg to x-axis <34> speed<50>;
-Turn RLLeg to x-axis <-21> speed<50>;
-Turn RFoot to x-axis <-12> speed<50>;
-Sleep 300;
+Turn LULeg to x-axis <-24> speed<120>;
+Turn LLLeg to x-axis <17> speed<120>;
+Turn LFoot to x-axis <11> speed<120>;
+Turn RULeg to x-axis <34> speed<120>;
+Turn RLLeg to x-axis <-21> speed<120>;
+Turn RFoot to x-axis <-12> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
 //Legs turn
-Turn LULeg to x-axis <-6> speed<50>;
-Turn LLLeg to x-axis <16> speed<50>;
-Turn LFoot to x-axis <-21> speed<50>;
-Turn RULeg to x-axis <16> speed<50>;
-Turn RLLeg to x-axis <-18> speed<50>;
-Turn RFoot to x-axis <-12> speed<50>;
-Sleep 300;
+Turn LULeg to x-axis <-6> speed<120>;
+Turn LLLeg to x-axis <16> speed<120>;
+Turn LFoot to x-axis <-21> speed<120>;
+Turn RULeg to x-axis <16> speed<120>;
+Turn RLLeg to x-axis <-18> speed<120>;
+Turn RFoot to x-axis <-12> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <-8.6> speed<50>;
-Turn LLArm to y-axis <7.2> speed<50>;
-Turn LLArm to z-axis <4.1> speed<50>;
-Turn RLArm to x-axis <-6> speed<50>;
 //Legs turn
-Turn LULeg to x-axis <31> speed<50>;
-Turn LLLeg to x-axis <-1.999> speed<50>;
-Turn LFoot to x-axis <-16> speed<50>;
-Turn RULeg to x-axis <-27> speed<50>;
-Turn RLLeg to x-axis <-18> speed<50>;
-Turn RFoot to x-axis <27> speed<50>;
-Sleep 300;
+Turn LULeg to x-axis <31> speed<120>;
+Turn LLLeg to x-axis <-1.999> speed<120>;
+Turn LFoot to x-axis <-16> speed<120>;
+Turn RULeg to x-axis <-27> speed<120>;
+Turn RLLeg to x-axis <-18> speed<120>;
+Turn RFoot to x-axis <27> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <19.5> speed<50>;
-Turn LLArm to y-axis <2> speed<50>;
-Turn LLArm to z-axis <-6.5> speed<50>;
-Turn RLArm to x-axis <-14> speed<50>;
 //legs move
 //Legs turn
-Turn LULeg to x-axis <45> speed<50>;
-Turn LLLeg to x-axis <-5> speed<50>;
-Turn LFoot to x-axis <-29> speed<50>;
-Turn RULeg to x-axis <-39> speed<50>;
-Turn RLLeg to x-axis <-9> speed<50>;
-Turn RFoot to x-axis <48> speed<50>;
-Sleep 300;
+Turn LULeg to x-axis <45> speed<120>;
+Turn LLLeg to x-axis <-5> speed<120>;
+Turn LFoot to x-axis <-29> speed<120>;
+Turn RULeg to x-axis <-39> speed<120>;
+Turn RLLeg to x-axis <-9> speed<120>;
+Turn RFoot to x-axis <48> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <19.5> speed<50>;
-Turn LLArm to y-axis <2> speed<50>;
-Turn LLArm to z-axis <-6.5> speed<50>;
-Turn RLArm to x-axis <-4> speed<50>;
 //legs move
 //Legs turn
-Turn LULeg to x-axis <45> speed<50>;
-Turn LLLeg to x-axis <-16> speed<50>;
-Turn LFoot to x-axis <-30> speed<50>;
-Turn RULeg to x-axis <-39> speed<50>;
-Turn RLLeg to x-axis <9> speed<50>;
-Turn RFoot to x-axis <31> speed<50>;
-Sleep 300;
+Turn LULeg to x-axis <45> speed<120>;
+Turn LLLeg to x-axis <-16> speed<120>;
+Turn LFoot to x-axis <-30> speed<120>;
+Turn RULeg to x-axis <-39> speed<120>;
+Turn RLLeg to x-axis <9> speed<120>;
+Turn RFoot to x-axis <31> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 	}
-Turn LLArm to x-axis <0> speed<50>;
-Turn LLArm to y-axis <0> speed<50>;
-Turn LLArm to z-axis <0> speed<50>;
-Turn RLArm to x-axis <0> speed<50>;
 //legs move
 //Legs turn
-Turn LULeg to x-axis <0> speed<50>;
-Turn LLLeg to x-axis <0> speed<50>;
-Turn LFoot to x-axis <0> speed<50>;
-Turn RULeg to x-axis <0> speed<50>;
-Turn RLLeg to x-axis <0> speed<50>;
-Turn RFoot to x-axis <0> speed<50>;
-Sleep 300;
+Turn LULeg to x-axis <0> speed<120>;
+Turn LLLeg to x-axis <0> speed<120>;
+Turn LFoot to x-axis <0> speed<120>;
+Turn RULeg to x-axis <0> speed<120>;
+Turn RLLeg to x-axis <0> speed<120>;
+Turn RFoot to x-axis <0> speed<120>;
+wait-for-turn LULeg around x-axis;
+wait-for-turn RULeg around x-axis;
+wait-for-turn RLLeg around x-axis;
+wait-for-turn LLLeg around x-axis;
 }
 
 activatescr()
@@ -379,6 +396,7 @@ MotionControl(moving, aiming, justmoved)
 
 Create()
 {
+	turn sleeve to x-axis <55> now;
 	hide muzzle2;
 	hide flare;
 	Static_Var_1 = 0;
@@ -411,8 +429,7 @@ RestoreAfterDelay()
 	turn RUArm to x-axis <0.> speed <60.>;
 	turn RLArm to x-axis <0.> speed <60.>;
 	turn LLArm to x-axis <0.> speed <60.>;
-	turn sleeve to x-axis <0.> speed <60.>;
-	turn sleeve to y-axis <0.> speed <60.>;
+	turn sleeve to x-axis <55.> speed <60.>;
 	turn torso to y-axis <0.> speed <150.>;
 	stop-spin gun around z-axis decelerate <25.000000>;
 	wait-for-turn torso around y-axis;
@@ -434,11 +451,11 @@ AimPrimary(heading, pitch)
 	signal 2;
 	set-signal-mask 2;
 	Static_Var_2 = 1;
+	spin gun around z-axis speed <400.000000> accelerate <50.000000>;
 	turn RUArm to x-axis <-14.> speed <150.>;
 	turn RLArm to x-axis <-30.> speed <150.>;
 	turn LLArm to x-axis <0.> speed <150.>;
-	turn sleeve to x-axis <-10.> speed <150.>;
-	turn sleeve to y-axis <2.> speed <150.>;
+	turn sleeve to x-axis <44.> speed <150.>;
 	turn torso to y-axis heading speed <250.>;
 
 	wait-for-turn torso around y-axis;
