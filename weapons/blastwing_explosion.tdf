@@ -25,7 +25,7 @@
   weaponvelocity=250;
   [DAMAGE]
   {
-    default=1700;
+    default=1850;
     commanders=500;
     bombers=200;
     fighters=50;

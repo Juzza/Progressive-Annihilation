@@ -24,6 +24,7 @@ end
 local stealthyTransports = {
 	[UnitDefNames.armdfly.id] = true,
 	[UnitDefNames.cormcv.id] = true,
+	[UnitDefNames.armdreadx.id] = true,
 }
 local stealthyUnits = {}
 

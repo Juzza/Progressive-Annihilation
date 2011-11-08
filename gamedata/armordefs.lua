@@ -325,6 +325,8 @@ return {
 		coruwadvms = 99,
 	},
 	bombers = {
+		armmineplane = 99,
+		cormineplane = 99,
 		armthund = 99,
 		corshad = 99,
         armcybr = 99,
@@ -357,6 +359,7 @@ return {
 		armmine1 = 99,
 		armmine2 = 99,
 		armmine3 = 99,
+		armmine4 = 99,
 		corfmine3 = 99,
 		cormine1 = 99,
 		cormine2 = 99,

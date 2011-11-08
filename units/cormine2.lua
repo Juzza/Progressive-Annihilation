@@ -2,10 +2,10 @@ return {
 	cormine2 = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 1000,
-		buildcostmetal = 15,
+		buildcostenergy = 1200,
+		buildcostmetal = 25,
 		buildpic = "CORMINE2.DDS",
-		buildtime = 100,
+		buildtime = 250,
 		canattack = false,
 		canguard = false,
 		canpatrol = false,
@@ -25,7 +25,7 @@ return {
 		idleautoheal = 0.10000000149012,
 		idletime = 900,
 		initcloaked = true,
-		maxdamage = 10,
+		maxdamage = 200,
 		maxslope = 40,
 		maxwaterdepth = 0,
 		mincloakdistance = 8,
@@ -77,7 +77,7 @@ return {
 				weaponvelocity = 1000,
 				damage = {
 					default = 0,
-					mines = 100,
+					mines = 1000,
 				},
 			},
 			mine_dummy = {

@@ -5,7 +5,8 @@ return {
 		cratermult = 0,
 		edgeeffectiveness = 0.60000002384186,
 		explosiongenerator = "custom:FLASHMEDIUMBUILDING",
-		impulseboost = 0,
+		impulseboost = 0.1,
+		impulsefactor = 0.25,
 		name = "MediumMine",
 		range = 480,
 		reloadtime = 3.5999999046326,
@@ -13,7 +14,7 @@ return {
 		soundstart = "largegun",
 		weaponvelocity = 250,
 		damage = {
-			default = 1000,
+			default = 800,
 			mines = 0.5,
 		},
 	},

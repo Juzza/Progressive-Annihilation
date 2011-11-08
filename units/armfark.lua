@@ -46,8 +46,8 @@ return {
 			[3] = "armmex",
 			[4] = "armmakr",
 			[5] = "armeyes",
-			[6] = "armmark",
-			[7] = "armaser",
+			[6] = "armrad",
+			[7] = "armjamt",
 		},
 		featuredefs = {
 			dead = {

@@ -5,7 +5,7 @@
 	Side=CORE;
 	Objectname=CORMCV;
 	Designation=CMCV417;
-	Name=Overlord;
+	Name=Zaratan;
 	Description=Mobile Weapon Platform (Amphibious);
 	FootprintX=14;
 	FootprintZ=14;
@@ -14,11 +14,11 @@
 	collisionvolumetest=1;
 	collisionvolumetype=Box;
 	BuildCostEnergy=40000;
-	BuildCostMetal=6500;
-	MaxDamage=30000;
+	BuildCostMetal=4500;
+	MaxDamage=24000;
 	MaxWaterDepth=255;
 	MaxSlope=12;
-	BuildTime=409292; 
+	BuildTime=100000; 
 	Buildpic=CORMCV.DDS;
 	BMcode=1;
 	Builder=0;

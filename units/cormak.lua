@@ -31,7 +31,7 @@ return {
 		objectname = "CORMAK",
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
-		sightdistance = 350,
+		sightdistance = 320,
 		smoothanim = true,
 		turnrate = 1050,
 		upright = true,

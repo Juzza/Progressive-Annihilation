@@ -55,6 +55,7 @@ return {
 			[10] = "armyork",
 			[11] = "armseer",
 			[12] = "armjam",
+			[13] = "armdreadx",
 		},
 		featuredefs = {
 			dead = {

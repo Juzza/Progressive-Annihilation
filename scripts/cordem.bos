@@ -260,6 +260,7 @@ RestoreAfterDelay()
 	set-signal-mask 0;
 	
 	turn torso to y-axis <0.000000> speed <80>;
+	turn torso to x-axis <0.000000> speed <80>;
 	wait-for-turn torso around y-axis;
 	baiming = 0;
 }
@@ -275,6 +276,7 @@ AimPrimary(heading, pitch)
 	
 	baiming = 1;
 	turn torso to y-axis heading speed (get 1030);
+	turn torso to x-axis <0.000000> - pitch speed 150;
 	wait-for-turn torso around y-axis;
 	spin lflamegun around z-axis speed <300.000000> accelerate <35.000000>;
 	spin rflamegun around z-axis speed <300.000000> accelerate <35.000000>;

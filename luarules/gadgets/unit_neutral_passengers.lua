@@ -24,6 +24,7 @@ end
 ----------------------------------------------------------------
 local neutralizingTransports = {
 	[UnitDefNames.cormcv.id] = true,
+	[UnitDefNames.armdreadx.id] = true,
 }
 
 local spGetUnitDefID = Spring.GetUnitDefID

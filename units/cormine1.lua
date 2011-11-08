@@ -2,10 +2,10 @@ return {
 	cormine1 = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 250,
-		buildcostmetal = 5,
+		buildcostenergy = 300,
+		buildcostmetal = 10,
 		buildpic = "CORMINE1.DDS",
-		buildtime = 50,
+		buildtime = 150,
 		canattack = false,
 		canguard = false,
 		canpatrol = false,

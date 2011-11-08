@@ -50,9 +50,10 @@ return {
 		workertime = 40,
 		buildoptions = {
 			[1] = "cormine1",
-			[2] = "cormine3",
-			[3] = "cordrag",
-			[4] = "coreyes",
+			[2] = "cormine2",
+			[3] = "cormine3",
+			[4] = "cordrag",
+			[5] = "coreyes",
 		},
 		featuredefs = {
 			dead = {

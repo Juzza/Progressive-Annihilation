@@ -8,7 +8,7 @@ piece  ground, hips, luparm, lloarm, lhand, fingerla, fingerlb, thumbl,
        cannonl, flareb, canonbarrel1, armr, cannonr, flarea, canonbarrel2, EnrgyCell1,
        Enrgycell2, b1, b2, arm1, arm2, ar, al, calcarm,
        calcflare, calcpoint, turret, barrel, emit, axis, flare, exploder,
-       hpoint, smokepoint, smokeemit;
+       hpoint, smokepoint, smokeemit, muzzle1, muzzle2;
 
 static-var  Static_Var_1, gun_1, bMoving, bAiming, Static_Var_5,
             Static_Var_6, unitviewer, Static_Var_8, Static_Var_9;
@@ -417,35 +417,50 @@ SmokeGun(Func_Var_1)
 	signal 16;
 	set-signal-mask 16;
 	Func_Var_1 = 150;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 150;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 170;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 190;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 210;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 230;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 250;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 270;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 290;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 310;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 330;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 350;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 370;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 390;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 	sleep 410;
-	emit-sfx 256 | 1 from emit;
+	emit-sfx 256 | 1 from flarea;
+	emit-sfx 256 | 1 from flareb;
 }
 
 Demo()
@@ -455,6 +470,8 @@ Demo()
 
 Create()
 {
+	hide muzzle2;
+	hide muzzle1;
 	hide flare;
 	hide flarea;
 	hide flareb;
@@ -521,6 +538,7 @@ RestoreTertiary()
 RestoreAfterDelay(Func_Var_1)
 {
 	sleep Static_Var_1;
+	start-script SmokeGun();
 	Func_Var_1 = bMoving;
 	stop-spin canonbarrel1 around z-axis decelerate <25.000000>;
 	stop-spin canonbarrel2 around z-axis decelerate <25.000000>;
@@ -616,9 +634,8 @@ FirePrimary()
 		move b2 to z-axis [-2.000000] speed [400.000000];
 		turn al to x-axis <20.000000> speed <400.000000>;
 		turn cannonl to x-axis <-20.000000> speed <400.000000>;
-		show flareb;
-		sleep 100;
-		hide flareb;
+		emit-sfx 1025 from flareb;
+		emit-sfx 1026 from muzzle1;
 		move b2 to z-axis [0.000000] speed [2.000000];
 		turn al to x-axis <0.000000> speed <35.000000>;
 		turn cannonl to x-axis <0.000000> speed <35.000000>;
@@ -630,9 +647,8 @@ FirePrimary()
 		move b1 to z-axis [-2.000000] speed [400.000000];
 		turn ar to x-axis <20.000000> speed <400.000000>;
 		turn cannonr to x-axis <-20.000000> speed <400.000000>;
-		show flarea;
-		sleep 100;
-		hide flarea;
+		emit-sfx 1025 from flarea;
+		emit-sfx 1026 from muzzle2;
 		move b1 to z-axis [0.000000] speed [2.000000];
 		turn ar to x-axis <0.000000> speed <35.000000>;
 		turn cannonr to x-axis <0.000000> speed <35.000000>;
@@ -641,17 +657,17 @@ FirePrimary()
 	}
 }
 
-AimFromTertiary(piecenum)
+AimFromSecondary(piecenum)
 {
 	piecenum = hpoint;
 }
 
-QueryTertiary(piecenum)
+QuerySecondary(piecenum)
 {
 	piecenum = emit;
 }
 
-AimTertiary(heading, pitch)
+AimSecondary(heading, pitch)
 {
 	Static_Var_9 = 1;
 	signal SIG_AIM_3;
@@ -662,20 +678,14 @@ AimTertiary(heading, pitch)
 	return (1);
 }
 
-FireTertiary()
+FireSecondary()
 {
-	start-script SmokeGun();
-	show flare;
-	explode emit type BITMAPONLY | BITMAP5;
-	explode exploder type FALL;
-	explode exploder type FALL;
-	explode exploder type FALL;
+	emit-sfx 1024 from emit;
 	move turret to z-axis [-0.500000] speed [200.000000];
 	move barrel to z-axis [-1.000000] speed [400.000000];
 	sleep 280;
 	move barrel to z-axis [0.000000] speed [2.000000];
 	move turret to z-axis [0.000000] speed [1.000000];
-	hide flare;
 }
 
 Killed(severity, corpsetype)

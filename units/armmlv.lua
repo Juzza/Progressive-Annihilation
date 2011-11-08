@@ -50,9 +50,11 @@ return {
 		workertime = 40,
 		buildoptions = {
 			[1] = "armmine1",
-			[2] = "armmine3",
-			[3] = "armdrag",
-			[4] = "armeyes",
+			[2] = "armmine2",
+			[3] = "armmine3",
+			[4] = "armmine4",
+			[5] = "armdrag",
+			[6] = "armeyes",
 		},
 		featuredefs = {
 			dead = {

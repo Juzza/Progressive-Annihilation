@@ -2,10 +2,10 @@ return {
 	corpyro = {
 		acceleration = 0.44999998807907,
 		brakerate = 0.64999997615814,
-		buildcostenergy = 2783,
-		buildcostmetal = 189,
+		buildcostenergy = 2800,
+		buildcostmetal = 190,
 		buildpic = "CORPYRO.DDS",
-		buildtime = 5027,
+		buildtime = 5000,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL ANTIFLAME NOTSUB NOTSHIP NOTAIR",
 		corpse = "HEAP",

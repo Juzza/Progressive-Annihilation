@@ -45,14 +45,13 @@ return {
 		buildoptions = {
 			[1] = "armcv",
 			[2] = "armbeaver",
-			[3] = "armmlv",
-			[4] = "armfav",
-			[5] = "armflash",
-			[6] = "armpincer",
-			[7] = "armstump",
-			[8] = "tawf013",
-			[9] = "armjanus",
-			[10] = "armsam",
+			[3] = "armfav",
+			[4] = "armflash",
+			[5] = "armpincer",
+			[6] = "armstump",
+			[7] = "tawf013",
+			[8] = "armjanus",
+			[9] = "armsam",
 		},
 		featuredefs = {
 			dead = {
