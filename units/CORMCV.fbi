@@ -18,7 +18,7 @@
 	MaxDamage=24000;
 	MaxWaterDepth=255;
 	MaxSlope=12;
-	BuildTime=100000; 
+	BuildTime=80000; 
 	Buildpic=CORMCV.DDS;
 	BMcode=1;
 	Builder=0;
