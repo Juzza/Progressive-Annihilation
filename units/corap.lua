@@ -48,6 +48,7 @@ return {
 			[5] = "corvalk",
 			[6] = "bladew",
 			[7] = "blastwing",
+			[8] = "cormineplane",
 		},
 		featuredefs = {
 			dead = {

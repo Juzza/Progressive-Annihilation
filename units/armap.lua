@@ -48,6 +48,7 @@ return {
 			[5] = "armatlas",
 			[6] = "armkam",
 			[7] = "whirligig",
+			[8] = "armmineplane",
 		},
 		featuredefs = {
 			dead = {

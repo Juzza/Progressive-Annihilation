@@ -2,8 +2,8 @@ return {
 	cormaw = {
 		acceleration = 9.9999998245167e-014,
 		buildangle = 8192,
-		buildcostenergy = 1412,
-		buildcostmetal = 273,
+		buildcostenergy = 1500,
+		buildcostmetal = 300,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
@@ -11,7 +11,7 @@ return {
 		buildpic = "CORMAW.DDS",
 		buildtime = 4419,
 		customparams = {
-	  dpslimit = 180,
+	  dpslimit = 90,
     },	
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -24 0",
