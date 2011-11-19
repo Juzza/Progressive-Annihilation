@@ -2,8 +2,8 @@ return {
 	armmine3 = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 1500,
-		buildcostmetal = 35,
+		buildcostenergy = 1,
+		buildcostmetal = 1,
 		buildpic = "ARMMINE3.DDS",
 		buildtime = 400,
 		canattack = false,

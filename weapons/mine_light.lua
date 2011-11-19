@@ -1,6 +1,6 @@
 return {
 	mine_light = {
-		areaofeffect = 250,
+		areaofeffect = 240,
 		craterboost = 0,
 		cratermult = 0,
 		edgeeffectiveness = 0.5,
@@ -14,7 +14,7 @@ return {
 		soundstart = "largegun",
 		weaponvelocity = 250,
 		damage = {
-			default = 100,
+			default = 200,
 			mines = 5,
 		},
 	},

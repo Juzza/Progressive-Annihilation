@@ -28,6 +28,37 @@
 		count=8;
 	}
 }
+[RocketTrailxD2] {
+	[smoke] {
+		class=CSimpleParticleSystem;
+		[properties]{
+			sizeGrowth=0.4 r0.2;
+			sizeMod=1;
+			pos=0, 0, 0;
+			emitVector=dir;
+			gravity=0, 0, 0;
+			colorMap	= 0.4 0.4 0.4 0.5   0.4 0.4 0.4 0.3   0.2 0.2 0.2 0.2	0.0 0.0 0.0 0.0;
+			Texture=smokesmall;
+			airdrag=0.5;
+			particleLife=24;
+			particleLifeSpread=32;
+			numParticles=1;
+			particleSpeed=i2;
+			particleSpeedSpread=1;
+			particleSize=1;
+			particleSizeSpread=2;
+			emitRot=0;
+			emitRotSpread=5;
+			directional=0;
+			alwaysVisible=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=8;
+	}
+}
+
 [RAKETENGROßTRAILXXXL]
 {
 	usedefaultexplosions=0;	
@@ -616,7 +647,7 @@
 
 		Texture=SmokeSmall;
 		airdrag=0.6;
-		colorMap=1.0 0.6 0.2 0.9 0.99 0.99 0.99 0.7 0.99 0.99 0.99 0.5 0.1 0.1 0.1 0.3 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.01;
+		colorMap	= 0.4 0.4 0.4 0.5   0.4 0.4 0.4 0.3   0.2 0.2 0.2 0.2	0.0 0.0 0.0 0.0;
 
 		particleLifeSpread=6; 
 		particleSpeedSpread=4;  
@@ -652,7 +683,7 @@
 
 		Texture=SmokeSmall;
 		airdrag=0.4;
-		colorMap=1.0 0.6 0.2 0.9 0.99 0.99 0.99 0.7 0.99 0.99 0.99 0.5 0.1 0.1 0.1 0.3 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.01;
+		colorMap	= 0.4 0.4 0.4 0.5   0.4 0.4 0.4 0.3   0.2 0.2 0.2 0.2	0.0 0.0 0.0 0.0;
 
 		particleLifeSpread=6; 
 		particleSpeedSpread=4;  
@@ -746,8 +777,8 @@
 
 		Texture=SmokeSmall;
 		airdrag=0.6;
-		colorMap=1.0 0.6 0.2 0.9 0.99 0.99 0.99 0.7 0.99 0.99 0.99 0.5 0.1 0.1 0.1 0.3 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.01;
-
+		colorMap	= 0.4 0.4 0.4 0.5   0.4 0.4 0.4 0.3   0.2 0.2 0.2 0.2	0.0 0.0 0.0 0.0;
+		
 		particleLifeSpread=5; 
 		particleSpeedSpread=3;  
 		particleSizeSpread=2;   
@@ -782,7 +813,7 @@
 
 		Texture=SmokeSmall;
 		airdrag=0.4;
-		colorMap=1.0 0.6 0.2 0.9 0.99 0.99 0.99 0.7 0.99 0.99 0.99 0.5 0.1 0.1 0.1 0.3 0.1 0.1 0.1 0.2 0.1 0.1 0.1 0.1 0.0 0.0 0.0 0.01;
+		colorMap	= 0.4 0.4 0.4 0.5   0.4 0.4 0.4 0.3   0.2 0.2 0.2 0.2	0.0 0.0 0.0 0.0;
 
 		particleLifeSpread=5; 
 		particleSpeedSpread=3;  

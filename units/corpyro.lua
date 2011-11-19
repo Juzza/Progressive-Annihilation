@@ -12,7 +12,7 @@ return {
 		customparams = {
       turretyawrate = 275,
 	  turretpitchrate = 100,
-	  dpslimit = 100,
+	  dpslimit = 130,
     },	
 		description = "Fast Assault Kbot",
 		energymake = 1.1000000238419,

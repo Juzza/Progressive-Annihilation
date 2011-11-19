@@ -11,7 +11,7 @@ return {
 		corpse = "DEAD",
 		customparams = {
       turretyawrate = 150,
-	  dpslimit = 330,
+	  dpslimit = 450,
     },	
 		description = "Experimental Flame Kbot",
 		explodeas = "MECH_BLASTSML",
@@ -132,7 +132,7 @@ return {
 				turret = true,
 				weaponVelocity = 500,
 				damage = {
-					default = 50,
+					default = 55,
 				},
 			},
 		},

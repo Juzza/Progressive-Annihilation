@@ -159,7 +159,7 @@ return {
 				intensity = 12,
 				name = "LightningGun",
 				noselfdamage = true,
-				range = 350,
+				range = 300,
 				reloadtime = 1.6000000476837,
 				rgbcolor = "0.5 0.5 1",
 				soundhit = "xplomed3",
