@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 90,
 		builddistance = 128,
 		builder = true,
-		buildpic = "arm_rezbot.pcx",
+		buildpic = "arm_rezbot.pcx", -- changed from old one
 		buildtime = 2400,
 		canassist = false,
 		canmove = true,
