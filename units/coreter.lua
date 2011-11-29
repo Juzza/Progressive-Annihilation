@@ -1,12 +1,12 @@
 return {
 	coreter = {
-		acceleration = 0.040699999779463,
+		acceleration = 0.04,
 		activatewhenbuilt = true,
-		brakerate = 0.019799999892712,
-		buildcostenergy = 1757,
-		buildcostmetal = 100,
+		brakerate = 0.02,
+		buildcostenergy = 2500,
+		buildcostmetal = 150,
 		buildpic = "CORETER.DDS",
-		buildtime = 6404,
+		buildtime = 6000,
 		canattack = false,
 		canmove = true,
 		category = "ALL TANK MOBILE NOTSUB NOWEAPON NOTSHIP NOTAIR",

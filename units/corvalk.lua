@@ -26,7 +26,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Valkyrie",
 		objectname = "CORVALK",
-		releaseheld = true,
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 125,

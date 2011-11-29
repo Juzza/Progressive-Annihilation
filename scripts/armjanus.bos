@@ -95,9 +95,13 @@ FireWeapon1() {
 	{
 	emit-sfx 1024 from muzzler;
 	emit-sfx 1025 from muzzleb1;
+	emit-sfx 1024 from muzzler;
+	emit-sfx 1025 from muzzleb1;
 	}
 	if ( gun_2 == 1)
 	{
+	emit-sfx 1024 from muzzler;
+	emit-sfx 1025 from muzzleb1;
 	emit-sfx 1024 from muzzlel;
 	emit-sfx 1025 from muzzleb2;
 	}

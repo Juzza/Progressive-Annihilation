@@ -2,7 +2,7 @@ return {
 	armamph = {
 		acceleration = 0.11999999731779,
 		brakerate = 0.1879999935627,
-		buildcostenergy = 2468,
+		buildcostenergy = 2500,
 		buildcostmetal = 245,
 		buildpic = "ARMAMPH.DDS",
 		buildtime = 5182,
@@ -11,8 +11,6 @@ return {
 		category = "KBOT MOBILE WEAPON ALL NOTSHIP NOTAIR",
 		corpse = "DEAD",
 		description = "Amphibious Kbot",
-		energymake = 0.40000000596046,
-		energyuse = 0.40000000596046,
 		explodeas = "BIG_UNITEX",
 		floater = false,
 		footprintx = 3,
@@ -153,7 +151,7 @@ return {
 				weaponvelocity = 600,
 				damage = {
 					bombers = 15,
-					default = 70,
+					default = 60,
 					fighters = 15,
 					subs = 5,
 					vtol = 15,

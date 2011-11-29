@@ -165,6 +165,20 @@ local moveDatas = {
 		maxslope = 18,
 		maxwaterdepth = 22,
 	},
+	TANK4 = {
+		crushstrength = 45,
+		footprintx = 4,
+		footprintz = 4,
+		maxslope = 18,
+		maxwaterdepth = 22,
+	},
+	TANK5 = {
+		crushstrength = 80,
+		footprintx = 5,
+		footprintz = 5,
+		maxslope = 18,
+		maxwaterdepth = 22,
+	},
 	TANK14 = {
 		crushstrength = 1400,
 		footprintx = 14,

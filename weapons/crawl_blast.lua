@@ -8,7 +8,7 @@ return {
 		impulseboost = 0.12300000339746,
 		impulsefactor = 0.12300000339746,
 		name = "CrawlingBomb",
-		range = 450,
+		range = 400,
 		reloadtime = 3.5999999046326,
 		soundhit = "xplonuk3",
 		soundstart = "largegun",
@@ -17,7 +17,7 @@ return {
 		damage = {
 			commanders = 1250,
 			crawlingbombs = 199,
-			default = 3000,
+			default = 2500,
 		},
 	},
 }

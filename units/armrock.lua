@@ -121,7 +121,7 @@ return {
 				weaponacceleration = 120,
 				weapontimer = 2,
 				weapontype = "MissileLauncher",
-				weaponvelocity = 190,
+				weaponvelocity = 260,
 				damage = {
 					default = 157,
 					subs = 5,

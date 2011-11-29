@@ -1,13 +1,13 @@
 return {
 	armspy = {
-		acceleration = 0.23999999463558,
+		acceleration = 0.24,
 		activatewhenbuilt = true,
-		brakerate = 0.20000000298023,
-		buildcostenergy = 8219,
-		buildcostmetal = 128,
+		brakerate = 0.2,
+		buildcostenergy = 9500,
+		buildcostmetal = 155,
 		builder = true,
 		buildpic = "ARMSPY.DDS",
-		buildtime = 17631,
+		buildtime = 20000,
 		canassist = false,
 		canguard = false,
 		canmove = true,

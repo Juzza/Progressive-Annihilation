@@ -1,10 +1,10 @@
 return {
 	corspec = {
-		acceleration = 0.10000000149012,
+		acceleration = 0.1,
 		activatewhenbuilt = true,
-		brakerate = 0.11999999731779,
-		buildcostenergy = 1453,
-		buildcostmetal = 70,
+		brakerate = 0.12,
+		buildcostenergy = 2500,
+		buildcostmetal = 130,
 		buildpic = "corspec.jpg",
 		buildtime = 5439,
 		canattack = false,

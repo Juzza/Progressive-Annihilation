@@ -2,10 +2,10 @@ return {
 	cormabm = {
 		acceleration = 0.019799999892712,
 		brakerate = 0.037399999797344,
-		buildcostenergy = 36400,
-		buildcostmetal = 1400,
+		buildcostenergy = 24000,
+		buildcostmetal = 1500,
 		buildpic = "CORMABM.DDS",
-		buildtime = 36400,
+		buildtime = 34000,
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR",
 		corpse = "DEAD",

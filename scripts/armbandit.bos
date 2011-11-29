@@ -93,7 +93,7 @@ wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <-8.6> speed<120>;
+Turn LLArm to x-axis <-18> speed<120>;
 Turn LLArm to y-axis <-7.2> speed<120>;
 Turn LLArm to z-axis <-4.1> speed<120>;
 Turn RLArm to x-axis <6> speed<120>;
@@ -111,7 +111,7 @@ wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <-19.5> speed<120>;
+Turn LLArm to x-axis <-35.5> speed<120>;
 Turn LLArm to y-axis <-2> speed<120>;
 Turn LLArm to z-axis <6.5> speed<120>;
 Turn RLArm to x-axis <14> speed<120>;
@@ -131,7 +131,7 @@ wait-for-turn LLLeg around x-axis;
 	}
 	if( TRUE )
 	{
-Turn LLArm to x-axis <-19.5> speed<120>;
+Turn LLArm to x-axis <-30.5> speed<120>;
 Turn LLArm to y-axis <-2> speed<120>;
 Turn LLArm to z-axis <6.5> speed<120>;
 Turn RLArm to x-axis <4> speed<120>;

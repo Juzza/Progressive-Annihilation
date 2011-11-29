@@ -11,7 +11,7 @@ return {
 		buildpic = "CORMAW.DDS",
 		buildtime = 4419,
 		customparams = {
-	  dpslimit = 120,
+	  dpslimit = 130,
     },	
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -24 0",

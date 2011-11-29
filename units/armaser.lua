@@ -1,10 +1,10 @@
 return {
 	armaser = {
-		acceleration = 0.11999999731779,
+		acceleration = 0.12,
 		activatewhenbuilt = true,
-		brakerate = 0.15000000596046,
-		buildcostenergy = 1326,
-		buildcostmetal = 73,
+		brakerate = 0.15,
+		buildcostenergy = 2500,
+		buildcostmetal = 130,
 		buildpic = "ARMASER.DDS",
 		buildtime = 4937,
 		canattack = false,

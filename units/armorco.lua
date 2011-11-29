@@ -126,7 +126,7 @@ return {
 				weaponvelocity = 900,
 				damage = {
 					bombers = 55,
-					default = 400,
+					default = 250,
 					fighters = 55,
 					subs = 5,
 					vtol = 55,
@@ -201,7 +201,7 @@ return {
 				weapontype = "StarburstLauncher",
 				weaponvelocity = 600,
 				damage = {
-					default = 220,
+					default = 450,
 					subs = 5,
 				},
 			},

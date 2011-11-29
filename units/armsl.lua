@@ -1,11 +1,11 @@
 return {
 	armsl = {
-		acceleration = 0.15000000596046,
+		acceleration = 0.15,
 		brakerate = 5,
-		buildcostenergy = 6091,
-		buildcostmetal = 344,
+		buildcostenergy = 6000,
+		buildcostmetal = 320,
 		buildpic = "ARMSL.DDS",
-		buildtime = 15289,
+		buildtime = 15000,
 		canfly = true,
 		canmove = true,
 		category = "ALL TPORT NOTSUB VTOL NOWEAPON",

@@ -22,7 +22,7 @@ return {
 		icontype = "building",
 		idleautoheal = 13,
 		idletime = 900,
-		maxdamage = 1300,
+		maxdamage = 1000,
 		maxslope = 20,
 		maxwaterdepth = 0,
 		metalstorage = 75,
@@ -131,8 +131,7 @@ return {
 				weaponvelocity = 800,
 				damage = {
 					bombers = 5,
-					commanders = 140,
-					default = 75,
+					default = 50,
 					fighters = 5,
 					subs = 2,
 					vtol = 5,

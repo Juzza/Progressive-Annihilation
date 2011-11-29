@@ -26,7 +26,6 @@ return {
 		maxwaterdepth = 0,
 		name = "Atlas",
 		objectname = "ARMATLAS",
-		releaseheld = true,
 		seismicsignature = 0,
 		selfdestructas = "SMALL_UNIT",
 		sightdistance = 125,

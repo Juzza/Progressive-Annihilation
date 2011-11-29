@@ -1,9 +1,9 @@
 return {
 	armyork = {
-		acceleration = 0.039599999785423,
+		acceleration = 0.04,
 		airsightdistance = 900,
-		brakerate = 0.12649999558926,
-		buildcostenergy = 8510,
+		brakerate = 0.126,
+		buildcostenergy = 8500,
 		buildcostmetal = 425,
 		buildpic = "ARMYORK.DDS",
 		buildtime = 9964,
@@ -21,7 +21,7 @@ return {
 		leavetracks = true,
 		maxdamage = 2350,
 		maxslope = 16,
-		maxvelocity = 2.4816000461578,
+		maxvelocity = 2.48,
 		maxwaterdepth = 12,
 		movementclass = "TANK3",
 		name = "Phalanx",
@@ -34,7 +34,7 @@ return {
 		trackstrength = 5,
 		tracktype = "StdTank",
 		trackwidth = 27,
-		turnrate = 618.20001220703,
+		turnrate = 618,
 		featuredefs = {
 			dead = {
 				blocking = true,
