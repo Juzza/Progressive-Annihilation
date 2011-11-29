@@ -11,7 +11,7 @@
   footprintz=14;
   height=25;
   hitdensity=100;
-  metal=4961;
+  metal=3561;
   object=cormcv_dead;
   reclaimable=1;
   seqnamereclamate=TREE1RECLAMATE;
@@ -30,7 +30,7 @@
   footprintz=14;
   height=4;
   hitdensity=100;
-  metal=2880;
+  metal=1880;
   object=7X7A;
   reclaimable=1;
   seqnamereclamate=TREE1RECLAMATE;
