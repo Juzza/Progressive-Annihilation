@@ -4,7 +4,7 @@ return {
 		brakerate = 0.20000000298023,
 		buildcostenergy = 750,
 		buildcostmetal = 85,
-		buildpic = "ARMPW.DDS",
+		buildpic = "arm_peewee.pcx", -- changed from old one
 		buildtime = 1600,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR",
