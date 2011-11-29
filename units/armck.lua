@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 90,
 		builddistance = 128,
 		builder = true,
-		buildpic = "arm_conkbot.pcx", -- changed from old one
+		buildpic = "ARMCK.DDS",
 		buildtime = 3500,
 		canmove = true,
 		category = "KBOT MOBILE ALL NOTSUB NOWEAPON NOTSHIP NOTAIR",

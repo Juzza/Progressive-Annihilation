@@ -3,8 +3,8 @@ return {
 		acceleration = 0,
 		brakerate = 0,
 		buildangle = 32768,
-		buildcostenergy = 1434,
-		buildcostmetal = 176,
+		buildcostenergy = 2000,
+		buildcostmetal = 300,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
@@ -128,7 +128,6 @@ return {
 				weaponvelocity = 1000,
 				damage = {
 					bombers = 2,
-					commanders = 80,
 					default = 40,
 					fighters = 2,
 					subs = 1,

@@ -4,7 +4,7 @@ return {
 		brakerate = 0.22499999403954,
 		buildcostenergy = 1100,
 		buildcostmetal = 130,
-		buildpic = "arm_ham.pcx", -- changed from old one
+		buildpic = "ARMHAM.DDS",
 		buildtime = 2200,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR",
@@ -127,7 +127,7 @@ return {
 				weaponvelocity = 286,
 				damage = {
 					bombers = 21,
-					default = 115,
+					default = 125,
 					fighters = 21,
 					subs = 5,
 					vtol = 21,
