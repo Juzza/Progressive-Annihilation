@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armclaw_aoplane.dds",
 		buildpic = "ARMCLAW.DDS",
-		buildtime = 4638,
+		buildtime = 6000,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -24 0",
 		collisionvolumescales = "30 60 30",

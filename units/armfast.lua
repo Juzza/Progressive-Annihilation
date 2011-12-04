@@ -2,8 +2,8 @@ return {
 	armfast = {
 		acceleration = 0.36000001430511,
 		brakerate = 0.375,
-		buildcostenergy = 4000,
-		buildcostmetal = 170,
+		buildcostenergy = 3600,
+		buildcostmetal = 160,
 		buildpic = "ARMFAST.DDS",
 		buildtime = 4000,
 		canmove = true,
