@@ -8,6 +8,7 @@ piece   turret, base, msleeve, turret2, canon2, muzzle2,
 		canon3a, sleeve, canon1, muzzle1, shell1, flare1, canon1a;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3;
+static-var AbsTurretHeadingGoal;
 
 #define SIG_AIM	2
 #define SIG_LOCK 4
@@ -111,8 +112,7 @@ AimPrimary(heading, pitch)
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
 	
-	var absHeading;
-	absHeading = heading + get HEADING;
+	AbsTurretHeadingGoal = heading + get HEADING;
 	
 	spin canon1a around z-axis speed <600.>;
 	turn turret to y-axis heading speed (get 1030);
@@ -120,7 +120,7 @@ AimPrimary(heading, pitch)
 	wait-for-turn turret around y-axis;
 	wait-for-turn sleeve around x-axis;
 	
-	start-script LockTurret(absHeading);
+	start-script LockTurret(AbsTurretHeadingGoal);
 	start-script RestoreAfterDelay();
 	
 	return (1);
@@ -131,11 +131,8 @@ AimSecondary(heading, pitch)
 	signal SIG_AIM2;
 	set-signal-mask SIG_AIM2;
 	
-
-	get HEADING;
-	
 	spin canon2a around z-axis speed <600.>;
-	turn turret2 to y-axis heading speed (get 1030);
+	turn turret2 to y-axis (heading - (AbsTurretHeadingGoal - get HEADING)) speed (get 1030);
 	turn canon2 to x-axis <0> - pitch speed (get 1031);
 	wait-for-turn turret2 around y-axis;
 	wait-for-turn canon2 around x-axis;
@@ -152,7 +149,7 @@ AimTertiary(heading, pitch)
 	set-signal-mask SIG_AIM3;
 	
 	spin canon3a around z-axis speed <600.>;
-	turn turret3 to y-axis heading speed (get 1030);
+	turn turret3 to y-axis (heading - (AbsTurretHeadingGoal - get HEADING)) speed (get 1030);
 	turn canon3 to x-axis <0> - pitch speed (get 1031);
 	wait-for-turn turret3 around y-axis;
 	wait-for-turn canon3 around x-axis;
