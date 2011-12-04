@@ -1,0 +1,212 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece 	 base, body, ground, turret, firepoint1, firepoint2, firepoint3,
+   		 firepoint4, ejectorr, ejectorl, flare, flare2, flare3, flare4,
+   		 barrelA, barrelB, barrelC, barrelD;
+
+
+static-var  activeBarrel;
+
+// Signal definitions
+#define SIG_AIM	2
+#define SIG_LOCK 4
+
+LockTurret(heading)
+{
+	set-signal-mask SIG_LOCK;
+	
+	while(1)
+	{
+		turn turret to y-axis (heading - get HEADING) speed (get 1030);
+		sleep 20;
+	}
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 258;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 257;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+RockUnit(anglex, anglez)
+{
+	turn body to x-axis anglex speed <50.>;
+	turn body to z-axis anglez speed <50.>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn body to z-axis <0.> speed <20.>;
+	turn body to x-axis <0.> speed <20.>;
+}
+
+HitByWeapon(Func_Var_1, Func_Var_2)
+{
+	turn body to z-axis Func_Var_2 speed <105.>;
+	turn body to x-axis Func_Var_1 speed <105.>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn body to z-axis <0.> speed <30.>;
+	turn body to x-axis <0.> speed <30.>;
+}
+
+Create()
+{
+	hide flare;
+	hide firepoint1;
+	hide firepoint2;
+	hide firepoint3;
+	hide firepoint4;
+	hide ejectorl;
+	hide ejectorr;
+	
+    activeBarrel = 0;
+    
+	start-script SmokeUnit();
+}
+
+RestoreAfterDelay()
+{
+	sleep 6000;
+	signal SIG_LOCK;
+	turn turret to y-axis <0.000000> speed (get 1030);
+	turn turret to x-axis <0.000000> speed (get 1031);
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_LOCK;
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	
+	var absHeading;
+	absHeading = heading + get HEADING;
+
+	turn turret to y-axis heading speed (get 1030);
+	turn turret to x-axis <0.000000> - pitch speed (get 1031);
+	wait-for-turn turret around y-axis;
+	wait-for-turn turret around x-axis;
+
+	start-script LockTurret(absHeading);
+	start-script RestoreAfterDelay();
+
+	return (1);
+}
+
+FirePrimary()
+{
+    // Nothing !
+}
+
+Shot1()
+{
+    if (activeBarrel == 0)
+    {
+        emit-sfx 1025 from ejectorl;
+        emit-sfx 1024 from firepoint1;
+		move barrelA to z-axis [-2.0] now;
+		move barrelA to z-axis [0.0] speed [8.0];
+        activeBarrel = 1;
+    }
+	else if (activeBarrel == 1)
+    {
+        emit-sfx 1025 from ejectorr;
+        emit-sfx 1024 from firepoint2;
+		move barrelB to z-axis [-2.0] now;
+		move barrelB to z-axis [0.0] speed [8.0];
+        activeBarrel = 2;
+    }
+	else if (activeBarrel == 2)
+    {
+        emit-sfx 1024 from firepoint3;
+        emit-sfx 1025 from ejectorl;
+		move barrelC to z-axis [-2.] now;
+		move barrelC to z-axis [0.] speed [8.];
+        activeBarrel = 3;
+    }
+	else if (activeBarrel == 3)
+    {
+        emit-sfx 1024 from firepoint4;
+        emit-sfx 1025 from ejectorr;
+		move barrelD to z-axis [-2.] now;
+		move barrelD to z-axis [0.] speed [8.];
+        activeBarrel = 0;
+    }
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = ground;
+}
+
+QueryPrimary(piecenum)
+{
+	if (activeBarrel == 0)         piecenum = flare;
+	else if (activeBarrel == 1)    piecenum = flare2;
+	else if (activeBarrel == 2)    piecenum = flare3;
+	else if (activeBarrel == 3)    piecenum = flare4;
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = body;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare;
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode body type SHATTER | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode ground type BITMAPONLY | BITMAP3;
+		explode turret type BITMAPONLY | BITMAP5;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode body type FALL | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode ground type FALL | BITMAP3;
+		explode turret type SHATTER | BITMAP5;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
+		explode ground type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode turret type SHATTER | BITMAP5;
+		return (0);
+	}
+	corpsetype = 3;
+	explode body type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode base type BITMAPONLY | BITMAP2;
+	explode ground type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode turret type SHATTER | EXPLODE_ON_HIT | BITMAP5;
+}
