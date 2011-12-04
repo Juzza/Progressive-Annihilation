@@ -104,7 +104,7 @@ return {
 		},
 		weapondefs = {
 			gray_mgun = {
-				accuracy = 100,
+				accuracy = 50,
 				areaofeffect = 8,
 				beamtime = 0.10,
 				corethickness = 0.40,
@@ -127,7 +127,7 @@ return {
 				soundhit = "",
 				soundstart = "RUS_45mm.wav",
 				soundtrigger = true,
-				sprayangle = 1000,
+				sprayangle = 200,
 				targetmoveerror = 0.20000000298023,
 				thickness = 1.20,
 				tolerance = 10000,
@@ -135,11 +135,11 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 1400,
 				damage = {
-					bombers = 25,
+					bombers = 15,
 					default = 50,
-					fighters = 25,
+					fighters = 15,
 					subs = 6,
-					vtol = 25,
+					vtol = 15,
 				},
 			},
 		},

@@ -22,7 +22,7 @@ return {
 		idletime = 900,
 		maxdamage = 3800,
 		maxslope = 14,
-		maxvelocity = 1.35,
+		maxvelocity = 0.9,
 		maxwaterdepth = 21,
 		movementclass = "KBOT2",
 		name = "Can",
@@ -98,8 +98,8 @@ return {
 		weapondefs = {
 			core_canlaser = {
 				areaofeffect = 8,
-				beamtime = 0.15000000596046,
-				corethickness = 0.20000000298023,
+				beamtime = 0.15,
+				corethickness = 0.2,
 				craterboost = 0,
 				cratermult = 0,
 				duration = 0.1,
@@ -112,7 +112,7 @@ return {
 				laserflaresize = 10,
 				name = "HighEnergyLaser",
 				noselfdamage = true,
-				range = 275,
+				range = 230,
 				reloadtime = 0.9,
 				rgbcolor = "0 1 0",
 				soundhit = "lasrhit1",

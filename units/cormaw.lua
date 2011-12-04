@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "cormaw_aoplane.dds",
 		buildpic = "CORMAW.DDS",
-		buildtime = 4419,
+		buildtime = 6000,
 		customparams = {
 	  dpslimit = 130,
     },	

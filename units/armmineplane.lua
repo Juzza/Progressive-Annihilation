@@ -30,7 +30,7 @@ return {
 		objectname = "armmineplane",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
-		sightdistance = 695,
+		sightdistance = 400,
 		turnrate = 929,
 		sounds = {
 			canceldestruct = "cancel2",
@@ -62,7 +62,7 @@ return {
 				burstrate = 0.45000001192093,
 				projectiles = 1,
 				collidefriendly = false,
-				commandfire = true,
+				commandfire = false,
 				craterboost = 0,
 				cratermult = 0,
 				dropped = true,

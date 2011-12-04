@@ -3,7 +3,7 @@ return {
 		acceleration = 0.019799999892712,
 		brakerate = 0.037399999797344,
 		buildcostenergy = 12000,
-		buildcostmetal = 1020,
+		buildcostmetal = 1220,
 		buildpic = "ARMMERL.DDS",
 		buildtime = 15500,
 		canmove = true,

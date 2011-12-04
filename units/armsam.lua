@@ -9,7 +9,7 @@ return {
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR",
 		corpse = "DEAD",
-		description = "Missile Truck",
+		description = "AA Truck",
 		energymake = 0.5,
 		energyuse = 0.5,
 		explodeas = "BIG_UNITEX",
