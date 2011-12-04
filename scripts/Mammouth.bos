@@ -169,6 +169,12 @@ FirePrimary()
 	sleep 66;
 	emit-sfx 1024 from muzzle1;
 	sleep 66;
+	emit-sfx 1024 from muzzle1;
+	sleep 66;
+	emit-sfx 1024 from muzzle1;
+	sleep 66;
+	emit-sfx 1024 from muzzle1;
+	sleep 66;
 }
 
 FireSecondary()
@@ -181,10 +187,22 @@ FireSecondary()
 	sleep 66;
 	emit-sfx 1024 from muzzle2;
 	sleep 66;
+	emit-sfx 1024 from muzzle2;
+	sleep 66;
+	emit-sfx 1024 from muzzle2;
+	sleep 66;
+	emit-sfx 1024 from muzzle2;
+	sleep 66;
 }
 
 FireTertiary()
 {
+	emit-sfx 1024 from muzzle3;
+	sleep 66;
+	emit-sfx 1024 from muzzle3;
+	sleep 66;
+	emit-sfx 1024 from muzzle3;
+	sleep 66;
 	emit-sfx 1024 from muzzle3;
 	sleep 66;
 	emit-sfx 1024 from muzzle3;

@@ -112,7 +112,7 @@ return {
 				noselfdamage = true,
 				paralyzer = true,
 				paralyzetime = 3,
-				range = 240,
+				range = 250,
 				reloadtime = 0.8,
 				rgbcolor = "1 1 0",
 				soundhit = "other_lightning",
@@ -127,7 +127,7 @@ return {
 				weaponvelocity = 600,
 				damage = {
 					bombers = 25,
-					default = 155,
+					default = 165,
 					fighters = 25,
 					subs = 1,
 					vtol = 25,
