@@ -11,7 +11,7 @@ return {
 		category = "ALL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB ANTIFLAME ANTIEMG ANTILASER VTOL NOTSHIP",
 		collide = false,
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "39 29 39",
+		collisionvolumescales = "29 15 29",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",
 		cruisealt = 100,
