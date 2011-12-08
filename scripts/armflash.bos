@@ -82,7 +82,7 @@ RestoreAfterDelay()
 	sleep 4000;
 	signal SIG_LOCK;
 	turn turret to y-axis <0.000000> speed (get 1030);
-	turn sleeves to x-axis <0.000000> speed (get 1031);
+	turn turret to x-axis <0.000000> speed (get 1031);
 }
 
 AimPrimary(heading, pitch)
@@ -95,9 +95,9 @@ AimPrimary(heading, pitch)
 	absHeading = heading + get HEADING;
 	
 	turn turret to y-axis heading speed (get 1030);
-	turn sleeves to x-axis <0.000000> - pitch speed (get 1031);
+	turn turret to x-axis <0.000000> - pitch speed (get 1031);
 	wait-for-turn turret around y-axis;
-	wait-for-turn sleeves around x-axis;
+	wait-for-turn turret around x-axis;
 	
 	start-script LockTurret(absHeading);
 	start-script RestoreAfterDelay();

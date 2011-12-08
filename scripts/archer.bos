@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece 	 base, body, ground, turret, firepoint1, firepoint2, firepoint3,
-   		 firepoint4, ejectorr, ejectorl, flare, flare2, flare3, flare4,
+   		 firepoint4, ejectorl, flare, flare2, flare3, flare4,
    		 barrelA, barrelB, barrelC, barrelD;
 
 
@@ -80,7 +80,6 @@ Create()
 	hide firepoint3;
 	hide firepoint4;
 	hide ejectorl;
-	hide ejectorr;
 	
     activeBarrel = 0;
     
@@ -132,7 +131,6 @@ Shot1()
     }
 	else if (activeBarrel == 1)
     {
-        emit-sfx 1025 from ejectorr;
         emit-sfx 1024 from firepoint2;
 		move barrelB to z-axis [-2.0] now;
 		move barrelB to z-axis [0.0] speed [8.0];
@@ -149,7 +147,6 @@ Shot1()
 	else if (activeBarrel == 3)
     {
         emit-sfx 1024 from firepoint4;
-        emit-sfx 1025 from ejectorr;
 		move barrelD to z-axis [-2.] now;
 		move barrelD to z-axis [0.] speed [8.];
         activeBarrel = 0;
