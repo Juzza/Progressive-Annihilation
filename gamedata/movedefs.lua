@@ -193,6 +193,12 @@ local moveDatas = {
 		footprintz = 3,
 		maxwaterdepth = 22,
 	},
+	TKBOT5 = {
+		crushstrength = 65,
+		footprintx = 5,
+		footprintz = 5,
+		maxwaterdepth = 22,
+	},
 	VKBOT3 = {
 		crushstrength = 1400,
 		depthmod = 0,
