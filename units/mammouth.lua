@@ -32,7 +32,7 @@ return {
 		movementclass = "TANK3",
 		name = "Mammoth",
 		nochasecategory = "VTOL",
-		objectname = "mammouth",
+		objectname = "mammoth",
 		seismicsignature = 0,
 		selfdestructas = "BIG_UNIT",
 		sightdistance = 325,

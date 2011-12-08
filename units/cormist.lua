@@ -9,7 +9,7 @@ return {
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR",
 		corpse = "DEAD",
-		description = "AA Truck",
+		description = "AA Truck (General AA)",
 		energymake = 0.5,
 		energyuse = 0.5,
 		explodeas = "BIG_UNITEX",
@@ -138,7 +138,7 @@ return {
 				weaponvelocity = 545,
 				damage = {
 					bombers = 99,
-					default = 56,
+					default = 99,
 					fighters = 99,
 					subs = 5,
 					vtol = 99,

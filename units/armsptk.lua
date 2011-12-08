@@ -16,7 +16,7 @@ return {
 		idleautoheal = 10.5,
 		idletime = 900,
 		maxdamage = 1250,
-		maxvelocity = 1.7200000286102,
+		maxvelocity = 1.72,
 		maxwaterdepth = 12,
 		movementclass = "TKBOT3",
 		name = "Recluse",

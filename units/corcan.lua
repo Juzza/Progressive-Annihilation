@@ -2,7 +2,7 @@ return {
 	corcan = {
 		acceleration = 0.12,
 		brakerate = 0.188,
-		buildcostenergy = 8700,
+		buildcostenergy = 8500,
 		buildcostmetal = 500,
 		buildpic = "CORCAN.DDS",
 		buildtime = 11500,
@@ -113,7 +113,7 @@ return {
 				laserflaresize = 10,
 				name = "HighEnergyLaser",
 				noselfdamage = true,
-				range = 230,
+				range = 220,
 				reloadtime = 0.9,
 				rgbcolor = "0 1 0",
 				soundhit = "lasrhit1",
@@ -126,7 +126,7 @@ return {
 				weaponvelocity = 600,
 				damage = {
 					bombers = 55,
-					default = 162,
+					default = 216,
 					fighters = 55,
 					subs = 5,
 					vtol = 55,
