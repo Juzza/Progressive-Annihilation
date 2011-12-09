@@ -1,11 +1,11 @@
 return {
 	armawac = {
-		acceleration = 0.1140000000596,
+		acceleration = 0.114,
 		brakerate = 5,
-		buildcostenergy = 8062,
+		buildcostenergy = 8000,
 		buildcostmetal = 165,
 		buildpic = "ARMAWAC.DDS",
-		buildtime = 12819,
+		buildtime = 12000,
 		canfly = true,
 		canmove = true,
 		category = "ALL ANTIEMG NOTLAND MOBILE NOTSUB ANTIFLAME ANTIGATOR ANTILASER VTOL NOWEAPON NOTSHIP",
@@ -26,7 +26,7 @@ return {
 		idletime = 900,
 		maxdamage = 800,
 		maxslope = 10,
-		maxvelocity = 10.579999923706,
+		maxvelocity = 10.58,
 		maxwaterdepth = 0,
 		name = "Eagle",
 		objectname = "ARMAWAC",

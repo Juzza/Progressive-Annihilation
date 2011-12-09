@@ -49,6 +49,7 @@ return {
 			[6] = "bladew",
 			[7] = "blastwing",
 			[8] = "cormineplane",
+			[9] = "bumblebee3g",
 		},
 		featuredefs = {
 			dead = {

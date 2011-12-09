@@ -119,7 +119,7 @@ return {
 				impulsefactor = 0.12300000339746,
 				name = "PlasmaCannon",
 				noselfdamage = true,
-				range = 380,
+				range = 350,
 				reloadtime = 1,
 				soundhit = "xplomed2",
 				soundstart = "cannon3",
@@ -128,7 +128,7 @@ return {
 				weaponvelocity = 380,
 				damage = {
 					bombers = 35,
-					default = 130,
+					default = 120,
 					fighters = 35,
 					subs = 5,
 					vtol = 35,

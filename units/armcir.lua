@@ -140,7 +140,7 @@ return {
 					mines = 10,
 					nanos = 10,
 					subs = 5,
-					vtol = 139,
+					vtol = 97,
 				},
 			},
 		},

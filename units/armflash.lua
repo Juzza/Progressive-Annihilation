@@ -118,7 +118,7 @@ return {
 				intensity = 0.69999998807907,
 				name = "flash",
 				noselfdamage = true,
-				range = 180,
+				range = 200,
 				reloadtime = 0.3,
 				rgbcolor = "1 0.95 0.4",
 				size = 1.75,

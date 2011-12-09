@@ -1,11 +1,11 @@
 return {
 	armkam = {
-		acceleration = 0.15399999916553,
+		acceleration = 0.154,
 		brakerate = 3.75,
-		buildcostenergy = 2226,
+		buildcostenergy = 2200,
 		buildcostmetal = 125,
 		buildpic = "ARMKAM.DDS",
-		buildtime = 5046,
+		buildtime = 5000,
 		canfly = true,
 		canmove = true,
 		category = "ALL WEAPON NOTSUB VTOL",
@@ -70,7 +70,7 @@ return {
 				name = "E.M.G.",
 				noselfdamage = true,
 				range = 350,
-				reloadtime = 0.69999998807907,
+				reloadtime = 0.7,
 				rgbcolor = "1 0.95 0.4",
 				size = 2.25,
 				soundstart = "brawlemg",
@@ -82,8 +82,7 @@ return {
 				weaponvelocity = 350,
 				damage = {
 					bombers = 1,
-					commanders = 3,
-					default = 9,
+					default = 10,
 					fighters = 1,
 					subs = 1,
 					vtol = 1,

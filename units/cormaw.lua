@@ -19,7 +19,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",
 		corpse = "DEAD",
-		damagemodifier = 0.50000000596046,
+		damagemodifier = 0.50,
 		description = "Pop-up Flamethrower Turret",
 		energystorage = 15,
 		explodeas = "MEDIUM_BUILDINGEX",

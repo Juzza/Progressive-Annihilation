@@ -2,8 +2,8 @@ return {
 	corfink = {
 		acceleration = 0.47999998927116,
 		brakerate = 12.5,
-		buildcostenergy = 1369,
-		buildcostmetal = 26,
+		buildcostenergy = 1300,
+		buildcostmetal = 35,
 		buildpic = "CORFINK.DDS",
 		buildtime = 2156,
 		canfly = true,

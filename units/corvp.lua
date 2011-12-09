@@ -52,6 +52,9 @@ return {
 			[7] = "corlevlr",
 			[8] = "corwolv",
 			[9] = "cormist",
+			[10] = "corfang",
+			[11] = "corhorg"
+			[12] = "archer"
 		},
 		featuredefs = {
 			dead = {
