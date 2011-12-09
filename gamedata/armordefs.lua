@@ -370,6 +370,7 @@ return {
 		cornanotc = 99,
 	},
 	vtol = {
+		bumblebee3g = 99,
 		whirligig = 99,
 		blastwing = 99,
 		armaca = 99,
