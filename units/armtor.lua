@@ -2,7 +2,7 @@ return {
 	armtor = {
 		acceleration = 0.0243,
 		brakerate = 0.0254,
-		buildcostenergy = 3000,
+		buildcostenergy = 3200,
 		buildcostmetal = 225,
 		buildpic = "CORRAID.DDS",
 		buildtime = 3800,

@@ -51,7 +51,7 @@
 	ShootMe=1;
 	DefaultMissionType=Standby;
 	maneuverleashlength=640;
-	MovementClass=TANK14;
+	MovementClass=ATANK14;
 	canload=1;
 	transportsize=4;
 	transportcapacity=50;

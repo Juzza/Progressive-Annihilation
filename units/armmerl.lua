@@ -22,7 +22,7 @@ return {
 		leavetracks = true,
 		maxdamage = 2100,
 		maxslope = 16,
-		maxvelocity = 0.8.5,
+		maxvelocity = 0.85,
 		maxwaterdepth = 12,
 		movementclass = "TANK3",
 		name = "Merl",
@@ -146,6 +146,8 @@ return {
 			[1] = {
 				def = "ARMTRUCK_ROCKET",
 				onlytargetcategory = "NOTAIR",
+				MainDir = "0 0 1",
+				MaxAngleDif = 30,
 			},
 		},
 	},

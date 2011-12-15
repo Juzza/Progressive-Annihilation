@@ -104,7 +104,7 @@ return {
 		},
 		weapondefs = {
 			lightmobileflak = {
-				accuracy = 700,
+				accuracy = 800,
 				areaofeffect = 160,
 				burnblow = true,
 				canattackground = false,

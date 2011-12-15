@@ -11,7 +11,7 @@ return {
 		category = "ALL WEAPON VTOL NOTSUB",
 		collide = false,
 		collisionvolumeoffsets = "0 0 0",
-		collisionvolumescales = "17 8 17",
+		collisionvolumescales = "30 20 30",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",
 		cruisealt = 78,

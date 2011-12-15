@@ -140,6 +140,8 @@ return {
 			[1] = {
 				def = "CORTRUCK_ROCKET",
 				onlytargetcategory = "NOTAIR",
+				MainDir = "0 0 1",
+				MaxAngleDif = 30,
 			},
 		},
 	},

@@ -122,7 +122,7 @@ return {
 					bombers = 200,
 					commanders = 10,
 					crawlingbombs = 10,
-					default = 1000,
+					default = 200,
 					["else"] = 10,
 					fighters = 200,
 					heavyunits = 10,
