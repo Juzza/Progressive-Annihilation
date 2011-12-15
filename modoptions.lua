@@ -7,14 +7,14 @@ local options={
 	},
     {
        key="ba_modes",
-       name="Balanced Annihilation - Game Modes",
-       desc="Balanced Annihilation - Game Modes",
+       name="Progressive Annihilation - Game Modes",
+       desc="Progressive Annihilation - Game Modes",
        type="section",
     },
     {
        key="ba_options",
-       name="Balanced Annihilation - Options",
-       desc="Balanced Annihilation - Options",
+       name="Progressive Annihilation - Options",
+       desc="Progressive Annihilation - Options",
        type="section",
     },
 	{
@@ -95,7 +95,7 @@ local options={
 		name   = "Air Comblast Full Damage",
 		desc   = "Commander death explosion does full damage if it dies whilst being air transported",
 		type   = "bool",
-		def    = true,
+		def    = false,
 		section= "ba_options",
     },
 	{
