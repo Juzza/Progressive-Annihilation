@@ -12,7 +12,8 @@ return {
 		customparams = {
       turretyawrate = 180,
 	  turretpitchrate = 100,
-	  dpslimit = 160,
+	  dpslimit = 135,
+	  fireproof = 1,
     },	
 		description = "Armoured Flame Kbot",
 		energymake = 0,
@@ -104,7 +105,7 @@ return {
 			},
 		},
 		weapondefs = {
-			flamer = {
+			jarflamer = {
 				accuracy = 800,
 				groundbounce = true,
 				areaOfEffect = 60,
@@ -139,7 +140,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "VTOL",
-				def = "flamer",
+				def = "jarflamer",
 			},
 		},
 	},

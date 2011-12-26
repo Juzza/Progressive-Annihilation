@@ -11,7 +11,8 @@ return {
 		buildpic = "CORMAW.DDS",
 		buildtime = 6000,
 		customparams = {
-	  dpslimit = 130,
+	  dpslimit = 105,
+	  fireproof = 1,
     },	
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -24 0",
@@ -115,7 +116,7 @@ return {
 			},
 		},
 		weapondefs = {
-			flamer = {
+			mawflamer = {
 				accuracy = 800,
 				groundbounce = true,
 				areaOfEffect = 60,
@@ -149,7 +150,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "flamer",
+				def = "mawflamer",
 				onlytargetcategory = "NOTAIR",
 			},
 		},

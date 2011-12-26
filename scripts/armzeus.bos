@@ -630,11 +630,6 @@ Create()
 	Static_Var_8 = 0;
 }
 
-SetMaxReloadTime(Func_Var_1)
-{
-	Static_Var_5 = Func_Var_1 * 5;
-}
-
 StartMoving()
 {
 	Static_Var_1 = 1;

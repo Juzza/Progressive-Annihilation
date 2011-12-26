@@ -53,6 +53,7 @@ return {
 			[9] = "armbandit",
 			[10] = "armsbot",
 			[11] = "armdido",
+			[12] = "armseer",
 		},
 		featuredefs = {
 			dead = {

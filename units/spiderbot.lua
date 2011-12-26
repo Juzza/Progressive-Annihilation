@@ -92,14 +92,14 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "vcormove",
+				[1] = "spider2",
 			},
 			select = {
-				[1] = "vcorsel",
+				[1] = "spider3",
 			},
 		},
 		weapondefs = {
-			tawf_banisher = {
+			spidermissile = {
 				areaofeffect = 140,
 				craterboost = 0,
 				cratermult = 0,
@@ -136,9 +136,7 @@ return {
 		weapons = {
 			[1] = {
 				badtargetcategory = "VTOL",
-				def = "TAWF_BANISHER",
-				maindir = "0 0 1",
-				maxangledif = 270,
+				def = "spidermissile",
 			},
 		},
 	},

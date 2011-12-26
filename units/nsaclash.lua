@@ -107,7 +107,7 @@ return {
 				name = "HighEnergyLaser",
 				noselfdamage = true,
 				range = 275,
-				reloadtime = 0.80000001192093,
+				reloadtime = 1,
 				rgbcolor = "0 1 0",
 				soundhit = "lasrhit1",
 				soundstart = "lasrhvy3",
@@ -119,7 +119,7 @@ return {
 				weaponvelocity = 700,
 				damage = {
 					bombers = 55,
-					default = 275,
+					default = 225,
 					fighters = 55,
 					subs = 5,
 					vtol = 55,

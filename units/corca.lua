@@ -20,7 +20,6 @@ return {
 		description = "Tech Level 1",
 		energymake = 5,
 		energystorage = 25,
-		energyuse = 5,
 		explodeas = "CA_EX",
 		footprintx = 3,
 		footprintz = 3,

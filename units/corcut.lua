@@ -3,7 +3,7 @@ return {
 		acceleration = 0.125,
 		brakerate = 3.938,
 		buildcostenergy = 3800,
-		buildcostmetal = 290,
+		buildcostmetal = 340,
 		buildpic = "CORCUT.DDS",
 		buildtime = 9000,
 		canfly = true,

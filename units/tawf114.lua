@@ -134,8 +134,6 @@ return {
 			[1] = {
 				badtargetcategory = "VTOL",
 				def = "TAWF_BANISHER",
-				maindir = "0 0 1",
-				maxangledif = 270,
 			},
 		},
 	},

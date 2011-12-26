@@ -10,8 +10,8 @@ return {
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR",
 		corpse = "DEAD",
 	customparams = {
-      turretyawrate = 180,
-	  turretpitchrate = 100,
+      turretyawrate = 80,
+	  turretpitchrate = 50,
     },	
 		description = "Rocket Tank",
 		explodeas = "BIG_UNITEX",

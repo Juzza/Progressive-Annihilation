@@ -62,6 +62,18 @@ local moveDatas = {
 		footprintz = 6,
 		minwaterdepth = 15,
 	},
+	DBOAT7 = {
+		crushstrength = 90,
+		footprintx = 7,
+		footprintz = 7,
+		minwaterdepth = 16,
+	},
+	DBOAT9 = {
+		crushstrength = 120,
+		footprintx = 9,
+		footprintz = 9,
+		minwaterdepth = 16,
+	},
 	HAKBOT4 = {
 		crushstrength = 250,
 		depthmod = 0,
@@ -231,6 +243,13 @@ local moveDatas = {
 	UBOAT3 = {
 		footprintx = 3,
 		footprintz = 3,
+		minwaterdepth = 15,
+		crushstrength = 5,
+		subMarine = 1,
+	},
+	UBOAT5 = {
+		footprintx = 5,
+		footprintz = 5,
 		minwaterdepth = 15,
 		crushstrength = 5,
 		subMarine = 1,

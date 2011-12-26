@@ -1,0 +1,5104 @@
+[NEUTRON_Expl]
+{
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 680;
+		flashAlpha = 1;
+		circleGrowth = 5;
+		circleAlpha = 1;
+		ttl = 160;
+		color = 0.4, 0.4, 0.6;
+
+	}
+	water=1;
+	ground=1;
+}
+
+
+[STUNNER_Expl]
+{
+	[electricstorm]  // residual electricity effect
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-200 r400, 1, -200 r400; 
+		delay=10 r200;		
+		explosionGenerator=custom:LIGHTNINGPLOSION_STORMBOLT; 
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=50;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=50;
+			length=150;
+			alpha=0.99;
+			alphadecay=0.05;
+			color=.4 .7 0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=20; 
+	}
+	[glow]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=-0, 1, 0;
+			gravity=0, 0.00, 0;
+			colorMap= 0 0 0 0.01   .4 .7 1 0.9      0 0 0 0.01;
+			Texture=diamondstar;
+			airdrag=1;
+			particleLife=15;
+			particleLifeSpread=0;
+			numParticles=1;
+			particleSpeed=1;
+			particleSpeedSpread=0;
+			particleSize=300;
+			particleSizeSpread=10;
+			emitRot=0;
+			emitRotSpread=180;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=3;
+	}
+	usedefaultexplosions=0;	
+	[groundflash]
+	{
+		flashSize = 600;   // flash size
+		flashAlpha = 1;    // initial alpha of the flash
+		circleGrowth = 50; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 16;          // number of frames
+		color = 0.2, 0.7, 1;
+	}
+	water=1;
+	ground=1;
+}
+
+[LRPC_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[bang]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+			texture=sparkexplo;
+	      		heat = 12;
+	      		maxheat = 12;
+	      		heatFalloff = 1;
+	      		size = 15;
+	      		sizeGrowth= 15;
+	      		speed = 0, 0, 0;
+	      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	ground=1;
+	water=1;
+      	count=2;
+	}
+	[heatcloud]
+	{
+		[properties]
+		{
+			pos = -15 r30, r15, -15 r30;
+			speed=0.4 r-0.8, -0.4 r0.8, 0.4 r-0.8;
+			heat = 30;
+			maxheat=30;
+			heatFalloff=.5;
+			size = 55;
+		}
+		ground=1;
+		air=1;
+		count=5;
+	}
+	[groundflash]
+	{
+		flashSize = 240;
+		flashAlpha = 1.8;
+		circleGrowth = 12;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 24;
+	}
+}
+
+[PLASMA_Expl]
+{	
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 100;
+		flashAlpha = 1.8;
+		circleGrowth = 6;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 15;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 13, 0;    
+		delay=0;				  
+		explosionGenerator=custom:CHARLIZE_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[SMALL_UNIT_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 190;   //270
+		flashAlpha = 2;
+		circleGrowth = 12;
+		circleAlpha = .3;
+		ttl = 13;          //16
+		color = 0.9, 0.9, .9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=15;
+			length=16;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.9,0.9,.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[BIG_UNIT_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 230;   //300 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 12; // size increase/frame
+		circleAlpha = .4;   // initial alpha of the ring
+		ttl = 16;          //20 number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=15;
+			length=16;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.9,0.9,0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[SMALL_AIRUNIT_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 270;   // flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 12; // size increase/frame
+		circleAlpha = .3;   // initial alpha of the ring
+		ttl = 16;          // number of frames
+		color = 0.9, 0.9, .9;
+	}
+}
+
+[BIG_AIRUNIT_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 300;   //300 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 12; // size increase/frame
+		circleAlpha = .4;   // initial alpha of the ring
+		ttl = 20;          //20 number of frames
+		color = 0.9, 0.9, .9;
+	}
+}
+
+[HUGE_AIRUNIT_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 450;   //300 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 11; // size increase/frame
+		circleAlpha = .4;   // initial alpha of the ring
+		ttl = 26;          //20 number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=22;
+			length=24;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.9,0.9,0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[SMALL_AIRCRASH_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 270;   // flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 12; // size increase/frame
+		circleAlpha = .3;   // initial alpha of the ring
+		ttl = 16;          // number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[splashy] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:LITTLESPLUNK;
+		}
+	air=0;
+	water=1;
+	ground=0;
+	count=1;
+	}
+}
+
+[BIG_AIRCRASH_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 300;   //300 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 12; // size increase/frame
+		circleAlpha = .4;   // initial alpha of the ring
+		ttl = 20;          //20 number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[splashy] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:LITTLESPLUNK;
+		}
+	air=0;
+	water=1;
+	ground=0;
+	count=1;
+	}
+}
+
+[HUGE_AIRCRASH_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 450;   //300 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 11; // size increase/frame
+		circleAlpha = .4;   // initial alpha of the ring
+		ttl = 26;          //20 number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=22;
+			length=24;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.9,0.9,0.9;
+
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=4; 
+	}
+	[splashy] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:KERSPLUNK;
+		}
+	air=0;
+	water=1;
+	ground=0;
+	count=1;
+	}
+}
+
+[HUGE_UNIT_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 350;   //300 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 11; // size increase/frame
+		circleAlpha = .4;   // initial alpha of the ring
+		ttl = 20;          //20 number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=22;
+			length=24;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.9,0.9,0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[SMALL_SUICIDE_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 250;   //300 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 12; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 17;          //20 number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=15;
+			length=16;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.9,0.9,0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[MED_SUICIDE_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 300;   //350 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 12; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 20;          //22 number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=15;
+			length=16;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.9,0.9,0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[BIG_SUICIDE_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 350;   //400 flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 10; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 24;          //26 number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=15;
+			length=16;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.9,0.9,0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[CRAWL_SUICIDE_Expl] // UNUSED
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 700;   // flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 10; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 30;          // number of frames
+		color = 0.9, 0.9, .9;
+	}
+}
+
+[CRAWL_UNIT_Expl]  // UNUSED
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 500;   // flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 10; // size increase/frame
+		circleAlpha = .3;   // initial alpha of the ring
+		ttl = 26;          // number of frames
+		color = 0.7, 0.7, .7;
+	}
+}
+
+[PYRO_UNIT_Expl]
+{
+	usedefaultexplosions=1;	
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.1, 0.001 r-0.002;
+			colorMap= 0 0 0  0.01   0.9 0.9 0 0.5  0.9 0.9 0 0.5  0.9 0.9 0 0.5     0.9 0.9 0 0.5     0.9 0.9 0 0.5       0.8 0.8 0.1 0.5       0.7 0.7 0.2 0.5      0.5 0.35 0. 0.5   0.5 0.35 0. 0.5   0.5 0.35 0. 0.5    0.5 0.35 0. 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.90;
+			particleLife=50;
+			particleLifeSpread=20;
+			numParticles=1;
+			particleSpeed=2.2;
+			particleSpeedSpread=2;
+			particleSize=16;
+			particleSizeSpread=16;
+			emitRot=30;
+			emitRotSpread=0;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=5;
+	}
+	[groundflash]
+	{
+		flashSize = 120;   // flash size
+		flashAlpha = 1.5;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 25;          // number of frames
+		color = 1, .8, .3;
+	}
+}
+
+[PYRO_SUICIDE_Expl]
+{	
+	usedefaultexplosions=1;	
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.1, 0.001 r-0.002;
+			colorMap= 0 0 0  0.01   0.9 0.9 0 0.5  0.9 0.9 0 0.5  0.9 0.9 0 0.5     0.9 0.9 0 0.5     0.9 0.9 0 0.5       0.8 0.8 0.1 0.5       0.7 0.7 0.2 0.5      0.5 0.35 0. 0.5   0.5 0.35 0. 0.5   0.5 0.35 0. 0.5    0.5 0.35 0. 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.90;
+			particleLife=50;
+			particleLifeSpread=20;
+			numParticles=1;
+			particleSpeed=3;
+			particleSpeedSpread=2;
+			particleSize=16;
+			particleSizeSpread=16;
+			emitRot=90;
+			emitRotSpread=0;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=8;
+	}
+	[groundflash]
+	{
+		flashSize = 160;   // flash size
+		flashAlpha = 1.5;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 35;          // number of frames
+		color = 1, .8, .3;
+	}
+}
+
+[FLAK_BURST_Expl]
+{
+	usedefaultexplosions=1;	
+	[smoke]
+	{
+		[properties]
+		{
+			ageSpeed=0.005;
+			size = 20;
+			sizeGrowth = 1.9;
+			pos = 4 r-2,4 r-2,4 r-2;
+			speed=.1 r-.2,.1 r-.2,.1 r-.2;
+		}
+		water=1;
+		ground=1;
+		air=1;
+		count=4;
+	}
+}
+
+[FLAK_SMALLBURST_Expl]
+{
+	usedefaultexplosions=1;	
+	[smoke]
+	{
+		[properties]
+		{
+			ageSpeed=0.005; // age increase per frame, when age >= 1 the particle is destroyed
+			size = 14;
+			sizeGrowth = 1.5;//1.15//1.07
+			sizeexpansion=0.04;
+			pos = 3 r-1.5,3 r-1.5,3 r-1.5;
+			speed=.04 r-.08,.04 r-.08,.04 r-.08;
+		}
+		water=1;
+		ground=1;
+		air=1;
+		count=1;
+	}
+}
+
+[FLAK_SMALLWHITEBURST_Expl]
+{
+	usedefaultexplosions=1;	
+	[SMOKE]
+	{
+		[PROPERTIES]
+		{
+			color=0.9;
+			startsize=2.25;
+			sizeexpansion=0.1;
+			ageSpeed=0.005;
+			size=16;
+			sizeGrowth = 1.5;//1.15//1.07
+			pos = 3 r-1.5,3 r-1.5,3 r-1.5;
+			speed=.04 r-.08,.04 r-.08,.04 r-.08;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[NAPALM_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 140;
+		flashAlpha = 2.2;
+		color = 1,0.6,0.0;
+		ttl = 80;
+	}
+	//[burst] 
+	//{
+	//    class=CExpGenSpawner;
+	//	[properties]
+	//	{
+	//	pos=10 r20, 4, -10 r20;    
+	//	delay=0;				  
+	//	explosionGenerator=custom:NAPALMFIREBALL_piece;
+	//	}
+	//air=1;
+	//water=1;
+	//ground=1;
+	//count=20;
+	//}
+	[ploom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i1, -10 r20;    
+		delay=0  i2;				  
+		explosionGenerator=custom:NAPALMFIREBALL_piece;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=30;
+	}
+	[fwoosh] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 10, 0;    
+		delay=0;				  
+		explosionGenerator=custom:NAPALMFIREBALL_piece2;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[redploom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i2, -10 r20;    
+		delay=30  i2;				  
+		explosionGenerator=custom:NAPALMFIREBALL_piece3;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=60;
+	}
+}
+
+[BIG_NUCLEAR_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 2500;
+		flashAlpha = 2;
+		circleGrowth = 30;
+		circleAlpha = 4;
+		ttl = 38;
+		color = 1,0.8,0.7;
+
+	}
+}
+
+[MINI_NUCLEAR_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 1100;
+		flashAlpha = 2.3;
+		circleGrowth = 20;
+		circleAlpha = 3;
+		ttl = 36;
+		color = 1,0.8,0.7;
+
+	}
+}
+
+[LARGE_BOMB_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 180;
+		flashAlpha = 2.4;
+		circleGrowth = 11;
+		circleAlpha = .5;
+		ttl = 11;
+		color = 1,0.9,0.8;
+
+	}
+}
+
+[MEDLARGE_BOMB_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 140;
+		flashAlpha = 2;
+		circleGrowth = 9;
+		circleAlpha = .5;
+		ttl = 10;
+		color = 1,0.9,0.8;
+
+	}
+}
+
+[SMALLFLASH_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 50;
+		flashAlpha = 1.8;
+		color = 1,0.9,0.8;
+		circleGrowth = 3;
+		circleAlpha = .5;
+		ttl = 11;
+	}
+}
+
+[MEDSMALLFLASH_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 60;
+		flashAlpha = 2.0;
+		color = 1,0.9,0.8;
+		ttl = 13;
+	}
+}
+
+[MINIBANG_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 150;   // flash size
+		flashAlpha = 1.4;    // initial alpha of the flash
+		circleGrowth = 5; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 16;          // number of frames
+		color = 0.9, 0.9, 0.9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:MINIOTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[MINISUIC_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 180;   // flash size
+		flashAlpha = 1.4;    // initial alpha of the flash
+		circleGrowth = 7; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 16;          // number of frames
+		color = 0.9, 0.9, 0.9;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:MINIOTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+
+
+[DRAGONGUN_Expl]
+{	
+	usedefaultexplosions=1;	
+	[bang]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+			texture=sparkexplo;
+	      		heat = 18;
+	      		maxheat = 18;
+	      		heatFalloff = 1;
+	      		size = 15;
+	      		sizeGrowth= 15;
+	      		speed = 0, 0, 0;
+	      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	ground=1;
+	water=1;
+      	count=2;
+	}
+	[ploom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i1, -10 r20;    
+		delay=0  i2;				  
+		explosionGenerator=custom:NAPALMFIREBALL_piece;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=30;
+	}
+	[fwoosh] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 10, 0;    
+		delay=0;				  
+		explosionGenerator=custom:NAPALMFIREBALL_piece2;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[redploom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i2, -10 r20;    
+		delay=30  i2;				  
+		explosionGenerator=custom:NAPALMFIREBALL_piece3;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=70;
+	}
+	[groundflash]
+	{
+		flashSize = 240;
+		flashAlpha = 1.8;
+		circleGrowth = 6;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 50;
+	}
+}
+
+[TORPEDO_SPLASH_Expl]
+{
+	usedefaultexplosions=1;
+	[dirt]
+	{
+		[properties]
+		{
+			color = 1, 1, 1;
+			size = 10;
+			sizeExpansion = 1;
+			slowdown=1;
+			lifetime=120;
+			pos = -3 r6, r6, -3 r6; // These codes are explained below
+			speed=0.75 r-1.5, 2 r4.0, 0.75 r-1.5;
+		}
+		water=1;
+		count=20;
+	}
+}
+
+
+[SMALLSTUNNER_Expl]
+{
+	
+	usedefaultexplosions=0;
+	[glow]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=-0, 1, 0;
+			gravity=0, 0.00, 0;
+			colorMap= 0 0 0 0.01   .4 .7 1 0.9      0 0 0 0.01;
+			Texture=diamondstar;
+			airdrag=1;
+			particleLife=10;
+			particleLifeSpread=0;
+			numParticles=1;
+			particleSpeed=0;
+			particleSpeedSpread=0;
+			particleSize=30;
+			particleSizeSpread=0;
+			emitRot=0;
+			emitRotSpread=180;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=25;
+			length=75;
+			alpha=0.99;
+			alphadecay=0.1;
+			color=.4 .7 0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=15; 
+	}
+	[groundflash]
+	{
+		flashSize = 300;   // flash size
+		flashAlpha = 1;    // initial alpha of the flash
+		circleGrowth = 22; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 16;          // number of frames
+		color = 0.2, 0.7, 1;
+	}
+	water=1;
+	ground=1;
+}
+
+[BIGPLASMA_Expl]
+{	
+	usedefaultexplosions=1;	
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 18, 0;    
+		delay=0;				  
+		explosionGenerator=custom:BIGCHARLIZE_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 130;
+		flashAlpha = 1.8;
+		circleGrowth = 6;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 18;
+	}
+}
+
+[HUGEPLASMA_Expl]
+{	
+	usedefaultexplosions=1;	
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 18, 0;    
+		delay=0;				  
+		explosionGenerator=custom:BIGCHARLIZE_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 200;
+		flashAlpha = 1.8;
+		circleGrowth = 10;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 22;
+	}
+}
+
+[FLASH1red]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 22;
+		flashAlpha = 0.9;
+		circleGrowth = 2;
+		circleAlpha = 1;
+		ttl = 5;
+		color = 1,0.7,0.6;
+	}
+}
+
+[FLASH2red]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 30;
+		flashAlpha = 2;
+		circleGrowth = 3;
+		circleAlpha = 1;
+		ttl = 7;
+		color = 1,0.5,0.4;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=2;
+			length=4;
+			alpha=0.9;
+			alphadecay=0.16;
+			color=0.9,0.3,0.3;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[FLASH1green]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 35;
+		flashAlpha = 1.1;
+		circleGrowth = 3;
+		circleAlpha = .7;
+		ttl = 7;
+		color = 0.4,1,0.4;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=3;
+			length=5;
+			alpha=0.9;
+			alphadecay=0.1;
+			color=0.3,0.9,0.3;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+}
+
+[FLASH1blue]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 11;
+		flashAlpha = 1.1;
+		ttl = 10;
+		color = 0.7,0.7,1;
+	}
+}
+
+[FLASH1blue_LONG]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 11;
+		flashAlpha = 1.1;
+		ttl = 16;//8
+		color = 0.5,0.5,1;
+	}
+}
+
+[FLASH1bluegreen]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 11;
+		flashAlpha = 1.1;
+		ttl = 8;
+		color = 0.5,0.8,1;
+	}
+}
+
+[FLASH1white]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 15;
+		flashAlpha = 1.3;
+		ttl = 4;
+		color = 1,1,1;
+	}
+}
+
+[FLASH2white]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 22;
+		flashAlpha = 1.4;
+		ttl = 16;
+		color = .7,.9,1;
+	}
+}
+
+[peewee_emg_flash]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 10;
+		flashAlpha = 1.3;
+		ttl = 4;
+		color = 1,1,1;
+	}
+}
+
+[blueEMGhit]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 6;
+		flashAlpha = 2.1;
+		ttl = 30;
+		color = 0.1,0.6,1;
+	}
+	[nova]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=blueexplo;
+      		heat = 24;
+      		maxheat = 24;
+      		heatFalloff = 1;
+      		size = 0.2;
+      		sizeGrowth = 1;
+      		speed = 0, 0, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=blueexplo;
+      		heat = 30;
+      		maxheat = 40;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = .5;
+      		speed = 0, 1, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+}
+
+[LIGHTNING]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 45;
+		flashAlpha = 2.6;
+		ttl = 30;
+		color = .7,.9,1;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=5;
+			length=9;
+			alpha=0.8;
+			alphadecay=0.1;
+			color=0.0,0.4,0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=6; 
+	}
+	[particlesystem_LIGHTNINGCHUNKS]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=-0.04;
+		sizeMod=1.0;
+		pos=0, 1.0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, -0.2, 0;
+		colorMap=1.0 1.0 1.0 0.1      0.5 0.75 1.0 0.1      0.0 0.5 1.0 0.1      0.0 1.0 1.0 0.1      1.0 1.0 0.0 0.1      0.5 0.1 0.0 0.1;
+		Texture=blueexplo;
+		airdrag=1.0;
+		particleLife=20;
+		particleLifeSpread=10;
+		numParticles=16;
+		particleSpeed=3;
+		particleSpeedSpread=1;
+		particleSize=2.2;
+		particleSizeSpread=.75;
+		emitRot=0;
+		emitRotSpread=120;
+		directional=1;
+		useAirLos=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}	
+}
+
+[SUPERGUN_Expl]
+{	
+	usedefaultexplosions=1;	
+	[heatcloud]
+	{
+		[properties]
+		{
+			pos = -20 r40, r20, -20 r40;
+			speed=0.5 r-1, -.5 r1, .5 r-1;
+			heat = 30;
+			maxheat=60;
+			heatFalloff=.5;
+			size = 65;
+		}
+		ground=1;
+		air=1;
+		count=5;
+	}
+	[groundflash]
+	{
+		flashSize = 340;
+		flashAlpha = 1.8;
+		circleGrowth = 18;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 26;
+	}
+}
+
+[LITTLEBANG_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 40;
+		flashAlpha = 2;
+		circleGrowth = 3;
+		circleAlpha = .5;
+		ttl = 10;
+		color = 1,0.9,0.8;
+
+	}
+}
+
+[LONGGUN_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 100;
+		flashAlpha = 1;
+		circleGrowth = 15;
+		circleAlpha = .5;
+		ttl = 10;
+		color = 0.7, 0.7, .7;
+	}
+	[dirtup] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 13, 0;    
+		delay=0;				  
+		explosionGenerator=custom:TESS;
+		}
+		air=0;
+		water=0;
+		ground=1;
+		count=1;
+	}
+}
+
+[ORBITALLASER_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 120;
+		flashAlpha = .5;
+		circleGrowth = 35;
+		circleAlpha = 1.2;
+		ttl = 8;
+		color = 0,0.5,1;
+	}
+}
+
+[LITTLEPLASMA_Expl]
+{	
+	usedefaultexplosions=1;	
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 7, 0;    
+		delay=0;				  
+		explosionGenerator=custom:MINICHARLIZE_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 55;
+		flashAlpha = 1.8;
+		circleGrowth = 4;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 15;
+	}
+}
+
+[SPIDSTUNNER_Expl]
+{
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=5;
+			length=10;
+			alpha=0.8;
+			alphadecay=0.1;
+			color=0.0,0.4,0.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=3; 
+	}
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 50;   // flash size
+		flashAlpha = 1;    // initial alpha of the flash
+		circleGrowth = 6; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 7;          // number of frames
+		color = 0.2, 0.7, 1;
+	}
+	water=1;
+	ground=1;
+}
+
+[DGUNTRACE]
+{
+	// oh why thank you BA
+	usedefaultexplosions=1;
+	[GROUNDFLASH]
+	{
+		flashsize=35;
+		flashalpha=3.5;
+		circlegrowth=0.001;
+		circlealpha=0.35;
+		ttl=160;//160
+		color=1, 0.3, 0.2;
+	}
+	[nova]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=blueexplo;
+      		heat = 24;
+      		maxheat = 24;
+      		heatFalloff = 1;
+      		size = 10;
+      		sizeGrowth = 1.2;
+      		speed = 0, 0, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=1;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=blueexplo;
+      		heat = 30;
+      		maxheat = 40;
+      		heatFalloff = 1;
+      		size = 20;
+      		sizeGrowth = .5;
+      		speed = 0, 1, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=1;
+	}
+	[HEATCLOUD]
+	{
+		[PROPERTIES]
+		{
+			heat=15;
+			maxheat=15;
+			heatfalloff=1;
+			size=3.75;
+			sizegrowth=-2.25;
+			sizemod=0;
+			sizemodmod=0;
+			speed=0, 0, 0;
+			pos=0, 1, 0;
+			color=0.0, 1, 0.5;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=5;
+	}
+}
+
+[OMEGAGUNTRACE]
+{
+	usedefaultexplosions=1;
+	[GROUNDFLASH]
+	{
+		flashsize=100;
+		flashalpha=0.3;
+		circlegrowth=0.001;
+		circlealpha=0.3;
+		ttl=30;
+		color=0.5, 0.8, 1;
+	}
+}
+
+[AIRBURST_PLASMA]
+{ 	
+	[nova]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=2explo;
+      		heat = 12;
+      		maxheat = 12;
+      		heatFalloff = 1;
+      		size = 0.2;
+      		sizeGrowth = 5;
+      		speed = 0, 0, 0;
+      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=2explo;
+      		heat = 15;
+      		maxheat = 20;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 3;
+      		speed = 0, 1, 0;
+      		pos = r-3 r3, 5, r-3 r3;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [spray]
+   		{
+      		class=CSimpleParticleSystem;
+                [properties]
+      		{
+		texture=randdots;
+                colorMap = 0.2 0.3 1.0 0.01   1.0 0.1 0.2 0.01   0.0 0.0 0.0 0.01;
+                pos = 0, 2, 0;
+      		gravity= 0, -0.005, 0; 
+                emitVector = 0, 1, 0; 
+                emitRot = 45; 
+                emitRotSpread = 32; 
+                sizeGrowth = 0.8; 
+                sizeMod = 1.0; 
+                airdrag = 0.8; 
+                particleLife = 5; 
+                particleLifeSpread = 8; 
+                numParticles = 8; 
+                particleSpeed = 8; 
+                particleSpeedSpread = 3; 
+                particleSize = 10; 
+                particleSizeSpread = 0; 
+                directional = 0; 
+                useAirLos = 0; 
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=1;
+	}
+	[GROUNDFLASH]
+	{
+		flashsize=80;
+		flashalpha=0.5;
+		circlegrowth=2;
+		circlealpha=1;
+		ttl=30;
+		color=0.5, 0.0, 1;
+	}
+}
+
+[REDGROUNDGLOW]
+{
+	[groundflash]
+	{
+		flashSize = 220;
+		flashAlpha = 2;
+		color = 1,0.5,0.2;
+		ttl = 160;
+	}
+}
+
+[BIGFIREBALL]
+{
+	usedefaultexplosions=1;
+	// INITIAL SPARK EFFECT
+	[flamey]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 40;
+      		maxheat = 40;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 5;
+      		speed = 0, 0, 0;
+      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 25;
+      		maxheat = 25;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 10;
+      		speed = 0, 1, 0;
+      		pos = r-3 r3, 5, r-3 r3;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=120;
+			length=150;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=1.0,1.0,1.0;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+	[glow]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=-0, 1, 0;
+			gravity=0, 0.00, 0;
+			colorMap= 0 0 0 0.01   1 1 0.8 0.9              0 0 0 0.01;
+			Texture=diamondstar;
+			airdrag=1;
+			particleLife=30;
+			particleLifeSpread=0;
+			numParticles=1;
+			particleSpeed=1;
+			particleSpeedSpread=0;
+			particleSize=250;
+			particleSizeSpread=10;
+			emitRot=0;
+			emitRotSpread=180;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=2;
+	}
+	[groundflash]
+	{
+		flashSize = 800;
+		flashAlpha = 2.5;
+		circleGrowth = 14;
+		circleAlpha = 2;
+		color = 1,0.7,0.4;
+		ttl = 30;
+	}
+	[ploom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i3, -10 r20;    
+		delay=0  i2;				  
+		explosionGenerator=custom:BIGFIREBALL_piece;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=60;
+	}
+	[ploom2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i3, -10 r20;    
+		delay=110  i2;
+		explosionGenerator=custom:BIGFIREBALL_piece3;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=20;
+	}
+	[fwoosh] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:BIGFIREBALL_piece2;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=1;
+	}
+	[groundglowred] 
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, -25, 0;  
+		delay=0 10;				  
+		explosionGenerator=custom:REDGROUNDGLOW;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[BIGFIREBALL_W]
+{
+	usedefaultexplosions=1;
+	// INITIAL SPARK EFFECT
+	[flamey]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 40;
+      		maxheat = 40;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 5;
+      		speed = 0, 0, 0;
+      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 25;
+      		maxheat = 25;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 10;
+      		speed = 0, 1, 0;
+      		pos = r-3 r3, 5, r-3 r3;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=50;
+			length=150;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=1.0,1.0,1.0;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4; 
+	}
+	[glow]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=-0, 1, 0;
+			gravity=0, 0.00, 0;
+			colorMap= 0 0 0 0.01   1 1 0.8 0.9              0 0 0 0.01;
+			Texture=diamondstar;
+			airdrag=1;
+			particleLife=30;
+			particleLifeSpread=0;
+			numParticles=1;
+			particleSpeed=1;
+			particleSpeedSpread=0;
+			particleSize=250;
+			particleSizeSpread=10;
+			emitRot=0;
+			emitRotSpread=180;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=2;
+	}
+	[groundflash]
+	{
+		flashSize = 800;
+		flashAlpha = 2.2;
+		circleGrowth = 14;
+		circleAlpha = 2;
+		color = 1,0.7,0.4;
+		ttl = 30;
+	}
+	[ploom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, 15 i3, -10 r20;    
+		delay=0  i2;				  
+		explosionGenerator=custom:BIGFIREBALL_piece;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=60;
+	}
+	[ploom2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, 15 i3, -10 r20;    
+		delay=110  i2;
+		explosionGenerator=custom:BIGFIREBALL_piece3;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=20;
+	}
+	[fwoosh] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 15, 0;    
+		delay=0;				  
+		explosionGenerator=custom:BIGFIREBALL_piece2;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[BIGFIREBALL_piece]
+{
+	// bloom piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap= 0 0 0 0.01   0.9 0.9 .9 0.5     0.9 0.9 .9 0.5    0.9 0.9 .9 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.97;
+			particleLife=100;
+			particleLifeSpread=100;
+			numParticles=1;
+			particleSpeed=2;
+			particleSpeedSpread=2;
+			particleSize=40;
+			particleSizeSpread=40;
+			emitRot=90;
+			emitRotSpread=10;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[BIGFIREBALL_piece2]
+{
+	// fwoosh piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.0, 0.001 r-0.002;
+			colorMap= 0 0 0  0.01   0.9 0.9 0 0.5  0.9 0.9 0 0.5  0.9 0.9 0 0.5     0.9 0.9 0 0.5     0.9 0.9 0 0.5       0.8 0.8 0.1 0.5       0.7 0.7 0.2 0.5      0.5 0.35 0. 0.5   0.5 0.35 0. 0.5   0.5 0.35 0. 0.5    0.5 0.35 0. 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.90;
+			particleLife=180;
+			particleLifeSpread=20;
+			numParticles=1;
+			particleSpeed=12;
+			particleSpeedSpread=2;
+			particleSize=40;
+			particleSizeSpread=20;
+			emitRot=90;
+			emitRotSpread=0;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=20;
+	}
+}
+
+[BIGFIREBALL_piece3]
+{
+	// bloom piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap= 0 0 0 0.01   0.9 0.9 .9 0.5     0.9 0.9 .9 0.5    0.9 0.9 .9 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.95;
+			particleLife=100;
+			particleLifeSpread=100;
+			numParticles=1;
+			particleSpeed=1;
+			particleSpeedSpread=1;
+			particleSize=40;
+			particleSizeSpread=40;
+			emitRot=90;
+			emitRotSpread=10;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[NAPALMFIREBALL_piece]
+{
+	// bloom piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.04;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap= 0 0 0 0.01   0.9 0.9 .9 0.5     0.9 0.9 .9 0.5    0.9 0.9 .9 0.5   0 0 0 0.01;
+			Texture=flame;
+			airdrag=0.97;
+			particleLife=30;
+			particleLifeSpread=10;
+			numParticles=1;
+			particleSpeed=1.2;
+			particleSpeedSpread=1.2;
+			particleSize=30;
+			particleSizeSpread=30;
+			emitRot=90;
+			emitRotSpread=10;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[NAPALMFIREBALL_piece2]
+{
+	// fwoosh piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.0, 0.001 r-0.002;
+			colorMap= 0 0 0  0.01   0.9 0.9 0.9 0.5  0.9 0.9 0.9 0.5  0.9 0.9 0.9 0.5     0.9 0.9 0.9 0.5     0.9 0.9 .5 0.5       0.9 0.9 0.5 0.5       0.9 0.9 0.5 0.5      0.9 0.9 0.5 0.5   0.9 0.5 0.0 0.5   0.9 0.5 0.0 0.5    0.9 0.5 0.0 0.3   0 0 0 0.01;
+			Texture=flame;
+			airdrag=0.90;
+			particleLife=60;
+			particleLifeSpread=10;
+			numParticles=1;
+			particleSpeed=5;
+			particleSpeedSpread=2;
+			particleSize=30;
+			particleSizeSpread=10;
+			emitRot=90;
+			emitRotSpread=0;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=20;
+	}
+}
+
+[NAPALMFIREBALL_piece3]
+{
+	// bloom piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.04;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap= 0 0 0 0.01   0.9 0.9 .9 0.5     0.9 0.9 .9 0.5    0.9 0.9 .9 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.97;
+			particleLife=100;
+			particleLifeSpread=20;
+			numParticles=1;
+			particleSpeed=1.5;
+			particleSpeedSpread=1.5;
+			particleSize=30;
+			particleSizeSpread=30;
+			emitRot=90;
+			emitRotSpread=10;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[PYROBLOOM_piece]
+{
+	// bloom piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.02;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.02 r-0.02, 0.001 r-0.002;
+			colorMap= 0 0 0 0.01   0.9 0.9 .9 0.5     0.9 0.9 .9 0.5    0.9 0.9 .9 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.94;
+			particleLife=80;
+			particleLifeSpread=80;
+			numParticles=1;
+			particleSpeed=.9;
+			particleSpeedSpread=.9;
+			particleSize=18;
+			particleSizeSpread=18;
+			emitRot=90;
+			emitRotSpread=10;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[PYROFWOOM_piece]
+{
+	// fwoosh piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.0, 0.001 r-0.002;
+			colorMap= 0 0 0  0.01   0.9 0.9 0 0.5  0.9 0.9 0 0.5  0.9 0.9 0 0.5     0.9 0.9 0 0.5     0.9 0.9 0 0.5       0.8 0.8 0.1 0.5       0.7 0.7 0.2 0.5      0.5 0.35 0. 0.5   0.5 0.35 0. 0.5   0.5 0.35 0. 0.5    0.5 0.35 0. 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.90;
+			particleLife=50;
+			particleLifeSpread=20;
+			numParticles=1;
+			particleSpeed=3;
+			particleSpeedSpread=2;
+			particleSize=16;
+			particleSizeSpread=8;
+			emitRot=90;
+			emitRotSpread=0;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=10;
+	}
+}
+
+[ATOMIC_BLASTSML]
+{
+	usedefaultexplosions=1;	
+	[ploom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i3, -10 r20;    
+		delay=0  i2;				  
+		explosionGenerator=custom:ATOMICFIREBALL_piece;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=30;
+	}
+	[fwoosh] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:ATOMICFIREBALL_piece2;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=1;
+	}
+	[flamey]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 25;
+      		maxheat = 25;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 5;
+      		speed = 0, 0, 0;
+      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 14;
+      		maxheat = 14;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 10;
+      		speed = 0, 1, 0;
+      		pos = r-3 r3, 5, r-3 r3;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [spray]
+   		{
+      		class=CSimpleParticleSystem;
+                [properties]
+      		{
+		texture=randdots;
+                colorMap = 1.0 1.0 0.7 0.01   1.0 0.8 0.5 0.01   1.0 0.4 0.1 0.01;
+                pos = 0, 2, 0;
+      		gravity= 0, -0.5, 0; 
+                emitVector = 0, 1, 0; 
+                emitRot = 45; 
+                emitRotSpread = 32; 
+                sizeGrowth = -0.01; 
+                sizeMod = 1.0; 
+                airdrag = 0.8; 
+                particleLife = 30; 
+                particleLifeSpread = 10; 
+                numParticles = 8; 
+                particleSpeed = 8; 
+                particleSpeedSpread = 3; 
+                particleSize = 4; 
+                particleSizeSpread = 0; 
+                directional = 0; 
+                useAirLos = 0; 
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 550;
+		flashAlpha = 2.2;
+		circleGrowth = 10;
+		circleAlpha = 2;
+		color = 1,0.7,0.4;
+		ttl = 30;
+	}
+}
+
+[ATOMICFIREBALL_piece]
+{
+	// bloom piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap= 0 0 0 0.01   0.9 0.9 .9 0.5     0.9 0.9 .9 0.5    0.9 0.9 .9 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.90;
+			particleLife=100;
+			particleLifeSpread=100;
+			numParticles=1;
+			particleSpeed=1.6;
+			particleSpeedSpread=1.6;
+			particleSize=30;
+			particleSizeSpread=30;
+			emitRot=90;
+			emitRotSpread=10;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[ATOMICFIREBALL_piece2]
+{
+	// fwoosh piece
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.0, 0.001 r-0.002;
+			colorMap= 0 0 0  0.01   0.9 0.9 0 0.5  0.9 0.9 0 0.5  0.9 0.9 0 0.5     0.9 0.9 0 0.5     0.9 0.9 0 0.5       0.8 0.8 0.1 0.5       0.7 0.7 0.2 0.5      0.5 0.35 0. 0.5   0.5 0.35 0. 0.5   0.5 0.35 0. 0.5    0.5 0.35 0. 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.85;
+			particleLife=180;
+			particleLifeSpread=20;
+			numParticles=1;
+			particleSpeed=7;
+			particleSpeedSpread=2;
+			particleSize=30;
+			particleSizeSpread=16;
+			emitRot=90;
+			emitRotSpread=0;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=10;
+	}
+}
+
+[BIGDUST_Expl]
+{
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 700;   // flash size
+		flashAlpha = 1;    // initial alpha of the flash
+		circleGrowth = 10; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 30;          // number of frames
+		color = 0.7, 0.7, .7;
+	}
+	[smokey]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap=0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0 0 0 0.01;
+			Texture=graysmoke;
+			airdrag=0.88;
+			particleLife=350;
+			particleLifeSpread=100;
+			numParticles=40;
+			particleSpeed=9;
+			particleSpeedSpread=9;
+			particleSize=50;
+			particleSizeSpread=50;
+			emitRot=40;
+			emitRotSpread=50;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[MEDDUST_Expl]
+{
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 500;   // flash size
+		flashAlpha = 2;    // initial alpha of the flash
+		circleGrowth = 10; // size increase/frame
+		circleAlpha = .3;   // initial alpha of the ring
+		ttl = 26;          // number of frames
+		color = 0.9, 0.9, .9;
+	}
+	[smokey]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap=0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0 0 0 0.01;
+			Texture=graysmoke;
+			airdrag=0.88;
+			particleLife=220;
+			particleLifeSpread=100;
+			numParticles=25;
+			particleSpeed=6;
+			particleSpeedSpread=6;
+			particleSize=30;
+			particleSizeSpread=5;
+			emitRot=40;
+			emitRotSpread=50;
+		}
+		air=1;
+		water=0;
+		ground=1;
+		count=1;
+	}
+	[light] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-20 r40, -10,  -20 r40;
+		delay=0 i5 r3;			
+		explosionGenerator=custom:ESTOR_FLASH;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=15;
+	}
+}
+
+[PODDIE_Expl]
+{
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 500;   // flash size
+		flashAlpha = 1;    // initial alpha of the flash
+		circleGrowth = 10; // size increase/frame
+		circleAlpha = .3;   // initial alpha of the ring
+		ttl = 26;          // number of frames
+		color = 0.7, 0.7, .7;
+	}
+	[smokey]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, -30, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap=0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .5	0 0 0 0.01;
+			Texture=graysmoke;
+			airdrag=0.88;
+			particleLife=250;
+			particleLifeSpread=100;
+			numParticles=35;
+			particleSpeed=9;
+			particleSpeedSpread=3;
+			particleSize=20;
+			particleSizeSpread=20;
+			emitRot=80;
+			emitRotSpread=10;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[MISSILE_SPLASH]
+{
+	[fire]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=1.01;
+		sizeMod=1.01;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0      1 1 1 0    0 0 0 0;
+		Texture=missileexplo;
+		airdrag=0.8;
+		particleLife=18;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=3;
+		particleSpeedSpread=2;
+		particleSize=3;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=3;
+	}
+	usedefaultexplosions=1;
+	[fastsmoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, 0.02, 0;
+		colorMap=1 1 1 1   .8 .8 .8 1   .5 .5 .5 .5   0 0 0 0;
+		Texture=graysmoke;
+		airdrag=0.9;
+		particleLife=90;
+		particleLifeSpread=2;
+		numParticles=3;
+		particleSpeed=5;
+		particleSpeedSpread=3;
+		particleSize=20;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[sparks2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, -.3, 0;
+		colorMap=1 1 1 0.01   1 1 0 0.01   1 1 0 0.01   1 1 0 0.01;
+		Texture=plasma;
+		airdrag=0.97;
+		particleLife=10;
+		particleLifeSpread=4;
+		numParticles=8;
+		particleSpeed=7;
+		particleSpeedSpread=4;
+		particleSize=3;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=30;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[pop]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0.01    0 0 0 0.01;
+		Texture=sparkexplo;
+		airdrag=1;
+		particleLife=6;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0.1;
+		particleSpeedSpread=0;
+		particleSize=4;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[BIGMISSILE_SPLASH]
+{
+	usedefaultexplosions=1;
+	[fire]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=1.013;
+		sizeMod=1.013;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0.01      1 1 1 0.01    0 0 0 0.01;
+		Texture=missileexplo;
+		airdrag=0.8;
+		particleLife=23;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=4;
+		particleSpeedSpread=2;
+		particleSize=4;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=4;
+	}
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, 0.02, 0;
+		colorMap=1 1 1 1   .8 .8 .8 1   .5 .5 .5 .5   0 0 0 0;
+		Texture=graysmoke;
+		airdrag=0.9;
+		particleLife=120;
+		particleLifeSpread=2;
+		numParticles=3;
+		particleSpeed=6;
+		particleSpeedSpread=4;
+		particleSize=28;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[sparks2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, -.3, 0;
+		colorMap=1 1 1 0.01   1 1 0 0.01   1 1 0 0.01   1 1 0 0.01;
+		Texture=plasma;
+		airdrag=0.97;
+		particleLife=10;
+		particleLifeSpread=4;
+		numParticles=20;
+		particleSpeed=8;
+		particleSpeedSpread=4;
+		particleSize=4;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=42;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[scattershot] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:BABETTE;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[HUGEMISSILE_SPLASH]
+{
+	usedefaultexplosions=1;
+	[fire]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=1.013;
+		sizeMod=1.013;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0.01      1 1 1 0.01    0 0 0 0.01;
+		Texture=missileexplo;
+		airdrag=0.8;
+		particleLife=28;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=4;
+		particleSpeedSpread=2;
+		particleSize=4;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=7;
+	}
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, 0.02, 0;
+		colorMap=1 1 1 1   .8 .8 .8 1   .5 .5 .5 .5   0 0 0 0;
+		Texture=graysmoke;
+		airdrag=0.9;
+		particleLife=120;
+		particleLifeSpread=2;
+		numParticles=4;
+		particleSpeed=6;
+		particleSpeedSpread=4;
+		particleSize=32;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[sparks2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, -.3, 0;
+		colorMap=1 1 1 0.01   1 1 0 0.01   1 1 0 0.01   1 1 0 0.01;
+		Texture=plasma;
+		airdrag=0.97;
+		particleLife=10;
+		particleLifeSpread=4;
+		numParticles=25;
+		particleSpeed=8;
+		particleSpeedSpread=4;
+		particleSize=4.5;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=42;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[scattershot] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:BABETTE2;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[MINIMISSILE_SPLASH]
+{
+	usedefaultexplosions=1;
+	[fire]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=1.01;
+		sizeMod=1.01;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0.01      1 1 1 0.01    0 0 0 0.01;
+		Texture=missileexplo;
+		airdrag=0.8;
+		particleLife=16;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=3;
+		particleSpeedSpread=2;
+		particleSize=2;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[smoke]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, 0.02, 0;
+		colorMap=1 1 1 1   .8 .8 .8 1   .5 .5 .5 .5   0 0 0 0;
+		Texture=graysmoke;
+		airdrag=0.9;
+		particleLife=60;
+		particleLifeSpread=2;
+		numParticles=3;
+		particleSpeed=4;
+		particleSpeedSpread=2;
+		particleSize=15;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=0;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[pop]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0.01    0 0 0 0.01;
+		Texture=sparkexplo;
+		airdrag=1;
+		particleLife=6;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0.1;
+		particleSpeedSpread=0;
+		particleSize=4;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[GAUSS_Expl]
+{
+	usedefaultexplosions=0;
+	[sparks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, -.25, 0;
+		colorMap=1 1 1 0.01   1 1 1 0.01   1 1 0 0.01   1 1 0 0.01;
+		Texture=plasma;
+		airdrag=0.97;
+		particleLife=20;
+		particleLifeSpread=2;
+		numParticles=3;
+		particleSpeed=8;
+		particleSpeedSpread=3;
+		particleSize=7;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=30;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[sparks2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, -.5, 0;
+		colorMap=1 1 1 0.01   1 1 0 0.01   1 1 0 0.01   1 1 0 0.01;
+		Texture=plasma;
+		airdrag=0.97;
+		particleLife=10;
+		particleLifeSpread=4;
+		numParticles=20;
+		particleSpeed=7;
+		particleSpeedSpread=4;
+		particleSize=3;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=40;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+}
+
+[BIGGAUSS_Expl]
+{
+	usedefaultexplosions=0;
+	[sparks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, -.25, 0;
+		colorMap=1 1 1 0.01   1 1 1 0.01   1 1 0 0.01   1 1 0 0.01;
+		Texture=plasma;
+		airdrag=0.97;
+		particleLife=20;
+		particleLifeSpread=2;
+		numParticles=4;
+		particleSpeed=10;
+		particleSpeedSpread=3;
+		particleSize=7;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=30;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+	[sparks2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 1, 0;
+		emitVector=dir;
+		gravity=0, -.5, 0;
+		colorMap=1 1 1 0.01   1 1 0 0.01   1 1 0 0.01   1 1 0 0.01;
+		Texture=plasma;
+		airdrag=0.97;
+		particleLife=13;
+		particleLifeSpread=4;
+		numParticles=40;
+		particleSpeed=9;
+		particleSpeedSpread=7;
+		particleSize=4;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=50;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;	
+	}
+}
+
+[flashmuzzle0]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 1 1 0.07  1 0.7 0 0.01	0.9 0.3 0 0.01	0 0 0 0.01; 
+          	size=12;
+          	length=18;
+          	sizeGrowth=1;
+          	ttl=3;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=flowerflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+   	[GROUNDFLASH]
+	{
+		flashsize=35;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=3;
+		color=1,0.7,0;
+	}
+}
+
+[machinegun_muzzle0]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.8 .5 0.01  0 0 0 0.01; 
+          	size=4;
+          	length=8;
+          	sizeGrowth=1;
+          	ttl=2;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+}
+
+[machinegun_muzzle1]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.8 .5 0.01  .5 0.3 .2 0.01; 
+          	size=4;
+          	length=8;
+          	sizeGrowth=1;
+          	ttl=2;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+}
+
+[emg_shells]
+{
+	usedefaultexplosions=0;
+	[shells]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, -0.5, 0;
+		colorMap=1 1 1 1   1 1 1 1;
+		Texture=shell;
+		airdrag=0.97;
+		particleLife=30;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=3;
+		particleSpeedSpread=0;
+		particleSize=1.5;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	
+	}
+}
+
+[COMMANDERLASER_Expl]
+{
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=5;
+			length=15;
+			alpha=0.8;
+			alphadecay=0.1;
+			color=1.0,0.4,0.4;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=7; 
+	}
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 50;   // flash size
+		flashAlpha = 1;    // initial alpha of the flash
+		circleGrowth = 6; // size increase/frame
+		circleAlpha = .5;   // initial alpha of the ring
+		ttl = 7;          // number of frames
+		color = 1.0, 0.4, 0.3;
+	}
+	water=1;
+	ground=1;
+}
+
+[BABETTE]
+{
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=5;
+			length=15;
+			alpha=0.8;
+			alphadecay=0.2;
+			color=1.0,0.7,0.4;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=10; 
+	}
+	[boom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-25 r50, -25 r50,  -25 r50;
+		delay=5 i1;				
+		explosionGenerator=custom:burst_babette;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=11;
+	}
+	[smoke] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-25 r50, 0 r50,  -25 r100;
+		delay=5 i1;				
+		explosionGenerator=custom:smoke_babette;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=11;
+	}
+}
+
+[BABETTE2]
+{
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=5;
+			length=15;
+			alpha=0.8;
+			alphadecay=0.2;
+			color=1.0,0.7,0.4;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=15; 
+	}
+	[boom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-25 r50, -25 r50,  -25 r50;
+		delay=5 i1;				
+		explosionGenerator=custom:burst_babette;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=17;
+	}
+	[smoke] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-25 r50, 0 r50,  -25 r100;
+		delay=5 i1;				
+		explosionGenerator=custom:smoke_babette;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=17;
+	}
+}
+
+[BURST_BABETTE]
+{
+ [pop]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0.01    0 0 0 0.01;
+		Texture=sparkexplo;
+		airdrag=1;
+		particleLife=6;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0.1;
+		particleSpeedSpread=0;
+		particleSize=2;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+[SMOKE_BABETTE]
+{
+ [pop]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, 0, 0;
+		colorMap=0.7 0.7 0.75 1    0 0 0 0.01;
+		Texture=graysmoke;
+		airdrag=1;
+		particleLife=24;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0.1;
+		particleSpeedSpread=0;
+		particleSize=2;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[IMMOLATOR_Expl]
+{	
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 100;
+		flashAlpha = 1.8;
+		circleGrowth = 6;
+		circleAlpha = .5;
+		color = 1,0.7,0.4;
+		ttl = 15;
+	}
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 13, 0;    
+		delay=0;				  
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[FACTORY_Expl]
+{
+	usedefaultexplosions=1;
+	[boom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-50 r100, 0 r20,  -50 r100;
+		delay=7 i10;				
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=5;
+	}
+	[burst] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-50 r100, 0 r11,  -50 r100;
+		delay=7 i8;			
+		explosionGenerator=custom:FLAMEYPOOF_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=10;
+	}
+}
+
+[ESTORBUILDING_Expl]
+{
+	usedefaultexplosions=1;
+	[light] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-20 r40, -10,  -20 r40;
+		delay=0 i5 r3;			
+		explosionGenerator=custom:ESTOR_FLASH;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=15;
+	}
+}
+
+[ESTOR_SPARK]
+{ 	
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=8;
+			length=38;
+			alpha=0.9;
+			alphadecay=0.2;
+			color=1.0,1.0,1.0;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=10; 
+	}
+}
+
+[ESTOR_FLASH]
+{ 	
+	[groundflash]
+	{
+		flashSize = 100;   // flash size
+		flashAlpha = 3;    // initial alpha of the flash
+		circleGrowth = 0; // size increase/frame
+		circleAlpha = 0;   // initial alpha of the ring
+		ttl = 5;          // number of frames
+		color = 1, 1, 1;
+	} 
+	[burst] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos= 0, r30, 0;
+		delay=0;			
+		explosionGenerator=custom:ESTOR_SPARK;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+
+[SMALLSHIP_Expl]
+{
+	usedefaultexplosions=1;
+	[boom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-50 r100, 0 r20,  -50 r100;
+		delay=7 i5;				
+		explosionGenerator=custom:OTA_PLAS;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=8;
+	}
+	[burst] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=-50 r100, 0 r11,  -50 r100;
+		delay=7 i4;			
+		explosionGenerator=custom:FLAMEYPOOF_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=10;
+	}
+}
+
+[TANKSHOT_Expl]
+{
+	usedefaultexplosions=1;
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:FLAMEYPOOF_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 27;
+		flashAlpha = 2;
+		circleGrowth = 3;
+		circleAlpha = .5;
+		ttl = 8;
+		color = 1,0.9,0.8;
+
+	}
+}
+
+[MEDTANKSHOT_Expl]
+{
+	usedefaultexplosions=1;
+	[flamey] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=0;				  
+		explosionGenerator=custom:FLAMEYPOOF_ANI;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	[groundflash]
+	{
+		flashSize = 32;
+		flashAlpha = 2;
+		circleGrowth = 3;
+		circleAlpha = .5;
+		ttl = 9;
+		color = 1,0.9,0.8;
+
+	}
+}
+
+[LAUNCHTORPEDO_Expl]
+{
+   [fluffy]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 1  1 1 1 1 0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.9;
+		particleLife=60;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0.5 i0.36;
+		particleSpeedSpread=0.5;
+		particleSize=5 i-0.45;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=7;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=10;
+	}
+   [fire]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.5;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 0 0.9      1 0.8  0.3 08    0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.6;
+		particleLife=20;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=2;
+		particleSpeedSpread=2;
+		particleSize=0.5;
+		particleSizeSpread=0.5;
+		emitRot=30;
+		emitRotSpread=15;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=10;
+	}
+}
+
+[rocketsmoke]
+{
+   [fluffy]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 1  1 1 1 1 0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.85;
+		particleLife=30;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=4 i1;
+		particleSpeedSpread=0;
+		particleSize=5 i-0.45;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=7;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=3;
+	}
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.9 .7 0.01  0 0 0 0; 
+          	size=8;
+          	length=14;
+          	sizeGrowth=1;
+          	ttl=2;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+}
+
+[smallrocketsmoke1]
+{
+   [fluffy]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 1  1 1 1 1 0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.85;
+		particleLife=30;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=1 i1;
+		particleSpeedSpread=0;
+		particleSize=5 i-0.45;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=7;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=3;
+	}
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.9 .7 0.01  1 0.7 0 0.01  0 0 0 0; 
+          	size=10;
+          	length=18;
+          	sizeGrowth=1;
+          	ttl=8;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+}
+
+[smallrocketsmoke2]
+{
+   [fluffy]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 1  1 1 1 1 0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.85;
+		particleLife=30;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=1 i1;
+		particleSpeedSpread=0;
+		particleSize=5 i-0.45;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=7;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=2;
+	}
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.9 .7 0.01  1 0.7 0 0.01  0 0 0 0; 
+          	size=8;
+          	length=14;
+          	sizeGrowth=1;
+          	ttl=3;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+}
+
+
+[flashyflash]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.9 .7 0.01  0 0 0 0; 
+          	size=7;
+          	length=15;
+          	sizeGrowth=1;
+          	ttl=3;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+}
+
+[flashtankmuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 1 1 0.07  1 0.7 0 0.01	0.9 0.3 0 0.01	0 0 0 0.01; 
+          	size=6;
+          	length=10;
+          	sizeGrowth=1;
+          	ttl=3;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=flowerflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+   	[GROUNDFLASH]
+	{
+		flashsize=35;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=3;
+		color=1,0.7,0;
+	}
+}
+
+[warmuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 1 1 0.07  .5 0.8 1 0.01	0.4 0.7 .9 0.01	0 0 0 0.01; 
+          	size=6;
+          	length=10;
+          	sizeGrowth=1;
+          	ttl=3;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=flowerflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+   	[GROUNDFLASH]
+	{
+		flashsize=35;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=3;
+		color=0,0.7,1;
+	}
+}
+
+[peeweemuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 1 1 0.07  1 0.7 0 0.01	0.9 0.3 0 0.01	0 0 0 0.01; 
+          	size=4;
+          	length=7;
+          	sizeGrowth=1;
+          	ttl=3;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+   	[GROUNDFLASH]
+	{
+		flashsize=23;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=3;
+		color=1,0.7,0;
+	}
+}
+
+[akmuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 .4 .4 0.07  1 0.4 0.4 0.01	.8 0.3 0.3 0.01	0 0 0 0.01; 
+          	size=4;
+          	length=8;
+          	sizeGrowth=1;
+          	ttl=3;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+   	[GROUNDFLASH]
+	{
+		flashsize=25;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=6;
+		color=1,0,0;
+	}
+}
+
+[gatormuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 .4 .4 0.07  1 0.4 0.4 0.01	.8 0.3 0.3 0.01	0 0 0 0.01; 
+          	size=6;
+          	length=12;
+          	sizeGrowth=1;
+          	ttl=4;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+   	[GROUNDFLASH]
+	{
+		flashsize=30;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=7;
+		color=1,0,0;
+	}
+}
+
+[HLTmuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=.4 1 .4 0.01  .4 1 0.4 0.01	.3 0.8 0.3 0.01	0 0 0 0.01; 
+          	size=9;
+          	length=24;
+          	sizeGrowth=1;
+          	ttl=13;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[light] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, -20, 0;
+		delay=0;			
+		explosionGenerator=custom:HLT_GROUNDFLASH;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[HLT_GROUNDFLASH]
+{
+	[GROUNDFLASH]
+	{
+		flashsize=35;
+		flashalpha=0.5;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=13;
+		color=0,1,0;
+	}
+}
+
+[tankmuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.9 .7 0.01  1 0.7 0 0.01  0 0 0 0; 
+          	size=8;
+          	length=18;
+          	sizeGrowth=1;
+          	ttl=8;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[GROUNDFLASH]
+	{
+		flashsize=30;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=4;
+		color=1,1,1;
+	}
+}
+
+[artbotmuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 0.9 .7 0.01  1 0.7 0 0.01  0 0 0 0; 
+          	size=5;
+          	length=12;
+          	sizeGrowth=1;
+          	ttl=8;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=mgunflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+	[GROUNDFLASH]
+	{
+		flashsize=25;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=4;
+		color=1,1,1;
+	}
+}
+
+[dig3]
+{
+	[dirt]
+	{
+		[properties]
+		{
+			color = .3, .25, .2;
+			size = 10;
+			sizeExpansion = .3;
+			slowdown=1;
+			lifetime=220;
+			pos = -3 r6, r6, -3 r6;
+			speed=0.3 r-0.6, 1 r1.0, 0.3 r-0.6;
+		}
+		air=1;
+		ground=1;
+		count=8;
+	}
+}
+
+
+[digdig]
+{
+	[burst] 
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+			pos= 0, 0, 0;
+			delay=0 i5;			
+			explosionGenerator=custom:dig3;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=4;
+	}
+	
+}
+
+[GOLSHOOT_FX]
+{
+	[MuzzleFlame]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+ 		{
+			dir = dir;
+			colorMap=0.9 0.8 0 0.01 0.9 0.9 0.9 0.01 0 0 0 0.01;
+ 			size=12;
+ 			length=32;
+ 			sizeGrowth=0.5;
+ 			ttl=4;
+ 			frontOffset=0.25;
+ 			sideTexture=muzzleside;
+ 			frontTexture=muzzlefront;
+		}
+		water=1;
+ 		air=1;
+		underwater=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[ARMRAZ_GUNEXPLODE]
+{
+ [pop]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0.01    0 0 0 0.01;
+		Texture=sparkexplo;
+		airdrag=1;
+		particleLife=9;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0.1;
+		particleSpeedSpread=0;
+		particleSize=2;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+ [sodapop]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, 0, 0;
+		colorMap=0.7 0.7 0.75 1    0 0 0 0.01;
+		Texture=graysmoke;
+		airdrag=1;
+		particleLife=24;
+		particleLifeSpread=0;
+		numParticles=1;
+		particleSpeed=0.1;
+		particleSpeedSpread=0;
+		particleSize=2;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=10;
+		directional=0;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[CRASHNBURN]
+{
+	usedefaultexplosions=1;	
+	[rocks]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.2;
+			sizeMod=1.0;
+			pos=0, 0, 0;
+			emitVector=0, 1, 0;
+			gravity=0, 0, 0;
+			colorMap= 0 0 0  0.01   0.9 0.9 0 0.5  0.9 0.9 0 0.5  0.9 0.9 0 0.5     0.9 0.9 0 0.5     0.9 0.9 0 0.5       0.8 0.8 0.1 0.5       0.7 0.7 0.2 0.5      0.5 0.35 0. 0.5   0.5 0.35 0. 0.5   0 0 0 0.01;
+			Texture=fireball;
+			airdrag=0.90;
+			particleLife=15;
+			particleLifeSpread=10;
+			numParticles=1;
+			particleSpeed=0.7;
+			particleSpeedSpread=0.7;
+			particleSize=3;
+			particleSizeSpread=3;
+			emitRot=30;
+			emitRotSpread=0;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=3;
+	}
+}
+
+[flameyrocketfire]
+{
+	[SMOKE]
+	{
+		[PROPERTIES]
+		{
+			color=0.9;
+			startsize=4.5;
+			sizeexpansion=1;
+			ageSpeed=0.05;
+			size=5;
+			sizeGrowth = 10;//1.15//1.07
+			pos = 0,0,0;
+			speed=0,0,0;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[TRANSPORTENGINE]
+{
+	[MuzzleFlame]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+ 		{
+			dir = dir;
+			colorMap=0.9 0.8 0.4 0.01 0.0 0.0 0.0 0.01;
+ 			size=9;
+ 			length=25;
+ 			sizeGrowth=0.5;
+ 			ttl=1;
+ 			frontOffset=0.25;
+ 			sideTexture=muzzleside;
+ 			frontTexture=muzzlefront;
+		}
+		water=1;
+ 		air=1;
+		underwater=1;
+		ground=1;
+		count=1;
+	}
+	[fluffy]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=.2 .2 .2 .01 0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.6;
+		particleLife=3;
+		particleLifeSpread=5;
+		numParticles=2;
+		particleSpeed=7;
+		particleSpeedSpread=6;
+		particleSize=10;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=18;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[YellowLight]//copied from ba
+{
+	useAirLos=0;
+	usedefaultexplosions=0;
+[heatcloud]// Fire burst
+   		{
+      		[properties]
+      		{
+      		heat = 25;
+		Texture=YellowLight;
+      		maxheat = 25;
+      		heatFalloff = 0.55;
+      		size = 12.0 r1;
+      		sizeGrowth = 0.08 r.16;
+      		sizemod = 0;
+      		sizemodmod = 0;
+      		speed = 0.05 r-0.1, 0.05 r-0.1, 0.05 r-0.1;
+      		pos = 0, 0.0, 0;
+		useAirLos=0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	useAirLos=0;
+   	}
+}
+
+[DGUN_SHOT]
+{
+	[groundflash]
+	{
+		flashSize = 200;   //270
+		flashAlpha = .1;
+		ttl = 12;          //16
+		color = 0.3, 0.6, .9;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-3 r6,-3 r6,-3 r6;
+			width=15;
+			length=4;
+			alpha=0.8;
+			alphadecay=0.05;
+			color=0.3,0.6,.9;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1; 
+	}
+}
+
+[blueEMGhit_BIG]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 18;
+		flashAlpha = 2.1;
+		ttl = 60;
+		color = 0.1,0.6,1;
+	}
+	[nova]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=blueexplo;
+      		heat = 48;
+      		maxheat = 48;
+      		heatFalloff = 1;
+      		size = 0.2;
+      		sizeGrowth = 1;
+      		speed = 0, 0, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		Texture=blueexplo;
+      		heat = 60;
+      		maxheat = 80;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = .5;
+      		speed = 0, 1, 0;
+      		pos = 0, 0, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+}
+
+[bcommuzzle]
+{
+   [BitmapMuzzleFlame]
+   {
+	class = CBitmapMuzzleFlame;
+      
+	[properties]
+      	{
+         	dir = dir;
+         	colorMap=1 1 1 0.07  .5 0.8 1 0.01	0.4 0.7 .9 0.01	0 0 0 0.01; 
+          	size=18;
+          	length=30;
+          	sizeGrowth=1;
+          	ttl=4;
+          	frontOffset=0;
+          	sideTexture=plasma;
+          	frontTexture=flowerflash;
+      	}
+   water=1;
+   air=1;
+   underwater=1;
+   ground=1;
+   count=1;
+   }
+   	[GROUNDFLASH]
+	{
+		flashsize=35;
+		flashalpha=0.4;
+		circlegrowth=0;
+		circlealpha=1;
+		ttl=3;
+		color=0,0.7,1;
+	}
+}
+
+[dirtring]
+{
+	[smokey]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0.05;
+			sizeMod=1.0;
+			pos=0, -30, 0;
+			emitVector=0, 1, 0;
+			gravity=0.001 r-0.002, 0.01 r-0.02, 0.001 r-0.002;
+			colorMap=0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0.5 0.5 0.5 .8	0 0 0 0.01;
+			Texture=graysmoke;
+			airdrag=0.88;
+			particleLife=60;
+			particleLifeSpread=100;
+			numParticles=20;
+			particleSpeed=7;
+			particleSpeedSpread=3;
+			particleSize=15;
+			particleSizeSpread=15;
+			emitRot=80;
+			emitRotSpread=10;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=1;
+	}
+}
+
+[jumpjetflame]
+{
+	[MuzzleFlame]
+	{
+		class = CBitmapMuzzleFlame;
+		[properties]
+ 		{
+			dir = dir;
+			colorMap=0.9 0.8 0.4 0.01 0.0 0.0 0.0 0.01;
+ 			size=9;
+ 			length=25;
+ 			sizeGrowth=0.5;
+ 			ttl=2;
+ 			frontOffset=0.25;
+ 			sideTexture=muzzleside;
+ 			frontTexture=muzzlefront;
+		}
+		water=1;
+ 		air=1;
+		underwater=1;
+		ground=1;
+		count=1;
+	}
+	[fluffy]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0.2;
+		sizeMod=1.0;
+		pos=0, 0, 0;
+		emitVector=dir;
+		gravity=0, 0, 0;
+		colorMap=.2 .2 .2 .01 0 0 0 0.01;
+		Texture=smokesmall;
+		airdrag=0.6;
+		particleLife=5;
+		particleLifeSpread=5;
+		numParticles=2;
+		particleSpeed=7;
+		particleSpeedSpread=6;
+		particleSize=10;
+		particleSizeSpread=0;
+		emitRot=0;
+		emitRotSpread=18;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
+
+[indiansmoke]
+{
+	[smoke]
+	{
+		[properties]
+		{
+			ageSpeed=0.03;
+			size = 4;
+			sizeGrowth = 2;
+			pos = 0,0,0;
+			speed=0,.1,0;
+		}
+		water=1;
+		ground=1;
+		air=1;
+		count=1;
+	}
+}
+
+[STRATEGIC_BOMBLET_Expl]
+{
+	usedefaultexplosions=1;
+	[groundflash]
+	{
+		flashSize = 50;
+		flashAlpha = 1.8;
+		color = 1,0.9,0.8;
+		circleGrowth = 3;
+		circleAlpha = .5;
+		ttl = 11;
+	}
+}
+
+[STRATEGIC_BOMB_Expl]
+{
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 140;
+		flashAlpha = 2;
+		circleGrowth = 9;
+		circleAlpha = .5;
+		ttl = 10;
+		color = 1,0.9,0.8;
+
+	}
+	[dirtup] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 13, 0;    
+		delay=0;				  
+		explosionGenerator=custom:TESS2;
+		}
+		air=0;
+		water=0;
+		ground=1;
+		count=1;
+	}
+	[bang]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+			texture=sparkexplo;
+	      		heat = 10;
+	      		maxheat = 10;
+	      		heatFalloff = 1;
+	      		size = 12;
+	      		sizeGrowth= 12;
+	      		speed = 0, 0, 0;
+	      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	ground=1;
+	water=1;
+      	count=2;
+	}
+	[splash] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 13, 0;    
+		delay=0;				  
+		explosionGenerator=custom:KERSPLUNK;
+		}
+		air=0;
+		water=1;
+		ground=0;
+		count=1;
+	}
+}
+
+[TINY_NUKE]
+{
+	usedefaultexplosions=1;
+	// INITIAL SPARK EFFECT
+	[flamey]
+	{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 60;
+      		maxheat = 60;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 5;
+      		speed = 0, 0, 0;
+      		pos = 0, 5, 0;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+        [center]
+   		{
+      		class=heatcloud;
+                [properties]
+      		{
+		texture=burn;
+      		heat = 60;
+      		maxheat = 60;
+      		heatFalloff = 1;
+      		size = 1;
+      		sizeGrowth = 10;
+      		speed = 0, 1, 0;
+      		pos = r-3 r3, 5, r-3 r3;
+      		}
+	air=1;
+      	water=1;
+      	ground=1;
+      	count=2;
+	}
+	[glow]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+			sizeGrowth=0;
+			sizeMod=1.0;
+			pos=0, 2, 0;
+			emitVector=-0, 1, 0;
+			gravity=0, 0.00, 0;
+			colorMap= 0 0 0 0.01     1 1 0.8 0.9     0 0 0 0.01;
+			Texture=diamondstar;
+			airdrag=1;
+			particleLife=30;
+			particleLifeSpread=0;
+			numParticles=1;
+			particleSpeed=1;
+			particleSpeedSpread=0;
+			particleSize=300;
+			particleSizeSpread=10;
+			emitRot=0;
+			emitRotSpread=180;
+			directional=1;
+		}
+		air=1;
+		water=1;
+		ground=1;
+		count=10;
+	}
+	[pikes]
+	{
+		class=explspike;
+		[properties]
+		{
+			dir=-15 r30,-15 r30,-15 r30;
+			width=50;
+			length=150;
+			alpha=0.99;
+			alphadecay=0.03;
+			color=1.0,1.0,1.0;
+
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=20; 
+	}
+	[groundflash]
+   	{
+      		flashSize = 1000;
+	      	flashAlpha = 2.5;
+	      	//circleGrowth = 4.1;
+	      	//circleAlpha = 1.4;
+	      	ttl = 60;
+	      	color = 1, 0.8, 0.6;
+		air=1;
+	     	ground=1;
+	      	water=1;
+	}
+	[ploom] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i3, -10 r20;    
+		delay=30  i2;				  
+		explosionGenerator=custom:BIGFIREBALL_piece;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=60;
+	}
+	[ploom2] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=10 r20, i3, -10 r20;    
+		delay=140  i2;
+		explosionGenerator=custom:BIGFIREBALL_piece3;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=20;
+	}
+	[fwoosh] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;    
+		delay=30;				  
+		explosionGenerator=custom:BIGFIREBALL_piece2;
+		}
+	air=1;
+	water=0;
+	ground=1;
+	count=1;
+	}
+	[groundglowred] 
+	{
+		class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 0, 0;  
+		delay=0 10;				  
+		explosionGenerator=custom:REDGROUNDGLOW;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+	usedefaultexplosions=0;	
+}
+
+[NONE]
+{
+}

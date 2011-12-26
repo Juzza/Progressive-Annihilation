@@ -155,11 +155,6 @@ SweetSpot(piecenum)
 	piecenum = base;
 }
 
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
-}
-
 RestoreAfterDelay()
 {
 	sleep restore_delay;

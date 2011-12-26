@@ -12,7 +12,8 @@ return {
 		customparams = {
       turretyawrate = 275,
 	  turretpitchrate = 100,
-	  dpslimit = 130,
+	  dpslimit = 105,
+	  fireproof = 1,
     },	
 		description = "Fast Assault Kbot",
 		energymake = 1.1000000238419,
@@ -84,7 +85,7 @@ return {
 			},
 		},
 		weapondefs = {
-			flamer = {
+			pyroflamer = {
 				accuracy = 800,
 				groundbounce = true,
 				areaOfEffect = 60,
@@ -118,7 +119,8 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "flamer",
+				def = "pyroflamer",
+				badtargetcategory = "VTOL",
 			},
 		},
 	},

@@ -110,7 +110,7 @@ return {
 				corethickness = 0.50,
 				craterboost = 0,
 				cratermult = 0,
-				explosiongenerator = "custom:EMG_HIT",
+				explosiongenerator = "custom:GAUSS_Expl",
 				edgeeffectiveness = 1,
 				firestarter = 30,
 				impactonly = 1,
