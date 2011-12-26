@@ -49,6 +49,7 @@ return {
 			[6] = "corthud",
 			[7] = "corcrash",
 			[8] = "corjar",
+			[9] = "corvoyr",
 		},
 		featuredefs = {
 			dead = {

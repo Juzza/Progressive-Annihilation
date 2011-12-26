@@ -131,7 +131,34 @@
 	}
 }
 
-
+[LONGGUN_Expl]
+{
+	
+	usedefaultexplosions=1;	
+	[groundflash]
+	{
+		flashSize = 100;
+		flashAlpha = 1;
+		circleGrowth = 15;
+		circleAlpha = .5;
+		ttl = 10;
+		color = 0.7, 0.7, .7;
+	}
+	[dirtup] 
+	{
+	    class=CExpGenSpawner;
+		[properties]
+		{
+		pos=0, 13, 0;    
+		delay=0;				  
+		explosionGenerator=custom:TESS;
+		}
+		air=0;
+		water=0;
+		ground=1;
+		count=1;
+	}
+}
 
 
 

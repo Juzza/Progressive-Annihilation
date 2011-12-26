@@ -33,15 +33,14 @@ return {
 		sightdistance = 276.89999389648,
 		terraformspeed = 500,
 		waterline = 33,
-		workertime = 100,
+		workertime = 200,
 		yardmap = "wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw",
 		buildoptions = {
 			[1] = "corcs",
-			[2] = "corsub",
-			[3] = "corpt",
-			[4] = "coresupp",
-			[5] = "corroy",
-			[6] = "cortship",
+			[2] = "corlightfrigate",
+			[3] = "cordest",
+			[4] = "corcrus",
+			[5] = "corsub",
 		},
 		featuredefs = {
 			dead = {

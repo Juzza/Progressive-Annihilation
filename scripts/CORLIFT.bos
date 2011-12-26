@@ -1,0 +1,547 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  base, body, link, arm1, jet1, arm2, jet2, arm3, jet3, arm4, jet4,
+	   leg1a, leg1b, leg1c, leg1d, leg2a, leg2b, leg2c, leg2d,
+	   leg3a, leg3b, leg3c, leg3d, leg4a, leg4b, leg4c, leg4d,
+	   leg5a, leg5b, leg5c, leg5d, leg6a, leg6b, leg6c, leg6d;
+
+
+static-var  statechg_DesiredState, statechg_StateChanging, loaded ;
+
+// Signal definitions
+#define SIG_MOVE			2
+#define SIG_AIM			4
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from body;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+/*
+pickup()
+{
+	if( loaded )
+	{
+		turn leg1b to y-axis <0.000000> speed <21.280220>;
+		turn leg3b to y-axis <0.000000> speed <21.280220>;
+		turn leg4b to y-axis <0.000000> speed <21.280220>;
+		turn leg6b to y-axis <0.000000> speed <21.280220>;
+		
+		turn leg1d to z-axis <-90.000000> speed <41.280220>;
+		turn leg1c to z-axis <-90.000000> speed <41.280220>;
+		turn leg1b to z-axis <-45.000000> speed <41.280220>;
+		
+		turn leg2d to z-axis <-90.000000> speed <41.280220>;
+		turn leg2c to z-axis <-90.000000> speed <41.280220>;
+		turn leg2b to z-axis <-45.000000> speed <41.280220>;
+		
+		turn leg3d to z-axis <-90.000000> speed <41.280220>;
+		turn leg3c to z-axis <-90.000000> speed <41.280220>;
+		turn leg3b to z-axis <-45.000000> speed <41.280220>;
+		
+		turn leg4d to z-axis <90.000000> speed <41.280220>;
+		turn leg4c to z-axis <90.000000> speed <41.280220>;
+		turn leg4b to z-axis <45.000000> speed <41.280220>;
+		
+		turn leg5d to z-axis <90.000000> speed <41.280220>;
+		turn leg5c to z-axis <90.000000> speed <41.280220>;
+		turn leg5b to z-axis <45.000000> speed <41.280220>;
+		
+		turn leg6d to z-axis <90.000000> speed <41.280220>;
+		turn leg6c to z-axis <90.000000> speed <41.280220>;
+		turn leg6b to z-axis <45.000000> speed <41.280220>;
+		sleep 1326;
+	}
+	sleep 11;
+}
+
+dropoff()
+{
+	if( !loaded )
+	{
+
+		turn leg1b to y-axis <30.000000> speed <21.280220>;
+		turn leg3b to y-axis <-30.000000> speed <21.280220>;
+		turn leg4b to y-axis <-30.000000> speed <21.280220>;
+		turn leg6b to y-axis <30.000000> speed <21.280220>;
+		
+		turn leg1d to z-axis <0.000000> speed <41.280220>;
+		turn leg1c to z-axis <0.000000> speed <41.280220>;
+		turn leg1b to z-axis <0.000000> speed <41.280220>;
+		
+		turn leg2d to z-axis <0.000000> speed <41.280220>;
+		turn leg2c to z-axis <0.000000> speed <41.280220>;
+		turn leg2b to z-axis <0.000000> speed <41.280220>;
+		
+		turn leg3d to z-axis <0.000000> speed <41.280220>;
+		turn leg3c to z-axis <0.000000> speed <41.280220>;
+		turn leg3b to z-axis <0.000000> speed <41.280220>;
+		
+		turn leg4d to z-axis <0.000000> speed <41.280220>;
+		turn leg4c to z-axis <0.000000> speed <41.280220>;
+		turn leg4b to z-axis <0.000000> speed <41.280220>;
+		
+		turn leg5d to z-axis <0.000000> speed <41.280220>;
+		turn leg5c to z-axis <0.000000> speed <41.280220>;
+		turn leg5b to z-axis <0.000000> speed <41.280220>;
+		
+		turn leg6d to z-axis <0.000000> speed <41.280220>;
+		turn leg6c to z-axis <0.000000> speed <41.280220>;
+		turn leg6b to z-axis <0.000000> speed <41.280220>;
+
+		sleep 1325;
+	}
+	sleep 15;
+}
+*/
+
+InitState()
+{
+	statechg_DesiredState = TRUE;
+	statechg_StateChanging = FALSE;
+}
+
+ProcessFlames()
+{
+	var prevxz, xz, prevy, y;
+	xz = get PIECE_XZ(base);
+	y = get PIECE_Y(base);
+	prevxz = 0;
+	prevy = 0;
+	while( 1 )
+	{
+		xz = get PIECE_XZ(base);
+		y = get PIECE_Y(base);
+		if( y > get GROUND_HEIGHT(xz) + [5])
+		{
+			emit-sfx 0 from jet1;
+			emit-sfx 0 from jet2;
+			emit-sfx 0 from jet3;
+			emit-sfx 0 from jet4;
+		}
+		if(prevxz == xz && prevy == y)
+		sleep 33;
+		prevxz = xz;
+		prevy = y;
+	}
+}
+
+
+RequestState(requestedstate, currentstate)
+{
+	if( statechg_StateChanging )
+	{
+		statechg_DesiredState = requestedstate;
+	}
+	statechg_StateChanging = TRUE;
+	currentstate = statechg_DesiredState;
+	statechg_DesiredState = requestedstate;
+	while( statechg_DesiredState != currentstate )
+	{
+		if( statechg_DesiredState == 0 )
+		{
+//			call-script pickup();
+			currentstate = 0;
+		}
+		if( statechg_DesiredState == 1 )
+		{
+//			call-script dropoff();
+			currentstate = 1;
+		}
+	}
+	statechg_StateChanging = FALSE;
+}
+
+
+/*
+HitByWeapon(Func_Var_1, Func_Var_2)
+{
+	turn base to z-axis Func_Var_2 speed <105.021978>;
+	turn base to x-axis Func_Var_1 speed <105.021978>;
+	wait-for-turn base around z-axis;
+	wait-for-turn base around x-axis;
+	turn base to z-axis <0.000000> speed <30.005495>;
+	turn base to x-axis <0.000000> speed <30.005495>;
+}
+*/
+
+Create()
+{
+	loaded=0;
+		
+	turn leg1b to y-axis <30.000000> now;
+	turn leg3b to y-axis <-30.000000> now;
+	turn leg4b to y-axis <-30.000000> now;
+	turn leg6b to y-axis <30.000000> now;
+
+	move link to z-axis [12.000000] now;
+//	move link to y-axis [5.000000] now;
+
+	call-script InitState();
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1000;
+	}
+	start-script SmokeUnit();
+	start-script ProcessFlames();
+}
+
+
+QueryTransport(Func_Var_1)
+{
+	Func_Var_1 = 2;
+}
+
+
+Activate()
+{
+	set ARMORED to 1;
+	
+	turn leg1b to y-axis <0.000000> speed <21.280220>;
+	turn leg3b to y-axis <0.000000> speed <21.280220>;
+	turn leg4b to y-axis <0.000000> speed <21.280220>;
+	turn leg6b to y-axis <0.000000> speed <21.280220>;
+			
+	turn leg1d to z-axis <-90.000000> speed <41.280220>;
+	turn leg1c to z-axis <-90.000000> speed <41.280220>;
+	turn leg1b to z-axis <-45.000000> speed <41.280220>;
+			
+	turn leg2d to z-axis <-90.000000> speed <41.280220>;
+	turn leg2c to z-axis <-90.000000> speed <41.280220>;
+	turn leg2b to z-axis <-45.000000> speed <41.280220>;
+			
+	turn leg3d to z-axis <-90.000000> speed <41.280220>;
+	turn leg3c to z-axis <-90.000000> speed <41.280220>;
+	turn leg3b to z-axis <-45.000000> speed <41.280220>;
+			
+	turn leg4d to z-axis <90.000000> speed <41.280220>;
+	turn leg4c to z-axis <90.000000> speed <41.280220>;
+	turn leg4b to z-axis <45.000000> speed <41.280220>;
+			
+	turn leg5d to z-axis <90.000000> speed <41.280220>;
+	turn leg5c to z-axis <90.000000> speed <41.280220>;
+	turn leg5b to z-axis <45.000000> speed <41.280220>;
+			
+	turn leg6d to z-axis <90.000000> speed <41.280220>;
+	turn leg6c to z-axis <90.000000> speed <41.280220>;
+	turn leg6b to z-axis <45.000000> speed <41.280220>;
+			
+	while (loaded )
+	{
+	
+		turn leg1b to y-axis <30.000000> speed <21.280220>;
+		turn leg3b to y-axis <-30.000000> speed <21.280220>;
+		turn leg4b to y-axis <-30.000000> speed <21.280220>;
+		turn leg6b to y-axis <30.000000> speed <21.280220>;
+		
+		turn leg1d to z-axis <0.000000> speed <41.280220>;
+		turn leg1c to z-axis <0.000000> speed <41.280220>;
+		turn leg1b to z-axis <0.000000> speed <41.280220>;
+			
+		turn leg2d to z-axis <0.000000> speed <41.280220>;
+		turn leg2c to z-axis <0.000000> speed <41.280220>;
+		turn leg2b to z-axis <0.000000> speed <41.280220>;
+			
+		turn leg3d to z-axis <0.000000> speed <41.280220>;
+		turn leg3c to z-axis <0.000000> speed <41.280220>;
+		turn leg3b to z-axis <0.000000> speed <41.280220>;
+			
+		turn leg4d to z-axis <0.000000> speed <41.280220>;
+		turn leg4c to z-axis <0.000000> speed <41.280220>;
+		turn leg4b to z-axis <0.000000> speed <41.280220>;
+			
+		turn leg5d to z-axis <0.000000> speed <41.280220>;
+		turn leg5c to z-axis <0.000000> speed <41.280220>;
+		turn leg5b to z-axis <0.000000> speed <41.280220>;
+			
+		turn leg6d to z-axis <0.000000> speed <41.280220>;
+		turn leg6c to z-axis <0.000000> speed <41.280220>;
+		turn leg6b to z-axis <0.000000> speed <41.280220>;
+		
+		sleep 30;
+	}
+	start-script RequestState(0);
+}
+
+Deactivate()
+{
+	start-script RequestState(1);
+	set ARMORED to 0;
+		
+	turn leg1b to y-axis <30.000000> speed <21.280220>;
+	turn leg3b to y-axis <-30.000000> speed <21.280220>;
+	turn leg4b to y-axis <-30.000000> speed <21.280220>;
+	turn leg6b to y-axis <30.000000> speed <21.280220>;
+	
+	turn leg1d to z-axis <0.000000> speed <41.280220>;
+	turn leg1c to z-axis <0.000000> speed <41.280220>;
+	turn leg1b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg2d to z-axis <0.000000> speed <41.280220>;
+	turn leg2c to z-axis <0.000000> speed <41.280220>;
+	turn leg2b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg3d to z-axis <0.000000> speed <41.280220>;
+	turn leg3c to z-axis <0.000000> speed <41.280220>;
+	turn leg3b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg4d to z-axis <0.000000> speed <41.280220>;
+	turn leg4c to z-axis <0.000000> speed <41.280220>;
+	turn leg4b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg5d to z-axis <0.000000> speed <41.280220>;
+	turn leg5c to z-axis <0.000000> speed <41.280220>;
+	turn leg5b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg6d to z-axis <0.000000> speed <41.280220>;
+	turn leg6c to z-axis <0.000000> speed <41.280220>;
+	turn leg6b to z-axis <0.000000> speed <41.280220>;
+	
+/*	
+	if( loaded )
+	{	
+		move body to y-axis [27.000000] speed [9.000000];
+		sleep 1;
+		move link to y-axis [0.000000] - Func_Var_1 now;
+		
+		
+		turn leg1b to y-axis <0.000000> speed <21.280220>;
+		turn leg3b to y-axis <0.000000> speed <21.280220>;
+		turn leg4b to y-axis <0.000000> speed <21.280220>;
+		turn leg6b to y-axis <0.000000> speed <21.280220>;
+		
+		turn leg1d to z-axis <-90.000000> speed <41.280220>;
+		turn leg1c to z-axis <-90.000000> speed <41.280220>;
+		turn leg1b to z-axis <-45.000000> speed <41.280220>;
+		
+		turn leg2d to z-axis <-90.000000> speed <41.280220>;
+		turn leg2c to z-axis <-90.000000> speed <41.280220>;
+		turn leg2b to z-axis <-45.000000> speed <41.280220>;
+		
+		turn leg3d to z-axis <-90.000000> speed <41.280220>;
+		turn leg3c to z-axis <-90.000000> speed <41.280220>;
+		turn leg3b to z-axis <-45.000000> speed <41.280220>;
+		
+		turn leg4d to z-axis <90.000000> speed <41.280220>;
+		turn leg4c to z-axis <90.000000> speed <41.280220>;
+		turn leg4b to z-axis <45.000000> speed <41.280220>;
+		
+		turn leg5d to z-axis <90.000000> speed <41.280220>;
+		turn leg5c to z-axis <90.000000> speed <41.280220>;
+		turn leg5b to z-axis <45.000000> speed <41.280220>;
+		
+		turn leg6d to z-axis <90.000000> speed <41.280220>;
+		turn leg6c to z-axis <90.000000> speed <41.280220>;
+		turn leg6b to z-axis <45.000000> speed <41.280220>;
+		
+		sleep 50;
+	}
+*/	
+}
+
+
+
+BeginTransport(Func_Var_1, unit_to_load)
+{
+	loaded=1;
+
+//	start-script RequestState(0);
+
+	turn leg1b to y-axis <30.000000> speed <21.280220>;
+	turn leg3b to y-axis <-30.000000> speed <21.280220>;
+	turn leg4b to y-axis <-30.000000> speed <21.280220>;
+	turn leg6b to y-axis <30.000000> speed <21.280220>;
+	
+	turn leg1d to z-axis <0.000000> speed <41.280220>;
+	turn leg1c to z-axis <0.000000> speed <41.280220>;
+	turn leg1b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg2d to z-axis <0.000000> speed <41.280220>;
+	turn leg2c to z-axis <0.000000> speed <41.280220>;
+	turn leg2b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg3d to z-axis <0.000000> speed <41.280220>;
+	turn leg3c to z-axis <0.000000> speed <41.280220>;
+	turn leg3b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg4d to z-axis <0.000000> speed <41.280220>;
+	turn leg4c to z-axis <0.000000> speed <41.280220>;
+	turn leg4b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg5d to z-axis <0.000000> speed <41.280220>;
+	turn leg5c to z-axis <0.000000> speed <41.280220>;
+	turn leg5b to z-axis <0.000000> speed <41.280220>;
+	
+	turn leg6d to z-axis <0.000000> speed <41.280220>;
+	turn leg6c to z-axis <0.000000> speed <41.280220>;
+	turn leg6b to z-axis <0.000000> speed <41.280220>;
+	sleep 1326;
+
+}
+
+EndTransport()
+{
+	loaded=0;
+
+	turn leg1b to y-axis <0.000000> speed <21.280220>;
+	turn leg3b to y-axis <0.000000> speed <21.280220>;
+	turn leg4b to y-axis <0.000000> speed <21.280220>;
+	turn leg6b to y-axis <0.000000> speed <21.280220>;
+		
+	turn leg1d to z-axis <-90.000000> speed <41.280220>;
+	turn leg1c to z-axis <-90.000000> speed <41.280220>;
+	turn leg1b to z-axis <-45.000000> speed <41.280220>;
+		
+	turn leg2d to z-axis <-90.000000> speed <41.280220>;
+	turn leg2c to z-axis <-90.000000> speed <41.280220>;
+	turn leg2b to z-axis <-45.000000> speed <41.280220>;
+		
+	turn leg3d to z-axis <-90.000000> speed <41.280220>;
+	turn leg3c to z-axis <-90.000000> speed <41.280220>;
+	turn leg3b to z-axis <-45.000000> speed <41.280220>;
+		
+	turn leg4d to z-axis <90.000000> speed <41.280220>;
+	turn leg4c to z-axis <90.000000> speed <41.280220>;
+	turn leg4b to z-axis <45.000000> speed <41.280220>;
+		
+	turn leg5d to z-axis <90.000000> speed <41.280220>;
+	turn leg5c to z-axis <90.000000> speed <41.280220>;
+	turn leg5b to z-axis <45.000000> speed <41.280220>;
+		
+	turn leg6d to z-axis <90.000000> speed <41.280220>;
+	turn leg6c to z-axis <90.000000> speed <41.280220>;
+	turn leg6b to z-axis <45.000000> speed <41.280220>;
+
+//	start-script RequestState(1);
+}
+
+StartMoving()
+{
+//	loaded=0;
+	signal 2;
+	set-signal-mask SIG_MOVE;
+}
+
+
+StopMoving()
+{
+	signal 2;
+}
+
+
+MoveRate1()
+{
+	signal 2;
+	set-signal-mask 2;
+//	start-script ProcessFlames();
+//	Static_Var_1 = 1;
+}
+
+MoveRate2()
+{
+	signal 2;
+	set-signal-mask 2;
+//	start-script ProcessFlames();
+//	Static_Var_1 = 2;
+}
+
+MoveRate3()
+{
+	signal 2;
+	set-signal-mask 2;
+//	start-script ProcessFlames();
+//	Static_Var_1 = 3;
+}
+
+
+SweetSpot(piecenum)
+{
+	piecenum = base;
+}
+
+Killed(severity, corpsetype)
+{
+	//if (get 75(get 71))
+	//{
+	//	var count, min, max;
+	//	min = get 69;
+	//	max = get 70;
+	//	for ( count = min; count < max; ++count )
+	//	{
+	//		drop-unit count;
+	//	}
+	//}
+	if( severity <= 25 )
+	{
+		corpsetype = 1;
+		explode arm1 type FALL | FIRE | SMOKE | BITMAP1;
+		explode arm2 type FALL | FIRE | SMOKE | BITMAP2;
+		explode arm3 type SHATTER | BITMAP1;
+		explode leg1a type BITMAPONLY | BITMAP2;
+		explode jet1 type FALL | FIRE | SMOKE | BITMAP5;
+		explode jet2 type FALL | FIRE | SMOKE | BITMAP1;
+		explode jet3 type FALL | FIRE | SMOKE | BITMAP2;
+		explode link type FALL | FIRE | SMOKE | BITMAP1;
+		return (0);
+	}
+	if( severity <= 50 )
+	{
+		corpsetype = 2;
+		explode arm1 type FALL | FIRE | SMOKE | BITMAP1;
+		explode arm2 type FALL | FIRE | SMOKE | BITMAP2;
+		explode arm3 type SHATTER | BITMAP1;
+		explode leg1a type BITMAPONLY | BITMAP2;
+		explode jet1 type FALL | FIRE | SMOKE | BITMAP5;
+		explode jet2 type FALL | FIRE | SMOKE | BITMAP1;
+		explode jet3 type FALL | FIRE | SMOKE | BITMAP2;
+		explode link type FALL | FIRE | SMOKE | BITMAP1;
+		return (0);
+	}
+	if( severity <= 99 )
+	{
+		corpsetype = 3;
+		explode arm1 type FALL | FIRE | SMOKE | BITMAP1;
+		explode arm2 type FALL | FIRE | SMOKE | BITMAP2;
+		explode arm3 type SHATTER | BITMAP1;
+		explode leg1a type BITMAPONLY | BITMAP2;
+		explode jet1 type FALL | FIRE | SMOKE | BITMAP5;
+		explode jet2 type FALL | FIRE | SMOKE | BITMAP1;
+		explode jet3 type FALL | FIRE | SMOKE | BITMAP2;
+		explode link type FALL | FIRE | SMOKE | BITMAP1;
+		return (0);
+	}
+	corpsetype = 3;
+		explode arm1 type FALL | FIRE | SMOKE | BITMAP1;
+		explode arm2 type FALL | FIRE | SMOKE | BITMAP2;
+		explode arm3 type SHATTER | BITMAP1;
+		explode leg1a type BITMAPONLY | BITMAP2;
+		explode jet1 type FALL | FIRE | SMOKE | BITMAP5;
+		explode jet2 type FALL | FIRE | SMOKE | BITMAP1;
+		explode jet3 type FALL | FIRE | SMOKE | BITMAP2;
+		explode link type FALL | FIRE | SMOKE | BITMAP1;
+}

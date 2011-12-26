@@ -110,7 +110,7 @@ return {
 				firestarter = 100,
 				impulseboost = 0.12300000339746,
 				impulsefactor = 0.12300000339746,
-				intensity = 0.69999998807907,
+				intensity = 0.7,
 				name = "peewee",
 				noselfdamage = true,
 				range = 180,

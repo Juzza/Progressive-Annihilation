@@ -34,15 +34,14 @@ return {
 		sightdistance = 275.60000610352,
 		terraformspeed = 500,
 		waterline = 26,
-		workertime = 100,
+		workertime = 200,
 		yardmap = "wCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCw",
 		buildoptions = {
 			[1] = "armcs",
-			[2] = "armsub",
-			[3] = "armpt",
-			[4] = "decade",
-			[5] = "armroy",
-			[6] = "armtship",
+			[2] = "armlightfrigate",
+			[3] = "armdest",
+			[4] = "armcrus",
+			[5] = "armsub",
 		},
 		featuredefs = {
 			dead = {

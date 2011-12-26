@@ -259,13 +259,7 @@ Deactivate()
 
 Reload()
 {
-	sleep 2450;
 	gun_2 = gauss;
-}
-
-SetMaxReloadTime(Func_Var_1)
-{
-	restore_delay = Func_Var_1 * 2;
 }
 
 StartMoving()

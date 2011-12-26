@@ -41,6 +41,12 @@ return {
 		turnrate = 9.9999998245167e-014,
 		upright = true,
 		usebuildinggrounddecal = true,
+		sfxtypes = {
+		explosiongenerators = {
+		"custom:zeusmuzzle",
+		"custom:zeusgroundflash",
+		},
+	},
 		featuredefs = {
 			dead = {
 				autoreclaimable = 0,

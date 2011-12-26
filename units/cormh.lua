@@ -117,7 +117,7 @@ return {
 				turnrate = 24384,
 				weaponacceleration = 102.40000152588,
 				weapontimer = 3,
-				weapontype = "StarburstLauncher",
+				weapontype = "MissileLauncher",
 				weaponvelocity = 400,
 				damage = {
 					default = 550,

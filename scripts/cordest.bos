@@ -1,0 +1,505 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+piece  flare1a, flare1b, flare2a, flare2b, firetp1a, firep1b, firetp2a, firep2b,
+       base, turret1, wake1, wake2, barrel1a, barrel1b, barrel2a, barrel2b,
+       turret2, torp1, torp2, bridge, radar, sleeves1, sleeves2, flakturret1,
+       flakGuns1, flakflare1a, flakflare1b, flakturret2, flakGuns2, flakflare2a, flakflare2b, samcanon,
+       sambarrel, samflare1, samflare2, samflare3, samflare4, samflare5, samflare6, samflare7,
+       samflare8, sam, floor,
+       muzzle1a, muzzle1b, muzzle2a, muzzle2b;
+
+static-var  gun_1, gun_2, Static_Var_3, Static_Var_4, Static_Var_5,
+            Static_Var_6, Static_Var_7, restore_delay, Static_Var_9, oldHead;
+
+// Signal definitions
+#define SIG_AIM				2
+#define SIG_AIM_2			4
+#define SIG_MOVE			32
+
+SetDirection(heading)
+{
+	var spd;
+	spd = (get ABS(oldHead) - get ABS(heading)) / 2;
+	turn base to y-axis heading speed spd;
+	turn base to y-axis 0-heading speed spd;
+	oldHead = heading;
+}
+
+RockOnWaves()
+{
+	var rockDir, rockAng, rockSpeed;
+	rockDir = <-0.1>;
+	rockAng = <-0.1>;
+	while( TRUE )
+	{
+		while( get ABS(rockAng) < <1.11> )
+		{
+			rockSpeed = <1.25> - get ABS(rockAng);
+			turn base to x-axis rockAng speed rockSpeed*2;
+			wait-for-turn base around x-axis;
+			rockAng = rockAng + rockDir;
+		}
+		rockDir = 0 - rockDir;
+		rockAng = rockAng + rockDir + rockDir;
+	}
+}
+
+FIdle()
+{
+    spin sambarrel around y-axis speed <25.0>;
+    turn sambarrel to x-axis <0.0> - <45.0> speed <45.0>;
+}
+
+SmokeUnit(healthpercent, sleeptime, smoketype)
+{
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 400;
+	}
+	start-script RockOnWaves();
+	while( TRUE )
+	{
+		healthpercent = get HEALTH;
+		if( healthpercent < 66 )
+		{
+			smoketype = 256 | 2;
+			if( Rand( 1, 66 ) < healthpercent )
+			{
+				smoketype = 256 | 1;
+			}
+			emit-sfx smoketype from base;
+		}
+		sleeptime = healthpercent * 50;
+		if( sleeptime < 200 )
+		{
+			sleeptime = 200;
+		}
+		sleep sleeptime;
+	}
+}
+
+Create()
+{
+	gun_1 = flare1a;
+	gun_2 = flare1a;
+	Static_Var_3 = 0;
+	Static_Var_4 = 0;
+	Static_Var_5 = 0;
+	Static_Var_6 = 0;
+	Static_Var_7 = 1;
+	turn torp1 to x-axis <-20.> now;
+	turn torp2 to x-axis <-20.> now;
+	hide flare1a;
+	hide flare1b;
+	hide flare2a;
+	hide flare2b;
+	hide muzzle1a;
+	hide muzzle1b;
+	hide muzzle2a;
+	hide muzzle2b;
+	hide flakflare1a;
+	hide flakflare1b;
+	hide flakflare2a;
+	hide flakflare2b;
+	turn turret2 to y-axis <180.> now;
+	spin radar around y-axis speed <100.>;
+	restore_delay = 4000;
+	Static_Var_9 = 4000;
+	start-script SmokeUnit();
+    call-script FIdle();
+}
+
+SetMaxReloadTime(Func_Var_1)
+{
+	restore_delay = Func_Var_1 * 2;
+}
+
+RestoreAfterDelay()
+{
+	sleep restore_delay;
+	turn turret1 to y-axis <0.> speed <35.>;
+	turn sleeves1 to x-axis <0.> speed <15.>;
+	turn turret2 to y-axis <180.> speed <35.>;
+	turn sleeves2 to x-axis <0.> speed <15.>;
+	turn torp1 to y-axis <45.> speed <50.>;
+	turn torp2 to y-axis <315.> speed <50.>;
+}
+
+RestoreAfterDelay2()
+{
+	sleep Static_Var_9;
+	turn flakturret1 to y-axis <0.> speed <60.>;
+	turn flakGuns1 to x-axis <0.> speed <40.>;
+	turn flakturret2 to y-axis <0.> speed <60.>;
+	turn flakGuns2 to x-axis <0.> speed <40.>;
+	turn samcanon to y-axis <0.> speed <60.>;
+	turn sambarrel to x-axis <0.> speed <40.>;
+    call-script FIdle();
+}
+
+waveSplash()
+{
+	while( TRUE )
+	{
+		turn base to x-axis <-1.> speed <1.0>;
+		move base to y-axis [0.23] speed [0.17];
+		wait-for-turn base around x-axis;
+		turn base to x-axis <0.0> speed <1.0>;
+		move base to y-axis [0.0] speed [0.17];
+		wait-for-turn base around x-axis;
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	var waketime;
+	start-script waveSplash();
+	while( TRUE )
+	{
+		emit-sfx 2 from wake1;
+		emit-sfx 2 from wake2;
+		waketime = (get CURRENT_SPEED) * 100 / get MAX_SPEED;
+		if( waketime < 50 ) waketime = 50;
+		sleep 12000 / waketime;	}
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	turn base to x-axis <0.0> speed <1.0>;
+	move base to y-axis [0.0] speed [0.17];
+}
+
+AimPrimary(heading, pitch)
+{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	turn turret1 to y-axis heading speed <90.>;
+	turn sleeves1 to x-axis <0.> - pitch speed <40.>;
+	wait-for-turn turret1 around y-axis;
+	wait-for-turn sleeves1 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimSecondary(heading, pitch)
+{
+	signal SIG_AIM_2;
+	set-signal-mask SIG_AIM_2;
+	turn turret2 to y-axis heading speed <90.>;
+	turn sleeves2 to x-axis <0.> - pitch speed <40.>;
+	wait-for-turn turret2 around y-axis;
+	wait-for-turn sleeves2 around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon3(Func_Var_1)
+{
+	signal 8;
+	set-signal-mask 8;
+	turn torp1 to y-axis Func_Var_1 speed <180.>;
+	wait-for-turn torp1 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon4(Func_Var_1)
+{
+	signal 16;
+	set-signal-mask 16;
+	turn torp2 to y-axis Func_Var_1 speed <180.>;
+	wait-for-turn torp2 around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+AimWeapon5(Func_Var_1, Func_Var_2)
+{
+	signal 64;
+	set-signal-mask 64;
+	turn flakturret1 to y-axis Func_Var_1 speed <180.>;
+	turn flakGuns1 to x-axis <0.> - Func_Var_2 speed <150.>;
+	wait-for-turn flakturret1 around y-axis;
+	wait-for-turn flakGuns1 around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+AimWeapon6(Func_Var_1, Func_Var_2)
+{
+	signal 128;
+	set-signal-mask 128;
+	turn flakturret2 to y-axis Func_Var_1 speed <180.>;
+	turn flakGuns2 to x-axis <0.> - Func_Var_2 speed <150.>;
+	wait-for-turn flakturret2 around y-axis;
+	wait-for-turn flakGuns2 around x-axis;
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+FirePrimary()
+{
+	if( gun_1 == 0 )
+	{
+		emit-sfx 1025 from flare1a;
+		move barrel1a to z-axis [-4.] speed [30.];
+		wait-for-move barrel1a along z-axis;
+		move barrel1a to z-axis [0.] speed [8.];
+	}
+	if( gun_1 == 1 )
+	{
+		emit-sfx 1025 from flare1b;
+		move barrel1b to z-axis [-4.] speed [30.];
+		wait-for-move barrel1b along z-axis;
+		move barrel1b to z-axis [0.] speed [8.];
+
+	}
+	gun_1 = !gun_1;
+}
+
+FireSecondary()
+{
+	if( gun_2 == 0 )
+	{
+		emit-sfx 1025 from flare2a;
+		move barrel2a to z-axis [-4.] speed [30.];
+		wait-for-move barrel2a along z-axis;
+		move barrel2a to z-axis [0.] speed [8.];
+	}
+	if( gun_2 == 1 )
+	{
+		emit-sfx 1025 from flare2b;
+		move barrel2b to z-axis [-4.] speed [30.];
+		wait-for-move barrel2b along z-axis;
+		move barrel2b to z-axis [0.] speed [8.];
+	}
+	gun_2 = !gun_2;
+}
+
+FireWeapon3()
+{
+	if (Static_Var_3 == 0) {
+		emit-sfx 1024 from muzzle1a;
+	} else if (Static_Var_3 == 1) {
+		emit-sfx 1024 from muzzle1b;
+	}
+	Static_Var_3 = !Static_Var_3;
+}
+
+FireWeapon4()
+{
+	if (Static_Var_4 == 0) {
+		emit-sfx 1024 from muzzle2a;
+	} else if (Static_Var_4 == 1) {
+		emit-sfx 1024 from muzzle2b;
+	}
+	Static_Var_4 = !Static_Var_4;
+}
+
+FireWeapon5()
+{
+	if( Static_Var_5 == 0 )
+	{
+		show flakflare1a;
+		sleep 50;
+		hide flakflare1a;
+	}
+	if( Static_Var_5 == 1 )
+	{
+		show flakflare1b;
+		sleep 50;
+		hide flakflare1b;
+	}
+	Static_Var_5 = !Static_Var_5;
+}
+
+FireWeapon6()
+{
+	if( Static_Var_6 == 0 )
+	{
+		show flakflare2a;
+		sleep 50;
+		hide flakflare2a;
+	}
+	if( Static_Var_6 == 1 )
+	{
+		show flakflare2b;
+		sleep 50;
+		hide flakflare2b;
+	}
+	Static_Var_6 = !Static_Var_6;
+}
+
+AimFromPrimary(piecenum)
+{
+	piecenum = turret1;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = turret2;
+}
+
+AimFrom3(Func_Var_1)
+{
+	Func_Var_1 = 17;
+}
+
+AimFrom4(Func_Var_1)
+{
+	Func_Var_1 = 18;
+}
+
+AimFrom5(Func_Var_1)
+{
+	Func_Var_1 = 23;
+}
+
+AimFrom6(Func_Var_1)
+{
+	Func_Var_1 = 29;
+}
+
+QueryPrimary(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum = flare1a;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum = flare1b;
+	}
+}
+
+QuerySecondary(piecenum)
+{
+	if( gun_2 == 0 )
+	{
+		piecenum = flare2a;
+	}
+	if( gun_2 == 1 )
+	{
+		piecenum = flare2b;
+	}
+}
+
+QueryWeapon3(Func_Var_1)
+{
+	if( Static_Var_3 == 0 )
+	{
+		Func_Var_1 = 4;
+	}
+	if( Static_Var_3 == 1 )
+	{
+		Func_Var_1 = 5;
+	}
+}
+
+QueryWeapon4(Func_Var_1)
+{
+	if( Static_Var_4 == 0 )
+	{
+		Func_Var_1 = 6;
+	}
+	if( Static_Var_4 == 1 )
+	{
+		Func_Var_1 = 7;
+	}
+}
+
+QueryWeapon5(Func_Var_1)
+{
+	if( Static_Var_5 == 0 )
+	{
+		Func_Var_1 = 27;
+	}
+	if( Static_Var_5 == 1 )
+	{
+		Func_Var_1 = 28;
+	}
+}
+
+QueryWeapon6(Func_Var_1)
+{
+	if( Static_Var_6 == 0 )
+	{
+		Func_Var_1 = 33;
+	}
+	if( Static_Var_6 == 1 )
+	{
+		Func_Var_1 = 34;
+	}
+}
+
+AimWeapon7(Func_Var_1, Func_Var_2)
+{
+	signal 256;
+	set-signal-mask 256;
+	
+	stop-spin sambarrel around y-axis;
+	turn samcanon to y-axis Func_Var_1 speed <180.>;
+	turn sambarrel to x-axis <0.> - Func_Var_2 speed <150.>;
+	
+	wait-for-turn samcanon around y-axis;
+	wait-for-turn sambarrel around x-axis;
+	
+	start-script RestoreAfterDelay2();
+	return (1);
+}
+
+FireWeapon7()
+{
+	if( Static_Var_7 == 0 )
+	{
+	emit-sfx 1026 from samflare1;
+	}
+	if( Static_Var_7 == 1 )
+	{
+	emit-sfx 1026 from samflare2;
+	}
+	Static_Var_7 = !Static_Var_7;
+}
+
+AimFrom7(piecenum)
+{
+	piecenum = sambarrel;
+}
+
+QueryWeapon7(piecenum)
+{
+	if( Static_Var_7 == 0 )
+	{
+		piecenum = samflare1;
+	}
+	if( Static_Var_7 == 1 )
+	{
+		piecenum = samflare2;
+	}
+}
+
+SweetSpot(piecenum)
+{
+	piecenum = floor;
+}
+
+Killed(severity, corpsetype)
+{
+	hide flare1a;
+	hide flare2a;
+	explode flare1a type BITMAPONLY | BITMAP1;
+	explode barrel1a type BITMAPONLY | BITMAP1;
+	explode barrel2a type BITMAPONLY | BITMAP2;
+	explode base type BITMAPONLY | BITMAP3;
+	explode flare1a type BITMAPONLY | BITMAP4;
+	explode flare2a type BITMAPONLY | BITMAP5;
+	explode turret1 type BITMAPONLY | BITMAP2;
+	explode wake1 type BITMAPONLY | BITMAP3;
+	explode wake2 type BITMAPONLY | BITMAP4;
+}

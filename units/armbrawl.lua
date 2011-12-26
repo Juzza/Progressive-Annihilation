@@ -3,7 +3,7 @@ return {
 		acceleration = 0.24,
 		brakerate = 4.41,
 		buildcostenergy = 6500,
-		buildcostmetal = 350,
+		buildcostmetal = 420,
 		buildpic = "ARMBRAWL.DDS",
 		buildtime = 11000,
 		canfly = true,

@@ -11,7 +11,8 @@ return {
 		corpse = "DEAD",
 		customparams = {
       turretyawrate = 150,
-	  dpslimit = 450,
+	  dpslimit = 425,
+	  fireproof = 1,
     },	
 		description = "Experimental Flame Kbot",
 		explodeas = "MECH_BLASTSML",
@@ -55,7 +56,7 @@ return {
 				footprintz = 3,
 				height = 10,
 				hitdensity = 100,
-				metal = 4273,
+				metal = 3473,
 				object = "CORDEM_dead",
 				reclaimable = true,
 				seqnamereclamate = "TREE1RECLAMATE",
@@ -101,7 +102,7 @@ return {
 			},
 		},
 		weapondefs = {
-			flamer1 = {
+			demflamer = {
 				accuracy = 1500,
 				burst = 2,
 				burstrate = 0.1,
@@ -138,7 +139,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "flamer1",
+				def = "demflamer",
 				onlytargetcategory = "NOTAIR",
 			},
 		},

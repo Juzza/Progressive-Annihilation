@@ -48,7 +48,7 @@ return {
 			[4] = "armamph",
 			[5] = "armzeus",
 			[6] = "armmav",
-			[7] = "armsptk",
+			[7] = "armspid",
 			[8] = "armfido",
 			[9] = "armsnipe",
 			[10] = "armfboy",
