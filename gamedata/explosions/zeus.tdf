@@ -71,6 +71,38 @@
 	}
 }
 
+[LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED]
+{
+ [electric thingies2]
+	{
+		class=CSimpleParticleSystem;
+		[properties]
+		{
+		sizeGrowth=0;
+		sizeMod=0.5;
+		pos=0, 1.0, 0;
+		emitVector=0, 1, 0;
+		gravity=0, 0, 0;
+		colorMap=1 1 1 0.01  1 1 1 0.01   1 1 1 0.01  1 1 1 0.01  1 1 1 0.01 0 0 0 0.01;
+		Texture=lightb;
+		airdrag=0.1;
+		particleLife=8;
+		particleLifeSpread=4;
+		numParticles=10;
+		particleSpeed=20;
+		particleSpeedSpread=20;
+		particleSize=15;
+		particleSizeSpread=15;
+		emitRot=0;
+		emitRotSpread=80;
+		directional=1;
+		}
+	air=1;
+	water=1;
+	ground=1;
+	count=1;
+	}
+}
 
 
 
