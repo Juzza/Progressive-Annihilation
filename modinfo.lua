@@ -1,8 +1,8 @@
 return {
-  name='Progressive Annihilationtestgit',
+  name='Progressive Annihilation',
   description='A new and glorious Mod',
   shortname='BA',
-  version='v1.45',
+  version='$VERSION',
   mutator='Official',
   game='Total Annihilation',
   shortGame='TA',
