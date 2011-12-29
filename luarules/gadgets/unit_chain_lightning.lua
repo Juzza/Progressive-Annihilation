@@ -20,6 +20,7 @@ if gadgetHandler:IsSyncedCode() then
     -- Config
     ----------------------------------------------------------------
     local CHAINRADIUS = 100
+    local CHAINDAMAGE = 50
     local CHAINCEG = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED'
     
     ----------------------------------------------------------------
@@ -37,6 +38,7 @@ if gadgetHandler:IsSyncedCode() then
     local spGetTeamInfo = Spring.GetTeamInfo
     local spGetGameFrame = Spring.GetGameFrame
     local spSpawnCEG = Spring.SpawnCEG
+    local spAddUnitDamage = Spring.AddUnitDamage
     local sqrt = math.sqrt
     local huge = math.huge
     
@@ -109,6 +111,7 @@ if gadgetHandler:IsSyncedCode() then
             
             -- Damage & Effects
             spSpawnCEG(CHAINCEG, ux, uy, uz, 0, 0, 0)
+            spAddUnitDamage(bestCID, CHAINDAMAGE, 0, uID)
             
             -- Find/update candidates
             local nearbyHostiles = GetHostileUnitDataInSphere(ux, uy, uz, CHAINRADIUS, aAllyTeam, processedUnits)
