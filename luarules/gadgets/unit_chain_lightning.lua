@@ -19,13 +19,13 @@ if gadgetHandler:IsSyncedCode() then
     ----------------------------------------------------------------
     -- Config
     ----------------------------------------------------------------
-    local CHAINRADIUS = 100
-    local CHAINDAMAGE = 50
-    local CHAINCEG = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED'
-    
-    ----------------------------------------------------------------
-    -- Locals
-    ----------------------------------------------------------------
+    local ChainWeapons = {
+        [WeaponDefNames.armzeus_lightning.id] = {
+            radius = 50,
+            damage = 50,
+            ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
+        },
+    }
     
     ----------------------------------------------------------------
     -- Speed
@@ -71,7 +71,13 @@ if gadgetHandler:IsSyncedCode() then
     function gadget:UnitDamaged(uID, uDefID, uTeam, damage, paralyzer, weaponID, aID, aDefID, aTeam)
         
         -- Checks
-        if not (uID and aTeam and weaponID == armzeus_lightning) then
+        if not (uID and aTeam and weaponID) then
+            return
+        end
+        
+        -- Weapon chains?
+        local chainData = ChainWeapons[weaponID]
+        if not chainData then
             return
         end
         
@@ -83,7 +89,7 @@ if gadgetHandler:IsSyncedCode() then
         
         -- Setup
         local ux, uy, uz = spGetUnitPosition(uID)
-        local firstHostiles = GetHostileUnitDataInSphere(ux, uy, uz, CHAINRADIUS, aAllyTeam, processedUnits)
+        local firstHostiles = GetHostileUnitDataInSphere(ux, uy, uz, chainData.radius, aAllyTeam, processedUnits)
         for i = 1, #firstHostiles do
             local hData = firstHostiles[i]
             candidates[hData[1]] = {hData[2], ux, uy, uz}
@@ -110,11 +116,11 @@ if gadgetHandler:IsSyncedCode() then
             candidates[bestCID] = nil
             
             -- Damage & Effects
-            spSpawnCEG(CHAINCEG, ux, uy, uz, 0, 0, 0)
-            spAddUnitDamage(bestCID, CHAINDAMAGE, 0, uID)
+            spSpawnCEG(chainData.ceg, ux, uy, uz, 0, 0, 0)
+            spAddUnitDamage(bestCID, chainData.damage, 0, uID)
             
             -- Find/update candidates
-            local nearbyHostiles = GetHostileUnitDataInSphere(ux, uy, uz, CHAINRADIUS, aAllyTeam, processedUnits)
+            local nearbyHostiles = GetHostileUnitDataInSphere(ux, uy, uz, chainData.radius, aAllyTeam, processedUnits)
             for i = 1, #nearbyHostiles do
                 local hData = nearbyHostiles[i]
                 local hID = hData[1]
