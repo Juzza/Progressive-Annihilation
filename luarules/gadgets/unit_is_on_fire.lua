@@ -60,6 +60,7 @@ for i=1,#WeaponDefs do
   --end
   if (WeaponDefs[i].name:lower():find("jarflamer")
 	or WeaponDefs[i].name:lower():find("pyroflamer") 
+	or WeaponDefs[i].name:lower():find("exp_heavyrocket") 
 	or WeaponDefs[i].name:lower():find("mawflamer")
 	or WeaponDefs[i].name:lower():find("demflamer")) then
     flamerWeaponDefs[i]=360 --- nux
