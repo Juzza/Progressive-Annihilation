@@ -1,7 +1,7 @@
 return {
 	corkrog = {
 		acceleration = 0.10,
-		brakerate = 0.23800000548363,
+		brakerate = 0.238,
 		buildcostenergy = 577000,
 		buildcostmetal = 27000,
 		buildpic = "CORKROG.DDS",
