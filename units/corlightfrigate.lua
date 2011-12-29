@@ -23,8 +23,8 @@ return {
 		icontype = "sea",
 		idleautoheal = 25,
 		idletime = 900,
-		maxdamage = 1750,
-		maxvelocity = 2,
+		maxdamage = 2515,
+		maxvelocity = 2.3,
 		minwaterdepth = 12,
 		movementclass = "BOAT5",
 		name = "Light Attack Frigate",
@@ -252,6 +252,7 @@ return {
 			[4] = {
 				def = "torpedo1",
 				badtargetcategory = "HOVER NOTSHIP",
+				onlytargetcategory = "SHIP UNDERWATER",
 			},
 		},
 	},

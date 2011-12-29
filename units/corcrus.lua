@@ -23,8 +23,8 @@ return {
 		icontype = "sea",
 		idleautoheal = 46.490001678467,
 		idletime = 900,
-		maxdamage = 5650,
-		maxvelocity = 1.4,
+		maxdamage = 8100,
+		maxvelocity = 1.7,
 		minwaterdepth = 30,
 		movementclass = "DBOAT9",
 		name = "Executioner",
@@ -232,6 +232,7 @@ return {
 			[4] = {
 				def = "torpedo1",
 				badtargetcategory = "HOVER NOTSHIP",
+				onlytargetcategory = "SHIP UNDERWATER",
 			},
 			[5] = {
 				def = "lightflak1",

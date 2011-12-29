@@ -19,7 +19,7 @@ return {
 		idletime = 900,
 		maxdamage = 959,
 		maxslope = 16,
-		maxvelocity = 3.3399999141693,
+		maxvelocity = 2,
 		maxwaterdepth = 0,
 		movementclass = "HOVER3",
 		name = "Swatter",

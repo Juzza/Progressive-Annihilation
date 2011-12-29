@@ -142,6 +142,7 @@ return {
 			},
 			[3] = {
 				def = "CORAMPH_WEAPON1",
+				onlytargetcategory = "SHIP UNDERWATER",
 			},
 		},
 	},

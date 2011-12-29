@@ -134,6 +134,7 @@ return {
 			[1] = {
 				badtargetcategory = "NOTSUB",
 				def = "COAX_DEPTHCHARGE",
+				onlytargetcategory = "SHIP UNDERWATER",
 			},
 		},
 	},

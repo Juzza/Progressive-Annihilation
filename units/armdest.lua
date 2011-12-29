@@ -23,8 +23,8 @@ return {
 		icontype = "sea",
 		idleautoheal = 33,
 		idletime = 900,
-		maxdamage = 3300,
-		maxvelocity = 1.75,
+		maxdamage = 4900,
+		maxvelocity = 2.05,
 		minwaterdepth = 12,
 		movementclass = "DBOAT7",
 		name = "Destroyer",
@@ -335,6 +335,7 @@ return {
 				badtargetcategory = "HOVER NOTSHIP",
 				MainDir = "0 0 -1",
 				MaxAngleDif = 300,
+				onlytargetcategory = "SHIP UNDERWATER",
 			},
 			[4] = {
 				def = "lightflak1",

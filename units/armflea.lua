@@ -139,6 +139,7 @@ return {
 			[1] = {
 				badtargetcategory = "VTOL",
 				def = "FLEA_LASER",
+				onlytargetcategory = "NOTAIR",
 			},
 		},
 	},

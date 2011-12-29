@@ -23,7 +23,7 @@ return {
 		idletime = 900,
 		maxdamage = 1296,
 		maxslope = 16,
-		maxvelocity = 2.5299999713898,
+		maxvelocity = 2,
 		maxwaterdepth = 0,
 		metalmake = 0.10999999940395,
 		metalstorage = 75,

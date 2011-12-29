@@ -23,8 +23,8 @@ return {
 		icontype = "sea",
 		idleautoheal = 45.060001373291,
 		idletime = 900,
-		maxdamage = 5450,
-		maxvelocity = 1.5,
+		maxdamage = 7885,
+		maxvelocity = 1.8,
 		minwaterdepth = 30,
 		movementclass = "BOAT5",
 		name = "Conqueror",
@@ -239,6 +239,7 @@ return {
 			[5] = {
 				def = "torpedo1",
 				badtargetcategory = "HOVER NOTSHIP",
+				onlytargetcategory = "SHIP UNDERWATER",
 			},
 			[6] = {
 				def = "lightflak1",

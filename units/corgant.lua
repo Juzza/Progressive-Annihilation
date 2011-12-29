@@ -2,8 +2,8 @@ return {
 	corgant = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 58524,
-		buildcostmetal = 7848,
+		buildcostenergy = 55000,
+		buildcostmetal = 6000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
@@ -42,11 +42,8 @@ return {
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
 			[1] = "corkrog",
-			[2] = "corkarg",
-			[3] = "gorg",
-			[4] = "shiva",
-			[5] = "armraven",
-			[6] = "cordem",
+			[2] = "armraven",
+			[3] = "cordem",
 		},
 		featuredefs = {
 			dead = {
