@@ -2,7 +2,6 @@
 local moveDatas = {
 	AKBOT2 = {
 		crushstrength = 50,
-		depthmod = 0,
 		footprintx = 2,
 		footprintz = 2,
 		maxslope = 36,
@@ -11,7 +10,6 @@ local moveDatas = {
 	},
 		AKBOT3 = {
 		crushstrength = 100,
-		depthmod = 0,
 		footprintx = 3,
 		footprintz = 3,
 		maxslope = 36,
@@ -20,7 +18,6 @@ local moveDatas = {
 	},
 	ATANK3 = {
 		crushstrength = 30,
-		depthmod = 0,
 		footprintx = 3,
 		footprintz = 3,
 		maxslope = 36,
@@ -29,7 +26,6 @@ local moveDatas = {
 	},
 	ATANK14 = {
 		crushstrength = 1000,
-		depthmod = 0,
 		footprintx = 14,
 		footprintz = 14,
 		maxslope = 36,
@@ -76,7 +72,6 @@ local moveDatas = {
 	},
 	HAKBOT4 = {
 		crushstrength = 250,
-		depthmod = 0,
 		footprintx = 4,
 		footprintz = 4,
 		maxslope = 36,
@@ -222,7 +217,6 @@ local moveDatas = {
 	},
 	VKBOT3 = {
 		crushstrength = 1400,
-		depthmod = 0,
 		footprintx = 3,
 		footprintz = 3,
 		maxslope = 24,
@@ -231,7 +225,6 @@ local moveDatas = {
 	},
 	VKBOT5 = {
 		crushstrength = 1400,
-		depthmod = 0,
 		footprintx = 5,
 		footprintz = 5,
 		maxslope = 24,
@@ -272,6 +265,7 @@ local defs = {}
 
 for moveName, moveData in pairs(moveDatas) do
 	
+	moveData.depthmod = 0
 	moveData.heatmapping = false
 	moveData.name = moveName
 	

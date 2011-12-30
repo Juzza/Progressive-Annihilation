@@ -2,8 +2,8 @@ return {
 	corfang = {
 		acceleration = 0.0243,
 		brakerate = 0.0254,
-		buildcostenergy = 2400,
-		buildcostmetal = 215,
+		buildcostenergy = 2300,
+		buildcostmetal = 225,
 		buildpic = "corfang.pcx",
 		buildtime = 2900,
 		canmove = true,

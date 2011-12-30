@@ -2,8 +2,8 @@ return {
 	armshltx = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 54540,
-		buildcostmetal = 7396,
+		buildcostenergy = 55000,
+		buildcostmetal = 6000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 10,
@@ -40,11 +40,10 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
-			[1] = "armbanth",
+			[1] = "spiderbot",
 			[2] = "armraz",
 			[3] = "marauder",
-			[4] = "armshock",
-			[5] = "armorco",
+			[4] = "armorco",
 
 		},
 		featuredefs = {

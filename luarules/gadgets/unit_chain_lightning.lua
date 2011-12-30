@@ -1,4 +1,4 @@
-
+ 
 function gadget:GetInfo()
 	return {
 		name      = "Chain Lightning",
@@ -25,6 +25,17 @@ if gadgetHandler:IsSyncedCode() then
             damage = 50,
             ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
         },
+        [WeaponDefNames.dclaw.id] = {
+            radius = 50,
+            damage = 50,
+            ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
+        },
+        [WeaponDefNames.armlatnk_weapon.id] = {
+            radius = 50,
+            damage = 50,
+            ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
+        },
+		
     }
     
     ----------------------------------------------------------------

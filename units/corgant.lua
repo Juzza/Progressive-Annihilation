@@ -41,9 +41,9 @@ return {
 		workertime = 600,
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
-			[1] = "corkrog",
+			[1] = "cordem",
 			[2] = "armraven",
-			[3] = "cordem",
+			[3] = "corkrog",
 		},
 		featuredefs = {
 			dead = {
