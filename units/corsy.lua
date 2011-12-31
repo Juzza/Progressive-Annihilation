@@ -7,6 +7,7 @@ return {
 		builder = true,
 		buildpic = "CORSY.DDS",
 		buildtime = 9000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTSUB NOWEAPON NOTAIR UNDERWATER",
 		collisionvolumeoffsets = "0 -18 0",
@@ -33,7 +34,7 @@ return {
 		sightdistance = 276.89999389648,
 		terraformspeed = 500,
 		waterline = 22,
-		workertime = 300,
+		workertime = 600,
 		yardmap = "CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC",
 		buildoptions = {
 			[1] = "corcs",

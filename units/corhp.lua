@@ -11,6 +11,7 @@ return {
 		buildinggrounddecaltype = "corhp_aoplane.dds",
 		buildpic = "CORHP.DDS",
 		buildtime = 10000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 2",
@@ -39,7 +40,7 @@ return {
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
 		waterline = 4,
-		workertime = 200,
+		workertime = 400,
 		yardmap = "occccccooccccccooccccccooccccccooccccccooccccccoocccccco",
 		buildoptions = {
 			[1] = "corch",

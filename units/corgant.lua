@@ -11,6 +11,7 @@ return {
 		buildinggrounddecaltype = "corgant_aoplane.dds",
 		buildpic = "CORGANT.DDS",
 		buildtime = 67321,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOWEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -21 0",
@@ -38,7 +39,7 @@ return {
 		sightdistance = 273,
 		terraformspeed = 3000,
 		usebuildinggrounddecal = true,
-		workertime = 600,
+		workertime = 1000,
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
 			[1] = "cordem",

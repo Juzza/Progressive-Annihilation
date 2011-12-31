@@ -12,6 +12,7 @@ return {
 		buildinggrounddecaltype = "armavp_aoplane.dds",
 		buildpic = "ARMAVP.DDS",
 		buildtime = 18000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL NOTLAND PLANT NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 2",
@@ -40,7 +41,7 @@ return {
 		sightdistance = 283.39999389648,
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
-		workertime = 250,
+		workertime = 600,
 		yardmap = "occcccoocccccoocccccoocccccoocccccooccccco",
 		buildoptions = {
 			[1] = "armacv",

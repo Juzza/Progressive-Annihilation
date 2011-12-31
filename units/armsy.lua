@@ -7,6 +7,7 @@ return {
 		builder = true,
 		buildpic = "ARMSY.DDS",
 		buildtime = 9000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR UNDERWATER",
 		collisionvolumeoffsets = "0 -40 0",
@@ -34,7 +35,7 @@ return {
 		sightdistance = 275.60000610352,
 		terraformspeed = 500,
 		waterline = 1,
-		workertime = 300,
+		workertime = 600,
 		yardmap = "CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC CCCCCCCCCCCC",
 		buildoptions = {
 			[1] = "armcs",

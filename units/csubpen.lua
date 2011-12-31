@@ -11,6 +11,7 @@ return {
 		buildinggrounddecaltype = "csubpen_aoplane.dds",
 		buildpic = "CSUBPEN.DDS",
 		buildtime = 11402,
+		CanBeAssisted = false,
 		category = "ALL PLANT NOWEAPON NOTSUB NOTAIR",
 		collisionvolumeoffsets = "0 0 -2",
 		collisionvolumescales = "115 36 112",
@@ -37,7 +38,7 @@ return {
 		sightdistance = 240,
 		terraformspeed = 750,
 		usebuildinggrounddecal = true,
-		workertime = 150,
+		workertime = 500,
 		yardmap = "oooooooooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCo",
 		buildoptions = {
 			[1] = "cormuskrat",

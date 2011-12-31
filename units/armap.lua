@@ -11,6 +11,7 @@ return {
 		buildinggrounddecaltype = "armap_aoplane.dds",
 		buildpic = "ARMAP.DDS",
 		buildtime = 9240,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL NOTLAND PLANT NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "11 -17 -22",
@@ -38,7 +39,7 @@ return {
 		sightdistance = 292,
 		terraformspeed = 500,
 		usebuildinggrounddecal = true,
-		workertime = 120,
+		workertime = 300,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
 			[1] = "armca",

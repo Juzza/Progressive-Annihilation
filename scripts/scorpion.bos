@@ -1,0 +1,2268 @@
+
+#define ROCKET_SALVO_RELOAD_TIME 9000
+#define SHOW_PURPLE_TAILFLARE_DURATION 600
+
+// Les temps sont en millisecondes
+//
+// Tourner vers l'avant: +
+// Tourner vers l'arrière: -
+// Tourner vers le haut: +
+// Tourner vers le base: -
+//
+// Cela correspond aux angles des pattes de droite (leg2**)
+// Attention, dans 3do Builder l'axe z est inversé.
+// Attention, dans UpSpring les axe x et z sont inversé.
+// (Mais les pattes ne tournent pas selon x de toute façon.)
+//
+// Les angles de "UP" doivent être plus grand que ceux de "DOWN"
+// et les angles de "FRONT" doivent être plus grand que ceux de "BACK"
+// sinon la vitesse est négative et ça tourne dans le mauvais sens.
+
+// Why am I commenting in French? Sorry about that:
+//
+// Times are in milliseconds
+//
+// Turn legs forward: +
+// Turn legs backward: -
+// Turn legs upward: +
+// Turn legs downward: -
+//
+// It corresponds to the angles of the right sided legs.
+// Beware, in 3do Builder the z axis is inverted.
+// Beware, in UpSpring the x and z axis ared inverted.
+// (But legs don't turn around x anyway.)
+//
+// The "UP" angles must be higher than the "DOWN" angles
+// and the "FRONT" angles must be higher than the "BACK" angles
+// otherwise speed becomes negative and it turns the wrong way.
+// And now that there is sideway walk, there's even more diff sign to keep.
+
+
+#define BASE_TIME 179// This is the only time to change if you wish to speed up or slow down the leg animation.
+
+#define LIFT_TIME (BASE_TIME)
+#define LOWER_TIME (BASE_TIME)
+#define AIR_TIME (BASE_TIME)
+#define GROUND_TIME ((BASE_TIME)*12)
+// The current "PAUSE_LEGS" macro and "HazyShadeOfWinter()" function suppose times follow those relations.
+
+#define TIME_BEFORE_RESTING_LEGS 25000 
+
+#define LEG_11_FRONT_ANGLE <20>// y angle of the front-front left & right legs, when in front
+#define LEG_21_FRONT_ANGLE <15>// y angle of the middle-front left & right legs, when in front
+#define LEG_31_FRONT_ANGLE <10>// y angle of the middle-rear left & right legs, when in front
+#define LEG_41_FRONT_ANGLE <5>// y angle of the rear-rear left & right legs, when in front
+
+#define LEG_11_BACK_ANGLE <-10>// y angle of the front-front left & right legs, when backward
+#define LEG_21_BACK_ANGLE <-20>// y angle of the middle-front left & right legs, when backward
+#define LEG_31_BACK_ANGLE <-30>// y angle of the middle-rear left & right legs, when backward
+#define LEG_41_BACK_ANGLE <-40>// y angle of the rear-rear left & right legs, when backward
+
+#define LEG_11_REST_ANGLE <20>// y angle of the front-front left & right legs, when in resting position
+#define LEG_21_REST_ANGLE <4>// y angle of the middle-front left & right legs, when in resting position
+#define LEG_31_REST_ANGLE <-15>// y angle of the middle-rear left & right legs, when in resting position
+#define LEG_41_REST_ANGLE <-38>// y angle of the rear-rear left & right legs, when in resting position
+
+#define LEG__1_DOWN_ANGLE <10>// z angle between body and first segment of all legs, when down
+#define LEG__2_DOWN_ANGLE <-20>// z angle of the second segment of all legs, when down
+#define LEG__3_DOWN_ANGLE <-20>// z angle of the third segment of all legs, when down
+#define LEG__4_DOWN_ANGLE <-20>// z angle of the fourth segment of all legs, when down
+#define LEG__5_DOWN_ANGLE <-20>// z angle of the fifth segment of all legs, when down
+
+#define LEG__1_UP_ANGLE <20>// z angle between body and first segment of all legs, when up
+#define LEG__2_UP_ANGLE <-10>// z angle of the second segment of all legs, when up
+#define LEG__3_UP_ANGLE <-10>// z angle of the third segment of all legs, when up
+#define LEG__4_UP_ANGLE <-10>// z angle of the fourth segment of all legs, when up
+#define LEG__5_UP_ANGLE <-10>// z angle of the fift segment of all legs, when up
+
+
+#define LEG__1_DOWN_FAR_ANGLE <-10>
+#define LEG__2_DOWN_FAR_ANGLE <-10>
+#define LEG__3_DOWN_FAR_ANGLE <-10>
+#define LEG__4_DOWN_FAR_ANGLE <-6>
+#define LEG__5_DOWN_FAR_ANGLE <-5>
+
+#define LEG__1_DOWN_CLOSE_ANGLE <40>
+#define LEG__2_DOWN_CLOSE_ANGLE <-50>
+#define LEG__3_DOWN_CLOSE_ANGLE <-50>
+#define LEG__4_DOWN_CLOSE_ANGLE <-20>
+#define LEG__5_DOWN_CLOSE_ANGLE <-10>
+
+#define LEG__1_UP_FAR_ANGLE <20>
+#define LEG__2_UP_FAR_ANGLE <-10>
+#define LEG__3_UP_FAR_ANGLE <-20>
+#define LEG__4_UP_FAR_ANGLE <-20>
+#define LEG__5_UP_FAR_ANGLE <-10>
+
+#define LEG__1_UP_CLOSE_ANGLE <40>
+#define LEG__2_UP_CLOSE_ANGLE <-20>
+#define LEG__3_UP_CLOSE_ANGLE <-30>
+#define LEG__4_UP_CLOSE_ANGLE <-30>
+#define LEG__5_UP_CLOSE_ANGLE <-30>
+
+
+/*
+Not close enough
+#define LEG__1_DOWN_CLOSE_ANGLE <20>
+#define LEG__2_DOWN_CLOSE_ANGLE <-30>
+#define LEG__3_DOWN_CLOSE_ANGLE <-30>
+#define LEG__4_DOWN_CLOSE_ANGLE <-20>
+#define LEG__5_DOWN_CLOSE_ANGLE <-20>
+*/
+
+/*=====================================================================================*/
+
+#define RESET_ALL_LEGS \
+	turn leg111 to y-axis 0 - (LEG_11_REST_ANGLE) now;\
+	turn leg121 to y-axis 0 - (LEG_21_REST_ANGLE) now;\
+	turn leg131 to y-axis 0 - (LEG_31_REST_ANGLE) now;\
+	turn leg141 to y-axis 0 - (LEG_41_REST_ANGLE) now;\
+	turn leg211 to y-axis (LEG_11_REST_ANGLE) now;\
+	turn leg221 to y-axis (LEG_21_REST_ANGLE) now;\
+	turn leg231 to y-axis (LEG_31_REST_ANGLE) now;\
+	turn leg241 to y-axis (LEG_41_REST_ANGLE) now;\
+	\
+	turn leg111 to z-axis 0 - (LEG__1_DOWN_ANGLE) now;\
+	turn leg112 to z-axis 0 - (LEG__2_DOWN_ANGLE) now;\
+	turn leg113 to z-axis 0 - (LEG__3_DOWN_ANGLE) now;\
+	turn leg114 to z-axis 0 - (LEG__4_DOWN_ANGLE) now;\
+	turn leg115 to z-axis 0 - (LEG__5_DOWN_ANGLE) now;\
+	turn leg121 to z-axis 0 - (LEG__1_DOWN_ANGLE) now;\
+	turn leg122 to z-axis 0 - (LEG__2_DOWN_ANGLE) now;\
+	turn leg123 to z-axis 0 - (LEG__3_DOWN_ANGLE) now;\
+	turn leg124 to z-axis 0 - (LEG__4_DOWN_ANGLE) now;\
+	turn leg125 to z-axis 0 - (LEG__5_DOWN_ANGLE) now;\
+	turn leg131 to z-axis 0 - (LEG__1_DOWN_ANGLE) now;\
+	turn leg132 to z-axis 0 - (LEG__2_DOWN_ANGLE) now;\
+	turn leg133 to z-axis 0 - (LEG__3_DOWN_ANGLE) now;\
+	turn leg134 to z-axis 0 - (LEG__4_DOWN_ANGLE) now;\
+	turn leg135 to z-axis 0 - (LEG__5_DOWN_ANGLE) now;\
+	turn leg141 to z-axis 0 - (LEG__1_DOWN_ANGLE) now;\
+	turn leg142 to z-axis 0 - (LEG__2_DOWN_ANGLE) now;\
+	turn leg143 to z-axis 0 - (LEG__3_DOWN_ANGLE) now;\
+	turn leg144 to z-axis 0 - (LEG__4_DOWN_ANGLE) now;\
+	turn leg145 to z-axis 0 - (LEG__5_DOWN_ANGLE) now;\
+	\
+	turn leg211 to z-axis (LEG__1_DOWN_ANGLE) now;\
+	turn leg212 to z-axis (LEG__2_DOWN_ANGLE) now;\
+	turn leg213 to z-axis (LEG__3_DOWN_ANGLE) now;\
+	turn leg214 to z-axis (LEG__4_DOWN_ANGLE) now;\
+	turn leg215 to z-axis (LEG__5_DOWN_ANGLE) now;\
+	turn leg221 to z-axis (LEG__1_DOWN_ANGLE) now;\
+	turn leg222 to z-axis (LEG__2_DOWN_ANGLE) now;\
+	turn leg223 to z-axis (LEG__3_DOWN_ANGLE) now;\
+	turn leg224 to z-axis (LEG__4_DOWN_ANGLE) now;\
+	turn leg225 to z-axis (LEG__5_DOWN_ANGLE) now;\
+	turn leg231 to z-axis (LEG__1_DOWN_ANGLE) now;\
+	turn leg232 to z-axis (LEG__2_DOWN_ANGLE) now;\
+	turn leg233 to z-axis (LEG__3_DOWN_ANGLE) now;\
+	turn leg234 to z-axis (LEG__4_DOWN_ANGLE) now;\
+	turn leg235 to z-axis (LEG__5_DOWN_ANGLE) now;\
+	turn leg241 to z-axis (LEG__1_DOWN_ANGLE) now;\
+	turn leg242 to z-axis (LEG__2_DOWN_ANGLE) now;\
+	turn leg243 to z-axis (LEG__3_DOWN_ANGLE) now;\
+	turn leg244 to z-axis (LEG__4_DOWN_ANGLE) now;\
+	turn leg245 to z-axis (LEG__5_DOWN_ANGLE) now;\
+
+/*=====================================================================================*/
+
+#define LIFT_1_LEFT\
+	turn leg111 to z-axis 0 - (LEG__1_UP_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg112 to z-axis 0 - (LEG__2_UP_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg113 to z-axis 0 - (LEG__3_UP_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_UP_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_UP_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_2_LEFT\
+	turn leg121 to z-axis 0 - (LEG__1_UP_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg122 to z-axis 0 - (LEG__2_UP_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg123 to z-axis 0 - (LEG__3_UP_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_UP_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_UP_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_3_LEFT\
+	turn leg131 to z-axis 0 - (LEG__1_UP_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg132 to z-axis 0 - (LEG__2_UP_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg133 to z-axis 0 - (LEG__3_UP_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_UP_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_UP_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_4_LEFT\
+	turn leg141 to z-axis 0 - (LEG__1_UP_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg142 to z-axis 0 - (LEG__2_UP_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg143 to z-axis 0 - (LEG__3_UP_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_UP_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_UP_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_1_RIGHT\
+	turn leg211 to z-axis (LEG__1_UP_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg212 to z-axis (LEG__2_UP_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg213 to z-axis (LEG__3_UP_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg214 to z-axis (LEG__4_UP_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg215 to z-axis (LEG__5_UP_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_2_RIGHT\
+	turn leg221 to z-axis (LEG__1_UP_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg222 to z-axis (LEG__2_UP_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg223 to z-axis (LEG__3_UP_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg224 to z-axis (LEG__4_UP_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg225 to z-axis (LEG__5_UP_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_3_RIGHT\
+	turn leg231 to z-axis (LEG__1_UP_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg232 to z-axis (LEG__2_UP_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg233 to z-axis (LEG__3_UP_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg234 to z-axis (LEG__4_UP_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg235 to z-axis (LEG__5_UP_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_4_RIGHT\
+	turn leg241 to z-axis (LEG__1_UP_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg242 to z-axis (LEG__2_UP_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg243 to z-axis (LEG__3_UP_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg244 to z-axis (LEG__4_UP_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LIFT_TIME);\
+	turn leg245 to z-axis (LEG__5_UP_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LIFT_TIME);\
+
+#define LOWER_1_LEFT\
+	turn leg111 to z-axis 0 - (LEG__1_DOWN_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg112 to z-axis 0 - (LEG__2_DOWN_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg113 to z-axis 0 - (LEG__3_DOWN_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_DOWN_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_DOWN_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_2_LEFT\
+	turn leg121 to z-axis 0 - (LEG__1_DOWN_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg122 to z-axis 0 - (LEG__2_DOWN_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg123 to z-axis 0 - (LEG__3_DOWN_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_DOWN_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_DOWN_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_3_LEFT\
+	turn leg131 to z-axis 0 - (LEG__1_DOWN_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg132 to z-axis 0 - (LEG__2_DOWN_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg133 to z-axis 0 - (LEG__3_DOWN_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_DOWN_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_DOWN_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_4_LEFT\
+	turn leg141 to z-axis 0 - (LEG__1_DOWN_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg142 to z-axis 0 - (LEG__2_DOWN_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg143 to z-axis 0 - (LEG__3_DOWN_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_DOWN_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_DOWN_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_1_RIGHT\
+	turn leg211 to z-axis (LEG__1_DOWN_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg212 to z-axis (LEG__2_DOWN_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg213 to z-axis (LEG__3_DOWN_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg214 to z-axis (LEG__4_DOWN_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg215 to z-axis (LEG__5_DOWN_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_2_RIGHT\
+	turn leg221 to z-axis (LEG__1_DOWN_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg222 to z-axis (LEG__2_DOWN_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg223 to z-axis (LEG__3_DOWN_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg224 to z-axis (LEG__4_DOWN_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg225 to z-axis (LEG__5_DOWN_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_3_RIGHT\
+	turn leg231 to z-axis (LEG__1_DOWN_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg232 to z-axis (LEG__2_DOWN_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg233 to z-axis (LEG__3_DOWN_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg234 to z-axis (LEG__4_DOWN_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg235 to z-axis (LEG__5_DOWN_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_4_RIGHT\
+	turn leg241 to z-axis (LEG__1_DOWN_ANGLE) speed  ((LEG__1_UP_ANGLE) - (LEG__1_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg242 to z-axis (LEG__2_DOWN_ANGLE) speed  ((LEG__2_UP_ANGLE) - (LEG__2_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg243 to z-axis (LEG__3_DOWN_ANGLE) speed  ((LEG__3_UP_ANGLE) - (LEG__3_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg244 to z-axis (LEG__4_DOWN_ANGLE) speed  ((LEG__4_UP_ANGLE) - (LEG__4_DOWN_ANGLE))*1000/(LOWER_TIME);\
+	turn leg245 to z-axis (LEG__5_DOWN_ANGLE) speed  ((LEG__5_UP_ANGLE) - (LEG__5_DOWN_ANGLE))*1000/(LOWER_TIME);\
+
+#define FRONT_AIR_1_LEFT\
+	turn leg111 to y-axis 0 - (LEG_11_FRONT_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(AIR_TIME);
+#define FRONT_AIR_2_LEFT\
+	turn leg121 to y-axis 0 - (LEG_21_FRONT_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(AIR_TIME);
+#define FRONT_AIR_3_LEFT\
+	turn leg131 to y-axis 0 - (LEG_31_FRONT_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(AIR_TIME);
+#define FRONT_AIR_4_LEFT\
+	turn leg141 to y-axis 0 - (LEG_41_FRONT_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(AIR_TIME);
+#define FRONT_AIR_1_RIGHT\
+	turn leg211 to y-axis (LEG_11_FRONT_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(AIR_TIME);
+#define FRONT_AIR_2_RIGHT\
+	turn leg221 to y-axis (LEG_21_FRONT_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(AIR_TIME);
+#define FRONT_AIR_3_RIGHT\
+	turn leg231 to y-axis (LEG_31_FRONT_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(AIR_TIME);
+#define FRONT_AIR_4_RIGHT\
+	turn leg241 to y-axis (LEG_41_FRONT_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(AIR_TIME);
+
+#define FRONT_GROUND_1_LEFT\
+	turn leg111 to y-axis 0 - (LEG_11_BACK_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(GROUND_TIME);
+#define FRONT_GROUND_2_LEFT\
+	turn leg121 to y-axis 0 - (LEG_21_BACK_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(GROUND_TIME);
+#define FRONT_GROUND_3_LEFT\
+	turn leg131 to y-axis 0 - (LEG_31_BACK_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(GROUND_TIME);
+#define FRONT_GROUND_4_LEFT\
+	turn leg141 to y-axis 0 - (LEG_41_BACK_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(GROUND_TIME);
+#define FRONT_GROUND_1_RIGHT\
+	turn leg211 to y-axis (LEG_11_BACK_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(GROUND_TIME);
+#define FRONT_GROUND_2_RIGHT\
+	turn leg221 to y-axis (LEG_21_BACK_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(GROUND_TIME);
+#define FRONT_GROUND_3_RIGHT\
+	turn leg231 to y-axis (LEG_31_BACK_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(GROUND_TIME);
+#define FRONT_GROUND_4_RIGHT\
+	turn leg241 to y-axis (LEG_41_BACK_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(GROUND_TIME);
+
+
+#define BACK_GROUND_1_LEFT\
+	turn leg111 to y-axis 0 - (LEG_11_FRONT_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(GROUND_TIME);
+#define BACK_GROUND_2_LEFT\
+	turn leg121 to y-axis 0 - (LEG_21_FRONT_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(GROUND_TIME);
+#define BACK_GROUND_3_LEFT\
+	turn leg131 to y-axis 0 - (LEG_31_FRONT_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(GROUND_TIME);
+#define BACK_GROUND_4_LEFT\
+	turn leg141 to y-axis 0 - (LEG_41_FRONT_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(GROUND_TIME);
+#define BACK_GROUND_1_RIGHT\
+	turn leg211 to y-axis (LEG_11_FRONT_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(GROUND_TIME);
+#define BACK_GROUND_2_RIGHT\
+	turn leg221 to y-axis (LEG_21_FRONT_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(GROUND_TIME);
+#define BACK_GROUND_3_RIGHT\
+	turn leg231 to y-axis (LEG_31_FRONT_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(GROUND_TIME);
+#define BACK_GROUND_4_RIGHT\
+	turn leg241 to y-axis (LEG_41_FRONT_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(GROUND_TIME);
+
+#define BACK_AIR_1_LEFT\
+	turn leg111 to y-axis 0 - (LEG_11_BACK_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(AIR_TIME);
+#define BACK_AIR_2_LEFT\
+	turn leg121 to y-axis 0 - (LEG_21_BACK_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(AIR_TIME);
+#define BACK_AIR_3_LEFT\
+	turn leg131 to y-axis 0 - (LEG_31_BACK_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(AIR_TIME);
+#define BACK_AIR_4_LEFT\
+	turn leg141 to y-axis 0 - (LEG_41_BACK_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(AIR_TIME);
+#define BACK_AIR_1_RIGHT\
+	turn leg211 to y-axis (LEG_11_BACK_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(AIR_TIME);
+#define BACK_AIR_2_RIGHT\
+	turn leg221 to y-axis (LEG_21_BACK_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(AIR_TIME);
+#define BACK_AIR_3_RIGHT\
+	turn leg231 to y-axis (LEG_31_BACK_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(AIR_TIME);
+#define BACK_AIR_4_RIGHT\
+	turn leg241 to y-axis (LEG_41_BACK_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(AIR_TIME);
+
+/*=====================================================================================*/
+
+#define LIFT_FAR_1_LEFT\
+	turn leg111 to z-axis 0 - (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);\
+	/*turn leg112 to z-axis 0 - (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg113 to z-axis 0 - (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_FAR_2_LEFT\
+	turn leg121 to z-axis 0 - (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);\
+	/*turn leg122 to z-axis 0 - (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg123 to z-axis 0 - (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_FAR_3_LEFT\
+	turn leg131 to z-axis 0 - (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);\
+	/*turn leg132 to z-axis 0 - (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg133 to z-axis 0 - (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_FAR_4_LEFT\
+	turn leg141 to z-axis 0 - (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);\
+	/*turn leg142 to z-axis 0 - (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg143 to z-axis 0 - (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_FAR_1_RIGHT\
+	turn leg211 to z-axis (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);\
+	/*turn leg212 to z-axis (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg213 to z-axis (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg214 to z-axis (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg215 to z-axis (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_FAR_2_RIGHT\
+	turn leg221 to z-axis (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);\
+	/*turn leg222 to z-axis (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg223 to z-axis (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg224 to z-axis (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg225 to z-axis (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_FAR_3_RIGHT\
+	turn leg231 to z-axis (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);\
+	/*turn leg232 to z-axis (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg233 to z-axis (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg234 to z-axis (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg235 to z-axis (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_FAR_4_RIGHT\
+	turn leg241 to z-axis (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);\
+	/*turn leg242 to z-axis (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg243 to z-axis (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg244 to z-axis (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+	turn leg245 to z-axis (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LIFT_TIME);\
+
+#define LOWER_FAR_1_LEFT\
+	turn leg111 to z-axis 0 - (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);\
+	/*turn leg112 to z-axis 0 - (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg113 to z-axis 0 - (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_FAR_2_LEFT\
+	turn leg121 to z-axis 0 - (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);\
+	/*turn leg122 to z-axis 0 - (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg123 to z-axis 0 - (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_FAR_3_LEFT\
+	turn leg131 to z-axis 0 - (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);\
+	/*turn leg132 to z-axis 0 - (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg133 to z-axis 0 - (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_FAR_4_LEFT\
+	turn leg141 to z-axis 0 - (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);\
+	/*turn leg142 to z-axis 0 - (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg143 to z-axis 0 - (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_FAR_1_RIGHT\
+	turn leg211 to z-axis (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);\
+	/*turn leg212 to z-axis (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg213 to z-axis (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg214 to z-axis (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg215 to z-axis (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_FAR_2_RIGHT\
+	turn leg221 to z-axis (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);\
+	/*turn leg222 to z-axis (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg223 to z-axis (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg224 to z-axis (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg225 to z-axis (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_FAR_3_RIGHT\
+	turn leg231 to z-axis (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);\
+	/*turn leg232 to z-axis (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg233 to z-axis (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg234 to z-axis (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg235 to z-axis (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_FAR_4_RIGHT\
+	turn leg241 to z-axis (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_UP_FAR_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);\
+	/*turn leg242 to z-axis (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_DOWN_FAR_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg243 to z-axis (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg244 to z-axis (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+	turn leg245 to z-axis (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_UP_FAR_ANGLE))*1000/(LOWER_TIME);\
+
+/*=====================================================================================*/
+
+#define LIFT_CLOSE_1_LEFT\
+	/*turn leg111 to z-axis 0 - (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg112 to z-axis 0 - (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg113 to z-axis 0 - (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_CLOSE_2_LEFT\
+	/*turn leg121 to z-axis 0 - (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg122 to z-axis 0 - (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg123 to z-axis 0 - (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_CLOSE_3_LEFT\
+	/*turn leg131 to z-axis 0 - (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg132 to z-axis 0 - (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg133 to z-axis 0 - (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_CLOSE_4_LEFT\
+	/*turn leg141 to z-axis 0 - (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg142 to z-axis 0 - (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg143 to z-axis 0 - (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_CLOSE_1_RIGHT\
+	/*turn leg211 to z-axis (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg212 to z-axis (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg213 to z-axis (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg214 to z-axis (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg215 to z-axis (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_CLOSE_2_RIGHT\
+	/*turn leg221 to z-axis (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg222 to z-axis (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg223 to z-axis (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg224 to z-axis (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg225 to z-axis (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_CLOSE_3_RIGHT\
+	/*turn leg231 to z-axis (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg232 to z-axis (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg233 to z-axis (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg234 to z-axis (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg235 to z-axis (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+
+#define LIFT_CLOSE_4_RIGHT\
+	/*turn leg241 to z-axis (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);*/\
+	turn leg242 to z-axis (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg243 to z-axis (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg244 to z-axis (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+	turn leg245 to z-axis (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LIFT_TIME);\
+
+#define LOWER_CLOSE_1_LEFT\
+	/*turn leg111 to z-axis 0 - (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg112 to z-axis 0 - (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg113 to z-axis 0 - (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_CLOSE_2_LEFT\
+	/*turn leg121 to z-axis 0 - (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg122 to z-axis 0 - (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg123 to z-axis 0 - (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_CLOSE_3_LEFT\
+	/*turn leg131 to z-axis 0 - (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg132 to z-axis 0 - (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg133 to z-axis 0 - (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_CLOSE_4_LEFT\
+	/*turn leg141 to z-axis 0 - (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg142 to z-axis 0 - (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg143 to z-axis 0 - (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_CLOSE_1_RIGHT\
+	/*turn leg211 to z-axis (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg212 to z-axis (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg213 to z-axis (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg214 to z-axis (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg215 to z-axis (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_CLOSE_2_RIGHT\
+	/*turn leg221 to z-axis (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg222 to z-axis (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg223 to z-axis (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg224 to z-axis (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg225 to z-axis (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_CLOSE_3_RIGHT\
+	/*turn leg231 to z-axis (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg232 to z-axis (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg233 to z-axis (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg234 to z-axis (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg235 to z-axis (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+
+#define LOWER_CLOSE_4_RIGHT\
+	/*turn leg241 to z-axis (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);*/\
+	turn leg242 to z-axis (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_UP_CLOSE_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg243 to z-axis (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_UP_CLOSE_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg244 to z-axis (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_CLOSE_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+	turn leg245 to z-axis (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_CLOSE_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(LOWER_TIME);\
+
+/*=====================================================================================*/
+
+#define AIR_CLOSE2FAR_1_LEFT\
+	turn leg111 to z-axis 0 - (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg112 to z-axis 0 - (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg113 to z-axis 0 - (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_CLOSE2FAR_2_LEFT\
+	turn leg121 to z-axis 0 - (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg122 to z-axis 0 - (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg123 to z-axis 0 - (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_CLOSE2FAR_3_LEFT\
+	turn leg131 to z-axis 0 - (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg132 to z-axis 0 - (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg133 to z-axis 0 - (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_CLOSE2FAR_4_LEFT\
+	turn leg141 to z-axis 0 - (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg142 to z-axis 0 - (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg143 to z-axis 0 - (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_CLOSE2FAR_1_RIGHT\
+	turn leg211 to z-axis (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg212 to z-axis (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg213 to z-axis (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg214 to z-axis (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg215 to z-axis (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_CLOSE2FAR_2_RIGHT\
+	turn leg221 to z-axis (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg222 to z-axis (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg223 to z-axis (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg224 to z-axis (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg225 to z-axis (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_CLOSE2FAR_3_RIGHT\
+	turn leg231 to z-axis (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg232 to z-axis (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg233 to z-axis (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg234 to z-axis (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg235 to z-axis (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_CLOSE2FAR_4_RIGHT\
+	turn leg241 to z-axis (LEG__1_UP_FAR_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg242 to z-axis (LEG__2_UP_FAR_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg243 to z-axis (LEG__3_UP_FAR_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg244 to z-axis (LEG__4_UP_FAR_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg245 to z-axis (LEG__5_UP_FAR_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+/*-------------------------------------------------------------------------------------*/
+
+#define AIR_FAR2CLOSE_1_LEFT\
+	turn leg111 to z-axis 0 - (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg112 to z-axis 0 - (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg113 to z-axis 0 - (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_FAR2CLOSE_2_LEFT\
+	turn leg121 to z-axis 0 - (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg122 to z-axis 0 - (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg123 to z-axis 0 - (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_FAR2CLOSE_3_LEFT\
+	turn leg131 to z-axis 0 - (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg132 to z-axis 0 - (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg133 to z-axis 0 - (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_FAR2CLOSE_4_LEFT\
+	turn leg141 to z-axis 0 - (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg142 to z-axis 0 - (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg143 to z-axis 0 - (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_FAR2CLOSE_1_RIGHT\
+	turn leg211 to z-axis (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg212 to z-axis (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg213 to z-axis (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg214 to z-axis (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg215 to z-axis (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_FAR2CLOSE_2_RIGHT\
+	turn leg221 to z-axis (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg222 to z-axis (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg223 to z-axis (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg224 to z-axis (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg225 to z-axis (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define AIR_FAR2CLOSE_3_RIGHT\
+	turn leg231 to z-axis (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg232 to z-axis (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg233 to z-axis (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg234 to z-axis (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg235 to z-axis (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+#define  AIR_FAR2CLOSE_4_RIGHT\
+	turn leg241 to z-axis (LEG__1_UP_CLOSE_ANGLE) speed  ((LEG__1_UP_CLOSE_ANGLE) - (LEG__1_UP_FAR_ANGLE))*1000/(AIR_TIME);\
+	turn leg242 to z-axis (LEG__2_UP_CLOSE_ANGLE) speed  ((LEG__2_UP_FAR_ANGLE) - (LEG__2_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg243 to z-axis (LEG__3_UP_CLOSE_ANGLE) speed  ((LEG__3_UP_FAR_ANGLE) - (LEG__3_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg244 to z-axis (LEG__4_UP_CLOSE_ANGLE) speed  ((LEG__4_UP_FAR_ANGLE) - (LEG__4_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+	turn leg245 to z-axis (LEG__5_UP_CLOSE_ANGLE) speed  ((LEG__5_UP_FAR_ANGLE) - (LEG__5_UP_CLOSE_ANGLE))*1000/(AIR_TIME);\
+
+/*-------------------------------------------------------------------------------------*/
+
+#define GROUND_CLOSE2FAR_1_LEFT\
+	turn leg111 to z-axis 0 - (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg112 to z-axis 0 - (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg113 to z-axis 0 - (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_CLOSE2FAR_2_LEFT\
+	turn leg121 to z-axis 0 - (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg122 to z-axis 0 - (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg123 to z-axis 0 - (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_CLOSE2FAR_3_LEFT\
+	turn leg131 to z-axis 0 - (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg132 to z-axis 0 - (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg133 to z-axis 0 - (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_CLOSE2FAR_4_LEFT\
+	turn leg141 to z-axis 0 - (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg142 to z-axis 0 - (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg143 to z-axis 0 - (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_CLOSE2FAR_1_RIGHT\
+	turn leg211 to z-axis (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg212 to z-axis (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg213 to z-axis (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg214 to z-axis (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg215 to z-axis (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_CLOSE2FAR_2_RIGHT\
+	turn leg221 to z-axis (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg222 to z-axis (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg223 to z-axis (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg224 to z-axis (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg225 to z-axis (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_CLOSE2FAR_3_RIGHT\
+	turn leg231 to z-axis (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg232 to z-axis (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg233 to z-axis (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg234 to z-axis (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg235 to z-axis (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_CLOSE2FAR_4_RIGHT\
+	turn leg241 to z-axis (LEG__1_DOWN_FAR_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg242 to z-axis (LEG__2_DOWN_FAR_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg243 to z-axis (LEG__3_DOWN_FAR_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg244 to z-axis (LEG__4_DOWN_FAR_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg245 to z-axis (LEG__5_DOWN_FAR_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+/*-------------------------------------------------------------------------------------*/
+
+#define GROUND_FAR2CLOSE_1_LEFT\
+	turn leg111 to z-axis 0 - (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg112 to z-axis 0 - (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg113 to z-axis 0 - (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg114 to z-axis 0 - (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg115 to z-axis 0 - (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_FAR2CLOSE_2_LEFT\
+	turn leg121 to z-axis 0 - (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg122 to z-axis 0 - (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg123 to z-axis 0 - (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg124 to z-axis 0 - (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg125 to z-axis 0 - (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_FAR2CLOSE_3_LEFT\
+	turn leg131 to z-axis 0 - (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg132 to z-axis 0 - (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg133 to z-axis 0 - (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg134 to z-axis 0 - (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg135 to z-axis 0 - (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_FAR2CLOSE_4_LEFT\
+	turn leg141 to z-axis 0 - (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg142 to z-axis 0 - (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg143 to z-axis 0 - (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg144 to z-axis 0 - (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg145 to z-axis 0 - (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_FAR2CLOSE_1_RIGHT\
+	turn leg211 to z-axis (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg212 to z-axis (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg213 to z-axis (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg214 to z-axis (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg215 to z-axis (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_FAR2CLOSE_2_RIGHT\
+	turn leg221 to z-axis (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg222 to z-axis (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg223 to z-axis (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg224 to z-axis (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg225 to z-axis (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_FAR2CLOSE_3_RIGHT\
+	turn leg231 to z-axis (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg232 to z-axis (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg233 to z-axis (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg234 to z-axis (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg235 to z-axis (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+#define GROUND_FAR2CLOSE_4_RIGHT\
+	turn leg241 to z-axis (LEG__1_DOWN_CLOSE_ANGLE) speed  ((LEG__1_DOWN_CLOSE_ANGLE) - (LEG__1_DOWN_FAR_ANGLE))*1000/(GROUND_TIME);\
+	turn leg242 to z-axis (LEG__2_DOWN_CLOSE_ANGLE) speed  ((LEG__2_DOWN_FAR_ANGLE) - (LEG__2_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg243 to z-axis (LEG__3_DOWN_CLOSE_ANGLE) speed  ((LEG__3_DOWN_FAR_ANGLE) - (LEG__3_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg244 to z-axis (LEG__4_DOWN_CLOSE_ANGLE) speed  ((LEG__4_DOWN_FAR_ANGLE) - (LEG__4_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+	turn leg245 to z-axis (LEG__5_DOWN_CLOSE_ANGLE) speed  ((LEG__5_DOWN_FAR_ANGLE) - (LEG__5_DOWN_CLOSE_ANGLE))*1000/(GROUND_TIME);\
+
+/*=====================================================================================*/
+
+#define REST_1_LEFT\
+	turn leg111 to y-axis 0 - (LEG_11_REST_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(AIR_TIME);
+#define REST_2_LEFT\
+	turn leg121 to y-axis 0 - (LEG_21_REST_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(AIR_TIME);
+#define REST_3_LEFT\
+	turn leg131 to y-axis 0 - (LEG_31_REST_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(AIR_TIME);
+#define REST_4_LEFT\
+	turn leg141 to y-axis 0 - (LEG_41_REST_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(AIR_TIME);
+#define REST_1_RIGHT\
+	turn leg211 to y-axis (LEG_11_REST_ANGLE) speed ((LEG_11_FRONT_ANGLE) - (LEG_11_BACK_ANGLE))*1000/(AIR_TIME);
+#define REST_2_RIGHT\
+	turn leg221 to y-axis (LEG_21_REST_ANGLE) speed ((LEG_21_FRONT_ANGLE) - (LEG_21_BACK_ANGLE))*1000/(AIR_TIME);
+#define REST_3_RIGHT\
+	turn leg231 to y-axis (LEG_31_REST_ANGLE) speed ((LEG_31_FRONT_ANGLE) - (LEG_31_BACK_ANGLE))*1000/(AIR_TIME);
+#define REST_4_RIGHT\
+	turn leg241 to y-axis (LEG_41_REST_ANGLE) speed ((LEG_41_FRONT_ANGLE) - (LEG_41_BACK_ANGLE))*1000/(AIR_TIME);
+
+/*=====================================================================================*/
+
+
+#define REST_ALL\
+	REST_1_LEFT\
+	REST_2_LEFT\
+	REST_3_LEFT\
+	REST_4_LEFT\
+	REST_1_RIGHT\
+	REST_2_RIGHT\
+	REST_3_RIGHT\
+	REST_4_RIGHT
+
+#define PAUSE_LEGS\
+	sleep (LIFT_TIME);\
+	while(!moving)\
+	{\
+		sleep (LIFT_TIME);\
+	}
+
+#define PAUSE_LEGS_CALC_CARD\
+	sleep (LIFT_TIME);\
+	while(!moving)\
+	{\
+		sleep (LIFT_TIME);\
+	}\
+	bishop=get XZ_ATAN(get PIECE_XZ(tail01) - get PIECE_XZ(body));\
+	bishop=bishop + 8192;\
+	while(bishop>32767)\
+		{bishop=bishop - 65536;}\
+	if(bishop<0)\
+		{bishop=bishop + 65536;}\
+	bishop=bishop / 16384;	
+
+// On epic map, distances can be too big to calculate, which makes TA crash.
+#define EPIC_SECURE_XZ\
+if(xz<0)\
+	{\
+	xz=0 - xz;\
+	}\
+x=xz/65536;\
+z=xz - x*65536;\
+if(z>32767)\
+	{\
+	z=65536 - z;\
+	/*x=x+(1-2*(xz<0));*/\
+	x=x+(xz>0);\
+	}\
+if(707333111<get XZ_HYPOT((x/2)*65536 + (z/2)))\
+	{\
+	xz=500333222;\
+	}
+
+piece	base, body,
+		mawleft, mawright,
+		arm11, arm12, arm13, fire11, fire12, fire13, fire14,
+		arm21, arm22, arm23, fire21, fire22, fire23, fire24,
+		tail01, tail02, tail03, tail04, tail05, tail06, tail07, tail08, tail09, tail10,
+		tail11, tail12, tail13, tail14, tail15, tail16, tail17, tail18, tail19, tailend, firetail,
+		leg111, leg112, leg113, leg114, leg115,
+		leg121, leg122, leg123, leg124, leg125,
+		leg131, leg132, leg133, leg134, leg135,
+		leg141, leg142, leg143, leg144, leg145,
+		leg211, leg212, leg213, leg214, leg215,
+		leg221, leg222, leg223, leg224, leg225,
+		leg231, leg232, leg233, leg234, leg235,
+		leg241, leg242, leg243, leg244, leg245,
+		transshoulder1, transarm1,
+		transshoulder2, transarm2,
+		tailaimer, centerer;//81 pieces, max 128
+
+static-var moving, rocket_tube, aimtype, maxreloadtime, last_h, cardinal, pincersign, rocket_fired, rocket_reload, id1, id2;
+
+#include "exptype.h"
+#include "sfxtype.h"
+
+#define SIG_AIM1 2
+#define SIG_AIM2 4
+#define SIG_AIM3 8
+#define SIG_MOVE 32
+#define SIG_FIRE2 64
+
+
+FrontwardOnly()
+{
+	while(1)
+	{
+		FRONT_GROUND_4_LEFT
+		LIFT_1_LEFT
+		LOWER_2_RIGHT
+		PAUSE_LEGS
+		FRONT_AIR_1_LEFT
+		FRONT_GROUND_2_RIGHT
+		LIFT_3_RIGHT
+		PAUSE_LEGS
+		LOWER_1_LEFT
+		FRONT_AIR_3_RIGHT
+		PAUSE_LEGS
+		FRONT_GROUND_1_LEFT
+		LIFT_2_LEFT
+		LOWER_3_RIGHT
+		PAUSE_LEGS
+		FRONT_AIR_2_LEFT
+		FRONT_GROUND_3_RIGHT
+		LIFT_4_RIGHT
+		PAUSE_LEGS
+		LOWER_2_LEFT
+		FRONT_AIR_4_RIGHT
+		PAUSE_LEGS
+		FRONT_GROUND_2_LEFT
+		LIFT_3_LEFT
+		LOWER_4_RIGHT
+		PAUSE_LEGS
+		FRONT_AIR_3_LEFT
+		FRONT_GROUND_4_RIGHT
+		LIFT_1_RIGHT
+		PAUSE_LEGS
+		LOWER_3_LEFT
+		FRONT_AIR_1_RIGHT
+		PAUSE_LEGS
+		FRONT_GROUND_3_LEFT
+		LIFT_4_LEFT
+		LOWER_1_RIGHT
+		PAUSE_LEGS
+		FRONT_AIR_4_LEFT
+		FRONT_GROUND_1_RIGHT
+		LIFT_2_RIGHT
+		PAUSE_LEGS
+		LOWER_4_LEFT
+		FRONT_AIR_2_RIGHT
+		PAUSE_LEGS
+	}
+}
+
+
+
+
+HazyShadeOfWinter()
+{
+	var bishop;
+	while(1)
+	{
+		if(cardinal==0){
+			FRONT_GROUND_4_LEFT
+			LIFT_1_LEFT
+			LOWER_2_RIGHT
+		}if(cardinal==3){
+			GROUND_FAR2CLOSE_4_LEFT
+			LIFT_CLOSE_1_LEFT
+			LOWER_CLOSE_2_RIGHT
+		}if(cardinal==1){
+			GROUND_CLOSE2FAR_4_LEFT
+			LIFT_FAR_1_LEFT
+			LOWER_FAR_2_RIGHT
+		}if(cardinal==2){
+			BACK_GROUND_1_LEFT
+			LIFT_4_LEFT
+			LOWER_3_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			FRONT_AIR_1_LEFT
+			FRONT_GROUND_2_RIGHT
+			LIFT_3_RIGHT
+		}if(cardinal==3){
+			AIR_CLOSE2FAR_1_LEFT
+			GROUND_CLOSE2FAR_2_RIGHT
+			LIFT_FAR_3_RIGHT
+		}if(cardinal==1){
+			AIR_FAR2CLOSE_1_LEFT
+			GROUND_FAR2CLOSE_2_RIGHT
+			LIFT_CLOSE_3_RIGHT
+		}if(cardinal==2){
+			BACK_AIR_4_LEFT
+			BACK_GROUND_3_RIGHT
+			LIFT_2_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			LOWER_1_LEFT
+			FRONT_AIR_3_RIGHT
+		}if(cardinal==3){
+			LOWER_FAR_1_LEFT
+			AIR_FAR2CLOSE_3_RIGHT
+		}if(cardinal==1){
+			LOWER_CLOSE_1_LEFT
+			AIR_CLOSE2FAR_3_RIGHT
+		}if(cardinal==2){
+			LOWER_4_LEFT
+			BACK_AIR_2_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			FRONT_GROUND_1_LEFT
+			LIFT_2_LEFT
+			LOWER_3_RIGHT
+		}if(cardinal==3){
+			GROUND_FAR2CLOSE_1_LEFT
+			LIFT_CLOSE_2_LEFT
+			LOWER_CLOSE_3_RIGHT
+		}if(cardinal==1){
+			GROUND_CLOSE2FAR_1_LEFT
+			LIFT_FAR_2_LEFT
+			LOWER_FAR_3_RIGHT
+		}if(cardinal==2){
+			BACK_GROUND_4_LEFT
+			LIFT_3_LEFT
+			LOWER_2_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			FRONT_AIR_2_LEFT
+			FRONT_GROUND_3_RIGHT
+			LIFT_4_RIGHT
+		}if(cardinal==3){
+			AIR_CLOSE2FAR_2_LEFT
+			GROUND_CLOSE2FAR_3_RIGHT
+			LIFT_FAR_4_RIGHT
+		}if(cardinal==1){
+			AIR_FAR2CLOSE_2_LEFT
+			GROUND_FAR2CLOSE_3_RIGHT
+			LIFT_CLOSE_4_RIGHT
+		}if(cardinal==2){
+			BACK_AIR_3_LEFT
+			BACK_GROUND_2_RIGHT
+			LIFT_1_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			LOWER_2_LEFT
+			FRONT_AIR_4_RIGHT
+		}if(cardinal==3){
+			LOWER_FAR_2_LEFT
+			AIR_FAR2CLOSE_4_RIGHT
+		}if(cardinal==1){
+			LOWER_CLOSE_2_LEFT
+			AIR_CLOSE2FAR_4_RIGHT
+		}if(cardinal==2){
+			LOWER_3_LEFT
+			BACK_AIR_1_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			FRONT_GROUND_2_LEFT
+			LIFT_3_LEFT
+			LOWER_4_RIGHT
+		}if(cardinal==3){
+			GROUND_FAR2CLOSE_2_LEFT
+			LIFT_CLOSE_3_LEFT
+			LOWER_CLOSE_4_RIGHT
+		}if(cardinal==1){
+			GROUND_CLOSE2FAR_2_LEFT
+			LIFT_FAR_3_LEFT
+			LOWER_FAR_4_RIGHT
+		}if(cardinal==2){
+			BACK_GROUND_3_LEFT
+			LIFT_2_LEFT
+			LOWER_1_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			FRONT_AIR_3_LEFT
+			FRONT_GROUND_4_RIGHT
+			LIFT_1_RIGHT
+		}if(cardinal==3){
+			AIR_CLOSE2FAR_3_LEFT
+			GROUND_CLOSE2FAR_4_RIGHT
+			LIFT_FAR_1_RIGHT
+		}if(cardinal==1){
+			AIR_FAR2CLOSE_3_LEFT
+			GROUND_FAR2CLOSE_4_RIGHT
+			LIFT_CLOSE_1_RIGHT
+		}if(cardinal==2){
+			BACK_AIR_2_LEFT
+			BACK_GROUND_1_RIGHT
+			LIFT_4_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			LOWER_3_LEFT
+			FRONT_AIR_1_RIGHT
+		}if(cardinal==3){
+			LOWER_FAR_3_LEFT
+			AIR_FAR2CLOSE_1_RIGHT
+		}if(cardinal==1){
+			LOWER_CLOSE_3_LEFT
+			AIR_CLOSE2FAR_1_RIGHT
+		}if(cardinal==2){
+			LOWER_2_LEFT
+			BACK_AIR_4_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			FRONT_GROUND_3_LEFT
+			LIFT_4_LEFT
+			LOWER_1_RIGHT
+		}if(cardinal==3){
+			GROUND_FAR2CLOSE_3_LEFT
+			LIFT_CLOSE_4_LEFT
+			LOWER_CLOSE_1_RIGHT
+		}if(cardinal==1){
+			GROUND_CLOSE2FAR_3_LEFT
+			LIFT_FAR_4_LEFT
+			LOWER_FAR_1_RIGHT
+		}if(cardinal==2){
+			BACK_GROUND_2_LEFT
+			LIFT_1_LEFT
+			LOWER_4_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			FRONT_AIR_4_LEFT
+			FRONT_GROUND_1_RIGHT
+			LIFT_2_RIGHT
+		}if(cardinal==3){
+			AIR_CLOSE2FAR_4_LEFT
+			GROUND_CLOSE2FAR_1_RIGHT
+			LIFT_FAR_2_RIGHT
+		}if(cardinal==1){
+			AIR_FAR2CLOSE_4_LEFT
+			GROUND_FAR2CLOSE_1_RIGHT
+			LIFT_CLOSE_2_RIGHT
+		}if(cardinal==2){
+			BACK_AIR_1_LEFT
+			BACK_GROUND_4_RIGHT
+			LIFT_3_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+		if(cardinal==0){
+			LOWER_4_LEFT
+			FRONT_AIR_2_RIGHT
+		}if(cardinal==3){
+			LOWER_FAR_4_LEFT
+			AIR_FAR2CLOSE_2_RIGHT
+		}if(cardinal==1){
+			LOWER_CLOSE_4_LEFT
+			AIR_CLOSE2FAR_2_RIGHT
+		}if(cardinal==2){
+			LOWER_1_LEFT
+			BACK_AIR_3_RIGHT
+		}
+		PAUSE_LEGS_CALC_CARD
+	}
+}
+
+Munching()
+{
+	while(1)
+	{
+		sleep rand(2222,22222);
+		turn mawleft to y-axis <20> speed <10>;
+		turn mawright to y-axis 0 - <20> speed <10>;
+		wait-for-turn mawleft around y-axis;
+		wait-for-turn mawright around y-axis;
+		turn mawleft to y-axis 0 - <10> speed <80>;
+		turn mawright to y-axis <10> speed <80>;
+		wait-for-turn mawleft around y-axis;
+		wait-for-turn mawright around y-axis;
+		sleep 850;
+		turn mawleft to y-axis <0> speed <3>;
+		turn mawright to y-axis <0> speed <3>;
+		wait-for-turn mawleft around y-axis;
+		wait-for-turn mawright around y-axis;
+		if(pincersign==0)
+		{
+			if(rand(0,20)==0)
+			{
+				turn arm11 to y-axis 0 - <5> speed <20>;
+				turn arm12 to y-axis 0 - <10> speed <40>;
+				turn arm13 to y-axis 0 - <15> speed <60>;
+				turn arm21 to y-axis <5> speed <20>;
+				turn arm22 to y-axis <10> speed <40>;
+				turn arm23 to y-axis <15> speed <60>;
+				sleep 250;
+				if(pincersign==0)
+				{
+					turn arm11 to y-axis <0> speed <20>;
+					turn arm12 to y-axis <0> speed <40>;
+					turn arm13 to y-axis <0> speed <60>;
+					turn arm21 to y-axis <0> speed <20>;
+					turn arm22 to y-axis <0> speed <40>;
+					turn arm23 to y-axis <0> speed <60>;
+				}
+			}
+		}
+	}
+}
+
+StartMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	moving=TRUE;
+}
+
+StopMoving()
+{
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	moving=FALSE;
+	stop-spin leg111 around y-axis;
+	stop-spin leg121 around y-axis;
+	stop-spin leg131 around y-axis;
+	stop-spin leg141 around y-axis;
+	stop-spin leg211 around y-axis;
+	stop-spin leg221 around y-axis;
+	stop-spin leg231 around y-axis;
+	stop-spin leg241 around y-axis;
+	sleep TIME_BEFORE_RESTING_LEGS;
+	
+	LIFT_1_LEFT
+	wait-for-turn leg111 around z-axis;
+	REST_1_LEFT
+	LIFT_4_RIGHT
+	wait-for-turn leg111 around y-axis;
+	wait-for-turn leg241 around z-axis;
+	LOWER_1_LEFT;
+	REST_4_RIGHT;
+	wait-for-turn leg111 around z-axis;
+	wait-for-turn leg241 around y-axis;
+	LIFT_4_LEFT
+	LOWER_4_RIGHT;
+	wait-for-turn leg141 around z-axis;
+	wait-for-turn leg241 around z-axis;
+	REST_4_LEFT
+	LIFT_1_RIGHT
+	wait-for-turn leg141 around y-axis;
+	wait-for-turn leg211 around z-axis;
+	LOWER_4_LEFT;
+	REST_1_RIGHT;
+	wait-for-turn leg141 around z-axis;
+	wait-for-turn leg211 around y-axis;
+	LIFT_2_LEFT
+	LOWER_1_RIGHT;
+	wait-for-turn leg121 around z-axis;
+	wait-for-turn leg211 around z-axis;
+	REST_2_LEFT
+	LIFT_3_RIGHT
+	wait-for-turn leg121 around y-axis;
+	wait-for-turn leg231 around z-axis;
+	LOWER_2_LEFT;
+	REST_3_RIGHT;
+	wait-for-turn leg121 around z-axis;
+	wait-for-turn leg231 around y-axis;
+	LIFT_3_LEFT
+	LOWER_3_RIGHT;
+	wait-for-turn leg131 around z-axis;
+	wait-for-turn leg231 around z-axis;
+	REST_3_LEFT
+	LIFT_2_RIGHT
+	wait-for-turn leg131 around y-axis;
+	wait-for-turn leg221 around z-axis;
+	LOWER_3_LEFT;
+	REST_2_RIGHT;
+	wait-for-turn leg131 around z-axis;
+	wait-for-turn leg221 around y-axis;
+	LOWER_2_RIGHT;
+	wait-for-turn leg221 around z-axis;
+}
+
+/*
+Some old values, that were too low:
+
+#define LEG_11_FRONT_ANGLE <20>
+#define LEG_21_FRONT_ANGLE <15>
+#define LEG_31_FRONT_ANGLE <10>
+#define LEG_41_FRONT_ANGLE <5>
+
+#define LEG_11_BACK_ANGLE <-10>
+#define LEG_21_BACK_ANGLE <-20>
+#define LEG_31_BACK_ANGLE <-30>
+#define LEG_41_BACK_ANGLE <-40>
+
+Some old values, that were too high:
+
+#define LEG_11_FRONT_ANGLE <30>
+#define LEG_21_FRONT_ANGLE <25>
+#define LEG_31_FRONT_ANGLE <20>
+#define LEG_41_FRONT_ANGLE <15>
+
+#define LEG_11_BACK_ANGLE <-30>
+#define LEG_21_BACK_ANGLE <-40>
+#define LEG_31_BACK_ANGLE <-50>
+#define LEG_41_BACK_ANGLE <-60>
+*/
+
+
+SetMaxReloadTime(time)
+	{
+	maxreloadtime = time;
+	}
+
+/*
+300 -> -100
+100 -> 100
+50 -> 150
+33 -W
+
+
+PX*k+(200 - PX)(1-k)
+PX*k+200 - PX -200 K + PX*k
+
+2*PX*(k-1) -200(k-1)
+
+
+
+(PX*20+(200 - PX)(1-20))/20
+(PX*19+(200 - PX)(1-k)
+PX*+(200 - PX)(1-k)
+PX*k+(200 - PX)(1-k)
+PX*k+(200 - PX)(1-k)
+PX*k+(200 - PX)(1-k)
+PX*k+(200 - PX)(1-k)
+PX*k+(200 - PX)(1-k)
+
+PX*k1+(200-PX)*k2
+
+*/
+
+
+#define EQX (((PX)*(19-ntail)+(200 - (PX))*(ntail))/19) 
+#define EQY (((PY)*(19-ntail)+(200 - (PY))*(ntail))/19) 
+#define EQZ (((PZ)*(19-ntail)+(200 - (PZ))*(ntail))/19) 
+
+
+#define TURNTAIL(X,Y,Z,S,PX,PY,PZ)\
+ntail=0;\
+turn tail01 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail01 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail01 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=1;\
+turn tail02 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail02 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail02 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=2;\
+turn tail03 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail03 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail03 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=3;\
+turn tail04 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail04 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail04 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=4;\
+turn tail05 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail05 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail05 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=5;\
+turn tail06 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail06 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail06 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=6;\
+turn tail07 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail07 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail07 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=7;\
+turn tail08 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail08 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail08 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=8;\
+turn tail09 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail09 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail09 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=9;\
+turn tail10 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail10 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail10 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=10;\
+turn tail11 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail11 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail11 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=11;\
+turn tail12 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail12 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail12 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=12;\
+turn tail13 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail13 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail13 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=13;\
+turn tail14 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail14 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail14 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=14;\
+turn tail15 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail15 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail15 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=15;\
+turn tail16 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail16 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail16 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=16;\
+turn tail17 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail17 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail17 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=17;\
+turn tail18 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail18 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail18 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=18;\
+turn tail19 to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tail19 to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tail19 to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+ntail=19;\
+turn tailend to x-axis (X)*(EQX)/2000 speed (S)/20;\
+turn tailend to y-axis (Y)*(EQY)/2000 speed (S)/20;\
+turn tailend to z-axis (Z)*(EQZ)/2000 speed (S)/20;\
+wait-for-turn tail01 around x-axis;\
+wait-for-turn tail01 around y-axis;\
+wait-for-turn tail10 around z-axis;\
+wait-for-turn tailend around x-axis;\
+wait-for-turn tailend around y-axis;\
+wait-for-turn tailend around z-axis;\
+
+
+
+
+#define wveqx (((px)*(19-tailseg)+(200 - (px))*(tailseg))/19) 
+#define wveqy (((py)*(19-tailseg)+(200 - (py))*(tailseg))/19) 
+#define wveqz (((pz)*(19-tailseg)+(200 - (pz))*(tailseg))/19) 
+
+Activate()
+{
+	return;
+}
+
+
+Deactivate()
+{
+	return;
+}
+
+
+TurnTailF(angX,angY,angZ,angular_speed,px,py,pz)
+// Arguments:
+// X angle of the tail to be repartited amongst segment
+// Y angle of the tail to be repartited amongst segment
+// Z angle of the tail to be repartited amongst segment
+// angular_speed: same speed for all rotation
+// px percent of X rotation at first segment (then it calculate the percent at last segment to get the wanted total)
+// py percent of Y rotation at first segment (then it calculate the percent at last segment to get the wanted total)
+// pz percent of Z rotation at first segment (then it calculate the percent at last segment to get the wanted total)
+{
+	var tailseg;
+	/*while(angX<0)
+		{angX=angX + 65536;}
+	while(angX>32767)
+		{angX=angX - 65536;}
+	while(angY<0)
+		{angY=angY + 65536;}
+	while(angY>32767)
+		{angY=angY - 65536;}
+	while(angZ<0)
+		{angZ=angZ + 65536;}
+	while(angZ>32767)
+		{angZ=angZ - 65536;}*/
+	tailseg=0;
+	turn tail01 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail01 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail01 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=1;
+	turn tail02 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail02 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail02 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=2;
+	turn tail03 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail03 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail03 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=3;
+	turn tail04 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail04 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail04 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=4;
+	turn tail05 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail05 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail05 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=5;
+	turn tail06 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail06 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail06 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=6;
+	turn tail07 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail07 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail07 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=7;
+	turn tail08 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail08 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail08 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=8;
+	turn tail09 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail09 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail09 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=9;
+	turn tail10 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail10 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail10 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=10;
+	turn tail11 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail11 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail11 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=11;
+	turn tail12 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail12 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail12 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=12;
+	turn tail13 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail13 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail13 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=13;
+	turn tail14 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail14 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail14 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=14;
+	turn tail15 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail15 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail15 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=15;
+	turn tail16 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail16 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail16 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=16;
+	turn tail17 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail17 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail17 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=17;
+	turn tail18 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail18 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail18 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=18;
+	turn tail19 to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tail19 to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tail19 to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	tailseg=19;
+	turn tailend to x-axis (angX)*(wveqx)/2000 speed angular_speed/20;
+	turn tailend to y-axis (angY)*(wveqy)/2000 speed angular_speed/20;
+	turn tailend to z-axis (angZ)*(wveqz)/2000 speed angular_speed/20;
+	wait-for-turn tail01 around x-axis;
+	wait-for-turn tail01 around y-axis;
+	wait-for-turn tail10 around z-axis;
+	wait-for-turn tailend around x-axis;
+	wait-for-turn tailend around y-axis;
+	wait-for-turn tailend around z-axis;
+}
+
+
+
+#define LinX ((((x1)*(19-tailseg)+(x2)*(tailseg))/19)/20) 
+#define LinY ((((y1)*(19-tailseg)+(y2)*(tailseg))/19)/20) 
+#define LinZ ((((z1)*(19-tailseg)+(z2)*(tailseg))/19)/20) 
+
+
+TurnTailLinear(x1,x2,y1,y2,z1,z2,angular_speed)
+// Arguments:
+// X rotation at first segment
+// X rotation at last segment
+// Y rotation at first segment
+// Y rotation at last segment
+// Z rotation at first segment
+// Z rotation at last segment
+// speed of all rotation
+// Note that you measure the angle like if it was one piece,
+// the function divide by the number of segment
+// like, if you set the first X rotation at <20> and the last at <40>
+// then overall the whole tail will be rotated <30>
+{
+	var tailseg;
+	tailseg=0;
+	turn tail01 to x-axis LinX speed angular_speed/20;
+	turn tail01 to y-axis LinY speed angular_speed/20;
+	turn tail01 to z-axis LinZ speed angular_speed/20;
+	tailseg=1;
+	turn tail02 to x-axis LinX speed angular_speed/20;
+	turn tail02 to y-axis LinY speed angular_speed/20;
+	turn tail02 to z-axis LinZ speed angular_speed/20;
+	tailseg=2;
+	turn tail03 to x-axis LinX speed angular_speed/20;
+	turn tail03 to y-axis LinY speed angular_speed/20;
+	turn tail03 to z-axis LinZ speed angular_speed/20;
+	tailseg=3;
+	turn tail04 to x-axis LinX speed angular_speed/20;
+	turn tail04 to y-axis LinY speed angular_speed/20;
+	turn tail04 to z-axis LinZ speed angular_speed/20;
+	tailseg=4;
+	turn tail05 to x-axis LinX speed angular_speed/20;
+	turn tail05 to y-axis LinY speed angular_speed/20;
+	turn tail05 to z-axis LinZ speed angular_speed/20;
+	tailseg=5;
+	turn tail06 to x-axis LinX speed angular_speed/20;
+	turn tail06 to y-axis LinY speed angular_speed/20;
+	turn tail06 to z-axis LinZ speed angular_speed/20;
+	tailseg=6;
+	turn tail07 to x-axis LinX speed angular_speed/20;
+	turn tail07 to y-axis LinY speed angular_speed/20;
+	turn tail07 to z-axis LinZ speed angular_speed/20;
+	tailseg=7;
+	turn tail08 to x-axis LinX speed angular_speed/20;
+	turn tail08 to y-axis LinY speed angular_speed/20;
+	turn tail08 to z-axis LinZ speed angular_speed/20;
+	tailseg=8;
+	turn tail09 to x-axis LinX speed angular_speed/20;
+	turn tail09 to y-axis LinY speed angular_speed/20;
+	turn tail09 to z-axis LinZ speed angular_speed/20;
+	tailseg=9;
+	turn tail10 to x-axis LinX speed angular_speed/20;
+	turn tail10 to y-axis LinY speed angular_speed/20;
+	turn tail10 to z-axis LinZ speed angular_speed/20;
+	tailseg=10;
+	turn tail11 to x-axis LinX speed angular_speed/20;
+	turn tail11 to y-axis LinY speed angular_speed/20;
+	turn tail11 to z-axis LinZ speed angular_speed/20;
+	tailseg=11;
+	turn tail12 to x-axis LinX speed angular_speed/20;
+	turn tail12 to y-axis LinY speed angular_speed/20;
+	turn tail12 to z-axis LinZ speed angular_speed/20;
+	tailseg=12;
+	turn tail13 to x-axis LinX speed angular_speed/20;
+	turn tail13 to y-axis LinY speed angular_speed/20;
+	turn tail13 to z-axis LinZ speed angular_speed/20;
+	tailseg=13;
+	turn tail14 to x-axis LinX speed angular_speed/20;
+	turn tail14 to y-axis LinY speed angular_speed/20;
+	turn tail14 to z-axis LinZ speed angular_speed/20;
+	tailseg=14;
+	turn tail15 to x-axis LinX speed angular_speed/20;
+	turn tail15 to y-axis LinY speed angular_speed/20;
+	turn tail15 to z-axis LinZ speed angular_speed/20;
+	tailseg=15;
+	turn tail16 to x-axis LinX speed angular_speed/20;
+	turn tail16 to y-axis LinY speed angular_speed/20;
+	turn tail16 to z-axis LinZ speed angular_speed/20;
+	tailseg=16;
+	turn tail17 to x-axis LinX speed angular_speed/20;
+	turn tail17 to y-axis LinY speed angular_speed/20;
+	turn tail17 to z-axis LinZ speed angular_speed/20;
+	tailseg=17;
+	turn tail18 to x-axis LinX speed angular_speed/20;
+	turn tail18 to y-axis LinY speed angular_speed/20;
+	turn tail18 to z-axis LinZ speed angular_speed/20;
+	tailseg=18;
+	turn tail19 to x-axis LinX speed angular_speed/20;
+	turn tail19 to y-axis LinY speed angular_speed/20;
+	turn tail19 to z-axis LinZ speed angular_speed/20;
+	tailseg=19;
+	turn tailend to x-axis LinX speed angular_speed/20;
+	turn tailend to y-axis LinY speed angular_speed/20;
+	turn tailend to z-axis LinZ speed angular_speed/20;
+	wait-for-turn tail01 around x-axis;
+	wait-for-turn tail01 around y-axis;
+	wait-for-turn tail10 around z-axis;
+	wait-for-turn tailend around x-axis;
+	wait-for-turn tailend around y-axis;
+	wait-for-turn tailend around z-axis;
+}
+
+
+RestoreTailAfterDelay()
+{
+	var rx;
+	sleep maxreloadtime*2;
+	while(TRUE)
+	{
+		if(rand(0,1))
+		{
+			rx=rand(0,<360>);
+			call-script TurnTailLinear(<520> - rx,rx - <180>,rand(<-10>,<10>),rand(<-30>,<-30>),rand(<-20>,<20>),rand(<-45>,<45>),rand(<10>,<60>));
+		}
+		else
+		{
+			rx=rand(<360>,<630>);
+			call-script TurnTailLinear(rx,0-rx,rand(<-10>,<10>),rand(<-30>,<-30>),rand(<-60>,<60>),rand(<-90>,<90>),rand(<10>,<60>));
+		}
+		aimtype=0;
+	}
+}
+
+AimFromPrimary(piece_to_aim_from)
+{
+	piece_to_aim_from=tailaimer;
+}
+
+
+//call-script TurnTailF
+//TURNTAIL
+AimPrimary(h,p)
+{
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	var ah, bh, nh;
+	h=h - cardinal*16384;
+	while(h<0)
+		{h=h + 65536;}
+	while(h>32767)
+		{h=h - 65536;}
+	while(p<0)
+		{p=p + 65536;}
+	while(p>32767)
+		{p=p - 65536;}
+	ah=h*(1-2*(h<0));
+	bh=(16384-ah)*(ah<16384);
+	nh=32768 + h;
+	while(nh>32767)
+		{nh=nh - 65536;}
+	// Now:
+	// * h: aiming heading, from -180° to 180° (0:front, 180°:back, etc...
+	// * ah: absolute value of heading, from 0 to 180° (0:front, 180° or -180°:back, 90°: any side, etc...)
+	// * bh: 0 when aiming backward (-90° to 90°), angle to nearest side (+-90°) otherwise
+	// * nh: opposite of the heading, from -180° to 180° (0:back, 180° or -180°:front,...)
+	//This one has to change configuration when switching from -180° to 180°
+	//call-script TurnTailLinear(<360>+2*ah,<0>-2*ah,h,0 - 3*h,<0>,<0>,<80>);
+	//This one has to change configuration when switching from 0- to 0+:	
+	//call-script TurnTailLinear(<540>,<-540>,<0>,<0>,0 - nh, 4*nh,<150>);
+	//This one has to change configuration when switching from -180° to 180°; and looks a bit dull when aiming at 0° (the tail is just a demi-circle)
+	//call-script TurnTailF(<180>,((0 - h)*2)/3,0,<80>,200,-200,100);
+	if(aimtype>2 || aimtype<1 || (last_h<0 && h>0) || (last_h>0 && h<0))
+	{
+		aimtype=1;
+		if(ah>16384)
+			{aimtype=2;}
+	}
+	last_h=h;
+	if(aimtype==1)
+		{call-script TurnTailLinear(<360>+2*bh,<0>-2*bh,h,0 - 3*h,<0>,<0>,<150>);}
+	if(aimtype==2)
+		{call-script TurnTailLinear(<540>,<-540>,<0>,<0>,0 - nh, 4*nh,<200>);}
+	start-script RestoreTailAfterDelay();
+	return(TRUE);
+}
+
+QueryPrimary(piece_to_fire_from)
+{
+	piece_to_fire_from=firetail;
+}
+
+FirePrimary()
+{
+	show firetail;
+	sleep SHOW_PURPLE_TAILFLARE_DURATION;
+	hide firetail;
+}
+
+
+RestoreArmAndBodyAfterDelay()
+{
+	sleep (3*maxreloadtime)/2;
+	if(pincersign==1)
+	{
+		turn arm21 to y-axis 0 speed <15>;
+		turn arm22 to y-axis 0 speed <10>;
+		turn arm23 to y-axis 0 speed <5>;
+		turn arm21 to x-axis 0 speed <5>;
+		turn arm22 to x-axis 0 speed <3.4>;
+		turn arm23 to x-axis 0 speed <1.7>;
+		wait-for-turn arm21 around x-axis;
+		turn arm11 to x-axis 0 speed <5>;
+		turn arm12 to x-axis 0 speed <3.4>;
+		turn arm13 to x-axis 0 speed <1.7>;
+		wait-for-turn arm21 around y-axis;
+		turn arm11 to y-axis 0 speed <15>;
+		turn arm12 to y-axis 0 speed <10>;
+		turn arm13 to y-axis 0 speed <5>;
+		wait-for-turn arm11 around x-axis;
+		wait-for-turn arm11 around y-axis;
+	}
+	if(pincersign==0 - 1)
+	{
+		turn arm11 to y-axis 0 speed <15>;
+		turn arm12 to y-axis 0 speed <10>;
+		turn arm13 to y-axis 0 speed <5>;
+		turn arm11 to x-axis 0 speed <5>;
+		turn arm12 to x-axis 0 speed <3.4>;
+		turn arm13 to x-axis 0 speed <1.7>;
+		wait-for-turn arm11 around x-axis;
+		turn arm21 to x-axis 0 speed <5>;
+		turn arm22 to x-axis 0 speed <3.4>;
+		turn arm23 to x-axis 0 speed <1.7>;
+		wait-for-turn arm11 around y-axis;
+		turn arm21 to y-axis 0 speed <15>;
+		turn arm22 to y-axis 0 speed <10>;
+		turn arm23 to y-axis 0 speed <5>;
+		wait-for-turn arm21 around x-axis;
+		wait-for-turn arm21 around y-axis;
+	}
+	pincersign=0;
+	sleep 3*maxreloadtime;
+	cardinal=0;
+	turn body to y-axis 0 speed <200>;
+	turn transarm1 to y-axis 0 speed <200>;
+	turn transarm2 to y-axis 0 speed <200>;
+}
+
+AimFromSecondary(piece_to_aim_from)
+{
+	piece_to_aim_from=body;
+}
+
+AimSecondary(h,p)
+{
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
+	var new_card, hdiff;
+	hdiff=cardinal*16384 - h;
+	while(hdiff<0)
+		{hdiff=hdiff + 65536;}
+	while(hdiff>32767)
+		{hdiff=hdiff - 65536;}
+	if(hdiff<0)
+		hdiff=0 - hdiff;
+	if(hdiff> <60>)
+	{
+		new_card=h + 8192;
+		while(new_card>32767)
+			{new_card=new_card - 65536;}
+		while(new_card<0)
+			{new_card=new_card + 65536;}
+		new_card=new_card / 16384;
+		if((new_card==1 || new_card==3) && (cardinal==0 || cardinal==2))
+			{
+			REST_ALL
+			}
+		cardinal=new_card;
+		turn body to y-axis cardinal*16384 speed <200>;
+		turn transarm1 to y-axis cardinal*16384 speed <200>;
+		turn transarm2 to y-axis cardinal*16384 speed <200>;
+	}
+	h=h - cardinal*16384;
+	while(h<0)
+		{h=h + 65536;}
+	while(h>32767)
+		{h=h - 65536;}
+	if(p>32767)
+		{p=p - 65536;}
+	if(h>=0)
+	{
+		pincersign=1;
+		turn arm11 to y-axis h/2 speed <55>;
+		turn arm12 to y-axis h/3 speed <37>;
+		turn arm13 to y-axis h/6 speed <19>;
+		turn arm11 to x-axis 0 - p/3 speed <27>;
+		turn arm12 to x-axis 0 - p/3 speed <27>;
+		turn arm13 to x-axis 0 - p/3 speed <27>;
+		turn arm21 to y-axis h/2 speed <30>;
+		turn arm22 to y-axis h/3 speed <20>;
+		turn arm23 to y-axis h/6 speed <10>;
+		turn arm21 to x-axis 0 - p/3 speed <17>;
+		turn arm22 to x-axis 0 - p/3 speed <17>;
+		turn arm23 to x-axis 0 - p/3 speed <17>;
+		wait-for-turn body around y-axis;
+		wait-for-turn arm11 around y-axis;
+		wait-for-turn arm11 around x-axis;
+		wait-for-turn arm21 around y-axis;
+		wait-for-turn arm21 around x-axis;
+	}
+	if(h<0)
+	{
+		pincersign=0 - 1;
+		turn arm21 to y-axis h/2 speed <55>;
+		turn arm22 to y-axis h/3 speed <37>;
+		turn arm23 to y-axis h/6 speed <19>;
+		turn arm21 to x-axis 0 - p/3 speed <27>;
+		turn arm22 to x-axis 0 - p/3 speed <27>;
+		turn arm23 to x-axis 0 - p/3 speed <27>;
+		turn arm11 to y-axis h/2 speed <30>;
+		turn arm12 to y-axis h/3 speed <20>;
+		turn arm13 to y-axis h/6 speed <10>;
+		turn arm11 to x-axis 0 - p/3 speed <17>;
+		turn arm12 to x-axis 0 - p/3 speed <17>;
+		turn arm13 to x-axis 0 - p/3 speed <17>;
+		wait-for-turn body around y-axis;
+		wait-for-turn arm21 around y-axis;
+		wait-for-turn arm21 around x-axis;
+		wait-for-turn arm11 around y-axis;
+		wait-for-turn arm11 around x-axis;
+	}
+	while(rocket_fired==8)
+		{sleep 200;}
+	start-script RestoreArmAndBodyAfterDelay();
+	return(TRUE);
+}
+
+QuerySecondary(piece_to_fire_from)
+{
+	if(rocket_tube<1 || rocket_tube>8)
+		{rocket_tube=1;}
+	if(rocket_tube==1)
+		{piece_to_fire_from=fire11;}
+	if(rocket_tube==2)
+		{piece_to_fire_from=fire21;}
+	if(rocket_tube==3)
+		{piece_to_fire_from=fire12;}
+	if(rocket_tube==4)
+		{piece_to_fire_from=fire22;}
+	if(rocket_tube==5)
+		{piece_to_fire_from=fire13;}
+	if(rocket_tube==6)
+		{piece_to_fire_from=fire23;}
+	if(rocket_tube==7)
+		{piece_to_fire_from=fire14;}
+	if(rocket_tube==8)
+		{piece_to_fire_from=fire24;}
+}
+
+FireSecondary()
+{
+	signal SIG_FIRE2;
+	set-signal-mask SIG_FIRE2;
+	if(rocket_tube==1)
+		{show fire11;hide fire14;}
+	if(rocket_tube==2)
+		{show fire21;hide fire24;}
+	if(rocket_tube==3)
+		{show fire12;hide fire11;}
+	if(rocket_tube==4)
+		{show fire22;hide fire21;}
+	if(rocket_tube==5)
+		{show fire13;hide fire12;}
+	if(rocket_tube==6)
+		{show fire23;hide fire22;}
+	if(rocket_tube==7)
+		{show fire14;hide fire13;}
+	if(rocket_tube==8)
+		{show fire24;hide fire23;}
+	++rocket_tube;
+	++rocket_fired;
+	sleep 300;
+	hide fire11;
+	hide fire21;
+	hide fire12;
+	hide fire22;
+	hide fire13;
+	hide fire23;
+	hide fire14;
+	hide fire24;
+	sleep ROCKET_SALVO_RELOAD_TIME;
+	rocket_fired=0;
+}
+
+Create()
+{
+	moving=FALSE;
+	aimtype=0;
+	last_h=0;
+	cardinal=0;
+	pincersign=0;
+	rocket_fired=0;
+	id1=0-1;
+	id2=0-1;
+	set ARMORED to TRUE;
+
+	hide fire11;
+	hide fire12;
+	hide fire13;
+	hide fire14;
+	hide fire21;
+	hide fire22;
+	hide fire23;
+	hide fire24;
+	
+	hide firetail;
+	
+	turn tail01 to x-axis <10> now;
+	turn tail02 to x-axis <10> now;
+	turn tail03 to x-axis <10> now;
+	turn tail04 to x-axis <10> now;
+	turn tail05 to x-axis <10> now;
+	turn tail06 to x-axis <10> now;
+	turn tail07 to x-axis <10> now;
+	turn tail08 to x-axis <10> now;
+	turn tail09 to x-axis <10> now;
+	turn tail10 to x-axis <10> now;
+	turn tail11 to x-axis <10> now;
+	turn tail12 to x-axis <10> now;
+	turn tail13 to x-axis <10> now;
+	turn tail14 to x-axis <10> now;
+	turn tail15 to x-axis <10> now;
+	turn tail16 to x-axis <10> now;
+	turn tail17 to x-axis <10> now;
+	turn tail18 to x-axis <10> now;
+	turn tail19 to x-axis <10> now;
+	turn tailend to x-axis <10> now;
+	
+	RESET_ALL_LEGS
+	
+	while(get BUILD_PERCENT_LEFT)
+	{
+		sleep 500;
+	}
+	
+	start-script HazyShadeOfWinter();
+	start-script Munching();
+	start-script AimPrimary(rand(0,65535),0);
+}
+
+
+TransportPickup(unitid)
+{
+	var xz,x,z,y;
+	if(id1!=0-1)
+	{
+		xz=get UNIT_XZ(id1) - get PIECE_XZ(transarm1);
+		EPIC_SECURE_XZ		
+		if(get XZ_HYPOT(xz)>[3])
+		{
+			id1=0-1;
+		}
+	}
+	if(id2!=0-1)
+	{
+		xz=get UNIT_XZ(id2) - get PIECE_XZ(transarm2);
+		EPIC_SECURE_XZ
+		if(get XZ_HYPOT(xz)>[3])
+		{
+			id2=0-1;
+		}
+	}
+	xz=get PIECE_XZ(base) - get UNIT_XZ(unitid);
+	EPIC_SECURE_XZ
+	if(get XZ_HYPOT(xz)<[144])
+	{	
+		if(id1==0-1)
+		{
+			set BUSY to TRUE;
+			move transshoulder2 to z-axis [12] speed [10];
+			xz=get UNIT_XZ(unitid) - get PIECE_XZ(transshoulder1);
+			y=get UNIT_Y(unitid) - get PIECE_Y(transshoulder1);
+			turn transshoulder1 to y-axis get XZ_ATAN(0 - xz) - cardinal*16384 now;
+			move transarm1 to z-axis get XZ_HYPOT(xz) now;
+			move transarm1 to y-axis y now;
+			turn transarm1 to y-axis get XZ_ATAN(xz) now;
+			attach-unit unitid to transarm1;
+			id1=unitid;
+			move transarm1 to z-axis [0] speed get XZ_HYPOT(xz);
+			move transarm1 to y-axis [18] speed ([18]-y)*(1-2*(([18]-y)<0))*3;
+			sleep 666;
+			move transarm1 to y-axis [0] speed ([18])*3;
+			wait-for-move transarm1 along z-axis;
+			turn transarm1 to y-axis <0> + cardinal*16384 speed <-150>;
+			set BUSY to FALSE;
+			return;
+		}
+		if(id2==0-1)
+		{
+			set BUSY to TRUE;
+			move transshoulder1 to z-axis [-22.5] speed [10];
+			move transshoulder2 to z-axis [12] speed [10];
+			sleep 666;
+			xz=get UNIT_XZ(unitid) - get PIECE_XZ(transshoulder2);
+			y=get UNIT_Y(unitid) - get PIECE_Y(transshoulder2);
+			turn transshoulder2 to y-axis get XZ_ATAN(0 - xz) - cardinal*16384 now;
+			move transarm2 to z-axis get XZ_HYPOT(xz) now;
+			move transarm2 to y-axis y now;
+			turn transarm2 to y-axis get XZ_ATAN(xz) now;
+			attach-unit unitid to transarm2;
+			id2=unitid;
+			move transarm2 to z-axis [0] speed get XZ_HYPOT(xz);
+			move transarm2 to y-axis [18] speed ([18]-y)*(1-2*(([18]-y)<0))*3;
+			sleep 666;
+			move transarm2 to y-axis [0] speed ([18])*3;
+			wait-for-move transarm2 along z-axis;
+			turn transarm2 to y-axis <0> + cardinal*16384 speed <-150>;
+			set BUSY to FALSE;
+			return;
+		}
+		set BUSY to TRUE;
+		sleep 1000;
+		set BUSY to FALSE;
+	}
+	return;
+}
+
+TransportDrop(unitid,position)
+{
+	var xz,x,z,y;
+	if(id1!=0-1)
+	{
+		xz=get UNIT_XZ(id1) - get PIECE_XZ(transarm1);
+		EPIC_SECURE_XZ
+		if(get XZ_HYPOT(xz)>[3])
+		{
+			id1=0-1;
+		}
+	}
+	if(id2!=0-1)
+	{
+		xz=get UNIT_XZ(id2) - get PIECE_XZ(transarm2);
+		EPIC_SECURE_XZ
+		if(get XZ_HYPOT(xz)>[3])
+		{
+			id2=0-1;
+		}
+	}
+	xz=get PIECE_XZ(base) - position;
+	EPIC_SECURE_XZ
+	if(get XZ_HYPOT(xz)<[144])
+	{
+		if((unitid!=id1) && (unitid!=id2))
+		{
+			if((id1==(0-1)) && (id2==(0-1)))
+			{
+				if(get XZ_HYPOT(get UNIT_XZ(unitid) - get PIECE_XZ(transarm2))<[2])
+				{
+					id2=unitid;
+				}
+				if((id2!=unitid) && (get XZ_HYPOT(get UNIT_XZ(unitid) - get PIECE_XZ(transarm1))<[2])))
+				{
+					id1=unitid;
+				}
+				if((unitid!=id1) && (unitid!=id2))
+				{
+					id2=unitid;
+				}
+			}
+			if((unitid!=id1) && (unitid!=id2))
+			{
+				if(id2==0-1)
+				{
+					id2=unitid;
+				}
+				if((id2!=unitid) && (id1==0-1))
+				{
+					id1=unitid;
+				}
+			}
+			if(((unitid!=id1) && (unitid!=id2)) || (id1==id2))
+			{
+				set BUSY to TRUE;
+				while(1)
+				{
+					if((unitid!=id1) && (unitid!=id2))
+					{
+						explode arm13 type SHATTER | BITMAP3;
+						show arm13;
+					}
+					if(id1==id2)
+					{
+						explode tail03 type SHATTER | BITMAP3;
+						if(id1!=0-1)
+						{
+							show tail03;
+						}
+					}
+					sleep 100;
+				}
+			}
+		}
+		if(unitid==id2)
+		{
+			set BUSY to TRUE;
+			xz=position - get PIECE_XZ(transshoulder2);
+			y=get GROUND_HEIGHT(position) - get PIECE_Y(transshoulder2);
+			attach-unit unitid to transarm2;
+			turn transarm2 to y-axis get XZ_ATAN(0 - xz) speed <240>;
+			wait-for-turn transarm2 around y-axis;
+			turn transshoulder2 to y-axis get XZ_ATAN(0 - xz) - cardinal*16384 now;
+			move transarm2 to z-axis get XZ_HYPOT(xz) speed get XZ_HYPOT(xz);
+			move transarm2 to y-axis [18] speed [18]*3;
+			sleep 666;
+			move transarm2 to y-axis y speed ([18]-y)*(1-2*(([18]-y)<0))*3;
+			wait-for-move transarm2 along z-axis;
+			drop-unit unitid;
+
+			move transarm2 to z-axis [0] speed get XZ_HYPOT(xz)*2;
+			move transarm2 to y-axis [18] speed ([18]-y)*(1-2*(([18]-y)<0))*6;
+			sleep 333;
+			move transarm2 to y-axis [0] speed ([18])*6;
+			wait-for-move transarm2 along z-axis;
+			turn transarm2 to y-axis <0> + cardinal*16384 speed <150>;
+			if(get XZ_HYPOT(get UNIT_XZ(id2) - get PIECE_XZ(transshoulder2))>[2])
+			{
+				id2=0-1;
+				move transshoulder1 to z-axis [0] speed [4];
+				move transshoulder2 to z-axis [0] speed [4];
+			}
+			set BUSY to FALSE;
+			return;
+		}
+		if(unitid==id1)
+		{
+			set BUSY to TRUE;
+			xz=position - get PIECE_XZ(transshoulder1);
+			y=get GROUND_HEIGHT(position) - get PIECE_Y(transshoulder1);
+			attach-unit unitid to transarm1;
+			turn transarm1 to y-axis get XZ_ATAN(0 - xz) speed <240>;
+			wait-for-turn transarm1 around y-axis;
+			turn transshoulder1 to y-axis get XZ_ATAN(0 - xz) - cardinal*16384 now;
+			move transarm1 to z-axis get XZ_HYPOT(xz) speed get XZ_HYPOT(xz);
+			move transarm1 to y-axis [18] speed [18]*3;
+			sleep 666;
+			move transarm1 to y-axis y speed ([18]-y)*(1-2*(([18]-y)<0))*3;
+			wait-for-move transarm1 along z-axis;
+			drop-unit unitid;
+
+			move transarm1 to z-axis [0] speed get XZ_HYPOT(xz)*2;
+			move transarm1 to y-axis [18] speed ([18]-y)*(1-2*(([18]-y)<0))*6;
+			sleep 333;
+			move transarm1 to y-axis [0] speed ([18])*6;
+			wait-for-move transarm1 along z-axis;
+			turn transarm1 to y-axis <0> + cardinal*16384 speed <150>;
+			if(get XZ_HYPOT(get UNIT_XZ(id1) - get PIECE_XZ(transshoulder1))>[2])
+			{
+				id1=0-1;
+				move transshoulder1 to z-axis [0] speed [4];
+				move transshoulder2 to z-axis [0] speed [4];
+			}
+			set BUSY to FALSE;
+			return;
+		}
+		set BUSY TO TRUE;
+		sleep 333;
+		set BUSY to FALSE;
+		return;
+	}
+	return;
+}
+
+
+Killed(severity,corpsetype)
+{
+	if(id1!=0-1)
+	{
+		drop-unit id1;
+	}
+	if(id2!=0-1)
+	{
+		drop-unit id2;
+	}
+	explode mawleft type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode mawright type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode leg241 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode leg141 type SHATTER | BITMAP3;
+	explode leg233 type FALL | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode leg132 type FALL | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode leg113 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode leg211 type SHATTER | BITMAP2;
+	explode tail02 type FALL | FIRE | EXPLODE_ON_HIT | BITMAP4;	
+	explode tail03 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode tail04 type FALL | FIRE | EXPLODE_ON_HIT | BITMAP4;	
+	explode tail01 type FALL | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	corpsetype=1;
+}
+
+

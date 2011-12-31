@@ -134,7 +134,7 @@ return {
 					subs = 5,
 				},
 			},
-			armlatnk_weapon = {
+			armlatnkweapon = {
 				areaofeffect = 8,
 				color = 128,
 				color2 = 130,
@@ -169,7 +169,7 @@ return {
 		},
 		weapons = {
 			[1] = {
-				def = "ARMLATNK_WEAPON",
+				def = "ARMLATNKWEAPON",
 				onlytargetcategory = "NOTAIR",
 			},
 			[3] = {

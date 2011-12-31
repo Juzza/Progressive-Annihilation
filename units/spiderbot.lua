@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 20000,
 		buildcostmetal = 1300,
 		buildpic = "TAWF114.DDS",
-		buildtime = 20000,
+		buildtime = 32000,
 		collisionvolumeoffsets = "0 5 0",
 		collisionvolumescales = "55 55 55",
 		collisionvolumetest = 1,

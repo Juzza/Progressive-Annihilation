@@ -25,18 +25,17 @@ if gadgetHandler:IsSyncedCode() then
             damage = 50,
             ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
         },
-        [WeaponDefNames.dclaw.id] = {
-            radius = 50,
-            damage = 50,
+        [WeaponDefNames.armclaw_dclaw.id] = {
+            radius = 70,
+            damage = 40,
             ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
         },
-        [WeaponDefNames.armlatnk_weapon.id] = {
+        [WeaponDefNames.armlatnk_armlatnkweapon.id] = {
             radius = 50,
-            damage = 50,
+            damage = 40,
             ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
         },
-		
-    }
+   }
     
     ----------------------------------------------------------------
     -- Speed

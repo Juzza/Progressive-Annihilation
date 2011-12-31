@@ -12,6 +12,7 @@ return {
 		buildinggrounddecaltype = "coralab_aoplane.dds",
 		buildpic = "CORALAB.DDS",
 		buildtime = 15000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOWEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 2",
@@ -39,7 +40,7 @@ return {
 		sightdistance = 288.60000610352,
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
-		workertime = 250,
+		workertime = 600,
 		yardmap = "ooooooooooooooocccccoccccccccccccccccccccc",
 		buildoptions = {
 			[1] = "corack",

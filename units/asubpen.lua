@@ -11,6 +11,7 @@ return {
 		buildinggrounddecaltype = "asubpen_aoplane.dds",
 		buildpic = "ASUBPEN.DDS",
 		buildtime = 11112,
+		CanBeAssisted = false,
 		category = "ALL PLANT NOTSUB NOWEAPON NOTAIR",
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "118 40 119",
@@ -37,7 +38,7 @@ return {
 		sightdistance = 234,
 		terraformspeed = 750,
 		usebuildinggrounddecal = true,
-		workertime = 150,
+		workertime = 500,
 		yardmap = "oooooooooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCo",
 		buildoptions = {
 			[1] = "armbeaver",

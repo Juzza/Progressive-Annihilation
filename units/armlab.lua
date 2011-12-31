@@ -12,6 +12,7 @@ return {
 		buildinggrounddecaltype = "armlab_aoplane.dds",
 		buildpic = "ARMLAB.DDS",
 		buildtime = 7000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 0",
@@ -39,7 +40,7 @@ return {
 		sightdistance = 289,
 		terraformspeed = 500,
 		usebuildinggrounddecal = true,
-		workertime = 150,
+		workertime = 400,
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {
 			[1] = "armck",
@@ -53,7 +54,7 @@ return {
 			[9] = "armbandit",
 			[10] = "armsbot",
 			[11] = "armdido",
-			[12] = "armseer",
+			[12] = "armmark",
 		},
 		featuredefs = {
 			dead = {

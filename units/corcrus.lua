@@ -5,7 +5,7 @@ return {
 		brakerate = 0.06,
 		buildangle = 16384,
 		buildcostenergy = 16000,
-		buildcostmetal = 2350,
+		buildcostmetal = 2580,
 		buildpic = "CORCRUS.DDS",
 		buildtime = 26000,
 		canmove = true,

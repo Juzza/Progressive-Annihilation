@@ -17,7 +17,7 @@ return {
 		description = "Advanced Metal Extractor / Storage",
 		energyuse = 0,
 		explodeas = "SMALL_BUILDINGEX",
-		extractsmetal = 0.0040000001899898,
+		extractsmetal = 0.002,
 		footprintx = 5,
 		footprintz = 5,
 		icontype = "building",

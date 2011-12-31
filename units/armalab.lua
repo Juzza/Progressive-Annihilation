@@ -12,6 +12,7 @@ return {
 		buildinggrounddecaltype = "armalab_aoplane.dds",
 		buildpic = "ARMALAB.DDS",
 		buildtime = 15000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL NOTLAND PLANT NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 2",
@@ -39,7 +40,7 @@ return {
 		sightdistance = 286,
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
-		workertime = 250,
+		workertime = 600,
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {
 			[1] = "armack",

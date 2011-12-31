@@ -12,6 +12,7 @@ return {
 		buildinggrounddecaltype = "corlab_aoplane.dds",
 		buildpic = "CORLAB.DDS",
 		buildtime = 7000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOWEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumescales = "80 28 80",
@@ -38,7 +39,7 @@ return {
 		sightdistance = 287.29998779297,
 		terraformspeed = 500,
 		usebuildinggrounddecal = true,
-		workertime = 150,
+		workertime = 400,
 		yardmap = "occccooccccooccccooccccooccccoocccco",
 		buildoptions = {
 			[1] = "corck",

@@ -7,6 +7,7 @@ return {
 		builder = true,
 		buildpic = "ARMPLAT.DDS",
 		buildtime = 10000,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		corpse = "DEAD",
@@ -30,7 +31,7 @@ return {
 		sightdistance = 169,
 		terraformspeed = 1000,
 		waterline = 53,
-		workertime = 200,
+		workertime = 400,
 		yardmap = "wwwwwwwwCCCCCwwCCCCCwwCCCCCwwCCCCCwwCCCCCwwwwwwww",
 		buildoptions = {
 			[1] = "armcsa",

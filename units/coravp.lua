@@ -12,6 +12,7 @@ return {
 		buildinggrounddecaltype = "asphalt512c.dds",
 		buildpic = "CORAVP.DDS",
 		buildtime = 18500,
+		CanBeAssisted = false,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOWEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 2",
@@ -40,7 +41,7 @@ return {
 		sightdistance = 286,
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
-		workertime = 250,
+		workertime = 600,
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
 			[1] = "coracv",
