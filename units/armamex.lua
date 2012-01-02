@@ -17,7 +17,7 @@ return {
 		corpse = "DEAD",
 		description = "Stealthy Cloakable Metal Extractor",
 		explodeas = "TWILIGHT",
-		extractsmetal = 0.0015,
+		extractsmetal = 0.001,
 		footprintx = 3,
 		footprintz = 3,
 		icontype = "building",

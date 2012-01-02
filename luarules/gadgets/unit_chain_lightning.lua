@@ -21,7 +21,7 @@ if gadgetHandler:IsSyncedCode() then
     ----------------------------------------------------------------
     local ChainWeapons = {
         [WeaponDefNames.armzeus_lightning.id] = {
-            radius = 50,
+            radius = 57,
             damage = 50,
             ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
         },
@@ -31,7 +31,7 @@ if gadgetHandler:IsSyncedCode() then
             ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
         },
         [WeaponDefNames.armlatnk_armlatnkweapon.id] = {
-            radius = 50,
+            radius = 57,
             damage = 40,
             ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
         },

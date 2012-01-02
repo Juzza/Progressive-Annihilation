@@ -4,7 +4,7 @@ return {
 		activatewhenbuilt = true,
 		brakerate = 0,
 		buildangle = 8192,
-		buildcostenergy = 16000,
+		buildcostenergy = 17000,
 		buildcostmetal = 2200,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 5,

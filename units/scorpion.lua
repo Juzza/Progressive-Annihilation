@@ -173,6 +173,11 @@ return {
 				def = "lightningtail",
 				onlytargetcategory = "NOTAIR",
 			},
+			[2] = {
+				badtargetcategory = "VTOL",
+				def = "sabot",
+				onlytargetcategory = "NOTAIR",
+			},
 		},
 	},
 }

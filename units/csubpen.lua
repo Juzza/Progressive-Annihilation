@@ -2,8 +2,8 @@ return {
 	csubpen = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 5285,
-		buildcostmetal = 917,
+		buildcostenergy = 5000,
+		buildcostmetal = 900,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 11,

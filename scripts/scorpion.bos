@@ -1312,12 +1312,6 @@ Some old values, that were too high:
 #define LEG_41_BACK_ANGLE <-60>
 */
 
-
-SetMaxReloadTime(time)
-	{
-	maxreloadtime = time;
-	}
-
 /*
 300 -> -100
 100 -> 100

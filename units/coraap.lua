@@ -2,7 +2,7 @@ return {
 	coraap = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 18000,
+		buildcostenergy = 10000,
 		buildcostmetal = 1500,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,

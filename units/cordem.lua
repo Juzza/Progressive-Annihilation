@@ -9,6 +9,10 @@ return {
 		canmove = true,
 		category = "KBOT WEAPON ALL NOTSUB NOTAIR",
 		corpse = "DEAD",
+		collisionvolumeoffsets = "0 -7 -5",
+		collisionvolumescales = "67 98 67",
+		collisionvolumetest = 1,
+		collisionvolumetype = "Ell",
 		customparams = {
       turretyawrate = 150,
 	  dpslimit = 325,

@@ -2,7 +2,7 @@ return {
 	armap = {
 		acceleration = 0,
 		brakerate = 0,
-		buildcostenergy = 3370,
+		buildcostenergy = 3500,
 		buildcostmetal = 1000,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
@@ -39,7 +39,7 @@ return {
 		sightdistance = 292,
 		terraformspeed = 500,
 		usebuildinggrounddecal = true,
-		workertime = 300,
+		workertime = 400,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooo",
 		buildoptions = {
 			[1] = "armca",

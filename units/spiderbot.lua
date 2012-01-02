@@ -7,7 +7,7 @@ return {
 		buildpic = "TAWF114.DDS",
 		buildtime = 32000,
 		collisionvolumeoffsets = "0 5 0",
-		collisionvolumescales = "55 55 55",
+		collisionvolumescales = "62 62 62",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",
 		canmove = true,
