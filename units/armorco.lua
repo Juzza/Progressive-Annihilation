@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 591957,
 		buildcostmetal = 25467,
 		buildpic = "armorco.DDS",
-		buildtime = 499801,
+		buildtime = 390000,
 		canmove = true,
 		category = "KBOT WEAPON ALL NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -9 0",

@@ -2,10 +2,10 @@ return {
 	armlance = {
 		acceleration = 0.23999999463558,
 		brakerate = 7.5,
-		buildcostenergy = 6598,
-		buildcostmetal = 306,
+		buildcostenergy = 6500,
+		buildcostmetal = 300,
 		buildpic = "ARMLANCE.DDS",
-		buildtime = 15096,
+		buildtime = 12000,
 		canfly = true,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE WEAPON ANTIGATOR NOTSUB ANTIFLAME ANTIEMG ANTILASER VTOL NOTSHIP",
@@ -85,13 +85,13 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 100,
 				damage = {
-					default = 1500,
+					default = 500,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "NOTSHIP",
+				onlytargetcategory = "SHIP UNDERWATER",
 				def = "ARMAIR_TORPEDO",
 			},
 		},

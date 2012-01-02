@@ -3,7 +3,7 @@ return {
 		acceleration = 0.084,
 		brakerate = 0.112,
 		buildcostenergy = 2750,
-		buildcostmetal = 275,
+		buildcostmetal = 245,
 		buildpic = "ARMANAC.DDS",
 		buildtime = 3400,
 		canhover = true,

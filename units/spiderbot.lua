@@ -19,7 +19,7 @@ return {
 		footprintz = 5,
 		idleautoheal = 22.5,
 		idletime = 900,
-		maxdamage = 6500,
+		maxdamage = 5500,
 		maxvelocity = 0.65,
 		maxwaterdepth = 20,
 		movementclass = "TKBOT5",

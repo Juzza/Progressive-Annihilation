@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 65500,
 		buildcostmetal = 4500,
 		buildpic = "ARMRAVEN.DDS",
-		buildtime = 125000,
+		buildtime = 115000,
 		canmove = true,
 		category = "WEAPON NOTSUB NOTAIR",
 		collisionvolumeoffsets = "0 0 2",

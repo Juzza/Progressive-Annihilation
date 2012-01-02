@@ -2,10 +2,10 @@ return {
 	cortitan = {
 		acceleration = 0.18000000715256,
 		brakerate = 7.25,
-		buildcostenergy = 6788,
-		buildcostmetal = 318,
+		buildcostenergy = 6700,
+		buildcostmetal = 315,
 		buildpic = "CORTITAN.DDS",
-		buildtime = 14722,
+		buildtime = 12000,
 		canfly = true,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE WEAPON ANTIGATOR VTOL ANTIFLAME ANTIEMG ANTILASER NOTSUB NOTSHIP",
@@ -85,13 +85,13 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 100,
 				damage = {
-					default = 1500,
+					default = 500,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "NOTSHIP",
+				onlytargetcategory = "SHIP UNDERWATER",
 				def = "ARMAIR_TORPEDO",
 			},
 		},

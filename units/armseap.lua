@@ -2,10 +2,10 @@ return {
 	armseap = {
 		acceleration = 0.32400000095367,
 		brakerate = 5,
-		buildcostenergy = 6619,
-		buildcostmetal = 243,
+		buildcostenergy = 6000,
+		buildcostmetal = 240,
 		buildpic = "ARMSEAP.DDS",
-		buildtime = 13825,
+		buildtime = 11000,
 		canfly = true,
 		canmove = true,
 		cansubmerge = true,
@@ -89,13 +89,13 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 100,
 				damage = {
-					default = 960,
+					default = 400,
 				},
 			},
 		},
 		weapons = {
 			[1] = {
-				badtargetcategory = "NOTSHIP",
+				onlytargetcategory = "SHIP UNDERWATER",
 				def = "ARMSEAP_WEAPON1",
 			},
 		},

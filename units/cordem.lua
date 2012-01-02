@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 50000,
 		buildcostmetal = 5000,
 		buildpic = "cordem.pcx",
-		buildtime = 135000,
+		buildtime = 125000,
 		canmove = true,
 		category = "KBOT WEAPON ALL NOTSUB NOTAIR",
 		corpse = "DEAD",

@@ -38,7 +38,7 @@ return {
 		sightdistance = 273,
 		terraformspeed = 3000,
 		usebuildinggrounddecal = true,
-		workertime = 1000,
+		workertime = 800,
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
 			[1] = "spiderbot",

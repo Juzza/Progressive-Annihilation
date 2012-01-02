@@ -152,7 +152,7 @@ function gadget:UnitCreated(unitID, unitDefID, teamID, builderID)
   if (factoryDefs[ud.name]) then
     buildspeedlist[unitID]=ud.buildSpeed
     AddBuildspeedCmdDesc(unitID)
-    UpdateButton(unitID, '1')
+    UpdateButton(unitID, '3')
     --RetreatCommand(unitID, unitDefID, { builderInfo[1] }, teamID)
   end
 end
