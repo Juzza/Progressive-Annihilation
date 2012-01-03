@@ -8,7 +8,7 @@ return {
 		buildpic = "ARMAAK.DDS",
 		buildtime = 7000,
 		canmove = true,
-		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR",
+		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR UNDERWATER",
 		corpse = "DEAD",
 		description = "Advanced Amphibious Anti-Air Kbot",
 		explodeas = "BIG_UNITEX",

@@ -7,7 +7,7 @@ return {
 		buildpic = "ARMCROC.DDS",
 		buildtime = 11000,
 		canmove = true,
-		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR",
+		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR UNDERWATER",
 		corpse = "DEAD",
 		description = "Heavy Amphibious Tank",
 		explodeas = "BIG_UNITEX",

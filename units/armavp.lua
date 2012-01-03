@@ -4,7 +4,7 @@ return {
 		brakerate = 0,
 		buildangle = 1024,
 		buildcostenergy = 8000,
-		buildcostmetal = 1000,
+		buildcostmetal = 1400,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -41,7 +41,7 @@ return {
 		sightdistance = 283.39999389648,
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
-		workertime = 600,
+		workertime = 500,
 		yardmap = "occcccoocccccoocccccoocccccoocccccooccccco",
 		buildoptions = {
 			[1] = "armacv",

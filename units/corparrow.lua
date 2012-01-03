@@ -7,7 +7,7 @@ return {
 		buildpic = "CORPARROW.DDS",
 		buildtime = 20000,
 		canmove = true,
-		category = "ALL TANK PHIB WEAPON NOTSUB NOTAIR",
+		category = "ALL TANK PHIB WEAPON NOTSUB NOTAIR UNDERWATER",
 		corpse = "DEAD",
 		description = "Very Heavy Amphibious Tank",
 		explodeas = "BIG_UNITEX",

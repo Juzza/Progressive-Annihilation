@@ -4,7 +4,7 @@ return {
 		brakerate = 0,
 		buildangle = 1024,
 		buildcostenergy = 6000,
-		buildcostmetal = 1050,
+		buildcostmetal = 1450,
 		builder = true,
 		buildinggrounddecaldecayspeed = 30,
 		buildinggrounddecalsizex = 8,
@@ -40,7 +40,7 @@ return {
 		sightdistance = 288.60000610352,
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
-		workertime = 600,
+		workertime = 500,
 		yardmap = "ooooooooooooooocccccoccccccccccccccccccccc",
 		buildoptions = {
 			[1] = "corack",

@@ -13,7 +13,7 @@ return {
 		buildtime = 10000,
 		CanBeAssisted = false,
 		canmove = true,
-		category = "ALL NOTLAND PLANT NOTSUB NOWEAPON NOTSHIP NOTAIR",
+		category = "ALL NOTLAND PLANT NOTSUB NOWEAPON NOTSHIP NOTAIR UNDERWATER",
 		collisionvolumeoffsets = "0 -1 2",
 		collisionvolumescales = "90 25 90",
 		collisionvolumetest = 1,

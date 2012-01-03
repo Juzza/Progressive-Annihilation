@@ -7,7 +7,7 @@ return {
 		buildpic = "CORSEAL.DDS",
 		buildtime = 7000,
 		canmove = true,
-		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR",
+		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR UNDERWATER",
 		corpse = "DEAD",
 		description = "Medium Amphibious Tank",
 		explodeas = "BIG_UNITEX",

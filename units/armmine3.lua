@@ -106,7 +106,6 @@ return {
 			[1] = {
 				badtargetcategory = "VTOL",
 				def = "MINE_DUMMY",
-				onlytargetcategory = "NOTAIR",
 			},
 			[2] = {
 				def = "MINE_DETONATOR",

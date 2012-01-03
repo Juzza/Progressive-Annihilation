@@ -4,7 +4,7 @@ return {
 		brakerate = 0,
 		buildangle = 1024,
 		buildcostenergy = 6000,
-		buildcostmetal = 1100,
+		buildcostmetal = 1450,
 		builder = true,
 		buildinggrounddecaldecayspeed = 0.0099999997764826,
 		buildinggrounddecalsizex = 10,
@@ -41,7 +41,7 @@ return {
 		sightdistance = 286,
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
-		workertime = 600,
+		workertime = 500,
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
 			[1] = "coracv",
