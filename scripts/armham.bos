@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  pelvis, rfirept, lfirept, lcannon, rcannon, locase, lthigh, rthigh,
-       torso, rleg, rfoot, lleg, lfoot, upcase2, canbase, ground, muzzler, ejectorr, groundr, muzzlel, ejectorl, groundl;
+       torso, rleg, rfoot, lleg, lfoot, upcase2, canbase, ground, muzzler, ejectorr, muzzlel, ejectorl;
 
 static-var  bMoving, Static_Var_2, Static_Var_3, Static_Var_4, gun_1,
             restore_delay, statechg_DesiredState, statechg_StateChanging;
@@ -562,10 +562,8 @@ Create()
 	start-script SmokeUnit();
 	hide muzzler;
 	hide ejectorr;
-	hide groundr;
 	hide muzzlel;
 	hide ejectorl;
-	hide groundl;
 }
 
 SetMaxReloadTime(Func_Var_1)
@@ -639,7 +637,6 @@ FirePrimary()
 		gun_1 = rfirept;
 		emit-sfx 1024+0 from muzzler;
 		emit-sfx 1024+1 from ejectorr;
-		emit-sfx 1024+2 from groundr;
 		move rcannon to z-axis [-2.000000] speed [25.000000];
 		sleep 100;
 		move rcannon to z-axis [0.000000] speed [4.000000];
@@ -650,7 +647,6 @@ FirePrimary()
 		gun_1 = pelvis;
 		emit-sfx 1024+0 from muzzlel;
 		emit-sfx 1024+1 from ejectorl;
-		emit-sfx 1024+2 from groundl;
 		move lcannon to z-axis [-2.000000] speed [25.000000];
 		sleep 100;
 		move lcannon to z-axis [0.000000] speed [4.000000];

@@ -2,7 +2,7 @@ return {
 	marauder = {
 		acceleration = 0.21999999880791,
 		brakerate = 0.23800000548363,
-		buildcostenergy = 19534,
+		buildcostenergy = 19000,
 		buildcostmetal = 900,
 		buildpic = "MARAUDER.DDS",
 		buildtime = 28000,
@@ -20,7 +20,7 @@ return {
 		idleautoheal = 40,
 		idletime = 900,
 		mass = 200000,
-		maxdamage = 3000,
+		maxdamage = 2500,
 		maxslope = 17,
 		maxvelocity = 3,
 		maxwaterdepth = 32,

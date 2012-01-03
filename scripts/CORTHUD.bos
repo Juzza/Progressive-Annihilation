@@ -4,7 +4,7 @@
 #include "exptype.h"
 
 piece  torso, gun, rfirept, lfirept, rgun, lgun, pelvis, rleg,
-       rfoot, lleg, lfoot, lthigh, rthigh, ground, muzzler, ejectorr, groundr, muzzlel, ejectorl, groundl;
+       rfoot, lleg, lfoot, lthigh, rthigh, ground, muzzler, ejectorr, muzzlel, ejectorl;
 
 static-var  bMoving, bAiming, Static_Var_3, gun_1;
 
@@ -478,11 +478,8 @@ Create()
 	start-script SmokeUnit();
 	hide muzzler;
 	hide ejectorr;
-	hide groundr;
 	hide muzzlel;
 	hide ejectorl;
-	hide groundl;
-	
 }
 
 StartMoving()
@@ -549,7 +546,6 @@ FirePrimary()
 		move rgun to z-axis [-2.000000] speed [60.000000];
 		emit-sfx 1024+0 from muzzler;
 		emit-sfx 1024+1 from ejectorr;
-		emit-sfx 1024+2 from groundr;
 		sleep 100;
 		wait-for-move rgun along z-axis;
 		gun_1 = gun;
@@ -562,7 +558,6 @@ FirePrimary()
 		move lgun to z-axis [-2.000000] speed [60.000000];
 		emit-sfx 1024+0 from muzzlel;
 		emit-sfx 1024+1 from ejectorl;
-		emit-sfx 1024+2 from groundl;
 		sleep 100;
 		wait-for-move lgun along z-axis;
 		gun_1 = torso;
