@@ -4,7 +4,7 @@ return {
 		brakerate = 0.11200000345707,
 		buildcostenergy = 1500,
 		buildcostmetal = 100,
-		buildpic = "CORSH.DDS",
+		buildpic = "CORSH.png",
 		buildtime = 2200,
 		canhover = true,
 		canmove = true,

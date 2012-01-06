@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armuwadvms_aoplane.dds",
-		buildpic = "ARMUWADVMS.DDS",
+		buildpic = "ARMUWADVMS.png",
 		buildtime = 20391,
 		category = "ALL NOTSUB NOWEAPON NOTAIR",
 		collisionvolumeoffsets = "0 0 0",

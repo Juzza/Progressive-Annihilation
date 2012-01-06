@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "50 102 48",
 		collisionvolumetest = 1,
 		collisionvolumetype = "Ell",
-		buildpic = "CORBHMTH.DDS",
+		buildpic = "CORBHMTH.png",
 		buildtime = 59640,
 		category = "ALL NOTLAND NOTSUB WEAPON NOTSHIP NOTAIR",
 		corpse = "dead",

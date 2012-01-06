@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armgate_aoplane.dds",
-		buildpic = "ARMGATE.DDS",
+		buildpic = "ARMGATe.png",
 		buildtime = 54139,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -15 -2",

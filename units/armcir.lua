@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armcir_aoplane.dds",
-		buildpic = "ARMCIR.DDS",
+		buildpic = "ARMCIR.png",
 		buildtime = 13000,
 		category = "ALL WEAPON STRATEGIC NOTSUB NOTAIR",
 		corpse = "DEAD",

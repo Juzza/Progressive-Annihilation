@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 700,
 		builddistance = 128,
 		builder = true,
-		buildpic = "CORDECOM.DDS",
+		buildpic = "CORDECOM.png",
 		buildtime = 24000,
 		candgun = true,
 		canmove = true,
@@ -61,9 +61,6 @@ return {
 			[4] = "cormstor",
 			[5] = "corestor",
 			[6] = "cormex",
-			[7] = "coruwmex",
-			[8] = "cormakr",
-			[9] = "corfmkr",
 		},
 		customparams = {
 			paralyzemultiplier = 0.025000000372529,

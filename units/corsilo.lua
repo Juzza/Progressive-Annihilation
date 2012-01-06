@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corsilo_aoplane.dds",
-		buildpic = "CORSILO.DDS",
+		buildpic = "CORSILO.png",
 		buildtime = 200000,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -18 -2",

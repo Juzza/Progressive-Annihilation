@@ -4,7 +4,7 @@ return {
 		brakerate = 0.1879999935627,
 		buildcostenergy = 24000,
 		buildcostmetal = 500,
-		buildpic = "CORSKTL.DDS",
+		buildpic = "CORSKTL.png",
 		buildtime = 17000,
 		canmove = true,
 		cantbetransported = true,

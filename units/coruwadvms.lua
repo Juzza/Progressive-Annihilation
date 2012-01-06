@@ -7,7 +7,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "coruwadvms_aoplane.dds",
-		buildpic = "CORUWADVMS.DDS",
+		buildpic = "CORUWADVMS.png",
 		buildtime = 20524,
 		category = "ALL NOTSUB NOWEAPON NOTAIR",
 		collisionvolumeoffsets = "-6 0 0",

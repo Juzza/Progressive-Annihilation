@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 21781,
 		buildcostmetal = 807,
-		buildpic = "ARMFFLAK.DDS",
+		buildpic = "ARMFFLAK.png",
 		buildtime = 21855,
 		category = "ALL WEAPON NOTSUB SPECIAL NOTAIR",
 		corpse = "DEAD",

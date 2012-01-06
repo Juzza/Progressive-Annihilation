@@ -4,7 +4,7 @@ return {
 		brakerate = 0.2,
 		buildcostenergy = 2500,
 		buildcostmetal = 255,
-		buildpic = "CORJAR.pcx",
+		buildpic = "CORJAR.png",
 		buildtime = 3900,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL ANTIGATOR NOTSUB ANTIEMG NOTSHIP NOTAIR",

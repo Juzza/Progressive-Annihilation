@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 7080,
 		buildcostmetal = 749,
-		buildpic = "CORFATF.DDS",
+		buildpic = "CORFATF.png",
 		buildtime = 10302,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 0 -3.5",

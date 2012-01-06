@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 90,
 		builddistance = 128,
 		builder = true,
-		buildpic = "CORNECRO.DDS",
+		buildpic = "CORNECRO.png",
 		buildtime = 2400,
 		canassist = false,
 		canmove = true,

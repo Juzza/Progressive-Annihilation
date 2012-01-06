@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "coruwms_aoplane.dds",
-		buildpic = "CORUWMS.DDS",
+		buildpic = "CORUWMS.png",
 		buildtime = 3800,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		corpse = "DEAD",

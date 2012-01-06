@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 213,
 		builddistance = 200,
 		builder = true,
-		buildpic = "ARMMLS.DDS",
+		buildpic = "ARMMLS.png",
 		buildtime = 5247,
 		canmove = true,
 		category = "ALL NOTSUB MINELAYER SHIP NOWEAPON NOTAIR",

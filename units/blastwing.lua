@@ -4,7 +4,7 @@ return {
 		brakerate = 4.0,
 		buildcostenergy = 1600,
 		buildcostmetal = 250,
-		buildpic = "blastwing.DDS",
+		buildpic = "blastwing.png",
 		buildtime = 2000,
 		canfly = true,
 		canmove = true,

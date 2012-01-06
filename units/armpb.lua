@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armpb_aoplane.dds",
-		buildpic = "ARMPB.DDS",
+		buildpic = "ARMPB.png",
 		buildtime = 15000,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		cloakcost = 16,
@@ -119,7 +119,7 @@ return {
 				weaponvelocity = 800,
 				damage = {
 					bombers = 26,
-					default = 600,
+					default = 720,
 					fighters = 26,
 					subs = 5,
 					vtol = 26,

@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 241,
 		builddistance = 200,
 		builder = true,
-		buildpic = "CORMLS.DDS",
+		buildpic = "CORMLS.png",
 		buildtime = 5352,
 		canmove = true,
 		category = "ALL NOWEAPON MINELAYER SHIP NOTSUB NOTAIR",

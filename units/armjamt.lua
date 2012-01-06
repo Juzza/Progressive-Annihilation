@@ -6,7 +6,7 @@ return {
 		buildangle = 4382,
 		buildcostenergy = 7945,
 		buildcostmetal = 226,
-		buildpic = "ARMJAMT.DDS",
+		buildpic = "ARMJAMT.png",
 		buildtime = 9955,
 		canattack = false,
 		category = "ALL NOTSUB NOWEAPON JAM SPECIAL NOTAIR",

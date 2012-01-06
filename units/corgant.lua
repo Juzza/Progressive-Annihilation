@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corgant_aoplane.dds",
-		buildpic = "CORGANT.DDS",
+		buildpic = "CORGANT.png",
 		buildtime = 67321,
 		CanBeAssisted = false,
 		canmove = true,
@@ -19,7 +19,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylZ",
 		corpse = "DEAD",
-		description = "Produces Level 3 Units",
+		description = "Produces Specialty Units",
 		energystorage = 1400,
 		explodeas = "LARGE_BUILDINGEX",
 		footprintx = 9,
@@ -39,12 +39,11 @@ return {
 		sightdistance = 273,
 		terraformspeed = 3000,
 		usebuildinggrounddecal = true,
-		workertime = 800,
+		workertime = 600,
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
 			[1] = "cordem",
 			[2] = "armraven",
-			[3] = "corkrog",
 		},
 		featuredefs = {
 			dead = {

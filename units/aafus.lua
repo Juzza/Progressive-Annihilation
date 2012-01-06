@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "aafus_aoplane.dds",
-		buildpic = "AAFUS.DDS",
+		buildpic = "AAFUS.png",
 		buildtime = 127529,
 		category = "ALL NOTSUB NOWEAPON SPECIAL NOTAIR",
 		collisionvolumeoffsets = "0 0 0",

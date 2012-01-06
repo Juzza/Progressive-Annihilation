@@ -4,7 +4,7 @@ return {
 		brakerate = 12.5,
 		buildcostenergy = 1300,
 		buildcostmetal = 35,
-		buildpic = "CORFINK.DDS",
+		buildpic = "CORFINK.png",
 		buildtime = 2156,
 		canfly = true,
 		canmove = true,

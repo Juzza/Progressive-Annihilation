@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corfus_aoplane.dds",
-		buildpic = "CORFUS.DDS",
+		buildpic = "CORFUS.png",
 		buildtime = 52000,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		corpse = "DEAD",

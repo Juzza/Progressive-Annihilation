@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armadvsol_aoplane.dds",
-		buildpic = "ARMADVSOL.DDS",
+		buildpic = "ARMADVSOL.png",
 		buildtime = 7945,
 		category = "ALL NOTSUB NOWEAPON NOTAIR",
 		collisionvolumeoffsets = "0 -2 -1",

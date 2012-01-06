@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corfort_aoplane.dds",
-		buildpic = "CORFORT.DDS",
+		buildpic = "CORFORT.png",
 		buildtime = 810,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		corpse = "FORTIFICATION_CORE",

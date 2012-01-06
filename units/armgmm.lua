@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "armgmm_aoplane.dds",
-		buildpic = "ARMGMM.DDS",
+		buildpic = "ARMGMM.png",
 		buildtime = 41347,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 6 0",

@@ -5,7 +5,7 @@ return {
 		brakerate = 0.25,
 		buildcostenergy = 9245,
 		buildcostmetal = 956,
-		buildpic = "CORSHARK.DDS",
+		buildpic = "CORSHARK.png",
 		buildtime = 15529,
 		canmove = true,
 		category = "ALL UNDERWATER MOBILE WEAPON NOTLAND NOTAIR",

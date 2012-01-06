@@ -7,7 +7,7 @@ return {
 		buildcostenergy = 20800,
 		buildcostmetal = 1600,
 		builder = true,
-		buildpic = "CORCARRY.DDS",
+		buildpic = "CORCARRY.png",
 		buildtime = 20800,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE NOTSUB SHIP NOWEAPON NOTAIR",

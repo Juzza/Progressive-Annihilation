@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "cjuno_aoplane.dds",
-		buildpic = "CJUNO.DDS",
+		buildpic = "CJUNO.png",
 		buildtime = 27681,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -2 0",

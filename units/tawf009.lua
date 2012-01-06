@@ -5,7 +5,7 @@ return {
 		brakerate = 0.30000001192093,
 		buildcostenergy = 11702,
 		buildcostmetal = 1686,
-		buildpic = "TAWF009.DDS",
+		buildpic = "TAWF009.png",
 		buildtime = 21087,
 		canmove = true,
 		category = "UNDERWATER ALL WEAPON NOTAIR",

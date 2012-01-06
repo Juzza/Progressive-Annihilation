@@ -5,7 +5,7 @@ return {
 		brakerate = 0.1879999935627,
 		buildcostenergy = 11940,
 		buildcostmetal = 1757,
-		buildpic = "CORSSUB.DDS",
+		buildpic = "CORSSUB.png",
 		buildtime = 23007,
 		canmove = true,
 		category = "ALL UNDERWATER MOBILE WEAPON NOTLAND NOTAIR",

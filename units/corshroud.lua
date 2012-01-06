@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corshroud_aoplane.dds",
-		buildpic = "CORSHROUD.DDS",
+		buildpic = "CORSHROUD.png",
 		buildtime = 9392,
 		canattack = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",

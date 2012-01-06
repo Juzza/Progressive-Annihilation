@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corgate_aoplane.dds",
-		buildpic = "CORGATE.DDS",
+		buildpic = "CORGATe.png",
 		buildtime = 57166,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -16 0",

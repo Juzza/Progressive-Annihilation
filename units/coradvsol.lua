@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "coradvsol_aoplane.dds",
-		buildpic = "CORADVSOL.DDS",
+		buildpic = "CORADVSOL.png",
 		buildtime = 8143,
 		category = "ALL NOTSUB NOWEAPON NOTAIR",
 		collisionvolumeoffsets = "0 -27 -2",

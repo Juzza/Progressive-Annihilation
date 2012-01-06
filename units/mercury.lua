@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "mercury_aoplane.dds",
-		buildpic = "MERCURY.DDS",
+		buildpic = "MERCURY.png",
 		buildtime = 27190,
 		category = "ALL WEAPON NOTSUB SPECIAL NOTAIR",
 		corpse = "DEAD",

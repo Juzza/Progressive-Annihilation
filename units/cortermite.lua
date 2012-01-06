@@ -4,7 +4,7 @@ return {
 		brakerate = 0.175,
 		buildcostenergy = 12500,
 		buildcostmetal = 600,
-		buildpic = "CORTERMITE.DDS",
+		buildpic = "CORTERMITe.png",
 		buildtime = 19000,
 		canmove = true,
 		category = "ALL TANK WEAPON NOTSUB NOTAIR",

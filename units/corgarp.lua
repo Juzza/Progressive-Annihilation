@@ -4,7 +4,7 @@ return {
 		brakerate = 0.010999999940395,
 		buildcostenergy = 2000,
 		buildcostmetal = 205,
-		buildpic = "CORGARP.DDS",
+		buildpic = "CORGARP.png",
 		buildtime = 2800,
 		canmove = true,
 		category = "ALL TANK PHIB WEAPON NOTSUB NOTAIR UNDERWATER",

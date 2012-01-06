@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armrl_aoplane.dds",
-		buildpic = "ARMRL.DDS",
+		buildpic = "ARMRL.png",
 		buildtime = 1800,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 1 0",

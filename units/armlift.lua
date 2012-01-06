@@ -4,7 +4,7 @@ return {
 		brakerate = 5.5,
 		buildcostenergy = 7000,
 		buildcostmetal = 480,
-		buildpic = "ARMlift.pcx",
+		buildpic = "ARMlift.png",
 		buildtime = 9000,
 		canfly = true,
 		canmove = true,

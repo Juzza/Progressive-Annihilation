@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armanni_aoplane.dds",
-		buildpic = "ARMANNI.DDS",
+		buildpic = "ARMANNI.png",
 		buildtime = 55000,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		corpse = "DEAD",

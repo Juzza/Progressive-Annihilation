@@ -5,7 +5,7 @@ return {
 		brakerate = 8.75,
 		buildcostenergy = 3600,
 		buildcostmetal = 115,
-		buildpic = "CORVAMP.DDS",
+		buildpic = "CORVAMP.png",
 		buildtime = 6554,
 		canfly = true,
 		canmove = true,

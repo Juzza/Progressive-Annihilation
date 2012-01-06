@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 197,
 		builddistance = 400,
 		builder = true,
-		buildpic = "CORNANOTC.DDS",
+		buildpic = "CORNANOTC.png",
 		buildtime = 5312,
 		cantbetransported = true,
 		category = "ALL NOTSUB CONSTR NOWEAPON NOTAIR",

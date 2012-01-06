@@ -5,7 +5,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 21941,
 		buildcostmetal = 5404,
-		buildpic = "CORBATS.DDS",
+		buildpic = "CORBATS.png",
 		buildtime = 60640,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE WEAPON SHIP NOTSUB NOTAIR",

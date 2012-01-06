@@ -5,7 +5,7 @@ return {
 		brakerate = 11.25,
 		buildcostenergy = 4600,
 		buildcostmetal = 100,
-		buildpic = "ARMHAWK.DDS",
+		buildpic = "ARMHAWK.png",
 		buildtime = 7685,
 		canfly = true,
 		canmove = true,

@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "armshltx_aoplane.dds",
-		buildpic = "ARMSHLTX.DDS",
+		buildpic = "ARMSHLTX.png",
 		buildtime = 61380,
 		CanBeAssisted = false,
 		canmove = true,
@@ -19,7 +19,7 @@ return {
 		collisionvolumetest = 0,
 		collisionvolumetype = "CylZ",
 		corpse = "ARMSHLT_DEAD",
-		description = "Produces Level 3 Units",
+		description = "Produces Specialty Units",
 		energystorage = 1400,
 		explodeas = "LARGE_BUILDINGEX",
 		footprintx = 9,
@@ -38,13 +38,11 @@ return {
 		sightdistance = 273,
 		terraformspeed = 3000,
 		usebuildinggrounddecal = true,
-		workertime = 800,
+		workertime = 600,
 		yardmap = "oooooooooooooooooooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoooocccccoo",
 		buildoptions = {
 			[1] = "spiderbot",
-			[2] = "armraz",
-			[3] = "marauder",
-			[4] = "armorco",
+			[2] = "marauder",
 
 		},
 		featuredefs = {

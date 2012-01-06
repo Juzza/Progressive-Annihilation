@@ -4,7 +4,7 @@ return {
 		brakerate = 0.6,
 		buildcostenergy = 3000,
 		buildcostmetal = 120,
-		buildpic = "armrond.DDS",
+		buildpic = "armmineplane.png",
 		buildtime = 4800,
 		canfly = true,
 		canmove = true,

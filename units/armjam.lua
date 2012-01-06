@@ -5,7 +5,7 @@ return {
 		brakerate = 0.012000000104308,
 		buildcostenergy = 2500,
 		buildcostmetal = 150,
-		buildpic = "armjam.jpg",
+		buildpic = "armjam.png",
 		buildtime = 5933,
 		canattack = false,
 		canmove = true,

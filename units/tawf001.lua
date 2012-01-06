@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "tawf001_aoplane.dds",
-		buildpic = "TAWF001.DDS",
+		buildpic = "TAWF001.png",
 		buildtime = 5324,
 		category = "ALL WEAPON NOTSUB NOTAIR",
 		collisionvolumeoffsets = "0 1 0",

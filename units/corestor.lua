@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corestor_aoplane.dds",
-		buildpic = "CORESTOR.DDS",
+		buildpic = "CORESTOR.png",
 		buildtime = 4200,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR UNDERWATER",
 		collisionvolumeoffsets = "0 -1 0",

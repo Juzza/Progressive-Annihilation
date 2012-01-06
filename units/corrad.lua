@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corrad_aoplane.dds",
-		buildpic = "CORRAD.DDS",
+		buildpic = "CORRAD.png",
 		buildtime = 1200,
 		canattack = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",

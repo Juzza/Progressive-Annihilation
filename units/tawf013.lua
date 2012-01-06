@@ -4,7 +4,7 @@ return {
 		brakerate = 0.015399999916553,
 		buildcostenergy = 2000,
 		buildcostmetal = 150,
-		buildpic = "TAWF013.DDS",
+		buildpic = "TAWF013.png",
 		buildtime = 3000,
 		canmove = true,
 		category = "ALL TANK WEAPON NOTSUB NOTSHIP NOTAIR",

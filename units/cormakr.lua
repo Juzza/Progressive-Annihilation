@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cormakr_aoplane.dds",
-		buildpic = "CORMAKR.DDS",
+		buildpic = "CORMAKR.png",
 		buildtime = 2682,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -1 0",

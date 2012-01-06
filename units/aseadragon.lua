@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 238406,
 		buildcostmetal = 32122,
-		buildpic = "ASEADRAGON.DDS",
+		buildpic = "ASEADRAGON.png",
 		buildtime = 299523,
 		canmove = true,
 		category = "ALL WEAPON NOTSUB SHIP NOTAIR",

@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armveil_aoplane.dds",
-		buildpic = "ARMVEIL.DDS",
+		buildpic = "ARMVEIL.png",
 		buildtime = 9080,
 		canattack = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",

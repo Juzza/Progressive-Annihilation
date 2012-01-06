@@ -4,7 +4,7 @@ return {
 		brakerate = 3.75,
 		buildcostenergy = 8000,
 		buildcostmetal = 165,
-		buildpic = "CORAWAC.DDS",
+		buildpic = "CORAWAC.png",
 		buildtime = 12000,
 		canfly = true,
 		canmove = true,

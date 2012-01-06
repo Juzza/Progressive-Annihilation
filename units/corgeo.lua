@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corgeo_aoplane.dds",
-		buildpic = "CORGEO.DDS",
+		buildpic = "CORGEO.png",
 		buildtime = 12875,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -27 -2",

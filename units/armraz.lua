@@ -4,7 +4,7 @@ return {
 		brakerate = 0.26199999451637,
 		buildcostenergy = 62000,
 		buildcostmetal = 3600,
-		buildpic = "ARMRAZ.DDS",
+		buildpic = "ARMRAZ.png",
 		buildtime = 88000,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTAIR",

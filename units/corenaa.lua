@@ -7,7 +7,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 23744,
 		buildcostmetal = 832,
-		buildpic = "CORENAA.DDS",
+		buildpic = "CORENAA.png",
 		buildtime = 23129,
 		category = "ALL WEAPON NOTSUB SPECIAL NOTAIR",
 		corpse = "DEAD",

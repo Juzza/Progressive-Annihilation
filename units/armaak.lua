@@ -5,7 +5,7 @@ return {
 		brakerate = 0.1879999935627,
 		buildcostenergy = 5000,
 		buildcostmetal = 480,
-		buildpic = "ARMAAK.DDS",
+		buildpic = "ARMAAK.png",
 		buildtime = 7000,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR UNDERWATER",

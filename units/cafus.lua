@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "cafus_aoplane.dds",
-		buildpic = "CAFUS.DDS",
+		buildpic = "CAFUS.png",
 		buildtime = 128390,
 		category = "ALL NOTSUB NOWEAPON SPECIAL NOTAIR",
 		corpse = "DEAD",

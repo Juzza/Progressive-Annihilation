@@ -5,7 +5,7 @@ return {
 		buildangle = 8192,
 		buildcostenergy = 600,
 		buildcostmetal = 20,
-		buildpic = "ARMFDRAG.DDS",
+		buildpic = "ARMFDRAG.png",
 		buildtime = 930,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		corpse = "FLOATINGTEETH",

@@ -3,37 +3,13 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, arms;
+piece  base, arms, emit1, emit2, emit3;
 
 static-var  Static_Var_1, Static_Var_2, Static_Var_3, statechg_DesiredState, statechg_StateChanging;
 
+// Signal definitions
+#define SIG_ACTIVATE			2
 
-SmokeUnit(healthpercent, sleeptime, smoketype)
-{
-	while( get BUILD_PERCENT_LEFT )
-	{
-		sleep 400;
-	}
-	while( TRUE )
-	{
-		healthpercent = get HEALTH;
-		if( healthpercent < 66 )
-		{
-			smoketype = 256 | 2;
-			if( Rand( 1, 66 ) < healthpercent )
-			{
-				smoketype = 256 | 1;
-			}
-			emit-sfx smoketype from base;
-		}
-		sleeptime = healthpercent * 50;
-		if( sleeptime < 200 )
-		{
-			sleeptime = 200;
-		}
-		sleep sleeptime;
-	}
-}
 
 fixGo()
 {
@@ -81,22 +57,33 @@ RequestState(requestedstate, currentstate)
 Create()
 {
 	Static_Var_1 = 0;
-	Static_Var_2 = 80;
-	Static_Var_3 = 160;
+	Static_Var_2 = 91;
+	Static_Var_3 = 182;
 	dont-shade arms;
 	dont-cache arms;
+	dont-shade base;
+	dont-cache base;
 	call-script InitState();
-	start-script SmokeUnit();
 }
 
 Activate()
 {
 	start-script RequestState(0);
+	signal SIG_ACTIVATE;
+	set-signal-mask SIG_ACTIVATE;
+	while( TRUE )
+	{
+		emit-sfx 259 from emit1;
+		emit-sfx 259 from emit2;
+		emit-sfx 259 from emit3;
+		sleep 250;
+	}
 }
 
 Deactivate()
 {
 	start-script RequestState(1);
+	signal SIG_ACTIVATE;
 }
 
 SweetSpot(piecenum)
@@ -128,8 +115,8 @@ Killed(severity, corpsetype)
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode arms type FALL | BITMAP1;
-		explode arms type SHATTER | BITMAP2;
+		explode arms type SHATTER | EXPLODE_ON_HIT | BITMAP1;
+		explode base type BITMAPONLY | BITMAP2;
 		return (0);
 	}
 	corpsetype = 3;

@@ -4,7 +4,7 @@ return {
 		brakerate = 0.0254,
 		buildcostenergy = 2300,
 		buildcostmetal = 225,
-		buildpic = "corfang.pcx",
+		buildpic = "corfang.png",
 		buildtime = 2900,
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR",

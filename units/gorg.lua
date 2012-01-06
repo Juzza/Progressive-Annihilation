@@ -4,7 +4,7 @@ return {
 		brakerate = 0.125,
 		buildcostenergy = 481165,
 		buildcostmetal = 18705,
-		buildpic = "GORG.DDS",
+		buildpic = "GORG.png",
 		buildtime = 629630,
 		canmove = true,
 		category = "KBOT WEAPON ALL NOTSUB NOTAIR",

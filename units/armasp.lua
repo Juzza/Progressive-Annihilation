@@ -12,7 +12,7 @@ return {
 		buildinggrounddecalsizex = 12,
 		buildinggrounddecalsizey = 12,
 		buildinggrounddecaltype = "armasp_aoplane.dds",
-		buildpic = "ARMASP.DDS",
+		buildpic = "ARMASP.png",
 		buildtime = 9090,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "3 -5 0",

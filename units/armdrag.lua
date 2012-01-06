@@ -8,7 +8,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armdrag_aoplane.dds",
-		buildpic = "ARMDRAG.DDS",
+		buildpic = "ARMDRAG.png",
 		buildtime = 255,
 		canattack = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",

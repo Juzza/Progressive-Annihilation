@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corerad_aoplane.dds",
-		buildpic = "CORERAD.DDS",
+		buildpic = "CORERAD.png",
 		buildtime = 13000,
 		category = "ALL WEAPON STRATEGIC NOTSUB NOTAIR",
 		corpse = "DEAD",

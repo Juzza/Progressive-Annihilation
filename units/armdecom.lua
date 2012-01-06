@@ -8,7 +8,7 @@ return {
 		buildcostmetal = 700,
 		builddistance = 128,
 		builder = true,
-		buildpic = "ARMDECOM.DDS",
+		buildpic = "ARMDECOM.png",
 		buildtime = 24000,
 		candgun = true,
 		canmove = true,
@@ -61,9 +61,6 @@ return {
 			[4] = "armmstor",
 			[5] = "armestor",
 			[6] = "armmex",
-			[7] = "armuwmex",
-			[8] = "armmakr",
-			[9] = "armfmkr",
 		},
 		customparams = {
 			paralyzemultiplier = 0.025000000372529,

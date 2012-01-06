@@ -6,7 +6,7 @@ return {
 		buildangle = 8192,
 		buildcostenergy = 2500,
 		buildcostmetal = 1,
-		buildpic = "CORFMKR.DDS",
+		buildpic = "CORFMKR.png",
 		buildtime = 3000,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		description = "Converts upto 60 energy/second into metal",

@@ -4,7 +4,7 @@ return {
 		brakerate = 0.10999999940395,
 		buildcostenergy = 25000,
 		buildcostmetal = 1800,
-		buildpic = "TREM.DDS",
+		buildpic = "TREM.png",
 		buildtime = 26000,
 		canmove = true,
 		category = "ALL WEAPON NOTSUB NOTAIR",

@@ -4,7 +4,7 @@ return {
 		brakerate = 0.188,
 		buildcostenergy = 8500,
 		buildcostmetal = 500,
-		buildpic = "CORCAN.DDS",
+		buildpic = "CORCAN.png",
 		buildtime = 11500,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR",

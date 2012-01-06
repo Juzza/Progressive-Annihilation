@@ -4,7 +4,7 @@ return {
 		brakerate = 0.5,
 		buildcostenergy = 600,
 		buildcostmetal = 70,
-		buildpic = "ARMFLEA.DDS",
+		buildpic = "ARMFLEA.png",
 		buildtime = 1200,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR",

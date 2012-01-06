@@ -4,7 +4,7 @@ return {
 		brakerate = 3.75,
 		buildcostenergy = 3800,
 		buildcostmetal = 200,
-		buildpic = "bumblebee3g.PCX",
+		buildpic = "bumblebee3g.png",
 		buildtime = 7500,
 		canfly = true,
 		canmove = true,

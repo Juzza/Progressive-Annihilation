@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 160,
 		builddistance = 128,
 		builder = true,
-		buildpic = "ARMFARK.DDS",
+		buildpic = "ARMFARK.png",
 		buildtime = 4302,
 		canmove = true,
 		category = "KBOT MOBILE ALL NOTSUB NOWEAPON NOTAIR",
@@ -44,10 +44,9 @@ return {
 			[1] = "armsolar",
 			[2] = "armwin",
 			[3] = "armmex",
-			[4] = "armmakr",
-			[5] = "armeyes",
-			[6] = "armrad",
-			[7] = "armjamt",
+			[4] = "armeyes",
+			[5] = "armrad",
+			[6] = "armjamt",
 		},
 		featuredefs = {
 			dead = {

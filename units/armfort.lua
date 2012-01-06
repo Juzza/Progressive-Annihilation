@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armfort_aoplane.dds",
-		buildpic = "ARMFORT.DDS",
+		buildpic = "ARMFORT.png",
 		buildtime = 965,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		corpse = "FORTIFICATION",

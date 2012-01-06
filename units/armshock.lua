@@ -4,7 +4,7 @@ return {
 		brakerate = 0.10000000149012,
 		buildcostenergy = 65687,
 		buildcostmetal = 3120,
-		buildpic = "ARMSHOCK.DDS",
+		buildpic = "ARMSHOCK.png",
 		buildtime = 101218,
 		canmove = true,
 		category = "ALL NOTSTRUCTURE NOTSUB WEAPON NOTAIR",

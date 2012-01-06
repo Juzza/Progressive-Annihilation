@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "armarad_aoplane.dds",
-		buildpic = "ARMARAD.DDS",
+		buildpic = "ARMARAD.png",
 		buildtime = 11000,
 		canattack = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",

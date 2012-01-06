@@ -4,7 +4,7 @@ return {
 		brakerate = 5.5,
 		buildcostenergy = 6000,
 		buildcostmetal = 500,
-		buildpic = "corlift.pcx",
+		buildpic = "corlift.png",
 		buildtime = 9000,
 		canfly = true,
 		canmove = true,

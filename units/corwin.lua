@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "corwin_aoplane.dds",
-		buildpic = "CORWIN.DDS",
+		buildpic = "CORWIN.png",
 		buildtime = 1600,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 2 0",

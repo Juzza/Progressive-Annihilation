@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "cmgeo_aoplane.dds",
-		buildpic = "CMGEO.DDS",
+		buildpic = "CMGEO.png",
 		buildtime = 32078,
 		category = "ALL NOTSUB NOWEAPON NOTAIR",
 		collisionvolumeoffsets = "3 -5 0",

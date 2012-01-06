@@ -4,7 +4,7 @@ return {
 		brakerate = 0.188,
 		buildcostenergy = 65500,
 		buildcostmetal = 4500,
-		buildpic = "ARMRAVEN.DDS",
+		buildpic = "ARMRAVEN.png",
 		buildtime = 115000,
 		canmove = true,
 		category = "WEAPON NOTSUB NOTAIR",

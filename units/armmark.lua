@@ -5,7 +5,7 @@ return {
 		brakerate = 0.018,
 		buildcostenergy = 2000,
 		buildcostmetal = 130,
-		buildpic = "armmark.jpg",
+		buildpic = "armmark.png",
 		buildtime = 2500,
 		canattack = false,
 		canmove = true,

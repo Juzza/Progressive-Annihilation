@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 8638,
 		buildcostmetal = 1079,
-		buildpic = "CORATL.DDS",
+		buildpic = "CORATL.png",
 		buildtime = 10875,
 		category = "ALL NOTLAND WEAPON NOTSHIP NOTAIR",
 		corpse = "DEAD",

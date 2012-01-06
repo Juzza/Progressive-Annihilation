@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armwin_aoplane.dds",
-		buildpic = "ARMWIN.DDS",
+		buildpic = "ARMWIN.png",
 		buildtime = 1600,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 1 0",

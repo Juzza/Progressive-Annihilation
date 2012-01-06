@@ -4,7 +4,7 @@ return {
 		brakerate = 0.1,
 		buildcostenergy = 2600,
 		buildcostmetal = 250,
-		buildpic = "CORSNAP.DDS",
+		buildpic = "CORSNAP.png",
 		buildtime = 3400,
 		canhover = true,
 		canmove = true,
@@ -107,7 +107,7 @@ return {
 				weaponvelocity = 350,
 				damage = {
 					bombers = 29,
-					default = 98,
+					default = 105,
 					fighters = 29,
 					subs = 5,
 					vtol = 29,

@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cortoast_aoplane.dds",
-		buildpic = "CORTOAST.DDS",
+		buildpic = "CORTOAST.png",
 		buildtime = 25000,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		corpse = "DEAD",

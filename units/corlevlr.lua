@@ -4,7 +4,7 @@ return {
 		brakerate = 0.36179998517036,
 		buildcostenergy = 2400,
 		buildcostmetal = 210,
-		buildpic = "CORLEVLR.DDS",
+		buildpic = "CORLEVLR.png",
 		buildtime = 3000,
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON ANTIGATOR ANTIEMG NOTSUB NOTSHIP NOTAIR",

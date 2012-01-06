@@ -6,7 +6,7 @@ return {
 		buildangle = 8192,
 		buildcostenergy = 800,
 		buildcostmetal = 30,
-		buildpic = "COREYES.DDS",
+		buildpic = "COREYES.png",
 		buildtime = 750,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		cloakcost = 10,

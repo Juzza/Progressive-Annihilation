@@ -4,7 +4,7 @@ return {
 		brakerate = 0.23800000548363,
 		buildcostenergy = 21874,
 		buildcostmetal = 1442,
-		buildpic = "SHIVA.DDS",
+		buildpic = "SHIVA.png",
 		buildtime = 30609,
 		canmove = true,
 		category = "KBOT WEAPON ALL NOTSUB NOTAIR",

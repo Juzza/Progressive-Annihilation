@@ -4,7 +4,7 @@ return {
 		brakerate = 0.02,
 		buildcostenergy = 10000,
 		buildcostmetal = 480,
-		buildpic = "ARMCROC.DDS",
+		buildpic = "ARMCROC.png",
 		buildtime = 11000,
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR UNDERWATER",

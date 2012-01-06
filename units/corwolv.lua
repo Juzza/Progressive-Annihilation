@@ -4,7 +4,7 @@ return {
 		brakerate = 0.0098999999463558,
 		buildcostenergy = 2000,
 		buildcostmetal = 150,
-		buildpic = "CORWOLV.DDS",
+		buildpic = "CORWOLV.png",
 		buildtime = 3000,
 		canmove = true,
 		category = "ALL TANK WEAPON NOTSUB NOTAIR",

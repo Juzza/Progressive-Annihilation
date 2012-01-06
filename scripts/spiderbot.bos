@@ -24,42 +24,42 @@ walk()
 	if( TRUE )
 	{
 //Front leg left
-	turn joint1a to y-axis <14> speed <40>;
-	turn joint1a to z-axis <-8> speed <40>;
-	turn joint1b to y-axis <0> speed <40>;
-	turn joint1b to z-axis <-10> speed <40>;
-	turn leg1 to z-axis <-30> speed <60>;
+	turn joint1a to y-axis <14> speed <70>;
+	turn joint1a to z-axis <-8> speed <70>;
+	turn joint1b to y-axis <0> speed <70>;
+	turn joint1b to z-axis <-10> speed <70>;
+	turn leg1 to z-axis <-30> speed <90>;
 // Front leg right
-	turn joint2a to y-axis <14> speed <40>;
-	turn joint2a to z-axis <8> speed <40>;
-	turn joint2b to y-axis <0> speed <40>;
-	turn joint2b to z-axis <10> speed <40>;
-	turn leg2 to z-axis <30> speed <60>;
+	turn joint2a to y-axis <14> speed <70>;
+	turn joint2a to z-axis <8> speed <70>;
+	turn joint2b to y-axis <0> speed <70>;
+	turn joint2b to z-axis <10> speed <70>;
+	turn leg2 to z-axis <30> speed <90>;
 // Back leg left
-	turn joint3a to y-axis <-10> speed <40>;
-	turn joint3a to z-axis <-8> speed <40>;
-	turn joint3b to y-axis <0> speed <40>;
-	turn joint3b to z-axis <-10> speed <40>;
-	turn leg3 to z-axis <10> speed <60>;
+	turn joint3a to y-axis <-10> speed <70>;
+	turn joint3a to z-axis <-8> speed <70>;
+	turn joint3b to y-axis <0> speed <70>;
+	turn joint3b to z-axis <-10> speed <70>;
+	turn leg3 to z-axis <10> speed <90>;
 
 // Back leg right
-	turn joint4a to y-axis <-10> speed <40>;
-	turn joint4a to z-axis <8> speed <40>;
-	turn joint4b to y-axis <0> speed <40>;
-	turn joint4b to z-axis <10> speed <40>;
-	turn leg4 to z-axis <-10> speed <60>;
+	turn joint4a to y-axis <-10> speed <70>;
+	turn joint4a to z-axis <8> speed <70>;
+	turn joint4b to y-axis <0> speed <70>;
+	turn joint4b to z-axis <10> speed <70>;
+	turn leg4 to z-axis <-10> speed <90>;
 //Mid leg right
-	turn joint5a to y-axis <-14> speed <40>;
-	turn joint5a to z-axis <-8> speed <40>;
-	turn joint5b to y-axis <0> speed <40>;
-	turn joint5b to z-axis <-10> speed <40>;
-	turn leg5 to z-axis <30> speed <60>;
+	turn joint5a to y-axis <-14> speed <70>;
+	turn joint5a to z-axis <-8> speed <70>;
+	turn joint5b to y-axis <0> speed <70>;
+	turn joint5b to z-axis <-10> speed <70>;
+	turn leg5 to z-axis <30> speed <90>;
 //Mid leg left
-	turn joint6a to y-axis <14> speed <40>;
-	turn joint6a to z-axis <8> speed <40>;
-	turn joint6b to y-axis <0> speed <40>;
-	turn joint6b to z-axis <10> speed <40>;
-	turn leg6 to z-axis <-30> speed <60>;
+	turn joint6a to y-axis <14> speed <70>;
+	turn joint6a to z-axis <8> speed <70>;
+	turn joint6b to y-axis <0> speed <70>;
+	turn joint6b to z-axis <10> speed <70>;
+	turn leg6 to z-axis <-30> speed <90>;
 	
 	turn torso to x-axis <5> speed <10>;
 	turn torso to z-axis <5> speed <10>;
@@ -92,41 +92,41 @@ walk()
 	}
 	if( TRUE )
 	{
-	turn joint1a to y-axis <14> speed <40>;
-	turn joint1a to z-axis <8> speed <40>;
-	turn joint1b to y-axis <0> speed <40>;
-	turn joint1b to z-axis <10> speed <40>;
-	turn leg1 to z-axis <-30> speed <60>;
+	turn joint1a to y-axis <14> speed <70>;
+	turn joint1a to z-axis <8> speed <70>;
+	turn joint1b to y-axis <0> speed <70>;
+	turn joint1b to z-axis <10> speed <70>;
+	turn leg1 to z-axis <-30> speed <90>;
 	
-	turn joint2a to y-axis <14> speed <40>;
-	turn joint2a to z-axis <-8> speed <40>;
-	turn joint2b to y-axis <0> speed <40>;
-	turn joint2b to z-axis <-10> speed <40>;
-	turn leg2 to z-axis <30> speed <60>;
+	turn joint2a to y-axis <14> speed <70>;
+	turn joint2a to z-axis <-8> speed <70>;
+	turn joint2b to y-axis <0> speed <70>;
+	turn joint2b to z-axis <-10> speed <70>;
+	turn leg2 to z-axis <30> speed <90>;
 	
-	turn joint3a to y-axis <-10> speed <40>;
-	turn joint3a to z-axis <8> speed <40>;
-	turn joint3b to y-axis <0> speed <40>;
-	turn joint3b to z-axis <10> speed <40>;
+	turn joint3a to y-axis <-10> speed <70>;
+	turn joint3a to z-axis <8> speed <70>;
+	turn joint3b to y-axis <0> speed <70>;
+	turn joint3b to z-axis <10> speed <70>;
 	turn leg3 to z-axis <-30> speed <90>;
 	
-	turn joint4a to y-axis <-10> speed <40>;
-	turn joint4a to z-axis <-8> speed <40>;
-	turn joint4b to y-axis <0> speed <40>;
-	turn joint4b to z-axis <-10> speed <40>;
+	turn joint4a to y-axis <-10> speed <70>;
+	turn joint4a to z-axis <-8> speed <70>;
+	turn joint4b to y-axis <0> speed <70>;
+	turn joint4b to z-axis <-10> speed <70>;
 	turn leg4 to z-axis <30> speed <90>;
 	
-	turn joint5a to y-axis <10> speed <40>;
-	turn joint5a to z-axis <8> speed <40>;
-	turn joint5b to y-axis <0> speed <40>;
-	turn joint5b to z-axis <10> speed <40>;
-	turn leg5 to z-axis <-10> speed <60>;
+	turn joint5a to y-axis <10> speed <70>;
+	turn joint5a to z-axis <8> speed <70>;
+	turn joint5b to y-axis <0> speed <70>;
+	turn joint5b to z-axis <10> speed <70>;
+	turn leg5 to z-axis <-10> speed <90>;
 	
-	turn joint6a to y-axis <-10> speed <40>;
-	turn joint6a to z-axis <-8> speed <40>;
-	turn joint6b to y-axis <0> speed <40>;
-	turn joint6b to z-axis <-10> speed <40>;
-	turn leg6 to z-axis <10> speed <60>;
+	turn joint6a to y-axis <-10> speed <70>;
+	turn joint6a to z-axis <-8> speed <70>;
+	turn joint6b to y-axis <0> speed <70>;
+	turn joint6b to z-axis <-10> speed <70>;
+	turn leg6 to z-axis <10> speed <90>;
 	
 	turn torso to x-axis <0> speed <10>;
 	turn torso to z-axis <0> speed <10>;
@@ -159,40 +159,40 @@ walk()
 	}
 	if( TRUE )
 	{
-	turn joint1a to y-axis <-10> speed <40>;
-	turn joint1a to z-axis <-8> speed <40>;
-	turn joint1b to y-axis <0> speed <40>;
-	turn joint1b to z-axis <-10> speed <40>;
-	turn leg1 to z-axis <10> speed <60>;
+	turn joint1a to y-axis <-10> speed <70>;
+	turn joint1a to z-axis <-8> speed <70>;
+	turn joint1b to y-axis <0> speed <70>;
+	turn joint1b to z-axis <-10> speed <70>;
+	turn leg1 to z-axis <10> speed <90>;
 	
-	turn joint2a to y-axis <-10> speed <40>;
-	turn joint2a to z-axis <8> speed <40>;
-	turn joint2b to y-axis <0> speed <40>;
-	turn joint2b to z-axis <10> speed <40>;
-	turn leg2 to z-axis <-10> speed <60>;
+	turn joint2a to y-axis <-10> speed <70>;
+	turn joint2a to z-axis <8> speed <70>;
+	turn joint2b to y-axis <0> speed <70>;
+	turn joint2b to z-axis <10> speed <70>;
+	turn leg2 to z-axis <-10> speed <90>;
 	
-	turn joint3a to y-axis <14> speed <40>;
-	turn joint3a to z-axis <-8> speed <40>;
-	turn joint3b to y-axis <0> speed <40>;
-	turn joint3b to z-axis <-10> speed <40>;
-	turn leg3 to z-axis <-30> speed <60>;
+	turn joint3a to y-axis <14> speed <70>;
+	turn joint3a to z-axis <-8> speed <70>;
+	turn joint3b to y-axis <0> speed <70>;
+	turn joint3b to z-axis <-10> speed <70>;
+	turn leg3 to z-axis <-30> speed <90>;
 
-	turn joint4a to y-axis <14> speed <40>;
-	turn joint4a to z-axis <8> speed <40>;
-	turn joint4b to y-axis <0> speed <40>;
-	turn joint4b to z-axis <10> speed <40>;
-	turn leg4 to z-axis <30> speed <60>;
+	turn joint4a to y-axis <14> speed <70>;
+	turn joint4a to z-axis <8> speed <70>;
+	turn joint4b to y-axis <0> speed <70>;
+	turn joint4b to z-axis <10> speed <70>;
+	turn leg4 to z-axis <30> speed <90>;
 	
-	turn joint5a to y-axis <10> speed <40>;
-	turn joint5a to z-axis <-8> speed <40>;
-	turn joint5b to y-axis <0> speed <40>;
-	turn joint5b to z-axis <-10> speed <40>;
+	turn joint5a to y-axis <10> speed <70>;
+	turn joint5a to z-axis <-8> speed <70>;
+	turn joint5b to y-axis <0> speed <70>;
+	turn joint5b to z-axis <-10> speed <70>;
 	turn leg5 to z-axis <30> speed <90>;
 	
-	turn joint6a to y-axis <-10> speed <40>;
-	turn joint6a to z-axis <8> speed <40>;
-	turn joint6b to y-axis <0> speed <40>;
-	turn joint6b to z-axis <10> speed <40>;
+	turn joint6a to y-axis <-10> speed <70>;
+	turn joint6a to z-axis <8> speed <70>;
+	turn joint6b to y-axis <0> speed <70>;
+	turn joint6b to z-axis <10> speed <70>;
 	turn leg6 to z-axis <-30> speed <90>;
 	
 	turn torso to x-axis <5> speed <10>;
@@ -226,41 +226,41 @@ walk()
 	}
 	if( TRUE )
 	{
-	turn joint1a to y-axis <-10> speed <40>;
-	turn joint1a to z-axis <8> speed <40>;
-	turn joint1b to y-axis <0> speed <40>;
-	turn joint1b to z-axis <10> speed <40>;
+	turn joint1a to y-axis <-10> speed <70>;
+	turn joint1a to z-axis <8> speed <70>;
+	turn joint1b to y-axis <0> speed <70>;
+	turn joint1b to z-axis <10> speed <70>;
 	turn leg1 to z-axis <-30> speed <90>;
 	
-	turn joint2a to y-axis <-10> speed <40>;
-	turn joint2a to z-axis <-8> speed <40>;
-	turn joint2b to y-axis <0> speed <40>;
-	turn joint2b to z-axis <-10> speed <40>;
+	turn joint2a to y-axis <-10> speed <70>;
+	turn joint2a to z-axis <-8> speed <70>;
+	turn joint2b to y-axis <0> speed <70>;
+	turn joint2b to z-axis <-10> speed <70>;
 	turn leg2 to z-axis <30> speed <90>;
 	
-	turn joint3a to y-axis <14> speed <40>;
-	turn joint3a to z-axis <8> speed <40>;
-	turn joint3b to y-axis <0> speed <40>;
-	turn joint3b to z-axis <10> speed <40>;
-	turn leg3 to z-axis <-30> speed <60>;
+	turn joint3a to y-axis <14> speed <70>;
+	turn joint3a to z-axis <8> speed <70>;
+	turn joint3b to y-axis <0> speed <70>;
+	turn joint3b to z-axis <10> speed <70>;
+	turn leg3 to z-axis <-30> speed <90>;
 	
-	turn joint4a to y-axis <14> speed <40>;
-	turn joint4a to z-axis <-8> speed <40>;
-	turn joint4b to y-axis <0> speed <40>;
-	turn joint4b to z-axis <-10> speed <40>;
-	turn leg4 to z-axis <30> speed <60>;
+	turn joint4a to y-axis <14> speed <70>;
+	turn joint4a to z-axis <-8> speed <70>;
+	turn joint4b to y-axis <0> speed <70>;
+	turn joint4b to z-axis <-10> speed <70>;
+	turn leg4 to z-axis <30> speed <90>;
 
-	turn joint5a to y-axis <-14> speed <40>;
-	turn joint5a to z-axis <8> speed <40>;
-	turn joint5b to y-axis <0> speed <40>;
-	turn joint5b to z-axis <10> speed <40>;
-	turn leg5 to z-axis <30> speed <60>;
+	turn joint5a to y-axis <-14> speed <70>;
+	turn joint5a to z-axis <8> speed <70>;
+	turn joint5b to y-axis <0> speed <70>;
+	turn joint5b to z-axis <10> speed <70>;
+	turn leg5 to z-axis <30> speed <90>;
 	
-	turn joint6a to y-axis <14> speed <40>;
-	turn joint6a to z-axis <-8> speed <40>;
-	turn joint6b to y-axis <0> speed <40>;
-	turn joint6b to z-axis <-10> speed <40>;
-	turn leg6 to z-axis <-30> speed <60>;
+	turn joint6a to y-axis <14> speed <70>;
+	turn joint6a to z-axis <-8> speed <70>;
+	turn joint6b to y-axis <0> speed <70>;
+	turn joint6b to z-axis <-10> speed <70>;
+	turn leg6 to z-axis <-30> speed <90>;
 	
 	turn torso to x-axis <0> speed <10>;
 	turn torso to z-axis <0> speed <10>;

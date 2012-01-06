@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 252321,
 		buildcostmetal = 34585,
-		buildpic = "CORBLACKHY.DDS",
+		buildpic = "CORBLACKHY.png",
 		buildtime = 309264,
 		canmove = true,
 		category = "ALL WEAPON NOTSUB SHIP NOTAIR",

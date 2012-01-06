@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "corpun_aoplane.dds",
-		buildpic = "CORPUN.DDS",
+		buildpic = "CORPUN.png",
 		buildtime = 20000,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 -13 0",

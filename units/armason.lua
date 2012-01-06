@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armason_aoplane.dds",
-		buildpic = "ARMASON.DDS",
+		buildpic = "ARMASON.png",
 		buildtime = 6152,
 		canattack = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",

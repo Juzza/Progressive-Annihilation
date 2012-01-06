@@ -4,7 +4,7 @@ return {
 		brakerate = 0.054999999701977,
 		buildcostenergy = 1000,
 		buildcostmetal = 110,
-		buildpic = "CORGATOR.DDS",
+		buildpic = "CORGATOR.png",
 		buildtime = 1850,
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR",

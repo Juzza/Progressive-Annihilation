@@ -6,7 +6,7 @@ return {
 		buildcostmetal = 180,
 		builddistance = 128,
 		builder = true,
-		buildpic = "corfred.DDS",
+		buildpic = "corfred.png",
 		buildtime = 6793,
 		canmove = true,
 		category = "ALL TANK MOBILE NOTSUB NOWEAPON NOTSHIP NOTAIR",
@@ -44,10 +44,9 @@ return {
 			[1] = "corsolar",
 			[2] = "corwin",
 			[3] = "cormex",
-			[4] = "cormakr",
-			[5] = "coreyes",
-			[6] = "corrad",
-			[7] = "corjamt",
+			[4] = "coreyes",
+			[5] = "corrad",
+			[6] = "corjamt",
 		},
 		featuredefs = {
 			dead = {

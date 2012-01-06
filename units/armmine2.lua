@@ -4,7 +4,7 @@ return {
 		brakerate = 0,
 		buildcostenergy = 1,
 		buildcostmetal = 1,
-		buildpic = "ARMMINE2.DDS",
+		buildpic = "ARMMINE2.png",
 		buildtime = 250,
 		canattack = false,
 		canguard = false,

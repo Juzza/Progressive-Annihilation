@@ -4,7 +4,7 @@ return {
 		brakerate = 0.15,
 		buildcostenergy = 50000,
 		buildcostmetal = 5000,
-		buildpic = "cordem.pcx",
+		buildpic = "cordem.png",
 		buildtime = 125000,
 		canmove = true,
 		category = "KBOT WEAPON ALL NOTSUB NOTAIR",

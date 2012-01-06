@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corllt_aoplane.dds",
-		buildpic = "CORLLT.DDS",
+		buildpic = "CORLLT.png",
 		buildtime = 2800,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		collisionvolumeoffsets = "0 1 0",

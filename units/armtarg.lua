@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armtarg_aoplane.dds",
-		buildpic = "ARMTARG.DDS",
+		buildpic = "ARMTARG.png",
 		buildtime = 8707,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
 		corpse = "DEAD",

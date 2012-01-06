@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 7058,
 		buildcostmetal = 658,
-		buildpic = "ARMAAS.DDS",
+		buildpic = "ARMAAS.png",
 		buildtime = 8628,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR",

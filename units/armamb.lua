@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 5,
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "armamb_aoplane.dds",
-		buildpic = "ARMAMB.DDS",
+		buildpic = "ARMAMB.png",
 		buildtime = 25000,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR",
 		cloakcost = 24,

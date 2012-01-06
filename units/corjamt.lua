@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corjamt_aoplane.dds",
-		buildpic = "CORJAMT.DDS",
+		buildpic = "CORJAMT.png",
 		buildtime = 4577,
 		canattack = false,
 		category = "ALL NOTSUB JAM NOWEAPON SPECIAL NOTAIR",

@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "screamer_aoplane.dds",
-		buildpic = "SCREAMER.DDS",
+		buildpic = "SCREAMER.png",
 		buildtime = 26280,
 		category = "ALL WEAPON NOTSUB SPECIAL NOTAIR",
 		corpse = "DEAD",

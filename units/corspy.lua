@@ -7,7 +7,7 @@ return {
 		buildcostmetal = 155,
 		builddistance = 128,
 		builder = true,
-		buildpic = "CORSPY.DDS",
+		buildpic = "CORSPY.png",
 		buildtime = 20000,
 		canassist = false,
 		canguard = false,

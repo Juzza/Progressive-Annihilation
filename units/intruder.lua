@@ -5,7 +5,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 15000,
 		buildcostmetal = 1250,
-		buildpic = "INTRUDER.DDS",
+		buildpic = "INTRUDER.png",
 		buildtime = 9000,
 		canmove = true,
 		cantbetransported = true,

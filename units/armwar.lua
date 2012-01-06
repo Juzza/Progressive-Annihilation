@@ -4,7 +4,7 @@ return {
 		brakerate = 0.23800000548363,
 		buildcostenergy = 2600,
 		buildcostmetal = 260,
-		buildpic = "ARMWAR.DDS",
+		buildpic = "ARMWAR.png",
 		buildtime = 4000,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL ANTIGATOR NOTSUB ANTIEMG NOTSHIP NOTAIR",

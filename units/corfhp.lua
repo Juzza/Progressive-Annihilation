@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 4000,
 		buildcostmetal = 1000,
 		builder = true,
-		buildpic = "CORFHP.DDS",
+		buildpic = "CORFHP.png",
 		buildtime = 14000,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR",
