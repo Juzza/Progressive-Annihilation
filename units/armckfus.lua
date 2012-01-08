@@ -16,7 +16,7 @@ return {
 		corpse = "DEAD",
 		description = "Produces Energy / Storage",
 		energymake = 1350,
-		energystorage = 3000,
+		energystorage = 8000,
 		explodeas = "ATOMIC_BLAST",
 		footprintx = 5,
 		footprintz = 4,

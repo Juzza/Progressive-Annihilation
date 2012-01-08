@@ -17,6 +17,8 @@ local FIRE_WEAPONS = {
   ["armpnix_armadvbomb"] = true,
   ["armraven_exp_heavyrocket"] = true,
   ["corkrog_corkrog_rocket"] = true,
+  ["corcom_comblaster"] = true,
+  ["cordecom_comblaster"] = true,
 }
 
 if (gadgetHandler:IsSyncedCode()) then

@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "Ell",
 		description = "Produces Energy",
 		energymake = 300,
-		energystorage = 1000,
+		energystorage = 2000,
 		explodeas = "LARGE_BUILDINGEX",
 		footprintx = 4,
 		footprintz = 4,

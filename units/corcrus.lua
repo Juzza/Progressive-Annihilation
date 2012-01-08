@@ -15,7 +15,7 @@ return {
 		collisionvolumetest = 1,
 		collisionvolumetype = "CylY",
 		corpse = "DEAD",
-		description = "Cruiser",
+		description = "Cruiser (Captial Class Ship)",
 		explodeas = "BIG_UNITEX",
 		floater = true,
 		footprintx = 9,

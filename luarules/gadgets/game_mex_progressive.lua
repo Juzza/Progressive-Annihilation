@@ -6,7 +6,7 @@ function gadget:GetInfo()
 		date      = "Sep 5, 2010",
 		license   = "GNU GPL, v2 or later",
 		layer     = 0,
-		enabled   = true
+		enabled   = false
 	}
 end
 
@@ -21,10 +21,6 @@ local mexRate = 0.001
 local isMex = {
 	[UnitDefNames.armmex.id] = true,
 	[UnitDefNames.cormex.id] = true,
-	[UnitDefNames.armuwmex.id] = true,
-	[UnitDefNames.coruwmex.id] = true,
-	[UnitDefNames.armamex.id] = true,
-	[UnitDefNames.corexp.id] = true,
 }
 local mexes = {}
 
@@ -41,7 +37,7 @@ function gadget:GameFrame(n)
 	if n > 0 and n % 18000 == 0 then
 		
 		mexRate = mexRate * 2
-		
+
 		for uID, _ in pairs(mexes) do
 			spSetUnitMetalExtraction(uID, mexRate)
 		end

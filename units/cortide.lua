@@ -11,7 +11,7 @@ return {
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR UNDERWATER",
 		corpse = "DEAD",
 		description = "Produces Energy",
-		energystorage = 50,
+		energystorage = 250,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 3,
 		footprintz = 3,

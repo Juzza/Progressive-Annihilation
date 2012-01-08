@@ -40,7 +40,7 @@ return {
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
 		waterline = 4,
-		workertime = 400,
+		workertime = 300,
 		yardmap = "occccccooccccccooccccccooccccccooccccccooccccccoocccccco",
 		buildoptions = {
 			[1] = "corch",

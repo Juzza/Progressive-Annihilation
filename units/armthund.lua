@@ -5,7 +5,7 @@ return {
 		buildcostenergy = 4900,
 		buildcostmetal = 140,
 		buildpic = "ARMTHUND.png",
-		buildtime = 4800,
+		buildtime = 7000,
 		canfly = true,
 		canmove = true,
 		category = "ALL MOBILE WEAPON NOTLAND ANTIGATOR NOTSUB ANTIFLAME ANTIEMG ANTILASER VTOL NOTSHIP",

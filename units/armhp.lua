@@ -39,7 +39,7 @@ return {
 		sightdistance = 286,
 		terraformspeed = 1000,
 		usebuildinggrounddecal = true,
-		workertime = 400,
+		workertime = 300,
 		waterline = 4,
 		yardmap = "occccccooccccccooccccccooccccccooccccccooccccccoocccccco",
 		buildoptions = {

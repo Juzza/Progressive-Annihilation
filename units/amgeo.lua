@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 11,
 		buildinggrounddecaltype = "amgeo_aoplane.dds",
 		buildpic = "AMGEO.png",
-		buildtime = 33152,
+		buildtime = 32000,
 		category = "ALL NOTSUB NOWEAPON NOTAIR",
 		collisionvolumeoffsets = "0 0 -2",
 		collisionvolumescales = "77 64 110",

@@ -20,7 +20,7 @@ return {
 		collisionvolumetype = "Box",
 		description = "Produces Energy / Storage",
 		energymake = 1350,
-		energystorage = 4000,
+		energystorage = 10000,
 		explodeas = "ATOMIC_BLAST",
 		footprintx = 5,
 		footprintz = 5,

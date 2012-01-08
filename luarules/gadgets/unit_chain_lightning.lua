@@ -35,6 +35,16 @@ if gadgetHandler:IsSyncedCode() then
             damage = 40,
             ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
         },
+        [WeaponDefNames.armcom_comlightning.id] = {
+            radius = 100,
+            damage = 150,
+            ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
+        },
+        [WeaponDefNames.armdecom_comlightning.id] = {
+            radius = 100,
+            damage = 30,
+            ceg = 'LIGHTNINGPLOSION_BLUEBOLTS1_CHAINED',
+        },
    }
     
     ----------------------------------------------------------------

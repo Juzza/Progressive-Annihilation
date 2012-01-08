@@ -21,7 +21,7 @@ return {
 		damagemodifier = 0.89999997615814,
 		description = "Produces Energy",
 		energymake = 80,
-		energystorage = 150,
+		energystorage = 500,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 4,
 		footprintz = 4,

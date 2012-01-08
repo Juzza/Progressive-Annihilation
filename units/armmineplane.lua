@@ -60,7 +60,7 @@ return {
 		weapondefs = {
 			armbomb = {
 				accuracy = 2000,
-				areaofeffect = 40,
+				areaofeffect = 100,
 				avoidfeature = false,
 				burst = 7,
 				burstrate = 0.45000001192093,
@@ -71,7 +71,7 @@ return {
 				cratermult = 0,
 				dropped = true,
 				metalpershot = 35,
-				edgeeffectiveness = 0.40000000596046,
+				edgeeffectiveness = 1,
 				explosiongenerator = "custom:T1ARMBOMB",
 				gravityaffected = "true",
 				impulseboost = 0.5,
@@ -90,7 +90,7 @@ return {
 				damage = {
 					default = 30,
 					subs = 0,
-					mines = 30,
+					mines = 100,
 				},
 			},
 		},

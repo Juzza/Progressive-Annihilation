@@ -115,7 +115,6 @@ return {
 				avoidFeature = false,
 				coreThickness = 0,
 				duration = 1,
-				energypershot = 1,
 				explosiongenerator = "custom:none",
 				fallOffRate = 1,
 				fireStarter = 50,

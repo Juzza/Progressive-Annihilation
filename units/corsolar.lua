@@ -18,7 +18,7 @@ return {
 		corpse = "DEAD",
 		damagemodifier = 0.2,
 		description = "Produces Energy",
-		energystorage = 50,
+		energystorage = 250,
 		energyuse = -25,
 		explodeas = "SMALL_BUILDINGEX",
 		footprintx = 5,
